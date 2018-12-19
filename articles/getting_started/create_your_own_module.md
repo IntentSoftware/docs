@@ -48,12 +48,51 @@ Intent Architect will download the necessary Modules, and once complete the appl
 
 ## 2. Defining Templates
 
-For a basic ASP.NET web application, we need at our module to create the following classes when executed:
+For a basic ASP.NET web application, we need our module to create the following classes when executed:
  - `Program.cs` - the standard ASP.NET Core Program class
  - `Startup.cs` - the standard ASP.NET Core Startup class
  - `{Service.Name}Controller.cs` - a controller for every service that we define within the Intent Architect `Services` modeler.
 
-To do this we must navigate to the `Module Builder` modeler and create a `C# Template` for each of the above. The `gif` below illustrates how to do this:
+To do this we must navigate to the `Module Builder` modeler and **create a `C# Template` for each of the above.** 
+
+>[!TIP]
+>Templates represent file outputs that a Module must make. The Intent Module Builder supports two types of templates:
+>1.	**File Templates** – any text file can be created using this template types.
+>2.	**C# Templates** – since Intent supports intelligent weaving in C# files, this template type wires this up. It is recommended to use this type of template for all C# classes as the weaving systems allow user-managed code to co-exist with Intent-managed code within the same file.
+     
+
+Both the `Program.cs` and `Startup.cs` files are single files. To ensure that only a single file is created we need to set the `Creation Mode` template setting to `Single File (No Model)`. On the contrary, the `Controller` template must create a class for every Service that we create. We therefore set the `Creation Mode` to `File per Model` and the `Modeler` setting to `Services`.
+
+How to do this is illustrated below:
 
 ![Create C# Templates](../../images/create_your_own_module/module_builder_create_templates.gif)
 *Create C# Templates in the Module Builder*
+
+>[!TIP]
+>The `Creation Mode` setting of a template determines what metadata format the template expects, and how files from a template must be created:
+>1.	**Single File (No Model)** – create a single file without any additional metadata needed. A standalone C# class or ReadMe file would be examples of this template setting. 
+>2.	**Single File (Model List)** – create a single file which takes in a list of metadata models. This is useful for creating classes which register other classes.
+>3.	**File per Model** – create a file per metadata model. This is useful for creating a file based on a model such as a Domain class, Service, or DTO.
+>4. **Custom** – you're on your own on this one. A `Registration` class (responsible for constructing template instances) won't be created for this template. You will have to create one yourself. This is useful when you want to create instances of a file in ways that are not supported by the previous options.
+
+>The `Modeler` setting determines which _type_ of modeler the metadata should be fetched from for the template. This can be `Domain`, `Services`, `Eventing`, etc. When setting up your Module, the `Intent Module Builder` will automatically add the modeler dependency depending on which `Modeler` you have selected. Nice :)
+
+
+## 3. Run the `Software Factory`
+
+To run the `Software Factory`, **click the _'play'_ button** in the top right hand corner (or press F5).
+
+The following outputs are staged before being applied:
+
+![Software Factory Execution](../../images/create_your_own_module/software_factory_execution_changes1.png)
+*Software Factory Execution - staged outputs*
+
+**Click the `APPLY CHANGES` button.**
+
+The `Software Factory` will apply the staged code changes from the list, and install the required NuGet packages. Once the NuGet packages have been installed, we can close the `Software Factory Execution` window.
+
+**Click the `CLOSE` button.**
+
+Our module has now been created and wired up. Next, we need to implement our templates to give the desired output.
+
+## 4. Implementing the Templates
