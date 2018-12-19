@@ -1,0 +1,9 @@
+- name: Intent Architect
+  href: articles/
+- name: Modules
+  href: modules/
+  homepage: modules/index.md
+- name: Web Site
+  href: https://intentarchitect.com/
+- name: Source Code
+  href: https://github.com/IntentSoftware/IntentArchitect
