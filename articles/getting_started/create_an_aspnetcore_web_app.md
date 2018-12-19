@@ -1,8 +1,20 @@
-# Getting Started - create an ASP.NET Core web app.
+# Getting started - create an ASP.NET Core web app
 
 This guide will take you through the steps required to create a functioning ASP.NET Core web application using some of the open-source Modules created by the Intent team. The aim is to introduce the main functions of Intent Architect, and show how you can describe your system in high-level models and allow a set of Modules to realize that into technology specific code (ASP.NET Core technologies in this guide).
 
-The open-source Modules repository can be found [here](https://github.com/IntentSoftware/IntentArchitect). The Modules are designed to support a hexagonal architecture (a.k.a. ports and adapters architecture), and the patterns are enterprise grade and production ready.
+The app manages a database of movie titles. In this guide, you will learn how to:
+ - Create a workspace and application from an _Application Template_.
+ - Execute the _Software Factory_ to generate or update code.
+ - Model a Domain entity
+ - Describe services, their operations and data contracts (Data Transfer Objects)
+ - Open, run and code within the generated codebase
+
+At the end, you will have an app that can manage movie data.
+
+[View or download sample](https://github.com/IntentSoftware/Docs/tree/master/tutorials/samples/create-web-app)
+
+>[!TIP]
+>The Modules used in this guide are open source. [View or download the Intent Modules repository](https://github.com/IntentSoftware/IntentArchitect) 
 
 ## Prerequisites
 
@@ -262,7 +274,7 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
 }
 ```
 
->[!NOTE]
+>[!TIP]
 >The attributes above the namespace are part of the Roslyn Weaving system that is provided by installing the `Intent.OutputManager.RoslynWeaver` module.
 
 >This system ultimately takes the pain out of continuous code generation, making it possible to work alongside continuously-generated code and to take over methods and classes if the generated output isn't meeting the specific requirements. 
