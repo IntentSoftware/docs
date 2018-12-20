@@ -95,4 +95,101 @@ The `Software Factory` will apply the staged code changes from the list, and ins
 
 Our module has now been created and wired up. Next, we need to implement our templates to give the desired output.
 
-## 4. Implementing the Templates
+## 4. Implementing the Module Templates
+
+**Open the generated Module solution in Visual Studio.** The Visual Studio Solution (`.sln`) file is located in the application folder. A shortcut to navigate here is to click on the 'Open in Folder' button in the 'Project Layout' view the application.
+
+The solution will be layed out as follows:
+
+![Visual Studio - Module layout](../../images/create_your_own_module/visual_studio_module_layout.png)
+
+*Module layout in Visual Studio*
+
+>[!TIP]
+>In the solution we will find an [Intent Module Specification](../modules/imodspec_file.md) (`.imodspec`) file, a `README.txt` file, and our three templates under the 'Templates' folder.
+
+>Notice that each template has three files:
+>1.	**T4 Template file** – defines the template logic and output. [Learn more about T4 Templates.](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2017)
+>2.	**Template Partial file** – this is a partial class to the T4 template and is responsible for defining the settings of the template and any ‘code-behind’ methods for the T4.
+>3.	**Template Registration file** – this file determines how the template is created (i.e. it determines how many output instances must be created, and what _metadata_ should be loaded and passed to each template instance.)
+
+Let's begin with the `ProgramTemplate`. **Open the `ProgramTemplate.tt` T4 file**. The file is generated as follows:
+
+```csharp
+<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<object>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+
+using System;
+<#=DependencyUsings#>
+// Mode.Fully will overwrite file on each run. 
+// Add in explicit [IntentManaged.Ignore] attributes to class or methods. Alternatively change to Mode.Merge (additive) or Mode.Ignore (once-off)
+[assembly: DefaultIntentManaged(Mode.Fully)]
+
+namespace <#= Namespace #>
+{
+    public class <#= ClassName #>
+    {
+    }
+}
+```
+
+The template above will simply output an empty C# class. The `ClassName` and `Namespace` are determined by the Template's metadata, which can be found by opening the `ProgramTemplatePartial.cs` file and viewing the `DefineRoslynDefaultFileMetaData` method:
+
+```cs
+protected override RoslynDefaultFileMetaData DefineRoslynDefaultFileMetaData()
+{
+    return new RoslynDefaultFileMetaData(
+        overwriteBehaviour: OverwriteBehaviour.Always,
+        fileName: "Program",
+        fileExtension: "cs",
+        defaultLocationInProject: "",
+        className: "Program",
+        @namespace: "${Project.Name}"
+    );
+}
+```
+
+Here we can see that the `ClassName` will be `"Program"`, and the namespace will be dynamically set to the name of the project in which it is outputted (`${Project.Name}`).
+
+>[!TIP]
+>Visual Studio unfortunately doesn't offer syntax highlighting on T4 files out the box. We recommend installing the [tangible T4 Editor](https://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) extension for Visual Studio.
+
+>It isn't required to implement Templates using T4, although we do recommend it. If you'd like to implement a template using a `StringBuilder` or other technology, delete the T4 file and implement the `string TransformText()` method in the Template Partial file.
+
+**Update the contents of the `ProgramTemplate.tt` as follows:**
+
+```csharp
+<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<object>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+
+using System;
+<#=DependencyUsings#>
+[assembly: DefaultIntentManaged(Mode.Fully)] // Overwrite file on each Software Factory run.
+
+namespace <#= Namespace #>
+{
+    public class <#= ClassName #>
+    {
+        public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
+    }
+}
+```
+

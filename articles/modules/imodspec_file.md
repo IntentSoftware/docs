@@ -1,8 +1,8 @@
-# IModSpec Files
+# Intent Module Specification (`.imodspec`) files
 
 ## Overview
 
-'IModSpec' files or modules specifications files, are XML configuration files used to describe the module, its content and configurability of the module. Every module must have a 'IModSpec' file. 
+Intent Module Specification (`.imodspec`) files, are XML configuration files used to describe the module, its content and configurability of the module. Every module must have an `.imodspec` file. 
 
 At a high level an imodspec file contains
 - **Module identity**, the identifier and version 
