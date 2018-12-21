@@ -2,7 +2,7 @@
 
 Modules are the building blocks and extension points of Intent Architect. They typically encapsulate _how_ your metadata should be realized as code in your application. 
 
-By creating modules to automate the repetitive coding tasks that you as a developer do, you effectively save yourself (and your team!) all that time and effort. In addition, you no longer have to manage the each instance of the automated pattern, but rather can upgrade the Module and update all instances at once.
+By creating modules to automate the repetitive coding tasks that you as a developer do, you effectively save yourself (and your team!) all that time and effort. In addition, you no longer have to manage each instance of the pattern, but rather can upgrade the Module and update all instances at once.
 
 _**"Automation is to your time, what compounding interest is to your money"** ~ Rory Vaden_
 
