@@ -10,15 +10,16 @@ And then the really interesting question... _Have you ever worked on a greenfiel
 
 Most developers acknowledge that almost every system they've ever worked on has become a spaghetti-code jungle, while all developer agree that this is the fate of most software systems. The only systems that escape this fate are either too small to have become unwieldy, are a rewrite (_of the last rewrite_) by the same team, or have a significant amount of code-automation. 
 
-The unfortunate truth is that the vast majority of software systems tend to become increasingly unwieldy, and the cost of maintaining and extending these system continues to rise exponentially.
+The unfortunate truth is that the vast majority of software systems tend to become increasingly unwieldy, and the cost of maintaining and extending these system continues to rise exponentially. We call this the **cost curve**, and it looks as follows.
 
 ![Cost vs. Size](../../images/intro/graph_cost_vs_size.png)
 
-So often you will see software systems in successful businesses, with sometimes hundreds of developers, that are barely able to make any significant changes to them. They have become so fragile and difficult to reason about that no matter how much manpower is assigned, the results are the same.
-
 **_The cost to change a software system grows exponentially as the system grows in size and complexity._**
 
-The implications of this on project outcome is dire, especially as the project size increases. The following table, published in the [Standish Group](https://www.standishgroup.com/) CHAOS report of 2015 shows the significant drop in project success for any project considered Moderate in size or bigger.
+So often you will see software systems in successful businesses, with sometimes hundreds of developers, that are barely able to make any significant changes to them. They have become so fragile and difficult to reason about that no matter how much manpower is assigned, the results are the same.
+
+
+The implications of this on project outcome can be dire, especially for larger projects. The following table, published in the [Standish Group](https://www.standishgroup.com/) CHAOS report of 2015 shows the significant drop in project success for any project considered Moderate in size or bigger.
 
 ![Project Size by CHAOS Resolution](../../images/intro/project_size_by_chaos_resolution.png)
 
@@ -30,17 +31,19 @@ Agile methodologies have significantly improved the success rate of projects ove
 
 The reality, however, is that the growing cost of making changes hasn't been alleviated, but rather that the need to make these changes has largely been _avoided_. The cost of change curve can't be flattened by a methodology, since the causes are primarily of a technical nature.
 
-## The technical causes
+## Causes of the _cost curve_
 
-We believe there are three fundamental reasons why software tends to become unwieldy. These are discussed below.
+We believe there are several fundamental reasons why software tends to become unwieldy, causing costs to grow exponentially. We discuss each of these below:
 
 ### 1. Cost of architecture
 
 The obvious cause of a system become unwieldy is that it lacks an appropriate architecture to support it's growth in the first place. Without patterns to keep coupling low, cohesion high, and the separation of concerns, the spaghetti-code jungle gets thick very quickly. 
 
-Putting these architectural patterns in place is costly and slows the team down in the short term, but as the system grows, they help ensure that the team can maintain a decent velocity.
+Putting these architectural patterns in place is very costly and slows the team down significantly. In the short term this cost is felt the hardest, but as the system grows, the architecture (if done correctly) ensures that the team can maintain a decent velocity into the future.
 
 ![Team Velocity vs. Size](../../images/intro/graph_team_velocity_architecture.png)
+
+The challenge lies in knowing what level of architecture is required and when. The work done by the [Scaled Agile Framework (SAFe)](https://www.scaledagileframework.com/) organization attempts to structure an approach to this problem.
 
 The implications of ignoring architecture often lead to a completely unmanageable codebase, in addition to often being unable to meet the non-functional requirements (e.g. performance, scalability, etc.). These are the dreaded systems that developers loath, keeping a vomit-bucket nearby as they attempt to reason about its inner workings.
 
@@ -54,12 +57,18 @@ Disorder in a system is a form of [technical debt](https://en.wikipedia.org/wiki
 
 Software entropy can take many different forms, from different coding styles to different architectures scattered throughout the application. All successful software gets changed, and so all successful software is subject to entropy.
 
+In teams, every developer has different styles, experience, level of technical expertise, knowledge of the technologies, and design capabilities. This makes it incredibly difficult to ensure consistency in the codebase. Governance processes, code reviews, and code analyzers (e.g. [StyleCop](https://github.com/StyleCop/StyleCop)) all attempt to prevent this source of entropy, each with their own cost overhead.
+
 ### 3. Architectural rigidity
 
 Code that _enables_ the functions of a system to be performed is surprisingly pervasive in any system. This is the code that handles service requests, sets transactional boundaries, manages persistance of the application's state, enforces security, etc. While a modern technology exists to handle any of these concerns, the code required to wire this up still makes up the vast majority of code in any system. By some definitions, this is the applications architecture - _the glue of the system_.
 
-As systems get larger, growing in features and functions, so this architectural code is "replicated" as patterns that are unique enough to prevent developers from consolidating them. When a pattern needs to be changed (e.g. to change or upgrade a technology, fix a vulnerability, implement a cross-cutting concern, etc.), each instance of that pattern must be changed. In a large system, this could mean months of rework. Thus developers find themselves constrained by architectural rigidity, and are often forced to compromise leading to entropy and technical debt. 
+As systems get larger, growing in features and functions, so this architectural code is "replicated" as patterns that are unique enough to prevent developers from consolidating them. When a pattern needs to be changed (e.g. to change or upgrade a technology, fix a vulnerability, implement a cross-cutting concern, etc.), each instance of that pattern must be changed. In a large system, this could mean months of rework. Thus developers find themselves constrained by architectural rigidity, and are often forced to compromise leading to entropy and technical debt.
 
+### 4. Hidden design
 
+Software design is lost in the implementation. 
+
+### 5. Staff turnover
 
 
