@@ -2,7 +2,7 @@
 
 ## Where would you like to start ?
 
-### [Overview of Intent Architect](articles/getting_started/intro.md)
+### [Overview of Intent Architect](articles/overview/intro.md)
 An overview of Intent Architect, how it works, and why it provides a better way to build software.
 
 ### [Getting Started - create an ASP.NET Core web app](articles/getting_started/create_an_aspnetcore_web_app.md)

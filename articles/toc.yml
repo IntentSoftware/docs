@@ -1,13 +1,19 @@
-- name: Getting Started
+- name: Overview
+  homepage: overview/intro.md
   items:
-  - name: Welcome to Intent Architect
-    href: getting_started/intro.md
+  - name: About Intent Architect
+    href: overview/intro.md
+  - name: Why Intent Architect
+    href: overview/case_for_intent_architect.md
+  - name: FAQ
+    href: getting_started/faq.md
+- name: Getting Started
+  homepage: getting_started/create_an_aspnetcore_web_app.md
+  items:
   - name: Create an ASP.NET Core web app
     href: getting_started/create_an_aspnetcore_web_app.md
   - name: Create your own Module
     href: getting_started/create_your_own_module.md
-  - name: FAQ
-    href: getting_started/faq.md
 - name: Modules
   homepage: modules/overview.md
   items:
