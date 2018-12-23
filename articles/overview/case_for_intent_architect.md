@@ -71,14 +71,58 @@ Software design is invisible from the outside, and it's vague essence lies scatt
 
 Without a clear understanding of the design of a subsystem, changing it becomes risky and prone to breaking existing functionality without the developers being aware of it. Often the subsystem wasn't originally designed to handle the new requirement, and the lack of clarity forces developers to inappropriately _hack_ the change in, thus introducing further entropy and technical debt.
 
-Some organizations rely heavily on the project's veteran developers (those that have been on the project for a long time) for their understanding of the design and where changes can and should be made. However, these key-man dependencies create a major risk when those developers decide to move on.
+Some organizations rely heavily on the project's _veteran_ developers (those that have been on the project for a long time) for their understanding of the design and where changes can and should be made. However, these key-man dependencies create a major risk when those developers decide to move on.
 
 With staff turnover being unavoidable, the only alternative is documentation. While some is almost always better than none, documentation is rife with it's own challenges. First, it's incredibly expensive and can at times cost the same as (if not more than) the software implementation it describes. Second, it becomes outdated and even incorrect the moment the code it describes is changed. Third, it may be vague, hard to read, misleading (_possibly even flat-out wrong_) and difficult to consume. Lastly, the majority of software engineers are both reluctant documenters and reluctant consumers of documentation, which poses it's own unique set of challenges.
 
 ## How Intent Architect helps
 
-Intent Architect effectively alleviates these causes by allowing developers to describe their systems at a higher level, and then allowing them to choosing how these descriptions are realized into tangible code. It then intelligently manages this code for the developer so that it can be easily changed at a later stage. While code generation using high-level models is not a new concept, the unique way in which Intent Architect does it has many benefits.
+Intent Architect effectively alleviates these causes by allowing developers to describe their systems at a higher level, and then allowing them to choosing how these descriptions are realized into tangible code. It then intelligently manages this code for the developer so that it can be easily changed at a later stage. While source-code generation using high-level models is not a new concept, the unique way in which Intent Architect does it has many benefits.
 
 >[!TIP]
 >Click here to learn more about how Intent Architect works.
 
+### 1. Automated patterns
+
+Intent Architect's Module system allows developers to codify, package and ultimately automate code structures and design patterns. Architectural code is ideally suited to be automated because of it's patternized nature. This means that developers can use Intent Architect's automation systems to generate and manage their architecture, thus reducing it's cost of implementation by orders of magnitude.
+
+Automated source code has the same cost regardless of whether the patterns are simple or complex. Even Proof of Concepts and MVPs (Minimum Viable Products) can be built with production-ready, enterprise-grade architecture, and it would cost less than the most unsophisticated architecture being coded by hand.
+
+### 2. Agile architecture
+
+**Move to another document:**
+***
+Most source-code generation systems provide a once-off generation experience. The benefit of this is the productivity boost that developers achieve. The code, once generated, is then customized and managed by the developer.
+
+Another form of source-code generation is continuous and overwrites the generated code on each run. Productivity is also a major benefit but with the added advantage that the code remains _managed_ by the generation mechanism (usually some kind of template). This means that the developer can manage and upgrade the pattern, instead of each instance of it's implementation (of which there could be hundreds). This offers great refactoring power but comes with a critical disadvantage. 
+
+The disadvantage of this is that any particular instance of the pattern cannot be customized, and for many developers this is a deal breaker. The generated pattern may be perfect for 95% of the cases but 5% of the time it needs customization and the inability to do this easily is often enough to negate the positive upside.
+***
+
+Intent's _code management_ system continuously manages the automated patterns in a codebase. The continuous nature of this allows developers to manage the pattern and not the individual instances of the pattern. This has powerful advantages.
+
+Intent Architect solves this with 
+
+Manage the pattern, not the instances
+
+Mass scale refactoring
+
+Upgrade the pattern in one place
+
+
+
+### 3. Ensured consistency
+
+Patterns under automation are 100% consistent, and not susceptible to the entropy that developer-managed code is. This effectively 
+
+### 4. Self-documented system design
+
+## Additional Benefits
+
+### Build faster
+
+### Share patterns and leverage those built by others
+
+### Create Intellectual Property
+
+### Focused Testability
