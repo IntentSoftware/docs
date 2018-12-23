@@ -10,7 +10,7 @@ And then the really interesting question... _Have you ever worked on a greenfiel
 
 Most developers acknowledge that almost every system they've ever worked on has become a spaghetti-code jungle, while all developer agree that this is the fate of most software systems. The only systems that escape this fate are either too small to have become unwieldy, are a rewrite (_of the last rewrite_) by the same team, or have a significant amount of code-automation. 
 
-The unfortunate truth is that the vast majority of software systems tend to become increasingly unwieldy, and the cost of maintaining and extending these system continues to rise exponentially. We call this the **cost curve**, and it looks as follows.
+The unfortunate truth is that the vast majority of software systems tend to become increasingly unwieldy, and the cost of maintaining and extending these systems continues to rise exponentially. We call this the **cost curve**, and it looks as follows.
 
 ![Cost vs. Size](../../images/intro/graph_cost_vs_size.png)
 
@@ -53,7 +53,7 @@ Reaching a point of near-zero velocity is a real phenomenon, and occurs when mak
 
 _"As a system is modified, its disorder, or entropy, tends to increase. This is known as software entropy."_ ~ [Software entropy, Wikipedia](https://en.wikipedia.org/wiki/Software_entropy)
 
-Disorder in a system is a form of [technical debt](https://en.wikipedia.org/wiki/Technical_debt) which creeps in as a system is modified. It's the most insidious form of technical debt which over time leads to the big ball of mud. As developers, we try avoid it but the cost of correcting software entropy becomes unaffordable as the system becomes larger. Needing another week or month to refactor the code is a luxury most developers (and businesses) don't have.
+Disorder in a system is a form of [technical debt](https://en.wikipedia.org/wiki/Technical_debt) which creeps in as a system is modified. It's an insidious form of technical debt which over time leads to the big ball of mud. As developers, we try avoid it but the cost of correcting software entropy becomes unaffordable as the system becomes larger. Needing another week or month to refactor the code is a luxury most developers (and businesses) don't have.
 
 Software entropy can take many different forms, from different coding styles to different architectures scattered throughout the application. All successful software gets changed, and so all successful software is subject to entropy.
 
@@ -67,8 +67,18 @@ As systems get larger, growing in features and functions, so this architectural 
 
 ### 4. Hidden design
 
-Software design is lost in the implementation. 
+Software design is invisible from the outside, and it's vague essence lies scattered throughout its implementation. Developers are often forced to trace through countless programming constructs while trying to reason about the design of a particular subsystem. The more confounding this process is, the more the developers wonder what the designer was even thinking.
 
-### 5. Staff turnover
+Without a clear understanding of the design of a subsystem, changing it becomes risky and prone to breaking existing functionality without the developers being aware of it. Often the subsystem wasn't originally designed to handle the new requirement, and the lack of clarity forces developers to inappropriately _hack_ the change in, thus introducing further entropy and technical debt.
 
+Some organizations rely heavily on the project's veteran developers (those that have been on the project for a long time) for their understanding of the design and where changes can and should be made. However, these key-man dependencies create a major risk when those developers decide to move on.
+
+With staff turnover being unavoidable, the only alternative is documentation. While some is almost always better than none, documentation is rife with it's own challenges. First, it's incredibly expensive and can at times cost the same as (if not more than) the software implementation it describes. Second, it becomes outdated and even incorrect the moment the code it describes is changed. Third, it may be vague, hard to read, misleading (_possibly even flat-out wrong_) and difficult to consume. Lastly, the majority of software engineers are both reluctant documenters and reluctant consumers of documentation, which poses it's own unique set of challenges.
+
+## How Intent Architect helps
+
+Intent Architect effectively alleviates these causes by allowing developers to describe their systems at a higher level, and then allowing them to choosing how these descriptions are realized into tangible code. It then intelligently manages this code for the developer so that it can be easily changed at a later stage. While code generation using high-level models is not a new concept, the unique way in which Intent Architect does it has many benefits.
+
+>[!TIP]
+>Click here to learn more about how Intent Architect works.
 
