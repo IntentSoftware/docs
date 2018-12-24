@@ -1,6 +1,6 @@
 # Why Intent Architect
 
-## The problem with building software
+## The problem when building software
 
 When interviewing developers, we often ask the following questions:
 
@@ -49,6 +49,12 @@ The implications of ignoring architecture often lead to a completely unmanageabl
 
 Reaching a point of near-zero velocity is a real phenomenon, and occurs when making any significant change breaks another part of the system, which when changed breaks yet another part of the system, and so on. The web of changes eventually becomes too complex and risky, and the developer has no choice but to roll back. This is unfortunately the state of most large (_legacy_) systems.
 
+#### How Intent Architect helps: automated patterns
+
+Intent Architect's Module system allows developers to codify, package and ultimately automate code structures and design patterns. Architectural code is ideally suited to be automated because of it's patternized nature. This means that developers can use Intent Architect's automation systems to generate and manage their architecture, thus reducing it's cost of implementation by orders of magnitude.
+
+Automated source code has the same cost regardless of whether the patterns are simple or complex. Even Proof of Concepts and MVPs (Minimum Viable Products) can be built with production-ready, enterprise-grade architecture, and it would cost less than the most unsophisticated architecture being coded by hand.
+
 ### 2. Software entropy
 
 _"As a system is modified, its disorder, or entropy, tends to increase. This is known as software entropy."_ ~ [Software entropy, Wikipedia](https://en.wikipedia.org/wiki/Software_entropy)
@@ -59,11 +65,23 @@ Software entropy can take many different forms, from different coding styles to 
 
 In teams, every developer has different styles, experience, level of technical expertise, knowledge of the technologies, and design capabilities. This makes it incredibly difficult to ensure consistency in the codebase. Governance processes, code reviews, and code analyzers (e.g. [StyleCop](https://github.com/StyleCop/StyleCop)) all attempt to prevent this source of entropy, each with their own cost overhead.
 
+#### How Intent Architect helps: enforced consistency
+
+Patterns under automation are 100% consistent, and not susceptible to the entropy that developer-managed code is. Since the large majority of source code can (and should) be patternized, Intent Architect is able to automate this and therefore protect it from entropy.
+
+Entropy in developer-managed code and at the design level must still be prevented where possible, but the danger it poses has been significantly reduced.
+
 ### 3. Architectural rigidity
 
 Code that _enables_ the functions of a system to be performed is surprisingly pervasive in any system. This is the code that handles service requests, sets transactional boundaries, manages persistance of the application's state, enforces security, etc. While a modern technology exists to handle any of these concerns, the code required to wire this up still makes up the vast majority of code in any system. By some definitions, this is the applications architecture - _the glue of the system_.
 
 As systems get larger, growing in features and functions, so this architectural code is "replicated" as patterns that are unique enough to prevent developers from consolidating them. When a pattern needs to be changed (e.g. to change or upgrade a technology, fix a vulnerability, implement a cross-cutting concern, etc.), each instance of that pattern must be changed. In a large system, this could mean months of rework. Thus developers find themselves constrained by architectural rigidity, and are often forced to compromise leading to entropy and technical debt.
+
+#### How Intent Architect helps: agile architecture
+
+Intent Architect's _code management_ system is by default continuous and therefore allows generated source code to be changed holistically at a later stage. This changes the paradigm where developers manage each implementation of a pattern by hand, to developers managing the pattern itself.
+
+This shift in control allows developers to achieve large scale refactoring, technology upgrades, and even technology changes by altering the pattern itself. Effectively, this enabled a truly _agile architecture_. Regardless of the size of the system, the cost to alter the pattern remains the same, with changes that would have taken months of team effort being possible in half a day of a single developers time.
 
 ### 4. Hidden design
 
@@ -74,6 +92,20 @@ Without a clear understanding of the design of a subsystem, changing it becomes 
 Some organizations rely heavily on the project's _veteran_ developers (those that have been on the project for a long time) for their understanding of the design and where changes can and should be made. However, these key-man dependencies create a major risk when those developers decide to move on.
 
 With staff turnover being unavoidable, the only alternative is documentation. While some is almost always better than none, documentation is rife with it's own challenges. First, it's incredibly expensive and can at times cost the same as (if not more than) the software implementation it describes. Second, it becomes outdated and even incorrect the moment the code it describes is changed. Third, it may be vague, hard to read, misleading (_possibly even flat-out wrong_) and difficult to consume. Lastly, the majority of software engineers are both reluctant documenters and reluctant consumers of documentation, which poses it's own unique set of challenges.
+
+#### How Intent Architect helps: self-documented system design
+
+Intent Architect's modeling systems allow developers to describe an application at a higher level, and then specify how these descriptions are realized into tangible code. Developers can know what the underlying implementation is by simply looking at the high-level model. This serves as documentation of the system's design, and has the added advantage that it can be trusted - _the document is a true representation of the underlying source code._
+
+The self-documentation provided by using Intent Architect has many benefits:
+ - It is the mechanism by which the system is altered and extended, meaning that the document will exist before the implementation is complete.
+ - Teams have visibility of the system design, greatly improving communication and common understanding between members and the business. 
+ - The model provides a concise view and doesn't attempt to visualize all the moving parts in the design. This makes it consumable and at an effective level of abstraction from the details. If more detail is required, developers will know exactly where to look in the codebase to find it.
+ - The ramp-up of new developers is greatly accelerated. They can use Intent Architect to extend the system without having to first understand all the underlying patterns and architecture.
+
+
+
+
 
 ## How Intent Architect helps
 
@@ -113,7 +145,7 @@ Upgrade the pattern in one place
 
 ### 3. Ensured consistency
 
-Patterns under automation are 100% consistent, and not susceptible to the entropy that developer-managed code is. This effectively 
+
 
 ### 4. Self-documented system design
 
