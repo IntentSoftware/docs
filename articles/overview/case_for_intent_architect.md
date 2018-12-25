@@ -1,6 +1,17 @@
 # Why Intent Architect
 
-## The problem when building software
+Software developers
+The principles that Intent Architect embodies are the future of software development.
+
+Intent Architect allows developers to describe their applications at a higher level using specialized models, and then choose how to realize these models into tangible source code. In a traditional sense this is a form of model-driven engineering (MDE), but with a unique and practical approach. In another sense, Intent Architect is a new flavour of _low-code_ technology - one that can actually scale and has no lock-in.
+
+Intent Architect is a paradigm shift from traditional software development.  
+
+Intent Architect effectively alleviates these causes by allowing developers to describe their systems at a higher level, and then allowing them to choosing how these descriptions are realized into tangible code. It then intelligently manages this code for the developer so that it can be easily changed at a later stage. While source-code generation using high-level models is not a new concept, the unique way in which Intent Architect does it has many benefits.
+
+Building software in the traditional way
+
+## Software deterioration
 
 When interviewing developers, we often ask the following questions:
 
@@ -25,15 +36,15 @@ The implications of this on project outcome can be dire, especially for larger p
 
 This problem is as old as the software industry, and while significant improvements in technologies, methodologies and tooling have helped, the problem persists because the software systems we are building have become so much more complex.
 
-## What about Agile?
+### What about Agile?
 
 Agile methodologies have significantly improved the success rate of projects over the (now outdated) waterfall approach. Agile also claims to flatten the cost of change curve, which is true but not to the extent that agile evangelists would have us believe. The fundamental problem that agile tackles is that of building the wrong thing. By shortening the feedback cycle, validation and correction of the software can be done sooner, thus saving massive reworking costs down the line. In essence, agile helps prevent the need to make significant changes down the line.
 
 The reality, however, is that the growing cost of making changes hasn't been alleviated, but rather that the need to make these changes has largely been _avoided_. The cost of change curve can't be flattened by a methodology, since the causes are primarily of a technical nature.
 
-## Causes of the _cost curve_
+## Causes of the _software deterioration_, and how Intent Architect helps
 
-We believe there are several fundamental reasons why software tends to become unwieldy, causing costs to grow exponentially. We discuss each of these below:
+We believe there are several fundamental causes why software deteriorates, becoming unwieldy, and causing costs to grow exponentially. We discuss some of these below:
 
 ### 1. Cost of architecture
 
@@ -102,6 +113,7 @@ The self-documentation provided by using Intent Architect has many benefits:
  - Teams have visibility of the system design, greatly improving communication and common understanding between members and the business. 
  - The model provides a concise view and doesn't attempt to visualize all the moving parts in the design. This makes it consumable and at an effective level of abstraction from the details. If more detail is required, developers will know exactly where to look in the codebase to find it.
  - The ramp-up of new developers is greatly accelerated. They can use Intent Architect to extend the system without having to first understand all the underlying patterns and architecture.
+ - Key-man dependencies are alleviated.
 
 
 
@@ -114,47 +126,32 @@ Intent Architect effectively alleviates these causes by allowing developers to d
 >[!TIP]
 >Click here to learn more about how Intent Architect works.
 
-### 1. Automated patterns
-
-Intent Architect's Module system allows developers to codify, package and ultimately automate code structures and design patterns. Architectural code is ideally suited to be automated because of it's patternized nature. This means that developers can use Intent Architect's automation systems to generate and manage their architecture, thus reducing it's cost of implementation by orders of magnitude.
-
-Automated source code has the same cost regardless of whether the patterns are simple or complex. Even Proof of Concepts and MVPs (Minimum Viable Products) can be built with production-ready, enterprise-grade architecture, and it would cost less than the most unsophisticated architecture being coded by hand.
-
-### 2. Agile architecture
-
-**Move to another document:**
-***
-Most source-code generation systems provide a once-off generation experience. The benefit of this is the productivity boost that developers achieve. The code, once generated, is then customized and managed by the developer.
-
-Another form of source-code generation is continuous and overwrites the generated code on each run. Productivity is also a major benefit but with the added advantage that the code remains _managed_ by the generation mechanism (usually some kind of template). This means that the developer can manage and upgrade the pattern, instead of each instance of it's implementation (of which there could be hundreds). This offers great refactoring power but comes with a critical disadvantage. 
-
-The disadvantage of this is that any particular instance of the pattern cannot be customized, and for many developers this is a deal breaker. The generated pattern may be perfect for 95% of the cases but 5% of the time it needs customization and the inability to do this easily is often enough to negate the positive upside.
-***
-
-Intent's _code management_ system continuously manages the automated patterns in a codebase. The continuous nature of this allows developers to manage the pattern and not the individual instances of the pattern. This has powerful advantages.
-
-Intent Architect solves this with 
-
-Manage the pattern, not the instances
-
-Mass scale refactoring
-
-Upgrade the pattern in one place
-
-
-
-### 3. Ensured consistency
-
-
-
-### 4. Self-documented system design
-
 ## Additional Benefits
 
 ### Build faster
 
+_"Automation is to your time, what compounding interest is to your money" ~ Rory Vaden_
+
+Intent Architect can easily double your development team's velocity, and help maintain that velocity. If a team were to begin a project using a pre-built set of Modules (e.g. the open source Modules for .NET Core developed by the Intent team), and these Modules automated an appropriate enterprise-grade architecture for that project, the effective velocity of the team over time would like something like the following:
+
+![Team Velocity vs. Size](../../images/intro/graph_team_velocity_with_intent_architect.png)
+
+In the scenario that no Modules exist for a particular set of architectural requirements, and the team decided to build their own, their velocity increase would quickly pay off the initial investment.
+
 ### Share patterns and leverage those built by others
+
+In a similar way that package managers such as NuGet and NPM provide a platform for packaging and sharing code so that it can be leveraged and reused by other developers, so Intent Architect provides a platform for packaging and sharing _patterns_ for reuse. These patterns are codified and packaged into a Module.
+
+Intent's Module system operates in a similar way to these package managers, providing searching, versioning, dependency management, and configuration. With it, individual developers and organizations can leverage the patterns built and maintained by experts.
+
+>[!TIP]
+>Learn how to build your own modules by following [this guide](../getting_started/create_your_own_module.md).
 
 ### Create Intellectual Property
 
-### Focused Testability
+A potentially very powerful opportunity that Intent's Module system provides, is the ability to create intellectual property. For example, an organization may invest in creating a powerful set of Modules that they use to build and maintain their software. If these Modules help make the organization more competitive in the market (e.g. it makes them faster, more agile, more sustainable, with better customer satisfaction, better quality, etc.) then these Modules have immense value and should probably not be shared publicly.
+
+
+### No lock-in
+
+### 
