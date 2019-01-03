@@ -1,25 +1,18 @@
 # Why Intent Architect
 
-Software developers
-The principles that Intent Architect embodies are the future of software development.
-
-Intent Architect allows developers to describe their applications at a higher level using specialized models, and then choose how to realize these models into tangible source code. In a traditional sense this is a form of model-driven engineering (MDE), but with a unique and practical approach. In another sense, Intent Architect is a new flavour of _low-code_ technology - one that can actually scale and has no lock-in.
-
-Intent Architect is a paradigm shift from traditional software development.  
-
-Intent Architect effectively alleviates these causes by allowing developers to describe their systems at a higher level, and then allowing them to choosing how these descriptions are realized into tangible code. It then intelligently manages this code for the developer so that it can be easily changed at a later stage. While source-code generation using high-level models is not a new concept, the unique way in which Intent Architect does it has many benefits.
-
-Building software in the traditional way
+To understand why there is a deep need for tools like Intent Architect, we need to understand the fundamental issues with traditional software development. Exceptionally low project success rates, missed schedules and blown budgets are commonplace in the software industry, even in recent years. The primary cause of this is the almost unavoidable tendency for software to _deteriorate_ as it changes and grows.
 
 ## Software deterioration
 
+_Software deterioration_, also called _design erosion_, is the phenomenon that occurs as piece of software ages, and is being maintained, it becomes harder and harder to maintain. Its conceptual integrity has been violated; it has become patched and mended beyond repair. Often developers will refer to this state of software system as a [big ball of mud](https://en.wikipedia.org/wiki/Big_ball_of_mud).
+
 When interviewing developers, we often ask the following questions:
 
-_Have you ever worked on a greenfields project that over time became a [big ball of mud](https://en.wikipedia.org/wiki/Big_ball_of_mud)?_
+_Have you ever worked on a greenfields project that over time became a big ball of mud?_
 
 And then the really interesting question... _Have you ever worked on a greenfields project that __didn't__ become a big ball of mud?_
 
-Most developers acknowledge that almost every system they've ever worked on has become a spaghetti-code jungle, while all developer agree that this is the fate of most software systems. The only systems that escape this fate are either too small to have become unwieldy, are a rewrite (_of the last rewrite_) by the same team, or have a significant amount of code-automation. 
+Most developers acknowledge that almost every system they've ever worked on has become a spaghetti-code jungle, while all developers agree that this is the fate of most software systems. The only systems that escape this fate are either too small to have become unwieldy, are a rewrite (_of the last rewrite_) by the same team, or have a significant amount of code-automation. 
 
 The unfortunate truth is that the vast majority of software systems tend to become increasingly unwieldy, and the cost of maintaining and extending these systems continues to rise exponentially. We call this the **cost curve**, and it looks as follows.
 
@@ -27,8 +20,7 @@ The unfortunate truth is that the vast majority of software systems tend to beco
 
 **_The cost to change a software system grows exponentially as the system grows in size and complexity._**
 
-So often you will see software systems in successful businesses, with sometimes hundreds of developers, that are barely able to make any significant changes to them. They have become so fragile and difficult to reason about that no matter how much manpower is assigned, the results are the same.
-
+So often we see software systems in successful businesses, with sometimes hundreds of developers, that are barely able to make any significant changes to them. They have become so fragile and difficult to reason about that no matter how much manpower is assigned, the results are the same.
 
 The implications of this on project outcome can be dire, especially for larger projects. The following table, published in the [Standish Group](https://www.standishgroup.com/) CHAOS report of 2015 shows the significant drop in project success for any project considered Moderate in size or bigger.
 
