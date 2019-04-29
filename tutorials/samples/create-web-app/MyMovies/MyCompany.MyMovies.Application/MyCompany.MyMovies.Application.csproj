@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
-    <PackageReference Include="CommonServiceLocator" Version="2.0.3" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
     <PackageReference Include="Intent.Framework.Domain" Version="1.0.0" />
   </ItemGroup>
 
