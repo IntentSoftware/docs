@@ -20,8 +20,9 @@ At the end, you will have an app that can manage movie data. Once you have the h
 ## Prerequisites
 
 This guide has the following prerequisites:
- - Intent Architect is currently only supported on Windows OS (_cross-platform support is on the road map for mid 2019 or earlier_)
- - Visual Studio 2017 with .NET Core 2.1 SDK is required. 
+ - Intent Architect is currently only supported on Windows OS and MacOS (_Linux support coming soon_)
+ - (Windows) Windows 8.1 or later with Visual Studio 2017 (with .NET Core 2.1 SDK) or later.
+ - (MacOS) 10.10 (Yosemite) or later with Visual Studio for Mac.
  - An instance of SQL Server is optional.
 
 
@@ -31,9 +32,8 @@ This guide has the following prerequisites:
 Get Intent Architect up and running through the following steps.
 
 - Download the latest version of Intent Architect from the website: [https://intentarchitect.com/#/downloads](https://intentarchitect.com/#/downloads)
-- Register an account: [https://intentarchitect.com/#/user-access/register](https://intentarchitect.com/#/user-access/register).
 - Double click the downloaded executable to install and run Intent Architect.
-- Log in using the credentials created for your account.
+- Log in using the credentials created for your account, or create a free account within Intent Architect.
 
 
 ***
