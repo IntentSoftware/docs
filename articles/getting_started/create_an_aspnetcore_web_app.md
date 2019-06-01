@@ -39,7 +39,7 @@ Get Intent Architect up and running through the following steps.
 ***
 ## 2. Create a workspace
 
-A `workspace` provides the root location of your solution. This is typically the root folder of you version control repository. It may for example contain a single monolithic application or several microservices.
+A `workspace` provides the root location of your solution. This is typically the root folder of your version control repository. It may for example contain a single monolithic application or several microservices.
 
 **From the home screen, click `Create new workspace...` under the 'Create' header.**
 
@@ -362,7 +362,7 @@ And that's all the code needed for our system to work :)
 >[!NOTE]
 >Since the `IMovieRepository` class is in the domain project (`MyCompany.MyMovies.Domain`), you will need to add a project reference to it in the `MyCompany.MyMovies.Application` project.
 
-The last step before we run our application is we need to set up the database. Here we have two options:
+The last step before we run our application is that we need to set up the database. Here we have two options:
  - Option 1: Use an in-memory database.
  - Option 2: Use the [Entity Framework migration](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/) system to create our database (requires access to a SQL Server instance).
 
