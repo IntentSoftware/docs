@@ -1,4 +1,4 @@
-# Why Intent Architect
+# Why Intent Architect?
 
 To understand why there is a deep need for tools like Intent Architect, we need to understand the fundamental issues with traditional software development. Exceptionally low project success rates, missed schedules and blown budgets are commonplace in the software industry, even in recent years. The primary cause of this is the almost unavoidable tendency for software to _deteriorate_ as it changes and grows.
 

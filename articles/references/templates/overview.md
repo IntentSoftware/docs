@@ -1,4 +1,4 @@
-# Template Overview
+# Module Templates Overview
 
 A template, simply put, is an artifact which generates code. These templates are how you instruct Intent Architect to build your application's source code.  
 
