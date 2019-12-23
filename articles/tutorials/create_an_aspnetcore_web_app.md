@@ -296,7 +296,7 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
 
 >The `[IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]` attribute is instructing the Roslyn Weaving system to allow you to alter the body of the method (`Body = Mode.Ignore`), while Intent Architect must manage the signature (`Signature = Mode.Fully`). Therefore, if we update the signature of our operations in the `Services` modeler, it will update the signature, but **leave** your implementation as is.
 
->For more information on the Roslyn Weaving system, click [here](../../modules/roslyn_weaver/overview.md).
+>For more information on the Roslyn Weaving system, click [here](../references/core_modules/roslyn_weaver/overview.md).
 
 In this application architecture, the service implementation classes are where we implement our application layer business logic.
 

@@ -16,3 +16,16 @@
       href: templates/registrations.md
     - name: Configuration
       href: templates/configuration.md
+- name: Core Modules
+  items:
+    - name: Intent Common
+      href: core_modules/intent_common/overview.md
+    - name: Intent Common Types
+      href: core_modules/intent_common_types/overview.md
+    - name: Intent Nuget Installer
+      href: core_modules/intent_nuget_installer/overview.md
+    - name: Intent Visual Studio Projects
+      href: core_modules/intent_visual_studio_projects/overview.md
+    - name: Roslyn Weaver
+      href: core_modules/roslyn_weaver/toc.yml
+      topicHref: core_modules/roslyn_weaver/overview.md

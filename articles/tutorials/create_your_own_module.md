@@ -105,7 +105,7 @@ The solution will be layed out as follows:
 *Module layout in Visual Studio*
 
 >[!TIP]
->In the solution we will find an [Intent Module Specification](../modules/imodspec_file.md) (`.imodspec`) file, a `README.txt` file, and our three templates under the 'Templates' folder.
+>In the solution we will find an [Intent Module Specification](../references/modules/imodspec_file.md) (`.imodspec`) file, a `README.txt` file, and our three templates under the 'Templates' folder.
 
 >Notice that each template has three files:
 >1.	**T4 Template file** – defines the template logic and output. [Learn more about T4 Templates.](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2017)
@@ -155,7 +155,7 @@ protected override RoslynDefaultFileMetaData DefineRoslynDefaultFileMetaData()
 }
 ```
 
-Here we can see that the `ClassName` will be `"Program"`, and the namespace will be dynamically set to the name of the project in which it is outputted (`${Project.Name}`). [Learn more about template configuration.](../templates/configuration.md)
+Here we can see that the `ClassName` will be `"Program"`, and the namespace will be dynamically set to the name of the project in which it is outputted (`${Project.Name}`). [Learn more about template configuration.](../references/templates/configuration.md)
 
 >[!TIP]
 >Visual Studio unfortunately doesn't offer syntax highlighting on T4 files out the box. We recommend installing the [tangible T4 Editor](https://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) extension for Visual Studio.
