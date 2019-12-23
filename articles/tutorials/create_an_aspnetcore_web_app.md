@@ -20,7 +20,7 @@ This guide has the following prerequisites:
  - Intent Architect is currently only supported on Windows OS and MacOS (_Linux support coming soon_)
  - (Windows) Windows 8.1 or later with Visual Studio 2017 (with .NET Core 2.1 SDK) or later.
  - (MacOS) 10.10 (Yosemite) or later with Visual Studio for Mac.
- - An instance of SQL Server is optional unless you want to test it.
+ - An instance of SQL Server is optional.
 
 
 ***
