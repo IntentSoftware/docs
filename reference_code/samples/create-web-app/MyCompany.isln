@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <solution id="3b31c76d-fa5f-4dcf-98e1-dfb64aa7dd1f">
   <name>MyCompany</name>
-  <version>1.2.0</version>
+  <version>2.0.0</version>
   <icon>laptop</icon>
   <iconType>FontAwesome</iconType>
   <metadataRelativePath>Intent.MetaData</metadataRelativePath>

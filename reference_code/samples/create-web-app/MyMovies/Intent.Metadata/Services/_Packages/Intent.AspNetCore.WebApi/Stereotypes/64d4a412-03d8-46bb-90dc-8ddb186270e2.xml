@@ -14,7 +14,8 @@
     <property id="1bbe782d-85bd-4500-96b6-23c4131063cb">
       <name>Roles</name>
       <type>string</type>
-      <options />
+      <valueOptions />
+      <lookupTypes />
     </property>
   </properties>
 </stereotypeDefinition>

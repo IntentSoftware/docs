@@ -15,13 +15,14 @@
       <name>Verb</name>
       <type>options</type>
       <defaultValue>AUTO</defaultValue>
-      <options>
+      <valueOptions>
         <option>AUTO</option>
         <option>GET</option>
         <option>POST</option>
         <option>PUT</option>
         <option>DELETE</option>
-      </options>
+      </valueOptions>
+      <lookupTypes />
     </property>
   </properties>
 </stereotypeDefinition>
