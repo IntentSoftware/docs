@@ -1,0 +1,18 @@
+- name: Intent Architect Modules
+  items:
+    - name: Overview
+      href: modules/overview.md
+    - name: IModSpac File
+      href: modules/imodspec_file.md
+    - name: Factory Extensions
+      href: modules/factory_extensions.md
+- name: Intent Architect Modules Templates
+  items:
+    - name: Overview
+      href: templates/overview.md
+    - name: The Template Class
+      href: templates/the_template_class.md
+    - name: Registration
+      href: templates/registrations.md
+    - name: Configuration
+      href: templates/configuration.md

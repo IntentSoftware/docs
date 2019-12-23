@@ -6,6 +6,7 @@ An Intent Architect template is comprised, logically, of five parts
 - **[The template class](the_template_class.md)**, your template class.
 - **[Registration](registrations.md)**, letting Intent Architect know about your template and how to bind data to it.
 - **[Configuration](registrations.md)**, making your template configurable.
-- **[Code output](registrations.md)**, the actual code generation process.
-- **[Extensions](registrations.md)**, built in or extension features which your templates can leverage to enrich or enhance the code generation process.
 
+TODO:
+- **Code output**, the actual code generation process.
+- **Extensions**, built in or extension features which your templates can leverage to enrich or enhance the code generation process.
