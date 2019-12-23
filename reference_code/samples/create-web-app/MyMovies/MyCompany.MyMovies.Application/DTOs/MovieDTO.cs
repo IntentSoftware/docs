@@ -17,7 +17,7 @@ namespace MyCompany.MyMovies.Application
 
         public static MovieDTO Create(
             string title,
-            System.DateTime releaseDate,
+            DateTime releaseDate,
             string genre,
             decimal price)
         {
@@ -34,7 +34,7 @@ namespace MyCompany.MyMovies.Application
         public string Title { get; set; }
 
         [DataMember]
-        public System.DateTime ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         [DataMember]
         public string Genre { get; set; }

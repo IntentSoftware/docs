@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
-    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 

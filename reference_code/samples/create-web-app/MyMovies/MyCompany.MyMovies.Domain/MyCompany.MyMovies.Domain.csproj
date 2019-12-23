@@ -5,8 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RT.Comb" Version="2.3.0" />
-    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
     <PackageReference Include="Intent.Framework.Domain" Version="1.0.0" />
+    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
+    <PackageReference Include="RT.Comb" Version="2.3.0" />
   </ItemGroup>
-  </Project>
+
+  <ItemGroup>
+    <Compile Update="Domain\MovieState.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Movie.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Domain\IMovie.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Movie.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
