@@ -2,7 +2,7 @@
 
 We've organized the documentation in such a way that you would find what you're looking for in no time.
 
-### [Overview of Intent Architect](articles/overview/intro.md)
+### [Overview of Intent Architect](articles/overview/index.md)
 An overview of Intent Architect. Why Intent Architect? How does it work? Isn't Code Generation evil? Those questions are answered here.
 
 ### [Getting Started - Create an ASP.NET Core web app](articles/tutorials/create_an_aspnetcore_web_app.md)
