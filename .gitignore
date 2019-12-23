@@ -254,3 +254,4 @@ ModelManifest.xml
 
 **/Intent.Modules/**
 /Modules/Intent.ApplicationTemplates/*.iat
+.vscode/

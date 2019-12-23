@@ -3,17 +3,9 @@
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
-        ]
-      },
-      {
-        "files": [
           "articles/**.md",
           "articles/**/toc.yml",
-          "modules/**.md",
-          "modules/**/toc.yml",
-          "toc.yml",
+          "articles/../toc.yml",
           "*.md"
         ],
         "exclude": [
@@ -39,12 +31,12 @@
     "overwrite": [
       {
         "files": [
-          "apidoc/**.md"
         ],
         "exclude": [
           "obj/**",
           "_site/**",
-          "readme.md"
+          "readme.md",
+          "articles/toc.yml"
         ]
       }
     ],
