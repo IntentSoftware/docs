@@ -16,7 +16,7 @@ Most developers acknowledge that almost every system they've ever worked on has 
 
 The unfortunate truth is that the vast majority of software systems tend to become increasingly unwieldy, and the cost of maintaining and extending these systems continues to rise exponentially. We call this the **cost curve**, and it looks as follows.
 
-![Cost vs. Size](../../images/intro/graph_cost_vs_size.png)
+![Cost vs. Size](../../images/topics/why_intent_architect/graph_cost_vs_size.png)
 
 **_The cost to change a software system grows exponentially as the system grows in size and complexity._**
 
@@ -24,7 +24,7 @@ So often we see software systems in successful businesses, with sometimes hundre
 
 The implications of this on project outcome can be dire, especially for larger projects. The following table, published in the [Standish Group](https://www.standishgroup.com/) CHAOS report of 2015 shows the significant drop in project success for any project considered Moderate in size or bigger.
 
-![Project Size by CHAOS Resolution](../../images/intro/project_size_by_chaos_resolution.png)
+![Project Size by CHAOS Resolution](../../images/topics/why_intent_architect/project_size_by_chaos_resolution.png)
 
 This problem is as old as the software industry, and while significant improvements in technologies, methodologies and tooling have helped, the problem persists because the software systems we are building have become so much more complex.
 
@@ -44,7 +44,7 @@ The obvious cause of a system become unwieldy is that it lacks an appropriate ar
 
 Putting these architectural patterns in place is very costly and slows the team down significantly. In the short term this cost is felt the hardest, but as the system grows, the architecture (if done correctly) ensures that the team can maintain a decent velocity into the future.
 
-![Team Velocity vs. Size](../../images/intro/graph_team_velocity_architecture.png)
+![Team Velocity vs. Size](../../images/topics/why_intent_architect/graph_team_velocity_architecture.png)
 
 The challenge lies in knowing what level of architecture is required and when. The work done by the [Scaled Agile Framework (SAFe)](https://www.scaledagileframework.com/) organization attempts to structure an approach to this problem.
 
@@ -126,7 +126,7 @@ _"Automation is to your time, what compounding interest is to your money" ~ Rory
 
 Intent Architect can easily double your development team's velocity, and help maintain that velocity. If a team were to begin a project using a pre-built set of Modules (e.g. the open source Modules for .NET Core developed by the Intent team), and these Modules automated an appropriate enterprise-grade architecture for that project, the effective velocity of the team over time would like something like the following:
 
-![Team Velocity vs. Size](../../images/intro/graph_team_velocity_with_intent_architect.png)
+![Team Velocity vs. Size](../../images/topics/why_intent_architect/graph_team_velocity_with_intent_architect.png)
 
 In the scenario that no Modules exist for a particular set of architectural requirements, and the team decided to build their own, their velocity increase would quickly pay off the initial investment.
 
