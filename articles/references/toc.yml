@@ -1,4 +1,4 @@
-- name: Intent Architect Modules
+- name: Modules
   items:
     - name: Overview
       href: modules/overview.md
@@ -6,7 +6,7 @@
       href: modules/imodspec_file.md
     - name: Factory Extensions
       href: modules/factory_extensions.md
-- name: Intent Architect Modules Templates
+- name: Modules Templates
   items:
     - name: Overview
       href: templates/overview.md
