@@ -1,15 +1,21 @@
-# Welcome to Intent Architect documentation.
+# Intent Architect Documentation
 
-## Where would you like to start ?
+We've organized the documentation in such a way that you would find what you're looking for in no time.
 
 ### [Overview of Intent Architect](articles/overview/intro.md)
-An overview of Intent Architect, how it works, and why it provides a better way to build software.
+An overview of Intent Architect. Why Intent Architect? How does it work? Isn't Code Generation evil? Those questions are answered here.
 
-### [Getting Started - create an ASP.NET Core web app](articles/getting_started/create_an_aspnetcore_web_app.md)
-Get started with Intent Architect by building a production ready ASP.NET Core web application.
+### [Getting Started - Create an ASP.NET Core web app](articles/tutorials/create_an_aspnetcore_web_app.md)
+Let us show you how easy it is to create a new ASP.NET Core Web Application using Intent Architect and have it up and running in 5 minutes.
 
-### [Getting Started - create your own Module](articles/getting_started/create_your_own_module.md)
-Most projects have patterns that are unique to them. Learn how to automate these patterns by creating your own Modules.
+### [More tutorials](articles/tutorials/index.md)
+Intent Architect offers more tutorials for helping new comers getting started.
 
-### [User Manual](articles/user_manual/shell.md)
-Explore the Intent Architect user interface, and its functionality.
+### [How-to guides](articles/howtos/index.md)
+After working through the tutorials and using Intent Architect for your projects, you might encounter some questions or problems. In here we will lay out those concerns and take you through how to resolve them.
+
+### [Reference documentation](articles/references/index.md)
+Concepts, ideas and API documentation can be found here in much more detail.
+
+### [Topic guides](articles/topics/index.md)
+Come and learn more about Intent Architect how it does more than just Code Automation.
