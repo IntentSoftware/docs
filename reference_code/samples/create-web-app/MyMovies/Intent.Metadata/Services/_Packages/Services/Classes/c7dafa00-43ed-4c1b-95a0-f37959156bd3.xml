@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="0a0e2e5c-16ec-4cc0-9140-f8c83f34be4b" type="DTO">
+<class id="c7dafa00-43ed-4c1b-95a0-f37959156bd3" type="DTO">
   <name>MovieDTO</name>
   <isAbstract>false</isAbstract>
   <genericTypes />
@@ -7,9 +7,9 @@
   <parentFolderId>8e091e63-9f8a-4f8f-8bd5-9e35fbef6b17</parentFolderId>
   <literals />
   <attributes>
-    <attribute id="1a341330-bbff-4563-80fd-6ef733ed95df" type="DTO-Field">
+    <attribute id="24bb281a-8f99-409d-b8e1-888e6a557545" type="DTO-Field">
       <name>title</name>
-      <typeReference id="c3d66c1b-5d5c-4d22-880f-0b107e095cc0">
+      <typeReference id="5d9d6bba-b76d-4b1e-b71a-5befa634d6c2">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -19,9 +19,9 @@
       <isMapped>false</isMapped>
       <stereotypes />
     </attribute>
-    <attribute id="99fcb831-1458-47ff-8969-0c363aad6396" type="DTO-Field">
+    <attribute id="c359b2bd-18bf-4e50-a0d2-e15397d90877" type="DTO-Field">
       <name>releaseDate</name>
-      <typeReference id="837288a6-4fa6-4801-a155-eaf369151257">
+      <typeReference id="1d5534ea-db33-45a1-ba02-d20e58a355df">
         <typeId>1fbaa056-b666-4f25-b8fd-76fe3165acc8</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -31,9 +31,9 @@
       <isMapped>false</isMapped>
       <stereotypes />
     </attribute>
-    <attribute id="356e1418-819b-4aba-a4aa-9498630cbee1" type="DTO-Field">
+    <attribute id="44c9b72e-95ce-47c5-b0db-711ecff3414e" type="DTO-Field">
       <name>genre</name>
-      <typeReference id="91a9b0b5-3f20-4dec-819a-47a7b76febeb">
+      <typeReference id="6d4a9728-727f-4c6f-8feb-93781829fb9d">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -43,9 +43,9 @@
       <isMapped>false</isMapped>
       <stereotypes />
     </attribute>
-    <attribute id="da0a26ac-2902-4f69-be8b-d28105fafa7b" type="DTO-Field">
+    <attribute id="9e9f8f5a-41d8-4610-a450-54b81e3c692a" type="DTO-Field">
       <name>price</name>
-      <typeReference id="8d01cdb8-55bc-435a-bcc8-11293f78e8eb">
+      <typeReference id="4e66d96a-571a-4442-9202-aee48c6715c2">
         <typeId>675c7b84-997a-44e0-82b9-cd724c07c9e6</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>

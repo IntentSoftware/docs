@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="799e10bb-557b-4a9e-a2cf-00c1164edf23" type="Service">
+  <name>MovieManager</name>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8e091e63-9f8a-4f8f-8bd5-9e35fbef6b17</parentFolderId>
+  <literals />
+  <attributes />
+  <operations>
+    <operation id="915894d3-c34e-43da-ac20-aa80a435ffa4" type="Operation" isAbstract="false">
+      <name>Create</name>
+      <isMapped>false</isMapped>
+      <parameters>
+        <parameter id="4f576ede-d568-422a-998e-fa24aacf0e4e">
+          <name>dto</name>
+          <typeReference id="9950fd2a-d3f7-48c0-9b67-562a0481df71">
+            <typeId>c7dafa00-43ed-4c1b-95a0-f37959156bd3</typeId>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <stereotypes />
+        </parameter>
+      </parameters>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="A225C795-33E9-417D-8D58-E22826A08224">
+          <addedByDefault>false</addedByDefault>
+          <properties />
+        </stereotype>
+        <stereotype stereotypeDefinitionId="049EB4F0-C89B-43B3-A082-AA7511858354">
+          <addedByDefault>false</addedByDefault>
+          <properties>
+            <property name="21C01082-802F-4099-BBCB-DFE56639B022" value="AUTO" />
+            <property name="13F033F5-9BC4-47C0-A2DE-92A10E039A23" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+    </operation>
+    <operation id="583d5148-b881-49fd-b1a9-a1e8a0c48ea8" type="Operation" isAbstract="false">
+      <name>List</name>
+      <isMapped>false</isMapped>
+      <returnType id="7b4f7e92-165a-4948-b862-61936c8e94c9">
+        <typeId>c7dafa00-43ed-4c1b-95a0-f37959156bd3</typeId>
+        <isNullable>false</isNullable>
+        <isCollection>true</isCollection>
+        <stereotypes />
+        <genericTypeParameters />
+      </returnType>
+      <parameters />
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="A225C795-33E9-417D-8D58-E22826A08224">
+          <addedByDefault>false</addedByDefault>
+          <properties />
+        </stereotype>
+        <stereotype stereotypeDefinitionId="049EB4F0-C89B-43B3-A082-AA7511858354">
+          <addedByDefault>false</addedByDefault>
+          <properties>
+            <property name="21C01082-802F-4099-BBCB-DFE56639B022" value="AUTO" />
+            <property name="13F033F5-9BC4-47C0-A2DE-92A10E039A23" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+    </operation>
+  </operations>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="592B2300-6406-47EC-B7FC-358F87F6E4A4">
+      <addedByDefault>false</addedByDefault>
+      <properties>
+        <property name="01FDB27C-50B3-4C04-AC0E-69D211119910" value="api/[controller]" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+</class>

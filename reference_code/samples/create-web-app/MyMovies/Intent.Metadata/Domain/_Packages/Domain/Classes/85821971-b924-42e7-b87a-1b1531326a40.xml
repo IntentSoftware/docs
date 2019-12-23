@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="85821971-b924-42e7-b87a-1b1531326a40" type="Diagram">
+  <name>Default view</name>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>30c16a15-4e9f-42c2-8a4d-2c86accd0551</parentFolderId>
+  <literals />
+  <attributes />
+  <operations />
+  <stereotypes />
+  <diagram>
+    <targetPackageId>30c16a15-4e9f-42c2-8a4d-2c86accd0551</targetPackageId>
+  </diagram>
+</class>
