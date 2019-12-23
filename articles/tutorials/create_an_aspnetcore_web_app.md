@@ -1,6 +1,6 @@
-# Getting started - create an ASP.NET Core web app
+# Getting started - Create an ASP.NET Core web app
 
-This guide will take you through the steps required to create a functioning ASP.NET Core web application using some of the open-source Modules created by the Intent team. The aim is to introduce the main functions of Intent Architect, and show how you can describe your system in high-level models and allow a set of Modules to realize that into technology specific code (ASP.NET Core technologies in this guide).
+The aim of this tutorial is to familiarize you with the interface of Intent Architect while learning the value of using visual models to design the application and generate code using different Modules.
 
 The app manages a database of movie titles. In this guide, you will learn how to:
  - Create a workspace and application from an _Application Template_.
@@ -9,12 +9,9 @@ The app manages a database of movie titles. In this guide, you will learn how to
  - Describe services, their operations and data contracts (Data Transfer Objects)
  - Open, run and code within the generated codebase
 
-At the end, you will have an app that can manage movie data. Once you have the hang of it, you will be able to build an app like this in less than 5 min :)
+At the end of the tutorial, you will have an app that can manage movie data. Once you have the hang of it, you will be able to build an app like this in less than 5 min :)
 
-[View or download sample](https://github.com/IntentSoftware/Docs/tree/master/tutorials/samples/create-web-app)
-
->[!TIP]
->The Modules used in this guide are open source. [View or download the Intent Modules repository](https://github.com/IntentSoftware/IntentArchitect) 
+[View or download sample](https://github.com/IntentSoftware/Docs/tree/master/source_code/samples/create-web-app)
 
 ***
 ## Prerequisites
@@ -23,7 +20,7 @@ This guide has the following prerequisites:
  - Intent Architect is currently only supported on Windows OS and MacOS (_Linux support coming soon_)
  - (Windows) Windows 8.1 or later with Visual Studio 2017 (with .NET Core 2.1 SDK) or later.
  - (MacOS) 10.10 (Yosemite) or later with Visual Studio for Mac.
- - An instance of SQL Server is optional.
+ - An instance of SQL Server is optional unless you want to test it.
 
 
 ***
