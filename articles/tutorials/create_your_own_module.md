@@ -67,15 +67,7 @@ How to do this is illustrated below:
 *Create C# Templates in the Module Builder*
 
 >[!TIP]
->The `Creation Mode` setting of a template determines what metadata format the template expects, and how files from a template must be created:
->1.	**Single File (No Model)** – create a single file without any additional metadata needed. A standalone C# class or ReadMe file would be examples of this template setting. 
->2.	**Single File (Model List)** – create a single file which takes in a list of metadata models. This is useful for creating classes which register other classes.
->3.	**File per Model** – create a file per metadata model. This is useful for creating a file based on a model such as a Domain class, Service, or DTO.
->4. **Custom** – you're on your own on this one. A minimalistic `Registration` class will be created whereby you will need to determine how many instances of that template will be created and from where.
-
->The `Modeler` setting determines which _type_ of modeler the metadata should be fetched from for the template. This can be `Domain`, `Services`, `Eventing`, etc. When setting up your Module, the `Intent Module Builder` will automatically add the modeler dependency depending on which `Modeler` you have selected. Nice :)
-
->The `Model Type` setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found here. TODO
+>You can discover more about these Template elements [here](xref:ModuleBuilder#template-settings).
 
 ***
 ## 3. Run the `Software Factory`
