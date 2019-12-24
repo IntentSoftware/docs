@@ -4,7 +4,7 @@ Modules are the building blocks and extension points of Intent Architect. They t
 
 By creating modules to automate the repetitive coding tasks that you as a developer do, you effectively save yourself (and your team!) all that time and effort. In addition, you no longer have to manage each instance of the pattern, but rather can upgrade the Module and update all instances at once.
 
-_**"Automation is to your time, what compounding interest is to your money"** ~ Rory Vaden_
+>_**"Automation is to your time, what compounding interest is to your money"** ~ Rory Vaden_
 
 This guide will take you through the process of creating an Intent Architect Module using the _Intent Module Builder_ application template. It aims to create a Module to automate the setup of ASP.NET Core web services. While we will be codifying a basic C# pattern, it is worth noting that the Intent Module system can generate _ANY_ type of text file, which means that **_Modules can be created to generate code for ANY programming language!_**
 
@@ -55,11 +55,12 @@ To do this we must navigate to the `Module Builder` modeler and **create a `C# T
 
 >[!TIP]
 >Templates represent file outputs that a Module must make. The Intent Module Builder supports two types of templates:
->1.	**File Templates** – any text file can be created using this template types.
->2.	**C# Templates** – since Intent supports intelligent weaving in C# files, this template type wires this up. It is recommended to use this type of template for all C# classes as the weaving systems allow user-managed code to co-exist with Intent-managed code within the same file.
+>1.	**File Templates** – any text file can be created using this template type.
+>2.	**C# Templates** – since Intent Architect supports intelligent weaving in C# files, it will create a template that will set this up for you. It is recommended to use this type of template for all C# classes as the weaving systems allow user-managed code to co-exist with Intent-managed code within the same file.
+>3. **Template Decorator** - some templates offer extensibility points which can be hooked into, so that any new module can update a template that is already installed through a separate module. This is explained in more detail here. TODO
      
 
-Both the `Program.cs` and `Startup.cs` files are single files. To ensure that only a single file is created we need to set the `Creation Mode` template setting to `Single File (No Model)`. On the contrary, the `Controller` template must create a class for every Service that we create. We therefore set the `Creation Mode` to `File per Model` and the `Modeler` setting to `Services`.
+Both the `Program.cs` and `Startup.cs` files are single files. To ensure that only a single file is created we need to set the `Creation Mode` template setting to `Single File (No Model)`. On the contrary, the `Controller` template must create a class for every Service that we create. We therefore set the `Creation Mode` to `File per Model`, the `Modeler` setting to `Services` and the `Model Type` to `IServiceModel` (only for the Controller).
 
 How to do this is illustrated below:
 
@@ -71,9 +72,11 @@ How to do this is illustrated below:
 >1.	**Single File (No Model)** – create a single file without any additional metadata needed. A standalone C# class or ReadMe file would be examples of this template setting. 
 >2.	**Single File (Model List)** – create a single file which takes in a list of metadata models. This is useful for creating classes which register other classes.
 >3.	**File per Model** – create a file per metadata model. This is useful for creating a file based on a model such as a Domain class, Service, or DTO.
->4. **Custom** – you're on your own on this one. A `Registration` class (responsible for constructing template instances) won't be created for this template. You will have to create one yourself. This is useful when you want to create instances of a file in ways that are not supported by the previous options.
+>4. **Custom** – you're on your own on this one. A minimalistic `Registration` class will be created whereby you will need to determine how many instances of that template will be created and from where.
 
 >The `Modeler` setting determines which _type_ of modeler the metadata should be fetched from for the template. This can be `Domain`, `Services`, `Eventing`, etc. When setting up your Module, the `Intent Module Builder` will automatically add the modeler dependency depending on which `Modeler` you have selected. Nice :)
+
+>The `Model Type` setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found here. TODO
 
 ***
 ## 3. Run the `Software Factory`
@@ -142,9 +145,9 @@ namespace <#= Namespace #>
 The template above will simply output an empty C# class. The `ClassName` and `Namespace` are determined by the Template's metadata, which can be found by opening the `ProgramTemplatePartial.cs` file and viewing the `DefineRoslynDefaultFileMetaData` method:
 
 ```cs
-protected override RoslynDefaultFileMetaData DefineRoslynDefaultFileMetaData()
+protected override RoslynDefaultFileMetadata DefineRoslynDefaultFileMetadata()
 {
-    return new RoslynDefaultFileMetaData(
+    return new RoslynDefaultFileMetadata(
         overwriteBehaviour: OverwriteBehaviour.Always,
         fileName: "Program",
         fileExtension: "cs",
@@ -159,8 +162,6 @@ Here we can see that the `ClassName` will be `"Program"`, and the namespace will
 
 >[!TIP]
 >Visual Studio unfortunately doesn't offer syntax highlighting on T4 files out the box. We recommend installing the [tangible T4 Editor](https://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html) extension for Visual Studio.
-
->It isn't required to implement Templates using T4, although we do recommend it. If you'd like to implement a template using a `StringBuilder` or other technology, delete the T4 file and implement the `string TransformText()` method in the Template Partial file.
 
 
 **Update the contents of the `ProgramTemplate.tt` as follows:**
@@ -257,13 +258,14 @@ namespace <#= Namespace #>
 Lastly, **update the contents of the `ControllerTemplate.tt` as follows:**
 
 ```csharp
-<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<IClass>" #>
+<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<IServiceModel>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
 <#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="Intent.Modelers.Services.Api" #>
 
 using Intent.RoslynWeaver.Attributes;
 using Microsoft.AspNetCore.Mvc;
@@ -307,11 +309,11 @@ using Intent.SoftwareFactory.Templates;
 namespace MyCompany.MyModule.Templates.ControllerTemplate
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    partial class ControllerTemplate : IntentRoslynProjectItemTemplateBase<IClass>
+    partial class ControllerTemplate : IntentRoslynProjectItemTemplateBase<IServiceModel>
     {
         public const string TemplateId = "MyModule.ControllerTemplate";
 
-        public ControllerTemplate(IProject project, IClass model) : base(TemplateId, project, model)
+        public ControllerTemplate(IProject project, IServiceModel model) : base(TemplateId, project, model)
         {
         }
 
@@ -321,9 +323,9 @@ namespace MyCompany.MyModule.Templates.ControllerTemplate
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        protected override RoslynDefaultFileMetaData DefineRoslynDefaultFileMetaData()
+        protected override RoslynDefaultFileMetadata DefineRoslynDefaultFileMetadata()
         {
-            return new RoslynDefaultFileMetaData(
+            return new RoslynDefaultFileMetadata(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: "${Model.Name}Controller",
                 fileExtension: "cs",
@@ -393,6 +395,10 @@ Next, we need to configure your local Module repository (_where our Module was c
 ![Add Project](../../images/tutorials/create_your_own_module/asset_repository_add_local.png)
 *Add a local Module repository*
 
+>Name: My Module
+>
+>Address: ./MyModule/Intent.Modules
+
 **Click `SAVE`.**
 
 >[!TIP]
@@ -434,29 +440,30 @@ You may have noticed that the `Services` modeler is installed with your Module. 
 
 Finally, we can test that your Module is creating code that actually works. Test this by performing the following steps:
 1. **Open the generated application in Visual Studio.** Open the generated classes to confirm that the code was outputted correctly. For example, the `TestServiceController.cs` file should look as follows:
-    ```csharp
-    using Intent.RoslynWeaver.Attributes;
-    using Microsoft.AspNetCore.Mvc;
 
+```csharp
+using Intent.RoslynWeaver.Attributes;
+using Microsoft.AspNetCore.Mvc;
 
-    [assembly: DefaultIntentManaged(Mode.Merge)] // Allowing additive updating of this file, while keeping user implementations
-    [assembly: IntentTemplate("MyModule.ControllerTemplate", Version = "1.0")]
+[assembly: DefaultIntentManaged(Mode.Merge)] // Allowing additive updating of this file, while keeping user implementations
+[assembly: IntentTemplate("MyModule.ControllerTemplate", Version = "1.0")]
 
-    namespace Test.App.Api.Controllers
+namespace Test.App.Api.Controllers
+{
+    [Route("api/[controller]")]
+    public class TestServiceController : Controller
     {
-        [Route("api/[controller]")]
-        public class TestServiceController : Controller
+
+        [HttpGet("[action]")]
+        public IActionResult TestMe()
         {
-
-            [HttpGet("[action]")]
-            public IActionResult TestMe()
-            {
-                return Ok("It's working!");
-            }
-
+            return Ok("It's working!");
         }
+
     }
-    ```
+}
+```
+
 2. **Build and run the solution** (_press F5_). The web application will launch in the browser.
 3. **Append `/api/testservice/testme` to the url** to test that our service works.
     We should get the following response:
