@@ -35,6 +35,9 @@ Template classes need a Type to represent meta-data in which then gets generated
 
 Notice that when you click on a Template element in Intent Architect, that it will display these fields:
 
+![Template Element](images/TemplateElement.png)
+_Template Element_
+
 ![Template Settings](images/TemplateSettings.png)
 _Template Settings_
 
@@ -50,3 +53,20 @@ The `Modeler` setting determines which _type_ of modeler the metadata should be 
 
 ### Model Type
 The `Model Type` setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found [here](intent_architect_concepts.md).
+
+### Expose Decorator Contract
+
+You might wish to create a Template the exposes an interface for a new Decorator to implement by applying the `Exposes Decorator Contract` Stereotype. The Type Fullname would be the C# Interface/class's full namespace and type name that will be used to allow Decorators to hook into this template.
+
+![Template Decorator Contract](images/TemplateDecoratorContract.png)
+
+## Decorator Settings
+
+Notice that when you click on a Decorator element in Intent Architect, that it will display these fields:
+
+![Decorator Element](images/DecoratorElement.png)
+_Decorator Element_
+
+![Decorator Settings](images/DecoratorSettings.png)
+_Decorator Settings_
+
