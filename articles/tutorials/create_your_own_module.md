@@ -57,11 +57,7 @@ For a basic ASP.NET web application, we need your Module to create the following
 To do this we must navigate to the `Module Builder` modeler and **create a `C# Template` for each of the above.** 
 
 >[!TIP]
->Templates represent file outputs that a Module must make. The Intent Module Builder supports two types of templates:
->1.	**File Templates** – any text file can be created using this template type.
->2.	**C# Templates** – since Intent Architect supports intelligent weaving in C# files, it will create a template that will set this up for you. It is recommended to use this type of template for all C# classes as the weaving systems allow user-managed code to co-exist with Intent-managed code within the same file.
->3. **Template Decorator** - some templates offer extensibility points which can be hooked into, so that any new module can update a template that is already installed through a separate module. This is explained in more detail here. TODO
-     
+>Templates represent file outputs that a Module must make. To find out more, please visit this [page](xref:ModuleBuilder#breakdown).     
 
 Both the `Program.cs` and `Startup.cs` files are single files. To ensure that only a single file is created we need to set the `Creation Mode` template setting to `Single File (No Model)`. On the contrary, the `Controller` template must create a class for every Service that we create. We therefore set the `Creation Mode` to `File per Model`, the `Modeler` setting to `Services` and the `Model Type` to `IServiceModel` (only for the Controller).
 
