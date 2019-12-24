@@ -1,3 +1,6 @@
+---
+uid: TutorialCreateApp
+---
 # Getting started - Create an ASP.NET Core web app
 
 The aim of this tutorial is to familiarize you with the interface of Intent Architect while learning the value of using visual models to design the application and generate code using different Modules.

@@ -122,7 +122,7 @@ Intent Architect effectively alleviates these causes by allowing developers to d
 
 ### Build faster
 
-_"Automation is to your time, what compounding interest is to your money" ~ Rory Vaden_
+>_"Automation is to your time, what compounding interest is to your money" ~ Rory Vaden_
 
 Intent Architect can easily double your development team's velocity, and help maintain that velocity. If a team were to begin a project using a pre-built set of Modules (e.g. the open source Modules for .NET Core developed by the Intent team), and these Modules automated an appropriate enterprise-grade architecture for that project, the effective velocity of the team over time would like something like the following:
 
@@ -137,7 +137,7 @@ In a similar way that package managers such as NuGet and NPM provide a platform 
 Intent's Module system operates in a similar way to these package managers, providing searching, versioning, dependency management, and configuration. With it, individual developers and organizations can leverage the patterns built and maintained by experts.
 
 >[!TIP]
->Learn how to build your own modules by following [this guide](../tutorials/create_your_own_module.md).
+>Learn how to build your own modules by following [this guide](xref:TutorialCreateModule).
 
 ### Create Intellectual Property
 
@@ -146,4 +146,4 @@ A potentially very powerful opportunity that Intent's Module system provides, is
 
 ### No lock-in
 
-### 
+TODO

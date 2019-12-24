@@ -1,3 +1,6 @@
+---
+uid: TutorialCreateModule
+---
 # Create your own Module
 
 Modules are the building blocks and extension points of Intent Architect. They typically encapsulate _how_ your metadata should be realized as code in your application. 

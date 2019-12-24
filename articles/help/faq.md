@@ -27,7 +27,7 @@ These Modules are written outside of Intent Architect as plugins, and similar Mo
 
 ## How do I create my own patterns / modules?
 
-[Make your own Module](../tutorials/create_your_own_module.md)
+[Make your own Module](xref:TutorialCreateModule)
 
 ## Do I need to use T4 templates for my patterns?
 
