@@ -2,13 +2,33 @@
   href: overview/index.md
 - name: Tutorials
   href: tutorials/index.md
+  items:
+    - name: Getting started - Create an ASP.NET Core web app
+      href: tutorials/create_an_aspnetcore_web_app.md
+    - name: Create your own Module
+      href: tutorials/create_your_own_module.md
 - name: How-to guides
   href: howtos/index.md
 - name: Reference documentation
   href: references/index.md
+  items:
+    - name: Intent Architect Concepts
+      href: references/intent_architect_concepts.md
+    - name: Modules
+      items:
+        - name: Core Modules
+          href: references/core_modules/toc.yml
+    - name: Module Builder
+      href: references/module_builder.md
+    - name: Templates
 - name: Topic guides
   href: topics/index.md
+  items:
+    - name: Why Intent Architect?
+      href: topics/why_intent_architect.md
 - name: Getting help
   items:
   - name: FAQ
     href: help/faq.md
+  - name: Github
+    href: help/github.md
