@@ -38,13 +38,13 @@ In the above example the configuration settings mean the following.
 - **className**, the class name of the generated class with the generated solution file
 - **namespace**, the namespace of the generated class with the generated solution file
 
-There is also a `Dictionary<string, string>` called `CustomMetaData` which allows you to define any additional parameter you wish to define, these can be exposed for end user configuration through the IModSpec file.
+There is also a `Dictionary<string, string>` called `CustomMetadata` which allows you to define any additional parameter you wish to define, these can be exposed for end user configuration through the IModSpec file.
 
 >[!NOTE]
 >These are default values, i.e. should you choose to expose these variables through the IModSpec files, consumers can change the values of these settings.
 
 >[!NOTE]
->Once a template instance has been created, calling `GetFileMetaData()` will return the actual configured values, the template will execute with.
+>Once a template instance has been created, calling `GetFileMetadata()` will return the actual configured values, the template will execute with.
 
 
 ## IModSpec Configuration
