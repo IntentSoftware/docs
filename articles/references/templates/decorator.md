@@ -1,0 +1,6 @@
+---
+uid: Decorator
+---
+# Decorator
+
+TODO

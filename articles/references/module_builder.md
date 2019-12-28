@@ -28,7 +28,8 @@ Creates a Decorator class that you can use to add content to an existing templat
 If you need to fetch meta-data from a modeler that is other than `Domain` or `Services`, you need to add it here with the appropriate name so that your template can reference it. See [below](#modeler).
 
 ### Type
-Template classes need a Type to represent meta-data in which then gets generated into a text file. See [below](#model-type) for more info.
+Consider that a given Template uses some element (or list of elements) to generate content into a file. This element Type can be specified by creating a Type that can be described in C# (or other language) namespace and type names.
+See [below](#model-type) for more info.
 
 
 ## Template Settings
@@ -49,14 +50,14 @@ The `Creation Mode` setting of a template determines what metadata format the te
 4. **Custom** – you're on your own on this one. A minimalistic `Registration` class will be created whereby you will need to determine how many instances of that template will be created and from where.
 
 ### Modeler
-The `Modeler` setting determines which _type_ of modeler the metadata should be fetched from for the template. This can be `Domain`, `Services`, `Eventing`, etc. When setting up your Module, the `Intent Module Builder` will automatically add the modeler dependency depending on which `Modeler` you have selected. Nice :)
+The **Modeler** setting determines which _type_ of modeler the metadata should be fetched from for the template. This can be `Domain`, `Services`, `Eventing`, etc. When setting up your Module, the `Intent Module Builder` will automatically add the modeler dependency depending on which `Modeler` you have selected.
 
 ### Model Type
-The `Model Type` setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found [here](intent_architect_concepts.md).
+The **Model Type** setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found [here](intent_architect_concepts.md).
 
 ### Expose Decorator Contract
 
-You might wish to create a Template the exposes an interface for a new Decorator to implement by applying the `Exposes Decorator Contract` Stereotype. The Type Fullname would be the C# Interface/class's full namespace and type name that will be used to allow Decorators to hook into this template.
+You might wish to create a Template that exposes an interface for a new Decorator to implement by applying the `Exposes Decorator Contract` Stereotype. The Type Fullname would be the C# Interface/class's full namespace and type name that will be used to allow Decorators to hook into this template.
 
 ![Template Decorator Contract](images/TemplateDecoratorContract.png)
 
@@ -70,3 +71,7 @@ _Decorator Element_
 ![Decorator Settings](images/DecoratorSettings.png)
 _Decorator Settings_
 
+1. **Declare Usings** - When the Decorator class gets generated, allow the developer to specify the necessary "using" namespaces to be included upon decorator usage.
+2. **Type Fullname** - Give the FQDN of the desired class/interface that will be used to attach to.
+
+Follow our how-to article that explains how to make your [template decorator ready](xref:MakeTemplateDecoratorReady) and how to [create a decorator](xref:CreateNewDecorator) for it in order to make more sense of these settings.

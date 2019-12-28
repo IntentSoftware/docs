@@ -7,3 +7,6 @@
     - name: Module Builder
       href: module_builder.md
     - name: Templates
+      items:
+        - name: Decorator
+          href: templates/decorator.md
