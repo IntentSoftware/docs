@@ -1,3 +1,6 @@
+---
+uid: IModSpecFile
+---
 # Intent Module Specification (`.imodspec`) files
 
 ## Overview

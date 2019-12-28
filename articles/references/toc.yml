@@ -6,7 +6,9 @@
       href: module_builder.md
     - name: Templates & Decorators
       href: templates_decorators/toc.yml
+      topicHref: templates_decorators/index.md
     - name: Modules
       href: modules/toc.yml
+      topicHref: modules/index.md
     - name: Core Modules
       href: core_modules/toc.yml
