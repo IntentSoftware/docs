@@ -2,11 +2,11 @@
   href: intent_architect_concepts.md
 - name: Modules
   items:
-    - name: Core Modules
-      href: core_modules/toc.yml
     - name: Module Builder
       href: module_builder.md
-    - name: Templates
-      items:
-        - name: Decorator
-          href: templates/decorator.md
+    - name: Templates & Decorators
+      href: templates_decorators/toc.yml
+    - name: Modules
+      href: modules/toc.yml
+    - name: Core Modules
+      href: core_modules/toc.yml

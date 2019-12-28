@@ -5,6 +5,10 @@ uid: ModuleBuilder
 
 The Module Builder is one of the powerful features of Intent Architect which allows a developer to craft their own code-generation module. This will allow a developer to generate custom defined code at the click of a button once that module is installed (while its being Intent Architect Managed). Think of the power!
 
+Generally to write your own Module required that you had to put up a lot of code to create a Template and the like, but the Module Builder takes care of that by modeling a Module the same way you would model your own application. Think of all the other possibilities of using Intent Architect!
+
+Please visit the Tutorial section to see how to work with the [Module Builder](xref:TutorialCreateModule).
+
 >[!NOTE]
 >The scope of this article is to explain the concepts found in the Module Builder. If you wish to find out more about Modules or Templates themselves, please navigate to the relevant section on the panel to the left.
 

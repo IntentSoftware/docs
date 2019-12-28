@@ -1,0 +1,6 @@
+- name: Template & Decorator Registrations
+  href: registrations.md
+- name: The Template Class
+  href: the_template_class.md
+- name: Decorator
+  href: decorator.md
