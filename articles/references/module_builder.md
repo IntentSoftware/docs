@@ -74,4 +74,4 @@ _Decorator Settings_
 1. **Declare Usings** - When the Decorator class gets generated, allow the developer to specify the necessary "using" namespaces to be included upon decorator usage.
 2. **Type Fullname** - Give the FQDN of the desired class/interface that will be used to attach to.
 
-Follow our how-to article that explains how to make your [template decorator ready](xref:MakeTemplateDecoratorReady) and how to [create a decorator](xref:CreateNewDecorator) for it in order to make more sense of these settings.
+To learn more about Decorators, click [here](xref:Decorator).
