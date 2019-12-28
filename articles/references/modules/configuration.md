@@ -13,9 +13,9 @@ There are several flavours of these configurations, but they are all very simila
 
 ```csharp
 
-        protected override RoslynDefaultFileMetaData DefineRoslynDefaultFileMetaData()
+        protected override RoslynDefaultFileMetadata DefineRoslynDefaultFileMetadata()
         {
-            return new RoslynDefaultFileMetaData(
+            return new RoslynDefaultFileMetadata(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: "${Model.Name}",
                 fileExtension: "cs",
