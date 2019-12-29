@@ -5,7 +5,7 @@ uid: MakeTemplateDecoratorReady
 
 If you are not sure what a Decorator is, please have a look [here](xref:Decorator).
 
-So building off what we've done in the [Module Builder tutorial](xref:TutorialModuleBuilder) where we have created a Module that generated a simple ASP.NET output project.
+So building off what we've done in the [Module Builder tutorial](xref:TutorialCreateModule) where we have created a Module that generated a simple ASP.NET output project.
 
 ![Module Builder Items](images/make-template-decorator-ready/ModuleBuilderItems.png)
 
