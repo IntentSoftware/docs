@@ -20,7 +20,7 @@ namespace MyCompany.MyModule.Templates.StartupTemplate
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Temp\TestModule\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
+    #line 1 "C:\Dev\Intent.Docs\source_code\samples\create-module\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class StartupTemplate : IntentRoslynProjectItemTemplateBase<object>
     {
@@ -34,7 +34,7 @@ namespace MyCompany.MyModule.Templates.StartupTemplate
                     "ng Microsoft.AspNetCore.Hosting;\r\nusing Microsoft.Extensions.Configuration;\r\nusi" +
                     "ng Microsoft.Extensions.DependencyInjection;\r\n");
             
-            #line 14 "C:\Temp\TestModule\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
+            #line 14 "C:\Dev\Intent.Docs\source_code\samples\create-module\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DependencyUsings));
             
             #line default
@@ -42,21 +42,21 @@ namespace MyCompany.MyModule.Templates.StartupTemplate
             this.Write("\r\n\r\n[assembly: DefaultIntentManaged(Mode.Fully)] // Overwrite this file on each S" +
                     "oftware Factory run.\r\n\r\nnamespace ");
             
-            #line 18 "C:\Temp\TestModule\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
+            #line 18 "C:\Dev\Intent.Docs\source_code\samples\create-module\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public class ");
             
-            #line 20 "C:\Temp\TestModule\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
+            #line 20 "C:\Dev\Intent.Docs\source_code\samples\create-module\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n        public ");
             
-            #line 22 "C:\Temp\TestModule\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
+            #line 22 "C:\Dev\Intent.Docs\source_code\samples\create-module\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
