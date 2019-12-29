@@ -1,14 +1,12 @@
 - name: Intent Architect Concepts
   href: intent_architect_concepts.md
+- name: Module Builder
+  href: module_builder.md
+- name: Templates & Decorators
+  href: templates_decorators/toc.yml
+  topicHref: templates_decorators/index.md
 - name: Modules
-  items:
-    - name: Module Builder
-      href: module_builder.md
-    - name: Templates & Decorators
-      href: templates_decorators/toc.yml
-      topicHref: templates_decorators/index.md
-    - name: Modules
-      href: modules/toc.yml
-      topicHref: modules/index.md
-    - name: Core Modules
-      href: core_modules/toc.yml
+  href: modules/toc.yml
+  topicHref: modules/index.md
+- name: Core Modules
+  href: core_modules/toc.yml
