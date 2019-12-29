@@ -1,0 +1,46 @@
+<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<object>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+
+using Intent.RoslynWeaver.Attributes;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+<#=DependencyUsings#>
+
+[assembly: DefaultIntentManaged(Mode.Fully)] // Overwrite this file on each Software Factory run.
+
+namespace <#= Namespace #>
+{
+    public class <#= ClassName #>
+    {
+        public <#= ClassName #>(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring services
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc();
+        }
+
+        // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring the HTTP request pipeline
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseMvc();
+        }
+    }
+}
