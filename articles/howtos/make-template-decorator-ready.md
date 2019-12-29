@@ -3,12 +3,86 @@ uid: MakeTemplateDecoratorReady
 ---
 # How do I make a Template, Decorator Ready?
 
-If you are not sure what a Decorator is, please have a look [here](xref:Decorator).
+Click [here](xref:Decorator) to find out more about Decorators.
 
-So building off what we've done in the [Module Creation tutorial](xref:TutorialCreateModule) where we have created a Module that generated a simple ASP.NET output project.
+This how-to will serve as an example of how to update a Template to allow Decorators to inject code during runtime. Please update it on your side according to what you need.
 
+Open up the Template that you wish to become more extensible. You will find that in this how-to we will use what we've done in a [previous tutorial](xref:TutorialCreateModule) to demonstrate how to achieve this. Please interpolate on your end what is written here to make the necessary adjustments on what you're trying to achieve.
+
+So we want to update the `StartupTemplate` to be extensible for new kinds of configurations installed by Intent Architect Modules.
+Open up Visual Studio and open up the solution containing the `StartupTemplate` Template that you wish to update.
+
+First, we need a "blueprint" (or contract for enterprise developers).
+You can create an abstract class or interface, depending on what you need, in one of two ways:
+- Create it inside the current Module.
+- Create a separate project to host this class/interface.
+
+For simplicity, we will host this in the same module as what we're modifying.
+
+Let's create an interface called `IStartupTemplateContract`. You may need to add the using namespace "using Intent.Templates;" at the top of the file.
+
+```csharp
+public interface IStartupTemplateContract : ITemplateDecorator
+{
+    string ConfigureCode();
+}
+```
+
+Make note to copy the namespace and the interface name for what we're about to do next.
+
+Open up the Module project in Intent Architect and go to the `Module Builder` modeler.
 ![Module Builder Items](images/make-template-decorator-ready/ModuleBuilderItems.png)
 
-So we want to update the `StartupTemplate` to be extendable for new kinds of configuration installed by Intent Architect Modules.
+Right click on the `StartupTemplate` item (as above) and add the `Exposes Decorator Contract` stereotype.
 
-TODO
+![Expose Decorator Contract](images/make-template-decorator-ready/TemplateExposeDecoratorContract.png)
+
+Paste in the namespace and interface name in the `Type FullName` field.
+
+> MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract
+
+Run the Software Factory in Intent Architect and apply the change.
+
+![Apply change](images/make-template-decorator-ready/ApplyExposeDecoratorContractChange.png)
+
+In the `StartupTemlateParial.cs` file, you will notice the following changes being made:
+
+- `IHasDecorators<MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract>` has been added to the class's inheritance list.
+- The definition of that interface has been populated for you:
+
+```csharp
+private ICollection<MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract> _decorators = new List<MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract>();
+
+[IntentManaged(Mode.Fully)]
+public void AddDecorator(MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract decorator)
+{
+    _decorators.Add(decorator);
+}
+
+[IntentManaged(Mode.Fully)]
+public IEnumerable<MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract> GetDecorators()
+{
+    return _decorators;
+}
+```
+
+Let's create a method that will aggregate all the Decorator output into a single string in that same class:
+
+```csharp
+private string GetConfigureCode()
+{
+    return GetDecorators().Aggregate(new StringBuilder(), (sb, dec) => sb.AppendLine(dec.ConfigureCode())).ToString();
+}
+```
+
+Now lets go to the `StartupTemplate.tt` file and make a call to this newly defined method:
+
+```csharp
+// [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring services
+public void ConfigureServices(IServiceCollection services)
+{<#= GetConfigureCode() #>
+    services.AddMvc();
+}
+```
+
+This will now allow a Decorator to use the interface being provided to inject new code into this Template.

@@ -17,5 +17,11 @@
         <property name="987590ee-a5ca-45ce-b742-0ee764b6b6e9" value="" />
       </properties>
     </stereotype>
+    <stereotype stereotypeDefinitionId="6c5afdfa-b948-4789-8f5b-6c6a8895fc47">
+      <addedByDefault>false</addedByDefault>
+      <properties>
+        <property name="825aea0e-ee1c-4e77-927e-658b67bc8189" value="MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract" />
+      </properties>
+    </stereotype>
   </stereotypes>
 </class>

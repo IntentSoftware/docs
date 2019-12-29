@@ -28,7 +28,7 @@ namespace <#= Namespace #>
 
         // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring services
         public void ConfigureServices(IServiceCollection services)
-        {
+        {<#= GetConfigureCode() #>
             services.AddMvc();
         }
 
