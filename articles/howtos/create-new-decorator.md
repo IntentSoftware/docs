@@ -1,6 +1,6 @@
 ---
 uid: CreateNewDecorator
 ---
-# Create New Decorator
+# How can I create a new Decorator?
 
 TODO

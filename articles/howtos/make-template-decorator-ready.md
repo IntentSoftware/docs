@@ -1,6 +1,6 @@
 ---
 uid: MakeTemplateDecoratorReady
 ---
-# Make Template Decorator Ready
+# How do I make a Template, Decorator Ready?
 
 TODO
