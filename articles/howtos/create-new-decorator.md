@@ -68,6 +68,8 @@ Let's add that module as an existing project into our current solution.
 
 Now we add that project as a reference to our new module project.
 
+## Implement the Decorator
+
 This should resolve our initial problem which is that the interface was not found but now we need to implement that interface, so we're not out of the woods yet.
 
 ![Go To Implement Interface Command](images/create-new-decorator/GoToImplementInterfaceCommand.png)
@@ -200,3 +202,21 @@ When you inspect that file you should notice this diff view:
 
 You can now apply the changes and inspect the file yourself.
 
+## Follow through
+
+Even though this is not technically part of the how-to, we do want to give developers the closure that this will work.
+
+Go to the Test.App Visual Studio solution and create a folder named `MyStaticFiles`. Create a text file `sample.txt` inside it with the content:
+
+>This is a sample file
+
+![Sample Text Solution](images/create-new-decorator/TestSampleTextFile.png)
+
+Once you run the solution and navigate to this URL:
+
+>http://localhost:63681/StaticFiles/sample.txt
+(port number may vary)
+
+You should get this outcome:
+
+![Outcome](images/create-new-decorator/TestFileResult.png)
