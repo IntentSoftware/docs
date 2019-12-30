@@ -17,7 +17,7 @@ Please visit the Tutorial section to see how to work with the [Module Builder](x
 ![Module Builder Components](images/ModuleBuilderComponentBreakdown.png)
 _Module Builder Components_
 
-For the purposes of this document, we will only stick to the following components below. For information on the rest of the components outlined in the image above, please visit the [Intent Architect Concepts](intent_architect_concepts.md) page.
+For the purposes of this document, we will only stick to the following components below. For information on the rest of the components outlined in the image above, please visit the [Intent Architect Concepts](xref:IntentArchitectConcepts) page.
 
 ### File Template
 Creates a Template class that will allow you to generate a text file for any type of text content (including any programming language).
@@ -57,7 +57,7 @@ The `Creation Mode` setting of a template determines what metadata format the te
 The **Modeler** setting determines which _type_ of modeler the metadata should be fetched from for the template. This can be `Domain`, `Services`, `Eventing`, etc. When setting up your Module, the `Intent Module Builder` will automatically add the modeler dependency depending on which `Modeler` you have selected.
 
 ### Model Type
-The **Model Type** setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found [here](intent_architect_concepts.md).
+The **Model Type** setting specifies the object that you will be working with once the module code has been generated. You can select this Type based on `Types` that Intent Architect has been able to detect. More around this topic can be found [here](xref:IntentArchitectConcepts).
 
 ### Expose Decorator Contract
 

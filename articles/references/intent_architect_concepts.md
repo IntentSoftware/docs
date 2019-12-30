@@ -1,3 +1,0 @@
-# Intent Architect Concepts
-
-TODO

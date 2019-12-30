@@ -1,5 +1,6 @@
-- name: Intent Architect Concepts
-  href: intent_architect_concepts.md
+- name: Concepts
+  href: concepts/toc.yml
+  topicHref: concepts/index.md
 - name: Module Builder
   href: module_builder.md
 - name: Templates & Decorators
