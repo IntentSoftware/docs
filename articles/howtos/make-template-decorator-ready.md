@@ -9,10 +9,10 @@ This how-to will serve as an example of how to update a Template to allow Decora
 
 Open up the Template that you wish to become more extensible. You will find that in this how-to we will use what we've done in a [previous tutorial](xref:TutorialCreateModule) to demonstrate how to achieve this. Please interpolate on your end what is written here to make the necessary adjustments on what you're trying to achieve.
 
+## Create "blueprint" (or contract)
+
 So we want to update the `StartupTemplate` to be extensible for new kinds of configurations installed by Intent Architect Modules.
 Open up Visual Studio and open up the solution containing the `StartupTemplate` Template that you wish to update.
-
-## Create "blueprint" (or contract)
 
 First, we need a "blueprint" (or contract for enterprise developers).
 You can create an abstract class or interface, depending on what you need, in one of two ways:
@@ -77,7 +77,9 @@ Let's create a method that will aggregate all the Decorator output into a single
 ```csharp
 private string GetConfigureCode()
 {
-    return GetDecorators().Aggregate(new StringBuilder(), (sb, dec) => sb.AppendLine(dec.ConfigureCode())).ToString();
+    return GetDecorators()
+                .OrderBy(o => o.Priority)
+                .Aggregate(new StringBuilder(), (sb, dec) => sb.AppendLine(dec.ConfigureCode())).ToString();
 }
 ```
 
@@ -94,3 +96,19 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 This will now allow a Decorator to use the interface being provided to inject new code into this Template.
+
+Recompile this project to ensure the Module is built.
+
+## Re-install that Module in your application
+
+Open up the `Test.App` in Intent Architect, click on the `Modules` on the side panel and then on the `Installed` link at the top of the page.
+
+In the Repository dropdown, select `My Module`.
+
+![Installed Modules](images/make-template-decorator-ready/AppInstalledModules.png)
+
+Locate the `MyCompany.MyModule` and click on the `Reinstall` button located on the right-side panel.
+
+When you click on the Code Generation run, you should not expect any new files from being generated, since the change we made doesn't have any decorators yet.
+
+This concludes this How-to. If you need to create a Decorator for this Template, please follow the How-to located [here](xref:CreateNewDecorator).

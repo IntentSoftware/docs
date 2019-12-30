@@ -12,8 +12,8 @@
     </FileLog>
     <FileLog>
       <ProjectId>1c99cde4-fa23-491d-b29e-62d22e9813f6</ProjectId>
-      <SolutionRelativeFilePath>..\Test.App\Test.App.Api\Controllers\TestService.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Controllers\TestService.cs</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>..\Test.App\Test.App.Api\Controller\TestService.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Controller\TestService.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>1c99cde4-fa23-491d-b29e-62d22e9813f6</ProjectId>

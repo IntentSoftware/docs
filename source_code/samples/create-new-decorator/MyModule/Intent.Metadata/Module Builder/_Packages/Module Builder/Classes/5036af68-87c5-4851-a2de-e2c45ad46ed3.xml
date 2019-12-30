@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="5036af68-87c5-4851-a2de-e2c45ad46ed3" type="C# Template">
+  <name>StartupTemplate</name>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6eac0efb-15d8-47ab-bff5-5b90f34afe48</parentFolderId>
+  <literals />
+  <attributes />
+  <operations />
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="819dee60-184a-4cb7-9529-0d3910f82ee6">
+      <addedByDefault>false</addedByDefault>
+      <properties>
+        <property name="311d788f-7582-4c27-9a4d-e0db1439c327" value="Single File (No Model)" />
+        <property name="c2283d15-4b57-4ed9-8aae-6efc73039034" value="Domain" />
+        <property name="987590ee-a5ca-45ce-b742-0ee764b6b6e9" value="" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="6c5afdfa-b948-4789-8f5b-6c6a8895fc47">
+      <addedByDefault>false</addedByDefault>
+      <properties>
+        <property name="825aea0e-ee1c-4e77-927e-658b67bc8189" value="MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+</class>

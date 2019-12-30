@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="fd208bf9-688f-4b69-96f2-af875b9b5011" type="Decorator">
+  <name>StaticFileServerDecorator</name>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>f837a063-0f30-42af-ab8e-f0783108ca24</parentFolderId>
+  <literals />
+  <attributes />
+  <operations />
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="0c076747-04f0-4849-abf6-91bc536fecd5">
+      <addedByDefault>false</addedByDefault>
+      <properties>
+        <property name="8acbb25a-9b8a-4da2-ba42-7c349851f049" value="false" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="5b12af5e-db2e-4a3c-9e8b-e370fd19f14b">
+      <addedByDefault>false</addedByDefault>
+      <properties>
+        <property name="ad61c60c-17e0-456c-b08d-ab9987b52c58" value="MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+</class>
