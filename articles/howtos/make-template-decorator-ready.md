@@ -12,6 +12,8 @@ Open up the Template that you wish to become more extensible. You will find that
 So we want to update the `StartupTemplate` to be extensible for new kinds of configurations installed by Intent Architect Modules.
 Open up Visual Studio and open up the solution containing the `StartupTemplate` Template that you wish to update.
 
+## Create "blueprint" (or contract)
+
 First, we need a "blueprint" (or contract for enterprise developers).
 You can create an abstract class or interface, depending on what you need, in one of two ways:
 - Create it inside the current Module.
@@ -29,6 +31,8 @@ public interface IStartupTemplateContract : ITemplateDecorator
 ```
 
 Make note to copy the namespace and the interface name for what we're about to do next.
+
+## Add Expose Decorator Contract Stereotype
 
 Open up the Module project in Intent Architect and go to the `Module Builder` modeler.
 ![Module Builder Items](images/make-template-decorator-ready/ModuleBuilderItems.png)
@@ -66,6 +70,8 @@ public IEnumerable<MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplate
 }
 ```
 
+## Aggregate all the Decorators output
+
 Let's create a method that will aggregate all the Decorator output into a single string in that same class:
 
 ```csharp
@@ -74,6 +80,8 @@ private string GetConfigureCode()
     return GetDecorators().Aggregate(new StringBuilder(), (sb, dec) => sb.AppendLine(dec.ConfigureCode())).ToString();
 }
 ```
+
+## Generate the injected code in Template
 
 Now lets go to the `StartupTemplate.tt` file and make a call to this newly defined method:
 
