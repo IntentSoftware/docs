@@ -200,4 +200,4 @@ Generated Code File
         ...
 ```
 
-Note the generated code is not seem as part of the template, hance if it is running under *Fully* managed mode, the code will be removed on a subsequent run.
+Note the generated code is not seem as part of the template, hence if it is running under *Fully* managed mode, the code will be removed on a subsequent run.

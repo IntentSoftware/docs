@@ -146,4 +146,4 @@ A potentially very powerful opportunity that Intent's Module system provides, is
 
 ### No lock-in
 
-TODO
+The one differentiating factor about Intent Architect is that it does not produce a big black box solution that your application needs to depend on. We understand that there are some code generation platforms that do this and when a Company or Developer no longer wants to make use of this toolset, it becomes impossible to separate the application from this platform. Intent Architect does not do this. At any time when a Company or Developer no longer wants to make use of Intent Architect, you can stop using it and maintain the source code manually. Intent Architect's one value is that code should be generated as if a developer wrote it by hand. So its still readable and maintainable. However, we cannot guarantee that developers would want to give up this productive advantage, so you may have trouble convincing them to go back to manual updates.
