@@ -70,14 +70,7 @@ namespace MyCompany.MyModule.Templates.StartupTemplate
 
         // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring services
         public void ConfigureServices(IServiceCollection services)
-        {");
-            
-            #line 31 "C:\Dev\Intent.Docs\source_code\samples\make-template-decorator-ready\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetConfigureCode()));
-            
-            #line default
-            #line hidden
-            this.Write(@"
+        {
             services.AddMvc();
         }
 
@@ -89,10 +82,14 @@ namespace MyCompany.MyModule.Templates.StartupTemplate
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
-        }
-    }
-}");
+            ");
+            
+            #line 43 "C:\Dev\Intent.Docs\source_code\samples\make-template-decorator-ready\MyModule\MyCompany.MyModule\Templates\StartupTemplate\StartupTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetConfigureCode()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            app.UseMvc();\r\n        }\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

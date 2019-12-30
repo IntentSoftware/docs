@@ -89,9 +89,15 @@ Now lets go to the `StartupTemplate.tt` file and make a call to this newly defin
 
 ```csharp
 // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring services
-public void ConfigureServices(IServiceCollection services)
-{<#= GetConfigureCode() #>
-    services.AddMvc();
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    <#= GetConfigureCode() #>
+    app.UseMvc();
 }
 ```
 
@@ -109,6 +115,6 @@ In the Repository dropdown, select `My Module`.
 
 Locate the `MyCompany.MyModule` and click on the `Reinstall` button located on the right-side panel.
 
-When you click on the Code Generation run, you should not expect any new files from being generated, since the change we made doesn't have any decorators yet.
+When you click on the Code Generation run, there will be one change that it will attempt to make which is an empty line. This is ok. Just proceed to apply.
 
 This concludes this How-to. If you need to create a Decorator for this Template, please follow the How-to located [here](xref:CreateNewDecorator).

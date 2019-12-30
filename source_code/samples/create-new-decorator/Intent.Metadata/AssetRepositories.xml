@@ -11,5 +11,10 @@
       <address>./MyModule/Intent.Modules</address>
       <isBuiltIn>false</isBuiltIn>
     </entry>
+    <entry>
+      <name>MyDecoratorModule</name>
+      <address>./MyDecoratorModule/Intent.Modules</address>
+      <isBuiltIn>false</isBuiltIn>
+    </entry>
   </entries>
 </assetRepositories>

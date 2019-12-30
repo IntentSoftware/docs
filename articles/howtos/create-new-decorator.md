@@ -36,6 +36,8 @@ It has a Full Namespace of: `MyCompany.MyModule.Templates.StartupTemplate.IStart
 
 So that is the value that we need to specify in the `Full TypeName` field for that Decorator.
 
+Also, click on the `Declare Usings` flag in the `Decorator Settings` panel.
+
 ![Add Type FullName](images/create-new-decorator/AddFQDN.png)
 
 Run the code generation.
@@ -99,4 +101,102 @@ public string ConfigureCode()
 }
 ```
 
+Also, with the Declare Usings section, we need to specify some namespaces that our Decorator will need to successfully apply code that will compile.
+
+Override the `DeclareUsings` method to look like this:
+
+```csharp
+[IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
+public IEnumerable<string> DeclareUsings()
+{
+    return new string[]
+    {
+        "System.IO",
+        "Microsoft.Extensions.FileProviders"
+    };
+}
+```
+
+We now need to add a dependency on the original Template.
+
+Open up the `MyCompany.MyDecoratorModule.imodspec` file in Visual Studio.
+
+You will see something resembling this:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <id>MyCompany.MyDecoratorModule</id>
+  <version>1.0.0</version>
+  <summary>A custom module for MyCompany.</summary>
+  <description>A custom module for MyCompany.</description>
+  <authors>MyCompany</authors>
+  <templates></templates>
+  <dependencies>
+    <dependency id="Intent.Common" version="2.0.0" />
+    <dependency id="Intent.Common.Types" version="2.0.0" />
+  </dependencies>
+  <files>
+    <file src="$outDir$/$id$.dll" />
+    <file src="$outDir$/$id$.pdb" />
+  </files>
+  <decorators>
+    <decorator id="MyDecoratorModule.StaticFileServerDecorator" />
+  </decorators>
+</package>
+```
+
+In the `dependencies` section we need to add a dependency to our original Template Module.
+
+```xml
+<dependencies>
+    <dependency id="Intent.Common" version="2.0.0" />
+    <dependency id="Intent.Common.Types" version="2.0.0" />
+    <dependency id="MyCompany.MyModule" version="1.0.0" />
+</dependencies>
+```
+
+Where did we get this info?
+Open up the `MyCompany.MyModule.imodspec` file in the project we imported.
+
+At the top of that XML file you will see this:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <id>MyCompany.MyModule</id>
+  <version>1.0.0</version>
+```
+
+We only need the `id` and `version` fields and that gets used to specify module dependencies.
+
 Now I can compile the solution.
+
+## Install the Decorator Module in your application
+
+Open up the `Test.App` in Intent Architect, click on the `Modules` on the side panel.
+
+Click on the "gear" icon located to the right. Add the location to the new Module.
+
+![Asset Repo](images/create-new-decorator/AssetRepo.png)
+
+**Name**: MyDecoratorModule
+**Address**: ./MyDecoratorModule/Intent.Modules
+
+Now, select the `MyDecoratorModule` in the dropdown.
+
+![Ready To Install My Decorator](images/create-new-decorator/ReadyToInstallMyDecorator.png)
+
+
+Locate the `MyCompany.MyDecoratorModule` and click on the `Install` button (located to the right).
+
+When you run the Software Factory, you should see the expected change in the `Startup.cs` file.
+
+![Code Generation With Decorator](images/create-new-decorator/CodeGenerationWithDecorator.png)
+
+When you inspect that file you should notice this diff view:
+
+![Code Diff My Decorator](images/create-new-decorator/CodeDiffMyDecorator.png)
+
+You can now apply the changes and inspect the file yourself.
+

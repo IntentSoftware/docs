@@ -33,6 +33,7 @@ namespace Test.App.Api
                 app.UseDeveloperExceptionPage();
             }
 
+
             app.UseMvc();
         }
     }
