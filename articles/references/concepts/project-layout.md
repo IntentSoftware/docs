@@ -4,11 +4,11 @@
 
 Since we need to generate code at the end of the day, we need to tell Intent Architect where to place it.
 
-![Project Layout](images/project-layout.png)
+![Project Layout](images/project-layout/project-layout.png)
 
 This can be located by clicking on `Project Layout`, located on the left-hand panel.
 
-![Located](images/locate-project-layout-button.png)
+![Located](images/project-layout/locate-project-layout-button.png)
 
 You'll notice a gray folder called `Projects`. This is there by default. It cannot change.
 
@@ -20,7 +20,7 @@ You may customize your solution to your hearts content by creating different fol
 
 If you were to open up Visual Studio, you will find that the layout above corresponds with the Visual Studio tree layout:
 
-![VS Tree Layouyt](images/corresponding-vs-solution.png)
+![VS Tree Layouyt](images/project-layout/corresponding-vs-solution.png)
 
 ## Roles
 
@@ -34,25 +34,25 @@ In order to assign that `Role`, the developer needs to drag that `Role` to a `Pr
 
 So let's assume for a minute that we don't have any Docker modules installed. The moment we install `Intent.AspNetCore.Docker`, it will add a new `Role`.
 
-![Install Docker](images/docker-module-install.png)
+![Install Docker](images/project-layout/docker-module-install.png)
 
-![Unassigned Dockerfile Role](images/unassigned-dockerfile.png)
+![Unassigned Dockerfile Role](images/project-layout/unassigned-dockerfile.png)
 
 To assign this `Role`, you need to click and drag it to where it needs to be.
 
-![Assign Dockerfile Role](images/drag-dockerfile-distribution.gif)
+![Assign Dockerfile Role](images/project-layout/drag-dockerfile-distribution.gif)
 
 So now if you were to run the Software Factory, you will notice that it will put the `Dockerfile` in the project where we assigned it (i.e. `TestProject.MyApplication.Api`).
 
-![Software Factory Run](images/software-factory-run-dockerfile.png)
+![Software Factory Run](images/project-layout/software-factory-run-dockerfile.png)
 
 Should we drag `Dockerfile` now to `TestProject.MyApplication.Application`, we will see that the Software Factory run will attempt to generate the file there.
 
-![Software Factory Run](images/software-factory-run-dockerfile2.png)
+![Software Factory Run](images/project-layout/software-factory-run-dockerfile2.png)
 
 And so, each Module will have potentially their own `Roles` that they will install that the developer will need to assign to a given Folder or Project.
 
 At the moment, there is no way to determine which Module installs which `Role` other than manually opening the Module settings and inspecting them one-by-one (unless you can inspect the source code).
 
-![Module Settings](images/docker-module-settings.png)
-![Dockerfile Settings](images/docker-module-dockerfile-settings.png)
+![Module Settings](images/project-layout/docker-module-settings.png)
+![Dockerfile Settings](images/project-layout/docker-module-dockerfile-settings.png)
