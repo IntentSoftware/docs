@@ -51,7 +51,7 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default", "Template/"
+      "default", "Template/default"
     ],
     "postProcessors": ["ExtractSearchIndex"],
     "noLangKeyword": false,
