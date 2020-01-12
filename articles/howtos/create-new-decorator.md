@@ -40,7 +40,7 @@ Ensure the `Decorator Settings`'s `Declare Usings` box is checked.
 
 ![Add Type FullName](images/create-new-decorator/AddFQDN.png)
 
-Run the code generation.
+Run the software factory.
 
 ![Code Generation Staging](images/create-new-decorator/CodeGenerationStaging.png)
 
