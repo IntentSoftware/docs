@@ -192,7 +192,7 @@ Now, select the `MyDecoratorModule` in the dropdown.
 
 Locate the `MyCompany.MyDecoratorModule` and click on the `Install` button (located to the right).
 
-When you run the Software Factory, you should see the expected change in the `Startup.cs` file.
+The decorator is ready, run the software factory and you should see it showing that `Startup.cs` is to be updated:
 
 ![Code Generation With Decorator](images/create-new-decorator/CodeGenerationWithDecorator.png)
 
