@@ -196,7 +196,7 @@ The decorator is ready, run the software factory and you should see it showing t
 
 ![Code Generation With Decorator](images/create-new-decorator/CodeGenerationWithDecorator.png)
 
-When you inspect that file you should notice this diff view:
+Click the file to review the proposed changes:
 
 ![Code Diff My Decorator](images/create-new-decorator/CodeDiffMyDecorator.png)
 
