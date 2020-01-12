@@ -36,7 +36,7 @@ It has a Full Namespace of: `MyCompany.MyModule.Templates.StartupTemplate.IStart
 
 So that is the value that we need to specify in the `Full TypeName` field for that Decorator.
 
-Also, click on the `Declare Usings` flag in the `Decorator Settings` panel.
+Ensure the `Decorator Settings`'s `Declare Usings` box is checked.
 
 ![Add Type FullName](images/create-new-decorator/AddFQDN.png)
 
