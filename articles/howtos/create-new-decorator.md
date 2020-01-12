@@ -200,7 +200,7 @@ Click the file to review the proposed changes:
 
 ![Code Diff My Decorator](images/create-new-decorator/CodeDiffMyDecorator.png)
 
-You can now apply the changes and inspect the file yourself.
+Press `Apply Changes` in the software factory execution window to commit the proposed changes to your disk.
 
 ## Follow through
 
