@@ -1,3 +1,3 @@
 # Github
 
-If you encountered any bugs while using Intent Architect, or if you have a new feature you would like to request, please visit our page on [Github](https://github.com/IntentSoftware/IntentArchitect) under [issues](https://github.com/IntentSoftware/IntentArchitect/issues).
+For feature requests or reporting of bugs, please [open an issue on our Github repository](https://github.com/IntentSoftware/IntentArchitect/issues).
