@@ -11,7 +11,7 @@ This how-to will build up from the [previous](xref:MakeTemplateDecoratorReady) h
 
 ## Create a new Decorator
 
-Typically you would create a new Decorator in a new Intent Architect Application which will reference a Template from another Module or Intent Architect Application. As such we will be doing that.
+Using the the Intent Architect Application's Module Builder, it's easy to scaffold and wire up a new decorator.
 
 ![Startup](images/create-new-decorator/MyDecoratorModuleStartup.png)
 
