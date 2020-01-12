@@ -105,7 +105,7 @@ public string ConfigureCode()
 
 Also, with the Declare Usings section, we need to specify some namespaces that our Decorator will need to successfully apply code that will compile.
 
-Override the `DeclareUsings` method to look like this:
+Add the following to the class to override the `DeclareUsings` method:
 
 ```csharp
 [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
