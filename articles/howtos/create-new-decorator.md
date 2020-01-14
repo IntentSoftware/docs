@@ -77,7 +77,7 @@ This should resolve our initial problem which is that the interface was not foun
 Once we instructed Visual Studio to implement this interface, you will notice that it added two things:
 
 ```csharp
-public int Priority => throw new NotImplementedException();
+public int Priority => 0;
 
 public string ConfigureCode()
 {
