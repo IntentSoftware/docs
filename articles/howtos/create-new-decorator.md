@@ -17,7 +17,7 @@ Using the the Intent Architect Application's Module Builder, it's easy to scaffo
 
 Go ahead and create your Application in Intent Architect that will be used to create the Module that will contain the new Decorator for the `StartupTemplate`.
 
-Once the generation is done, create a new Decorator called `StaticFileServerDecorator`.
+Once the application creation is complete, right-click on the `Module Builder` node to create a new Decorator called `StaticFileServerDecorator`.
 
 ![New Decroator](images/create-new-decorator/NewDecorator.png)
 
