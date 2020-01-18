@@ -66,8 +66,8 @@ Notice that this is not all. Stereotypes can also have fields assigned to them.
 | | * Number|An integer number
 | | * Boolean|True / False
 | | * Options|Create your own options that can be selected
-| | * Lookup Type|Specify the type of elements that can be looked up and there will be a dropdown list of all those items
-| | * Lookup Internal|Not sure. TODO
+| | * Lookup Type|Define the list of element-types that will feature in a drop-down list for this field
+| | * Lookup Internal|Same as `Lookup Type` except that as you select a type, it will bring up a nested drop-down with all the types which that nested type is allowed to show (and so on)
 
 ## How do I apply Stereotypes?
 
