@@ -1,13 +1,12 @@
 ---
 uid: CreateNewDecorator
 ---
-# How can I create a new Decorator?
+# Creating a new Decorator
 
-Click [here](xref:Decorator) to find out more about Decorators.
+Once you have a Template that is able to receive [Decorators](xref:Decorator), you can now go and create your technology dependent Decorator that will inject code during code-generation time to your file that you wish to generate.
 
-This how-to will serve as an example of how to create a new Decorator that will inject code at runtime for a Template that has been setup for it.
-
-This how-to will build up from the [previous](xref:MakeTemplateDecoratorReady) how-to, which showed how to make a Template ready for Decorators. Please interpolate on your end what is written here to make the necessary adjustments on what you're trying to achieve.
+>[!TIP]
+>Please ensure that you have done [this tutorial](xref:MakeTemplateDecoratorReady) before completing this one.
 
 ## Create a new Decorator
 
@@ -202,9 +201,7 @@ Click the file to review the proposed changes:
 
 Press `Apply Changes` in the software factory execution window to commit the proposed changes to your disk.
 
-## Follow through
-
-Even though this is not technically part of the how-to, we do want to give developers the closure that this will work.
+## Final steps and verification
 
 Go to the Test.App Visual Studio solution and create a folder named `MyStaticFiles`. Create a text file `sample.txt` inside it with the content:
 

@@ -3,9 +3,9 @@
 - name: Tutorials
   topicHref: tutorials/index.md
   href: tutorials/toc.yml
-- name: How-to guides
-  href: howtos/toc.yml
-  topicHref: howtos/index.md
+#- name: How-to guides
+#  href: howtos/toc.yml
+#  topicHref: howtos/index.md
 - name: Reference documentation
   topicHref: references/index.md
   href: references/toc.yml

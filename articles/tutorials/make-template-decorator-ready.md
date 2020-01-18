@@ -1,13 +1,12 @@
 ---
 uid: MakeTemplateDecoratorReady
 ---
-# How do I make a Template, Decorator Ready?
+# Making a Template Decorator Ready
 
-Click [here](xref:Decorator) to find out more about Decorators.
+You will notice that templates, by themselves, are quite static in nature. If you have created a template that generates a file for a specific technology configuration, you will have to update the template again if you want to add another kind of technology configuration. We will show you how to overcome this by using [Decorators](xref:Decorator).
 
-This how-to will serve as an example of how to update a Template to allow Decorators to inject code during runtime. Please update it on your side according to what you need.
-
-Open up the Template that you wish to become more extensible. You will find that in this how-to we will use what we've done in a [previous tutorial](xref:TutorialCreateModule) to demonstrate how to achieve this. Please interpolate on your end what is written here to make the necessary adjustments on what you're trying to achieve.
+>[!TIP]
+>Please make sure you have done [this tutorial](xref:TutorialCreateModule) before completing this one.
 
 ## Create "blueprint" (or contract)
 
@@ -117,4 +116,4 @@ Locate the `MyCompany.MyModule` and click on the `Reinstall` button located on t
 
 When you click on the Code Generation run, there will be one change that it will attempt to make which is an empty line. This is ok. Just proceed to apply.
 
-This concludes this How-to. If you need to create a Decorator for this Template, please follow the How-to located [here](xref:CreateNewDecorator).
+This concludes this Tutorial. If you need to create a Decorator for this Template, please follow the Tutorial located [here](xref:CreateNewDecorator).

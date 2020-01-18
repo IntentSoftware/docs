@@ -10,8 +10,8 @@ Intent Architect offers tutorials for helping new comers getting started.
 > ### [Getting Started - Create an ASP.NET Core web app](articles/tutorials/create_an_aspnetcore_web_app.md)
 > Let us show you how easy it is to create a new ASP.NET Core Web Application using Intent Architect and have it up and running in 5 minutes.
 
-## [How-to guides](articles/howtos/index.md)
-After working through the tutorials and using Intent Architect for your projects, you might encounter some questions or problems. In here we will lay out those concerns and take you through how to resolve them.
+<!--## [How-to guides](articles/howtos/index.md)
+After working through the tutorials and using Intent Architect for your projects, you might encounter some questions or problems. In here we will lay out those concerns and take you through how to resolve them.-->
 
 ## [Reference documentation](articles/references/index.md)
 Concepts, ideas and API documentation can be found here in much more detail.

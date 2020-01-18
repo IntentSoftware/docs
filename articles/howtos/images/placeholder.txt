@@ -1,0 +1,1 @@
+Please delete when images are back. This helps to retain the folder in git.
