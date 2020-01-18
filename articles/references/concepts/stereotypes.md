@@ -56,18 +56,24 @@ Notice that this is not all. Stereotypes can also have fields assigned to them.
 
 ![Fields](images/stereotypes/new-stereotype-definition-role-properties-fields.png)
 
-|Name|Description|Type Description
-|-|-|-
-|Name|The name of the field|
-|Type|The type of field you're working with.|
-| |Kind of Types that there are:|
-| | * String|Single-line piece of text
-| | * Text|Multi-line text
-| | * Number|An integer number
-| | * Boolean|True / False
-| | * Options|Create your own options that can be selected
-| | * Lookup Type|Define the list of element-types that will feature in a drop-down list for this field
-| | * Lookup Internal|Same as `Lookup Type` except that as you select a type, it will bring up a nested drop-down with all the types which that nested type is allowed to show (and so on)
+|Name|Description
+|-|-
+|Name|The name of the field
+|Type|The field Type (see list below)
+|Options|If you have selected `Options` as the Type, you can define them here
+|Default value|If you have selected `Options` as the Type and you have defined a list of options, you can select the default one here
+
+### Types
+
+|Type|Description
+|-|-
+|String|Single-line piece of text
+|Text|Multi-line text
+|Number|An integer number
+|Boolean|True / False
+|Options|Create your own options that can be selected
+|Lookup Type|Define the list of element-types that will feature in a drop-down list for this field
+|Lookup Internal|Same as `Lookup Type` except that as you select a type, it will bring up a nested drop-down with all the types which that nested type is allowed to show, and so on
 
 ## How do I apply Stereotypes?
 
