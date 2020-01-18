@@ -1,3 +1,3 @@
 # How-to guides
 
-TODO
+TODO (remember to uncomment code in upper toc.yml and in root index.md)
