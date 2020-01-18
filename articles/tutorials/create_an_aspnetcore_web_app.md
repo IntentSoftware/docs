@@ -310,61 +310,7 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
 In this application architecture, the service implementation classes are where we implement our application layer business logic.
 
 **Implement the `MovieManager.cs` service as follows:**
-
-```csharp
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Intent.RoslynWeaver.Attributes;
-using MyCompany.MyMovies.Domain;
-
-[assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("Intent.Application.ServiceImplementations", Version = "1.0")]
-
-namespace MyCompany.MyMovies.Application.ServiceImplementation
-{
-    public class MovieManager : IMovieManager
-    {
-        private readonly IMovieRepository _movieRepository;
-
-        public MovieManager(IMovieRepository movieRepository)
-        {
-            _movieRepository = movieRepository;
-        }
-
-        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task Create(MovieDTO dto)
-        {
-            // Add new movie to database
-            _movieRepository.Add(new Movie()
-            {
-                Title = dto.Title,
-                ReleaseDate = dto.ReleaseDate,
-                Genre = dto.Genre,
-                Price = dto.Price
-            });
-        }
-
-        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<List<MovieDTO>> List()
-        {
-            // Fetch out all movies out of database
-            var movies = await _movieRepository.FindAllAsync();
-
-            // Convert to DTO list and return
-            return movies.Select(x => MovieDTO.Create(
-                title: x.Title, 
-                releaseDate: x.ReleaseDate, 
-                genre: x.Genre, 
-                price: x.Price)).ToList();
-        }
-
-        public void Dispose()
-        {
-        }
-    }
-}
-```
+[!code-csharp[MovieManager](../../source_code/samples/create-web-app/MyMovies/MyCompany.MyMovies.Application/ServiceImplementation/MovieManager.cs)]
 
 And that's all the code needed for our system to work :)
 
