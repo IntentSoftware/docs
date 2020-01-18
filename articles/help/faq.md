@@ -27,7 +27,7 @@ These Modules are written outside of Intent Architect as plugins, and similar Mo
 
 ## How do I create my own patterns / modules?
 
-[Make your own Module](xref:TutorialCreateModule)
+[](xref:TutorialCreateModule)
 
 ## Do I need to use T4 templates for my patterns?
 
@@ -56,7 +56,6 @@ With Intent Architect we have taken these learnings and tried to create a seamle
 - **IDE integration.** The generated code is integrated into your IDE, no need to manually add or removed generated code files in your IDE. (We currently have an implementation for Visual Studio, but Intent Architect is extensible and there is no reason it can not be integrated into your IDE of choice)
 
 Code generation is simply a tool, the benefit you get out of it is up to you. In the world of code generation tools, Intent Architect is a power tool, giving you new and better ways to solve your software problems.
-
 
 
 
