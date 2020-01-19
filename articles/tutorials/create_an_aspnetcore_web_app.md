@@ -310,7 +310,7 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
 In this application architecture, the service implementation classes are where we implement our application layer business logic.
 
 **Implement the `MovieManager.cs` service as follows:**
-[!code-csharp[MovieManager](../../source_code/samples/create-web-app/MyMovies/MyCompany.MyMovies.Application/ServiceImplementation/MovieManager.cs)]
+[!code-csharp[MovieManager](~/source_code/samples/create-web-app/MyMovies/MyCompany.MyMovies.Application/ServiceImplementation/MovieManager.cs)]
 
 And that's all the code needed for our system to work :)
 

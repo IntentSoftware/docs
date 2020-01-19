@@ -22,12 +22,7 @@ For simplicity, we will host this in the same module as what we're modifying.
 
 Let's create an interface called `IStartupTemplateContract`. You may need to add the using namespace "using Intent.Templates;" at the top of the file.
 
-```csharp
-public interface IStartupTemplateContract : ITemplateDecorator
-{
-    string ConfigureCode();
-}
-```
+[!code-csharp[IStartupTemplateContract](~/source_code/samples/make-template-decorator-ready/MyModule/MyCompany.MyModule/Templates/StartupTemplate/IStartupTemplateContract.cs)]
 
 Make note to copy the namespace and the interface name for what we're about to do next.
 
@@ -73,14 +68,7 @@ public IEnumerable<MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplate
 
 Let's create a method that will aggregate all the Decorator output into a single string in that same class:
 
-```csharp
-private string GetConfigureCode()
-{
-    return GetDecorators()
-                .OrderBy(o => o.Priority)
-                .Aggregate(new StringBuilder(), (sb, dec) => sb.AppendLine(dec.ConfigureCode())).ToString();
-}
-```
+[!code-csharp[StartupTemplatePartial](~/source_code/samples/make-template-decorator-ready/MyModule/MyCompany.MyModule/Templates/StartupTemplate/StartupTemplatePartial.cs#GetConfigureCode)]
 
 ## Generate the injected code in Template
 

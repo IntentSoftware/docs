@@ -24,12 +24,7 @@ We need to specify the Contract name for that Decorator so that it will know for
 
 To recap, the Template we're trying to Decorate is the `StartupTemplate` and it requires a Decorator that adheres to this interface:
 
-```csharp
-public interface IStartupTemplateContract : ITemplateDecorator
-{
-    string ConfigureCode();
-}
-```
+[!code-csharp[IStartupTemplateContract](~/source_code/samples/create-new-decorator/MyModule/MyCompany.MyModule/Templates/StartupTemplate/IStartupTemplateContract.cs)]
 
 It has a Full Namespace of: `MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract`
 
@@ -90,33 +85,13 @@ So in our case, we want to put this at an arbitrary order and supply the value `
 
 As for the Code that we want to generate, we will write the following lines inside the `ConfigureCode` method:
 
-```csharp
-public string ConfigureCode()
-{
-    return @"app.UseStaticFiles(new StaticFileOptions
-    {
-        FileProvider = new PhysicalFileProvider(
-            Path.Combine(Directory.GetCurrentDirectory(), ""MyStaticFiles"")),
-        RequestPath = ""/StaticFiles""
-    });";
-}
-```
+[!code-csharp[StaticFileServerDecorator](~/source_code/samples/create-new-decorator/MyDecoratorModule/MyCompany.MyDecoratorModule/Decorators/StaticFileServerDecorator/StaticFileServerDecorator.cs#ConfigureCode)]
 
 Also, with the Declare Usings section, we need to specify some namespaces that our Decorator will need to successfully apply code that will compile.
 
 Add the following to the class to override the `DeclareUsings` method:
 
-```csharp
-[IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-public IEnumerable<string> DeclareUsings()
-{
-    return new string[]
-    {
-        "System.IO",
-        "Microsoft.Extensions.FileProviders"
-    };
-}
-```
+[!code-csharp[StaticFileServerDecorator](~/source_code/samples/create-new-decorator/MyDecoratorModule/MyCompany.MyDecoratorModule/Decorators/StaticFileServerDecorator/StaticFileServerDecorator.cs#DeclareUsings)]
 
 We now need to add a dependency on the original Template.
 
@@ -124,28 +99,7 @@ Open up the `MyCompany.MyDecoratorModule.imodspec` file in Visual Studio.
 
 You will see something resembling this:
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<package>
-  <id>MyCompany.MyDecoratorModule</id>
-  <version>1.0.0</version>
-  <summary>A custom module for MyCompany.</summary>
-  <description>A custom module for MyCompany.</description>
-  <authors>MyCompany</authors>
-  <templates></templates>
-  <dependencies>
-    <dependency id="Intent.Common" version="2.0.0" />
-    <dependency id="Intent.Common.Types" version="2.0.0" />
-  </dependencies>
-  <files>
-    <file src="$outDir$/$id$.dll" />
-    <file src="$outDir$/$id$.pdb" />
-  </files>
-  <decorators>
-    <decorator id="MyDecoratorModule.StaticFileServerDecorator" />
-  </decorators>
-</package>
-```
+[!code-xml[imodspec](~/source_code/samples/create-new-decorator/MyDecoratorModule/MyCompany.MyDecoratorModule/MyCompany.MyDecoratorModule.imodspec)]
 
 In the `dependencies` section we need to add a dependency to our original Template Module.
 

@@ -157,177 +157,27 @@ Here we can see that the `ClassName` will be `"Program"`, and the namespace will
 
 **Update the contents of the `ProgramTemplate.tt` as follows:**
 
-```csharp
-<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<object>" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="Intent.Modules.Common" #>
-<#@ import namespace="Intent.Modules.Common.Templates" #>
-<#@ import namespace="Intent.Metadata.Models" #>
-
-using Intent.RoslynWeaver.Attributes;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-<#=DependencyUsings#>
-
-[assembly: DefaultIntentManaged(Mode.Fully)] // Overwrite this file on each Software Factory run.
-
-namespace <#= Namespace #>
-{
-    public class <#= ClassName #>
-    {
-        public static void Main(string[] args)
-        {
-            BuildWebHost(args).Run();
-        }
-
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-    }
-}
-```
-
+[!code-csharp[ProgramTemplate](~/source_code/samples/create-module/MyModule/MyCompany.MyModule/Templates/ProgramTemplate/ProgramTemplate.tt)]
 
 ### 4.2 Implementing the `StartupTemplate`:
 
 Next, **update the contents of the `StartupTemplate.tt` as follows:**
 
-```csharp
-<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<object>" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="Intent.Modules.Common" #>
-<#@ import namespace="Intent.Modules.Common.Templates" #>
-<#@ import namespace="Intent.Metadata.Models" #>
-
-using Intent.RoslynWeaver.Attributes;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-<#=DependencyUsings#>
-
-[assembly: DefaultIntentManaged(Mode.Fully)] // Overwrite this file on each Software Factory run.
-
-namespace <#= Namespace #>
-{
-    public class <#= ClassName #>
-    {
-        public <#= ClassName #>(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
-        // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring services
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc();
-        }
-
-        // [IntentManaged(Mode.Ignore)] // Uncomment to take over configuring the HTTP request pipeline
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseMvc();
-        }
-    }
-}
-```
+[!code-csharp[StartupTemplate](~/source_code/samples/create-module/MyModule/MyCompany.MyModule/Templates/StartupTemplate/StartupTemplate.tt)]
 
 ### 4.3 Implementing the `ControllerTemplate`:
 
 Lastly, **update the contents of the `ControllerTemplate.tt` as follows:**
 
-```csharp
-<#@ template language="C#" inherits="IntentRoslynProjectItemTemplateBase<IServiceModel>" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="Intent.Modules.Common" #>
-<#@ import namespace="Intent.Modules.Common.Templates" #>
-<#@ import namespace="Intent.Metadata.Models" #>
-<#@ import namespace="Intent.Modelers.Services.Api" #>
-
-using Intent.RoslynWeaver.Attributes;
-using Microsoft.AspNetCore.Mvc;
-<#=DependencyUsings#>
-
-[assembly: DefaultIntentManaged(Mode.Merge)] // Allowing additive updating of this file, while keeping user implementations
-
-namespace <#= Namespace #>
-{
-    [Route("api/[controller]")]
-    public class <#= ClassName #> : Controller
-    {
-
-<#  foreach(var operation in Model.Operations) { #>
-        [HttpGet("[action]")]
-        public IActionResult <#= operation.Name.ToPascalCase() #>(<#= string.Join(", ", operation.Parameters.Select(x => string.Format("{0} {1}", Types.Get(x.Type), x.Name))) #>)
-        {
-            return Ok("It's working!");
-        }
-
-<#  } #>
-    }
-}
-```
+[!code-csharp[ControllerTemplate](~/source_code/samples/create-module/MyModule/MyCompany.MyModule/Templates/ControllerTemplate/ControllerTemplate.tt)]
 
 >[!TIP]
 >Notice the parameter type is provided by calling `Types.Get(x.Type)`. This is the Intent _Types_ system that simplifies converting types specified in the modeler to actual C#, Typescript, Java, etc. types. This system is enabled automatically by installing the `Intent.Common.Types` module (_which is set as a dependency by default for this module. See the `.imodspec` file, under dependencies._)
 
 For the controllers, we want the class name to have `Controller` appended to the service name. To do this we need to **update the `ControllerTemplatePartial.cs` file as follows:**
 
-```csharp
-using Intent.Metadata.Models;
-using Intent.Modules.Common.Templates;
-using Intent.RoslynWeaver.Attributes;
-using Intent.SoftwareFactory.Engine;
-using Intent.SoftwareFactory.Templates;
+[!code-csharp[ControllerTemplatePartial](~/source_code/samples/create-module/MyModule/MyCompany.MyModule/Templates/ControllerTemplate/ControllerTemplatePartial.cs)]
 
-[assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("Intent.ModuleBuilder.RoslynProjectItemTemplate.Partial", Version = "1.0")]
-
-namespace MyCompany.MyModule.Templates.ControllerTemplate
-{
-    [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    partial class ControllerTemplate : IntentRoslynProjectItemTemplateBase<IServiceModel>
-    {
-        public const string TemplateId = "MyModule.ControllerTemplate";
-
-        public ControllerTemplate(IProject project, IServiceModel model) : base(TemplateId, project, model)
-        {
-        }
-
-        public override RoslynMergeConfig ConfigureRoslynMerger()
-        {
-            return new RoslynMergeConfig(new TemplateMetaData(Id, "1.0"));
-        }
-
-        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        protected override RoslynDefaultFileMetadata DefineRoslynDefaultFileMetadata()
-        {
-            return new RoslynDefaultFileMetadata(
-                overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: "${Model.Name}Controller",
-                fileExtension: "cs",
-                defaultLocationInProject: "Controllers",
-                className: "${Model.Name}Controller",
-                @namespace: "${Project.ProjectName}.Controllers"
-            );
-        }
-    }
-}
-```
 ### 4.4 Packaging the Module
 
 To package the module, we simply **build the solution** (_Build -> Build Solution_).
@@ -432,28 +282,7 @@ You may have noticed that the `Services` modeler is installed with your Module. 
 Finally, we can test that your Module is creating code that actually works. Test this by performing the following steps:
 1. **Open the generated application in Visual Studio.** Open the generated classes to confirm that the code was outputted correctly. For example, the `TestServiceController.cs` file should look as follows:
 
-```csharp
-using Intent.RoslynWeaver.Attributes;
-using Microsoft.AspNetCore.Mvc;
-
-[assembly: DefaultIntentManaged(Mode.Merge)] // Allowing additive updating of this file, while keeping user implementations
-[assembly: IntentTemplate("MyModule.ControllerTemplate", Version = "1.0")]
-
-namespace Test.App.Api.Controllers
-{
-    [Route("api/[controller]")]
-    public class TestServiceController : Controller
-    {
-
-        [HttpGet("[action]")]
-        public IActionResult TestMe()
-        {
-            return Ok("It's working!");
-        }
-
-    }
-}
-```
+[!code-csharp[TestService](~/source_code/samples/create-module/Test.App/Test.App.Api/Controller/TestService.cs)]
 
 2. **Build and run the solution** (_press F5_). The web application will launch in the browser.
 3. **Append `/api/testservice/testme` to the url** to test that our service works.

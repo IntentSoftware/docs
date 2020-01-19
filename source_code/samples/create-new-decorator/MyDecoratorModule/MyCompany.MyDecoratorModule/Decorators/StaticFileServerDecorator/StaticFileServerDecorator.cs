@@ -23,6 +23,7 @@ namespace MyCompany.MyDecoratorModule.Decorators.StaticFileServerDecorator
 
         public int Priority => 1;
 
+#region ConfigureCode
         public string ConfigureCode()
         {
             return @"app.UseStaticFiles(new StaticFileOptions
@@ -32,7 +33,9 @@ namespace MyCompany.MyDecoratorModule.Decorators.StaticFileServerDecorator
         RequestPath = ""/StaticFiles""
     });";
         }
+#endregion
 
+#region DeclareUsings
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public IEnumerable<string> DeclareUsings()
         {
@@ -43,4 +46,5 @@ namespace MyCompany.MyDecoratorModule.Decorators.StaticFileServerDecorator
             };
         }
     }
+#endregion
 }
