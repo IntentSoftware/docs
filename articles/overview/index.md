@@ -1,7 +1,7 @@
 # Welcome to Intent Architect
 
 >[!NOTE]
->With Intent Architect we want you to stop focusing on the nitty-gritty aspects of Software development and really become more productive by completing new features that you need to build to really add value to your business.
+>With Intent Architect we want you to stop focusing on the repetitive, mundane aspects of Software development and really become more productive by completing new features that you need to build to really add value to your business.
 
 ---
 

@@ -3,7 +3,7 @@
 We've organized the documentation in such a way that you would find what you're looking for in no time.
 
 ## [Overview of Intent Architect](articles/overview/index.md)
-An overview of Intent Architect. Why Intent Architect? How does it work? Isn't Code Generation evil? Those questions are answered here.
+An overview of Intent Architect, how it works, and why it provides a better way to build software.
 
 ## [Tutorials](articles/tutorials/index.md)
 Intent Architect offers tutorials for helping new comers getting started.
