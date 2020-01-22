@@ -7,7 +7,7 @@ An overview of Intent Architect. Why Intent Architect? How does it work? Isn't C
 
 ## [Tutorials](articles/tutorials/index.md)
 Intent Architect offers tutorials for helping new comers getting started.
-> ### [Getting Started - Create an ASP.NET Core web app](articles/tutorials/create_an_aspnetcore_web_app.md)
+> ### [Getting Started - Create an ASP.NET Core web app](articles/tutorials/create-an-aspnetcore-web-app.md)
 > Let us show you how easy it is to create a new ASP.NET Core Web Application using Intent Architect and have it up and running in 5 minutes.
 
 <!--## [How-to guides](articles/howtos/index.md)

@@ -1,7 +1,7 @@
 ---
-uid: MakeTemplateDecoratorReady
+uid: MakeTemplateExtensibleThroughDecorators
 ---
-# Making a Template Decorator Ready
+# Making a Template able to support extensibility through Decorators
 
 You will notice that templates, by themselves, are quite static in nature. If you have created a template that generates a file for a specific technology configuration, you will have to update the template again if you want to add another kind of technology configuration. We will show you how to overcome this by using [Decorators](xref:Decorator).
 

@@ -6,7 +6,7 @@ uid: CreateNewDecorator
 Once you have a Template that is able to receive [Decorators](xref:Decorator), you can now go and create your technology dependent Decorator that will inject code during code-generation time to your file that you wish to generate.
 
 >[!TIP]
->Please ensure that you have done [this tutorial](xref:MakeTemplateDecoratorReady) before completing this one.
+>Please ensure that you have done [this tutorial](xref:MakeTemplateExtensibleThroughDecorators) before completing this one.
 
 ## Create a new Decorator
 
@@ -14,7 +14,7 @@ Using the the Intent Architect Application's Module Builder, it's easy to scaffo
 
 ![Startup](images/create-new-decorator/MyDecoratorModuleStartup.png)
 
-Go ahead and create your Application in Intent Architect that will be used to create the Module that will contain the new Decorator for the `StartupTemplate`.
+Start by creating an Application in Intent Architect that will be used to create the Module that will contain the new Decorator for the `StartupTemplate`.
 
 Once the application creation is complete, right-click on the `Module Builder` node to create a new Decorator called `StaticFileServerDecorator`.
 
@@ -64,11 +64,11 @@ Now we add that project as a reference to our new module project.
 
 ## Implement the Decorator
 
-This should resolve our initial problem which is that the interface was not found but now we need to implement that interface, so we're not out of the woods yet.
+Add the following code to implement the `MyCompany.MyModule.Templates.StartupTemplate.IStartupTemplateContract` interface:
 
-![Go To Implement Interface Command](images/create-new-decorator/GoToImplementInterfaceCommand.png)
-
-Once we instructed Visual Studio to implement this interface, you will notice that it added two things:
+> [!TIP]
+> You use Visual Studio's light-bulb can generate interface implementations for you:
+> ![Go To Implement Interface Command](images/create-new-decorator/GoToImplementInterfaceCommand.png)
 
 ```csharp
 public int Priority => 0;
@@ -79,7 +79,7 @@ public string ConfigureCode()
 }
 ```
 
-The Priority helps to clarify in which order the Decorator gets applied. You will notice in the [Aggregate method](xref:MakeTemplateDecoratorReady#aggregate-all-the-decorators-output) of that Template that it does an order by `Priority`.
+The Priority helps to clarify in which order the Decorator gets applied. You will notice in the [Aggregate method](xref:MakeTemplateExtensibleThroughDecorators#aggregate-all-the-decorators-output) of that Template that it does an order by `Priority`.
 
 So in our case, we want to put this at an arbitrary order and supply the value `1`.
 

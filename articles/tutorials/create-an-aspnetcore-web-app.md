@@ -45,7 +45,7 @@ A `workspace` provides the root location of your solution. This is typically the
 
 Fill in the Name, Description (optional), and Location of your workspace. You can also change the icon by clicking on it.
 
-![New Workspace Dialog](images/create_web_app/create_workspace.png)
+![New Workspace Dialog](images/create-web-app/create-workspace.png)
 
 *Create Workspace Dialog*
 
@@ -68,7 +68,7 @@ A `Create application` wizard will be displayed, presenting a set of `applicatio
 - Select the `Web Application ASP.NET Core` application template.
 - Capture the Name, Location, Icon and Description (option) of your application.
 
-![Select an Application Template](images/create_web_app/create_application_page1.png)
+![Select an Application Template](images/create-web-app/create-application-page1.png)
 *Select an application template and fill out application details.*
 
 **Click `NEXT`.**
@@ -79,7 +79,7 @@ We will want to test our services later, and for that we can use the [Swagger UI
 
 **Select the `Swagger (Swashbuckle)` component for installation.**
 
-![Capture Application Details](images/create_web_app/create_application_page2.png)
+![Capture Application Details](images/create-web-app/create-application-page2.png)
 *Select application components to install*
 
 >[!TIP]
@@ -91,7 +91,7 @@ Intent Architect will now create the application as defined by the `Web Applicat
 
 Applications open by default on the `Project Layout` section. This application template lays out the projects in the following way:
 
-![Project Layout](images/create_web_app/configuration.png)
+![Project Layout](images/create-web-app/configuration.png)
 *Project Layout*
 
 >[!TIP]
@@ -111,7 +111,7 @@ Your application is now created, and pre-configured with a `Project Layout` and 
 
 The `Run Software Execution` dialogue will appear, providing an output log in the `Console` tab, followed by staging files it intends on creating, updating or deleting in the `Changes` tab:
 
-![Execution of the Software Factory](images/create_web_app/software_factory_execute.gif)
+![Execution of the Software Factory](images/create-web-app/software-factory-execute.gif)
 *Software Factory Execution*
 
 The `Software Factory` hasn’t created or altered any files at this point. The files are staged so that it is clear to the developer what the software factory is intending on doing. By clicking on one of the files, Intent Architect will open a diff-tool (by default Visual Studio) to compare changes. 
@@ -133,12 +133,12 @@ At this point, we've told Intent Architect that we want an ASP.NET Core web appl
 
 The folder should look something like this:
 
-![View of Generated Output](images/create_web_app/generated_application.png)
+![View of Generated Output](images/create-web-app/generated-application.png)
 *Generated outputs*
 
 **Open the solution (e.g. `MyMovies.sln` file) in Visual Studio 2017** or later (since this is a .NET Core application). The solution will look as follows:
 
-![Visual Studio Solution](images/create_web_app/visual_studio_solution.png)
+![Visual Studio Solution](images/create-web-app/visual-studio-solution.png)
 
 *Visual Studio solution layout*
 
@@ -148,7 +148,7 @@ Allow Visual Studio to restore NuGet dependencies then **compile and run the app
 
 The server will be launched locally. **Navigate to `/swagger` relative url to open the Swagger UI.**
 
-![Empty Swagger](images/create_web_app/swagger_empty.png)
+![Empty Swagger](images/create-web-app/swagger-empty.png)
 *Swagger UI - No operations defined in spec!*
 
 Since we haven't described any services, the Swagger UI will be empty. Let's now begin describing what we want our web server to do (_describing our "intent"_).
@@ -167,9 +167,9 @@ To model our Movies domain, **navigate to the `Domain` modeler.**
 >[!NOTE]
 >Since the new Intent Architect 2.0 update, we have made enhancements to the diagrams in the `Domain` modeler. Unfortunately we also have yet to resolve one or two minor issues with creating them from the beginning, which we're hoping to have resolved in a close future release.
 >
->You'll also notice that the view starts off looking like a Tree view. Go ahead and first click on the button ![](images/create_web_app/DiagramToggler.png) to toggle between the UML diagram view and the Treeview diagram view. This is located on the top toolbar.
+>You'll also notice that the view starts off looking like a Tree view. Go ahead and first click on the button ![](images/create-web-app/DiagramToggler.png) to toggle between the UML diagram view and the Treeview diagram view. This is located on the top toolbar.
 >
->Next you need to create a new Diagram. You'll notice a `Domain` package on the panel to your right. ![](images/create_web_app/DomainPackage.png)
+>Next you need to create a new Diagram. You'll notice a `Domain` package on the panel to your right. ![](images/create-web-app/DomainPackage.png)
 >
 >Right click on that package and click on `New Diagram`. Give it a name of "Default view". Double click on it to select the diagram and to begin modeling your domain.
 
@@ -179,7 +179,7 @@ Next let's add attributes to our `Movie` class. To add an attribute, right-click
 
 **Add the following attributes:**
 
-![Movie class](images/create_web_app/domain_movie_class.png)
+![Movie class](images/create-web-app/domain-movie-class.png)
 
 *Domain Modeler - adding classes and attributes.*
 
@@ -187,14 +187,14 @@ To change the `Type` of the attribute, select the desired type from the dropdown
 
 The following `gif` illustrates this process:
 
-![Adding a Domain Class](images/create_web_app/domain_create_movies.gif)
+![Adding a Domain Class](images/create-web-app/domain-create-movies.gif)
 *Domain Modeler - adding classes and attributes.*
 
 **Press the _'save'_ icon to save your `Domain` model, and re-run the `Software Factory`.**
 
 The changes should look as follows:
 
-![Software Factory Execution - Domain changes](images/create_web_app/software_factory_domain_changes.png)
+![Software Factory Execution - Domain changes](images/create-web-app/software-factory-domain-changes.png)
 *Software Factory Execution - Domain changes.*
 
 >[!NOTE]
@@ -212,7 +212,7 @@ Next, we want to create services to create and access our Movies. To do this, we
 
 Let's create a service that will allow us to add and retrieve our movies. To add a service, **right-click the `Services` package and click on `New Service`.** Name the service `MovieManager`, and **add two operations, `Create` and `List`,** by right-clicking the new service and clicking on `New Operation`.
 
-![Adding a Service](images/create_web_app/services_service_creation.gif)
+![Adding a Service](images/create-web-app/services-service-creation.gif)
 *Services - adding a service with operations*
 
 Operations by themselves have limited uses. We need to describe what parameters they accept as well as what data they return. Our `Create` operation needs to accept a data object which we will refer to as a `Data Transfer Object (DTO)`. To add a DTO, simply **right-click the `Services` package and click `New DTO`.** We will name this DTO `MovieDTO`.
@@ -221,24 +221,24 @@ Next, we must describe the data fields that this DTO provides. Since we are usin
 
 **Describe the `MovieDTO` as shown below:**
 
-![Adding a DTO](images/create_web_app/services_dto_creation.png)
+![Adding a DTO](images/create-web-app/services-dto-creation.png)
 
 *Services - adding a DTO*
 
 To wire up our DTO with our operations, we add parameters and return types. **right-click the `Create` operation and assign in a parameter called `dto` with Type `MovieDTO`. Next, right-click the `List` operation and assign it a return type of Type `MovieDTO`, and check the `Is Collection` option in the `Properties` on the right. Click the _"save"_ icon.**
 
-![Assigning parameters and return types to operations](images/create_web_app/services_assign_parameters_returntypes.gif)
+![Assigning parameters and return types to operations](images/create-web-app/services-assign-parameters-returntypes.gif)
 *Services - assigning parameters and return types to operations*
 
 The services should look as follows:
 
-![Adding a DTO](images/create_web_app/services_final_result.png)
+![Adding a DTO](images/create-web-app/services-final-result.png)
 
 *Services - MovieManager.*
 
 **Re-run the `Software Factory` and apply changes.**
 
-![Software Factory Execution - Services changes](images/create_web_app/software_factory_services_changes.png)
+![Software Factory Execution - Services changes](images/create-web-app/software-factory-services-changes.png)
 *Software Factory Execution - Services changes.*
 
 >[!NOTE]
@@ -350,13 +350,13 @@ Once the app is running, **navigate to the Swagger UI (`~/swagger`) test the ser
 ### Testing the `Create` operation
 For the `'POST /api/MovieManager/create'` service, use the Swagger UI to set the DTO body with data and execute it. The response should indicate that the call was successful:
 
-![Swagger Test - Create Movie](images/create_web_app/swagger_test_createmovie.gif)
+![Swagger Test - Create Movie](images/create-web-app/swagger-test-createmovie.gif)
 *Swagger Test - Create Movie*
 
 ### Testing the `List` operation
 For the `'GET /api/MovieManager/list'` service, use the Swagger UI to list the movies that were added to the database in the previous step:
 
-![Swagger Test - List Movies](images/create_web_app/swagger_test_listmovies.gif)
+![Swagger Test - List Movies](images/create-web-app/swagger-test-listmovies.gif)
 *Swagger Test - List Movies*
 
 

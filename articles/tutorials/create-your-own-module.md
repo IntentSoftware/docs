@@ -12,15 +12,15 @@ By creating modules to automate the repetitive coding tasks that you as a develo
 This guide will take you through the process of creating an Intent Architect Module using the _Intent Module Builder_ application template. It aims to create a Module to automate the setup of ASP.NET Core web services. While we will be codifying a basic C# pattern, it is worth noting that the Intent Module system can generate _ANY_ type of text file, which means that **_Modules can be created to generate code for ANY programming language!_**
 
 >[!TIP]
->A basic knowledge of Intent Architect is required for this guide. If you are new to Intent Architect, it is recommended that you do the [Create an ASP.NET Core web app](create_an_aspnetcore_web_app.md) tutorial before attempting this one.
+>A basic knowledge of Intent Architect is required for this guide. If you are new to Intent Architect, it is recommended that you do the [Create an ASP.NET Core web app](create-an-aspnetcore-web-app.md) tutorial before attempting this one.
 
 ***
 ## Prerequisites
 
 This guide has the following prerequisites:
  - Visual Studio 2015 or later
- - Intent Architect is installed. [See here for installation instructions](create_an_aspnetcore_web_app.md#1-installing-and-running-intent-architect).
- - A workspace has been created. [See this for how to create a workspace](create_an_aspnetcore_web_app.md#2-create-a-workspace).
+ - Intent Architect is installed. [See here for installation instructions](create-an-aspnetcore-web-app.md#1-installing-and-running-intent-architect).
+ - A workspace has been created. [See this for how to create a workspace](create-an-aspnetcore-web-app.md#2-create-a-workspace).
 
 ***
 ## 1. Creating an Intent Module Builder application
@@ -32,7 +32,7 @@ A `Create application` wizard will be displayed, presenting a set of `applicatio
 - Select the `Intent Module Builder` application template.
 - Capture the Name, Location, Icon and Description (option) of your Module Builder application.
 
-![Select Intent Module Builder application template](images/create_your_own_module/create_application_module_builder1.png)
+![Select Intent Module Builder application template](images/create-your-own-module/create-application-module-builder1.png)
 *Select the Intent Module Builder application template*
 
 **Click `NEXT`.**
@@ -41,7 +41,7 @@ The `Intent Module Builder` application template provides a set of components wh
 
 **Leave all components selected and click `CREATE`.**
 
-![Select Intent Module Builder application template](images/create_your_own_module/create_application_module_builder2.png)
+![Select Intent Module Builder application template](images/create-your-own-module/create-application-module-builder2.png)
 *Select the Intent Module Builder application template*
 
 Intent Architect will download the necessary Modules, and once complete the application will open automatically. You can **close the Installation Manager** once this process is complete.
@@ -63,7 +63,7 @@ Both the `Program.cs` and `Startup.cs` files are single files. To ensure that on
 
 How to do this is illustrated below:
 
-![Create C# Templates](images/create_your_own_module/module_builder_create_templates.gif)
+![Create C# Templates](images/create-your-own-module/module-builder-create-templates.gif)
 *Create C# Templates in the Module Builder*
 
 >[!TIP]
@@ -76,7 +76,7 @@ To run the `Software Factory`, **click the _'play'_ button** in the top right ha
 
 The following outputs are staged before being applied:
 
-![Software Factory Execution](images/create_your_own_module/software_factory_execution_changes1.png)
+![Software Factory Execution](images/create-your-own-module/software-factory-execution-changes1.png)
 *Software Factory Execution - staged outputs*
 
 **Click the `APPLY CHANGES` button.**
@@ -94,7 +94,7 @@ Your module has now been created and wired up. Next, we need to implement our te
 
 The solution will be layed out as follows:
 
-![Visual Studio - Module layout](images/create_your_own_module/visual_studio_module_layout.png)
+![Visual Studio - Module layout](images/create-your-own-module/visual-studio-module-layout.png)
 
 *Module layout in Visual Studio*
 
@@ -209,7 +209,7 @@ Before we install the Module, let's create an empty application so that the outp
 **Click the `New Application` tile** then in the `Create Application` wizard, **fill out the application's name and click `CREATE EMPTY`**. When prompted to confirm you wish to create an empty application, **click `YES`**.
 
 
-![Create Empty Application](images/create_your_own_module/create_empty_application.gif)
+![Create Empty Application](images/create-your-own-module/create-empty-application.gif)
 *Create Empty Application*
 
 >[!TIP]
@@ -219,12 +219,12 @@ We will need a Project to install your Module outputs into. Since we're working 
 
 **Add an `ASP.NET Core Web Application` project to your `Project Layout`** by right clicking on the `Projects` folder and clicking `New Project...`. Select the `ASP.NET Core Web Application` project option, fill in the project name, and click `CREATE`.
 
-![Add Project](images/create_your_own_module/project_layout_add_project.gif)
+![Add Project](images/create-your-own-module/project-layout-add-project.gif)
 *Add ASP.NET Core Web Application project*
 
 **Run the `Software Factory` to set generate the this project.**
 
-![Software Factory Execution](images/create_your_own_module/software_factory_execution_test_application.png)
+![Software Factory Execution](images/create-your-own-module/software-factory-execution-test-application.png)
 
 *Software Factory Execution to create test application*
 
@@ -233,7 +233,7 @@ We will need a Project to install your Module outputs into. Since we're working 
 ### 5.2 Configure local Module repository
 Next, we need to configure your local Module repository (_where our Module was created_) so that we can find it from within Intent Architect. **Navigate to the `Modules` view and click the _'cog'_ icon to the right of the `Repository source` dropdown. Add our local repository location as a full or relative path:**
 
-![Add Project](images/create_your_own_module/asset_repository_add_local.png)
+![Add Project](images/create-your-own-module/asset-repository-add-local.png)
 *Add a local Module repository*
 
 >Name: My Module
@@ -250,12 +250,12 @@ Now **select your local repository** from the `Repository source` dropdown. The 
 
 **Select your Module and install it**. Notice that _unassigned_ `Roles` were added as part of the installation. These represent the output targets that your module has created. `Roles` allow you to specify where in your codebase you would like the Module to place outputs. This is configured in the `Project Layout`.
 
-![Install your Module](images/create_your_own_module/install_module.gif)
+![Install your Module](images/create-your-own-module/install-module.gif)
 *Installing your Module*
 
 **Navigate to the `Project Layout` view** and assign them to our `ASP.NET Core Web Application` project by dragging them onto it.
 
-![Assign Roles](images/create_your_own_module/project_layout_assign_roles.gif)
+![Assign Roles](images/create-your-own-module/project-layout-assign-roles.gif)
 
 *Assign Roles*
 
@@ -265,14 +265,14 @@ Now **select your local repository** from the `Repository source` dropdown. The 
 ### 5.4 Create a test Service
 You may have noticed that the `Services` modeler is installed with your Module. This is because a dependency on the `Intent.Modelers.Services` module (_which installs the `Services` modeler_) is configured in the `.imodspec` file. **Navigate to the `Services` modeler and create a `TestService` service with a `TestMe` operation:**
 
-![Test Service](images/create_your_own_module/services_test_service.png)
+![Test Service](images/create-your-own-module/services-test-service.png)
 *Test Service*
 
 ### 5.5 Run the Software Factory
 
 **Run the `Software Factory` to run your Module.** The following will be outputted:
 
-![Test Service](images/create_your_own_module/software_factory_execution_module_output.png)
+![Test Service](images/create-your-own-module/software-factory-execution-module-output.png)
 *Module output*
 
 **Click `APPLY CHANGED` and close the `Software Factory Execution` dialog.**
@@ -288,7 +288,7 @@ Finally, we can test that your Module is creating code that actually works. Test
 3. **Append `/api/testservice/testme` to the url** to test that our service works.
     We should get the following response:
 
-    ![Test Service in browser](images/create_your_own_module/test_service_in_browser.png)
+    ![Test Service in browser](images/create-your-own-module/test-service-in-browser.png)
 
     *Hitting the `TestService` in from the browser*
 

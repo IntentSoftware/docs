@@ -1,3 +1,4 @@
 # How-to guides
 
-TODO (remember to uncomment code in upper toc.yml and in root index.md)
+This is a collection how-to articles for guiding you through accomplishing specific tasks.
+Please refer to the side panel for the available articles.
