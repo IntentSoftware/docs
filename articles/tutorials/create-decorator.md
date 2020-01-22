@@ -1,24 +1,24 @@
 ---
-uid: CreateNewDecorator
+uid: CreateDecorator
 ---
-# Creating a new Decorator
+# Creating a Decorator
 
 Once you have a Template that is able to receive [Decorators](xref:Decorator), you can now go and create your technology dependent Decorator that will inject code during code-generation time to your file that you wish to generate.
 
 >[!TIP]
 >Please ensure that you have done [this tutorial](xref:MakeTemplateExtensibleThroughDecorators) before completing this one.
 
-## Create a new Decorator
+## Create a Decorator Project
 
 Using the the Intent Architect Application's Module Builder, it's easy to scaffold and wire up a new decorator.
 
-![Startup](images/create-new-decorator/MyDecoratorModuleStartup.png)
+![Startup](images/create-decorator/MyDecoratorModuleStartup.png)
 
 Start by creating an Application in Intent Architect that will be used to create the Module that will contain the new Decorator for the `StartupTemplate`.
 
 Once the application creation is complete, right-click on the `Module Builder` node to create a new Decorator called `StaticFileServerDecorator`.
 
-![New Decroator](images/create-new-decorator/NewDecorator.png)
+![New Decroator](images/create-decorator/NewDecorator.png)
 
 We need to specify the Contract name for that Decorator so that it will know for which Template it is meant to Decorate.
 
@@ -32,21 +32,21 @@ So that is the value that we need to specify in the `Full TypeName` field for th
 
 Ensure the `Decorator Settings`'s `Declare Usings` box is checked.
 
-![Add Type FullName](images/create-new-decorator/AddFQDN.png)
+![Add Type FullName](images/create-decorator/AddFQDN.png)
 
 Run the software factory.
 
-![Code Generation Staging](images/create-new-decorator/CodeGenerationStaging.png)
+![Code Generation Staging](images/create-decorator/CodeGenerationStaging.png)
 
 Open Visual Studio and navigate to where the code has been generated and open up the `MyCompany.MyDecoratorModule` solution.
 
 You will notice that it has generated a Decorator as well as a Registration for the Decorator.
 
-![Solution Tree Structure](images/create-new-decorator/SolutionTreeStructure.png)
+![Solution Tree Structure](images/create-decorator/SolutionTreeStructure.png)
 
 Although, you will notice that the IDE reports a problem with our namespace we gave it.
 
-![IDE Error](images/create-new-decorator/IDEError.png)
+![IDE Error](images/create-decorator/IDEError.png)
 
 ## Ensure the "blueprint" (or contract) assembly is referenced
 
@@ -54,11 +54,11 @@ To fix this issue, we need to make sure that we reference the assembly that cont
 
 In our case this is simple. We add a project reference to that solution.
 
-![Add Existing Project](images/create-new-decorator/AddExistingProject.png)
+![Add Existing Project](images/create-decorator/AddExistingProject.png)
 
 Let's add that module as an existing project into our current solution.
 
-![Add Project Reference](images/create-new-decorator/AddProjectReference.png)
+![Add Project Reference](images/create-decorator/AddProjectReference.png)
 
 Now we add that project as a reference to our new module project.
 
@@ -68,7 +68,7 @@ Add the following code to implement the `MyCompany.MyModule.Templates.StartupTem
 
 > [!TIP]
 > You use Visual Studio's light-bulb can generate interface implementations for you:
-> ![Go To Implement Interface Command](images/create-new-decorator/GoToImplementInterfaceCommand.png)
+> ![Go To Implement Interface Command](images/create-decorator/GoToImplementInterfaceCommand.png)
 
 ```csharp
 public int Priority => 0;
@@ -133,25 +133,25 @@ Open up the `Test.App` in Intent Architect, click on the `Modules` on the side p
 
 Click on the "gear" icon located to the right. Add the location to the new Module.
 
-![Asset Repo](images/create-new-decorator/AssetRepo.png)
+![Asset Repo](images/create-decorator/AssetRepo.png)
 
 **Name**: MyDecoratorModule
 **Address**: ./MyDecoratorModule/Intent.Modules
 
 Now, select the `MyDecoratorModule` in the dropdown.
 
-![Ready To Install My Decorator](images/create-new-decorator/ReadyToInstallMyDecorator.png)
+![Ready To Install My Decorator](images/create-decorator/ReadyToInstallMyDecorator.png)
 
 
 Locate the `MyCompany.MyDecoratorModule` and click on the `Install` button (located to the right).
 
 The decorator is ready, run the software factory and you should see it showing that `Startup.cs` is to be updated:
 
-![Code Generation With Decorator](images/create-new-decorator/CodeGenerationWithDecorator.png)
+![Code Generation With Decorator](images/create-decorator/CodeGenerationWithDecorator.png)
 
 Click the file to review the proposed changes:
 
-![Code Diff My Decorator](images/create-new-decorator/CodeDiffMyDecorator.png)
+![Code Diff My Decorator](images/create-decorator/CodeDiffMyDecorator.png)
 
 Press `Apply Changes` in the software factory execution window to commit the proposed changes to your disk.
 
@@ -161,7 +161,7 @@ Go to the Test.App Visual Studio solution and create a folder named `MyStaticFil
 
 >This is a sample file
 
-![Sample Text Solution](images/create-new-decorator/TestSampleTextFile.png)
+![Sample Text Solution](images/create-decorator/TestSampleTextFile.png)
 
 Once you run the solution and navigate to this URL:
 
@@ -170,4 +170,4 @@ Once you run the solution and navigate to this URL:
 
 You should get this outcome:
 
-![Outcome](images/create-new-decorator/TestFileResult.png)
+![Outcome](images/create-decorator/TestFileResult.png)

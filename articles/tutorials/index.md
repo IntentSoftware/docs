@@ -12,5 +12,5 @@ Once you have understood that one of the powerful features of Intent Architect c
 ### [Making a Template able to support extensibility through Decorators](make-template-extensible-through-decorators.md)
 You will notice that templates are quite static in nature. If you have created a template that generates a file for a specific technology configuration, you will have to update the template again if you want to add another kind of technology configuration. We will show you how to overcome this by using Decorators.
 
-### [Creating a new Decorator](create-new-decorator.md)
+### [Creating a Decorator](create-decorator.md)
 Once you have a Template that is able to receive Decorators, you can now go and create your technology dependent Decorator that will inject code during code-generation time to your file that you wish to generate.

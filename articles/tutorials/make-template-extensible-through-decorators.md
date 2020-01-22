@@ -104,4 +104,4 @@ Locate the `MyCompany.MyModule` and click on the `Reinstall` button located on t
 
 When you click on the Code Generation run, there will be one change that it will attempt to make which is an empty line. This is ok. Just proceed to apply.
 
-This concludes this Tutorial. If you need to create a Decorator for this Template, please follow the Tutorial located [here](xref:CreateNewDecorator).
+This concludes this Tutorial. If you need to create a Decorator for this Template, please follow the Tutorial located [here](xref:CreateDecorator).

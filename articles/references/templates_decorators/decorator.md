@@ -116,4 +116,4 @@ public void ConfigureAuth(IAppBuilder app)
 //...
 ```
 
-Follow our how-to article that explains how to make your [template decorator ready](xref:MakeTemplateExtensibleThroughDecorators) and how to [create a decorator](xref:CreateNewDecorator) for it.
+Follow our how-to article that explains how to make your [template decorator ready](xref:MakeTemplateExtensibleThroughDecorators) and how to [create a decorator](xref:CreateDecorator) for it.
