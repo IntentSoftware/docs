@@ -272,6 +272,7 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
 {
     public class MovieManager : IMovieManager
     {
+
         public MovieManager()
         {
         }
@@ -279,13 +280,13 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public async Task Create(MovieDTO dto)
         {
-            throw new NotImplementedException("Your implementation here...");
+            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public async Task<List<MovieDTO>> List()
         {
-            throw new NotImplementedException("Your implementation here...");
+            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         public void Dispose()

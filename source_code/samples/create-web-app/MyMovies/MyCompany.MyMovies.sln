@@ -1,14 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Api", "MyCompany.MyMovies.Api\MyCompany.MyMovies.Api.csproj", "{211E747A-5227-4148-B138-0245AAC745DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Api", "MyCompany.MyMovies.Api\MyCompany.MyMovies.Api.csproj", "{211E747A-5227-4148-B138-0245AAC745DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Application", "MyCompany.MyMovies.Application\MyCompany.MyMovies.Application.csproj", "{650E7624-B1EC-47A1-B478-2492EDC3A614}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Application", "MyCompany.MyMovies.Application\MyCompany.MyMovies.Application.csproj", "{650E7624-B1EC-47A1-B478-2492EDC3A614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Domain", "MyCompany.MyMovies.Domain\MyCompany.MyMovies.Domain.csproj", "{8EA9F0DD-1062-4E88-AB22-DD70757235F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Domain", "MyCompany.MyMovies.Domain\MyCompany.MyMovies.Domain.csproj", "{8EA9F0DD-1062-4E88-AB22-DD70757235F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Infrastructure.Data", "MyCompany.MyMovies.Infrastructure.Data\MyCompany.MyMovies.Infrastructure.Data.csproj", "{BE9550C9-9C65-48B5-993F-A730C63056EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Infrastructure.Data", "MyCompany.MyMovies.Infrastructure.Data\MyCompany.MyMovies.Infrastructure.Data.csproj", "{BE9550C9-9C65-48B5-993F-A730C63056EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Distribution", "1 - Distribution", "{DDA8F9B7-FCD9-432F-BCB3-BCA2FBD1DEEF}"
 EndProject
@@ -49,5 +49,8 @@ Global
 		{650E7624-B1EC-47A1-B478-2492EDC3A614} = {F0DE5AEC-1219-46BB-834D-8A9A9D138C23}
 		{8EA9F0DD-1062-4E88-AB22-DD70757235F9} = {F2B03341-EB2D-417A-A6BD-A26E5D3AE211}
 		{BE9550C9-9C65-48B5-993F-A730C63056EA} = {798C723A-8911-4343-85AD-7357F89EDC00}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10BE4EA4-9FA7-47DB-B911-CBA1DF2DDF61}
 	EndGlobalSection
 EndGlobal

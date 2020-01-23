@@ -1,14 +1,10 @@
-
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
 using MyCompany.MyMovies.Application;
-
+using MyCompany.MyMovies.Domain;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.Application.ServiceImplementations", Version = "1.0")]
@@ -17,21 +13,34 @@ namespace MyCompany.MyMovies.Application.ServiceImplementation
 {
     public class MovieManager : IMovieManager
     {
+        private readonly IMovieRepository _movieRepository;
 
-        public MovieManager()
+        public MovieManager(IMovieRepository movieRepository)
         {
+            _movieRepository = movieRepository;
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public async Task Create(MovieDTO dto)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            _movieRepository.Add(new Movie()
+            {
+                Title = dto.Title,
+                ReleaseDate = dto.ReleaseDate,
+                Genre = dto.Genre,
+                Price = dto.Price
+            });
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public async Task<List<MovieDTO>> List()
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            var movies = await _movieRepository.FindAllAsync();
+            return movies.Select(x => MovieDTO.Create(
+                title: x.Title,
+                releaseDate: x.ReleaseDate,
+                genre: x.Genre,
+                price: x.Price)).ToList();
         }
 
         public void Dispose()
