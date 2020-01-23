@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,11 +84,9 @@ namespace MyCompany.MyMovies.Api
             });
         }
 
-        [IntentManaged(Mode.Ignore)] // We're taking this method over
         private void ConfigureDbContext(IServiceCollection services)
         {
-            services.AddDbContext<MyMoviesDbContext>(x =>
-                x.UseInMemoryDatabase("MyCompany.MyMovies"));
+            services.AddDbContext<MyMoviesDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("MyMoviesDB")).UseLazyLoadingProxies());
         }
     }
 }

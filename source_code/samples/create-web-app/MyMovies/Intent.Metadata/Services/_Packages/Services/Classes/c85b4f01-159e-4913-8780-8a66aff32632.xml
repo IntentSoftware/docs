@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="799e10bb-557b-4a9e-a2cf-00c1164edf23" type="Service">
+<class id="c85b4f01-159e-4913-8780-8a66aff32632" type="Service">
   <name>MovieManager</name>
   <isAbstract>false</isAbstract>
   <genericTypes />
@@ -8,14 +8,14 @@
   <literals />
   <attributes />
   <operations>
-    <operation id="915894d3-c34e-43da-ac20-aa80a435ffa4" type="Operation" isAbstract="false">
+    <operation id="f5ec5bc4-1f80-4c69-8971-3793dcb1b457" type="Operation" isAbstract="false">
       <name>Create</name>
       <isMapped>false</isMapped>
       <parameters>
-        <parameter id="4f576ede-d568-422a-998e-fa24aacf0e4e">
+        <parameter id="4c82acc4-ee9d-4d17-9e12-37812e2192b2">
           <name>dto</name>
-          <typeReference id="9950fd2a-d3f7-48c0-9b67-562a0481df71">
-            <typeId>c7dafa00-43ed-4c1b-95a0-f37959156bd3</typeId>
+          <typeReference id="206b2d3e-7d82-42a7-ac76-970f7b0d1e40">
+            <typeId>089a73ad-a691-45ea-a34c-1bedbddedc39</typeId>
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <stereotypes />
@@ -38,11 +38,11 @@
         </stereotype>
       </stereotypes>
     </operation>
-    <operation id="583d5148-b881-49fd-b1a9-a1e8a0c48ea8" type="Operation" isAbstract="false">
+    <operation id="df2f9cc8-8d92-4cb4-87fe-90a18c2f4519" type="Operation" isAbstract="false">
       <name>List</name>
       <isMapped>false</isMapped>
-      <returnType id="7b4f7e92-165a-4948-b862-61936c8e94c9">
-        <typeId>c7dafa00-43ed-4c1b-95a0-f37959156bd3</typeId>
+      <returnType id="6e6d9978-2187-4716-b5eb-4366b28b4ccc">
+        <typeId>089a73ad-a691-45ea-a34c-1bedbddedc39</typeId>
         <isNullable>false</isNullable>
         <isCollection>true</isCollection>
         <stereotypes />

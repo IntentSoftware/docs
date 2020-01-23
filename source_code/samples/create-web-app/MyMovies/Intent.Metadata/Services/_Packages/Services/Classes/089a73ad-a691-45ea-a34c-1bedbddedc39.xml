@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="9a6fe5d7-8077-4dfd-ad62-ebfcb9e10fec" type="Class">
-  <name>Movie</name>
+<class id="089a73ad-a691-45ea-a34c-1bedbddedc39" type="DTO">
+  <name>MovieDTO</name>
   <isAbstract>false</isAbstract>
   <genericTypes />
   <isMapped>false</isMapped>
-  <parentFolderId>30c16a15-4e9f-42c2-8a4d-2c86accd0551</parentFolderId>
+  <parentFolderId>8e091e63-9f8a-4f8f-8bd5-9e35fbef6b17</parentFolderId>
   <literals />
   <attributes>
-    <attribute id="24d65dbb-f91d-4df2-b9cb-4fe822b8bbc8" type="Attribute">
+    <attribute id="112e6040-02d1-47fe-b831-555f80565b66" type="DTO-Field">
       <name>title</name>
-      <typeReference id="c321533e-b8ee-4a36-91e9-0b22fb065245">
+      <typeReference id="4420af3c-4b8e-49d0-aa04-0babd3ea1da0">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -19,9 +19,9 @@
       <isMapped>false</isMapped>
       <stereotypes />
     </attribute>
-    <attribute id="5e575aeb-1625-40ee-a9b1-5c6bf50fce86" type="Attribute">
+    <attribute id="ee51c45c-7be4-4818-84a3-f4de0a4f94e4" type="DTO-Field">
       <name>releaseDate</name>
-      <typeReference id="34a6874b-8558-49cf-ae1b-d7f812b3ce7b">
+      <typeReference id="7ee30fb0-28ad-4537-9733-adffd46bd15b">
         <typeId>1fbaa056-b666-4f25-b8fd-76fe3165acc8</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -31,9 +31,9 @@
       <isMapped>false</isMapped>
       <stereotypes />
     </attribute>
-    <attribute id="06384341-b5c5-40f8-915a-73c7e76eea07" type="Attribute">
+    <attribute id="5c124063-a379-4b08-8479-13a68be46661" type="DTO-Field">
       <name>genre</name>
-      <typeReference id="f9b60615-2da9-4aa8-a1f1-c9f936fa43a8">
+      <typeReference id="a53e83e1-7150-4142-ac47-442793d4648f">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -43,9 +43,9 @@
       <isMapped>false</isMapped>
       <stereotypes />
     </attribute>
-    <attribute id="e5c360f7-89dd-400d-a1fa-08b0e50d7d16" type="Attribute">
+    <attribute id="2088991e-ffd6-4016-9e7c-59ac255e01dc" type="DTO-Field">
       <name>price</name>
-      <typeReference id="1b5ac5b8-6e9a-4607-9534-719a124a1e6f">
+      <typeReference id="0c2ccad7-f2d9-4ce5-961c-ec51e9d9ce8a">
         <typeId>675c7b84-997a-44e0-82b9-cd724c07c9e6</typeId>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>

@@ -1,10 +1,6 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Intent.Framework.Core.Context;
-using Intent.Framework.Domain.Repositories;
-using Intent.Framework.EntityFrameworkCore;
-using Intent.Framework.EntityFrameworkCore.Repositories;
 using Intent.RoslynWeaver.Attributes;
 using Microsoft.EntityFrameworkCore;
 using MyCompany.MyMovies.Domain;

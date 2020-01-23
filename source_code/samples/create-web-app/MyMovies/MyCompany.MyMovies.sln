@@ -1,22 +1,22 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Api", "MyCompany.MyMovies.Api\MyCompany.MyMovies.Api.csproj", "{211E747A-5227-4148-B138-0245AAC745DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Api", "MyCompany.MyMovies.Api\MyCompany.MyMovies.Api.csproj", "{211E747A-5227-4148-B138-0245AAC745DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Application", "MyCompany.MyMovies.Application\MyCompany.MyMovies.Application.csproj", "{650E7624-B1EC-47A1-B478-2492EDC3A614}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Application", "MyCompany.MyMovies.Application\MyCompany.MyMovies.Application.csproj", "{650E7624-B1EC-47A1-B478-2492EDC3A614}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Domain", "MyCompany.MyMovies.Domain\MyCompany.MyMovies.Domain.csproj", "{8EA9F0DD-1062-4E88-AB22-DD70757235F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Domain", "MyCompany.MyMovies.Domain\MyCompany.MyMovies.Domain.csproj", "{8EA9F0DD-1062-4E88-AB22-DD70757235F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCompany.MyMovies.Infrastructure.Data", "MyCompany.MyMovies.Infrastructure.Data\MyCompany.MyMovies.Infrastructure.Data.csproj", "{BE9550C9-9C65-48B5-993F-A730C63056EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.MyMovies.Infrastructure.Data", "MyCompany.MyMovies.Infrastructure.Data\MyCompany.MyMovies.Infrastructure.Data.csproj", "{BE9550C9-9C65-48B5-993F-A730C63056EA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Distribution", "1 - Distribution", "{6D95ECC5-16EB-416E-982E-A1A05F327605}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Distribution", "1 - Distribution", "{DDA8F9B7-FCD9-432F-BCB3-BCA2FBD1DEEF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{0E9C4398-1358-4DE5-B4F7-ED4C20D0E311}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{F0DE5AEC-1219-46BB-834D-8A9A9D138C23}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{09D8C616-F1A8-46A6-8931-645C804E75EE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{F2B03341-EB2D-417A-A6BD-A26E5D3AE211}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{9AB26042-91D4-4340-939B-C8EF14A6F66C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{798C723A-8911-4343-85AD-7357F89EDC00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,12 +45,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{211E747A-5227-4148-B138-0245AAC745DE} = {6D95ECC5-16EB-416E-982E-A1A05F327605}
-		{650E7624-B1EC-47A1-B478-2492EDC3A614} = {0E9C4398-1358-4DE5-B4F7-ED4C20D0E311}
-		{8EA9F0DD-1062-4E88-AB22-DD70757235F9} = {09D8C616-F1A8-46A6-8931-645C804E75EE}
-		{BE9550C9-9C65-48B5-993F-A730C63056EA} = {9AB26042-91D4-4340-939B-C8EF14A6F66C}
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A1335542-F285-494B-9A1A-503A351A47FB}
+		{211E747A-5227-4148-B138-0245AAC745DE} = {DDA8F9B7-FCD9-432F-BCB3-BCA2FBD1DEEF}
+		{650E7624-B1EC-47A1-B478-2492EDC3A614} = {F0DE5AEC-1219-46BB-834D-8A9A9D138C23}
+		{8EA9F0DD-1062-4E88-AB22-DD70757235F9} = {F2B03341-EB2D-417A-A6BD-A26E5D3AE211}
+		{BE9550C9-9C65-48B5-993F-A730C63056EA} = {798C723A-8911-4343-85AD-7357F89EDC00}
 	EndGlobalSection
 EndGlobal
