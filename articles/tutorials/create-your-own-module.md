@@ -282,7 +282,7 @@ You may have noticed that the `Services` modeler is installed with your Module. 
 Finally, we can test that your Module is creating code that actually works. Test this by performing the following steps:
 1. **Open the generated application in Visual Studio.** Open the generated classes to confirm that the code was outputted correctly. For example, the `TestServiceController.cs` file should look as follows:
 
-[!code-csharp[TestService](~/source_code/samples/create-module/Test.App/Test.App.Api/Controller/TestService.cs)]
+[!code-csharp[TestService](~/source_code/samples/create-module/Test.App/Test.App.Api/Controllers/TestService.cs)]
 
 2. **Build and run the solution** (_press F5_). The web application will launch in the browser.
 3. **Append `/api/testservice/testme` to the url** to test that our service works.

@@ -21,14 +21,9 @@ namespace MyCompany.MyMovies.Infrastructure.Data
         {
         }
 
-        public IMovie FindById(Guid id)
-        {
-            return CreateQuery().SingleOrDefault(x => x.Id == id);
-        }
-
         public async Task<IMovie> FindByIdAsync(Guid id)
         {
-            return await CreateQuery().SingleOrDefaultAsync(x => x.Id == id);
+            return await FindAsync(x => x.Id == id);
         }
     }
 }

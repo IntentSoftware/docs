@@ -74,6 +74,16 @@
     </FileLog>
     <FileLog>
       <ProjectId>8ea9f0dd-1062-4e88-ab22-dd70757235f9</ProjectId>
+      <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Domain\IPagedResult.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>IPagedResult.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>8ea9f0dd-1062-4e88-ab22-dd70757235f9</ProjectId>
+      <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Domain\IRepository.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>IRepository.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>8ea9f0dd-1062-4e88-ab22-dd70757235f9</ProjectId>
       <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Domain\MyCompany.MyMovies.Domain.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>MyCompany.MyMovies.Domain.csproj</ProjectRelativeFilePath>
     </FileLog>
@@ -81,11 +91,6 @@
       <ProjectId>8ea9f0dd-1062-4e88-ab22-dd70757235f9</ProjectId>
       <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Domain\Repositories\IMovieRepository.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Repositories\IMovieRepository.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>8ea9f0dd-1062-4e88-ab22-dd70757235f9</ProjectId>
-      <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Domain\Specifications\MovieSpecification.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Specifications\MovieSpecification.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>be9550c9-9c65-48b5-993f-a730c63056ea</ProjectId>
@@ -109,8 +114,18 @@
     </FileLog>
     <FileLog>
       <ProjectId>be9550c9-9c65-48b5-993f-a730c63056ea</ProjectId>
+      <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Infrastructure.Data\PagedList.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>PagedList.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>be9550c9-9c65-48b5-993f-a730c63056ea</ProjectId>
       <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Infrastructure.Data\Repository\MovieRepository.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Repository\MovieRepository.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>be9550c9-9c65-48b5-993f-a730c63056ea</ProjectId>
+      <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.Infrastructure.Data\RepositoryBase.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>RepositoryBase.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <SolutionRelativeFilePath>..\MyMovies\MyCompany.MyMovies.sln</SolutionRelativeFilePath>

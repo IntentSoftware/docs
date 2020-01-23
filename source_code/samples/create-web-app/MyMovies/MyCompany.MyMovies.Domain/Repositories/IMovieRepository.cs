@@ -6,13 +6,12 @@ using Intent.Framework.Domain.Repositories;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
-[assembly: IntentTemplate("Intent.Entities.Repositories.Api.Interface", Version = "1.0")]
+[assembly: IntentTemplate("Intent.Entities.Repositories.Api.EntityInterface", Version = "1.0")]
 
 namespace MyCompany.MyMovies.Domain
 {
     public interface IMovieRepository : IRepository<IMovie, Movie>
     {
-        IMovie FindById(Guid id);
         Task<IMovie> FindByIdAsync(Guid id);
     }
 }
