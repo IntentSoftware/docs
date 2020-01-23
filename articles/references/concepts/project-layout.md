@@ -1,3 +1,6 @@
+---
+uid: ProjectLayout
+---
 # Project Layout (with Roles)
 
 ## Overall layout
