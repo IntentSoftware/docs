@@ -146,7 +146,7 @@ Notice how closely it resembles the layout in Intent Architect when we were stil
 
 Allow Visual Studio to restore NuGet dependencies then **compile and run the application by clicking `Debug` -> `Start Debugging` menu items** (or press F5).
 
-The server will be launched locally. **Navigate to `/swagger` relative url to open the Swagger UI.**
+The server will be launched locally. Do not be alarmed when greeted with a "page not found" error. The application is empty from a content point of view so there is no landing page to display. Rather, **navigate to `/swagger` relative url to open the Swagger UI.**
 
 ![Empty Swagger](images/create-web-app/swagger-empty.png)
 *Swagger UI - No operations defined in spec!*
@@ -172,6 +172,7 @@ To model our Movies domain, **navigate to the `Domain` modeler.**
 >Next you need to create a new Diagram. You'll notice a `Domain` package on the panel to your right. ![](images/create-web-app/DomainPackage.png)
 >
 >Right click on that package and click on `New Diagram`. Give it a name of "Default view". Double click on it to select the diagram and to begin modeling your domain.
+<!-- TODO: Once this is fixed in Intent, remove this piece. -->
 
 Let's now add a class called `Movie` to our Domain. To add a class, **right-click the diagram view and click `New Class`.** The newly added class automatically allows you to rename it in the model window on the right. **Rename it to `Movie`.** Alternatively, right-click the class and click `Rename` (or press F2).
 
@@ -182,8 +183,6 @@ Next let's add attributes to our `Movie` class. To add an attribute, right-click
 ![Movie class](images/create-web-app/domain-movie-class.png)
 
 *Domain Modeler - adding classes and attributes.*
-
-To change the `Type` of the attribute, select the desired type from the dropdown inside the `Properties` window that is displayed on selecting an element in the diagram.
 
 The following `gif` illustrates this process:
 
