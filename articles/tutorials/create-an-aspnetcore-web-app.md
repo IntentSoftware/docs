@@ -12,7 +12,7 @@ The app manages a database of movie titles. In this guide, you will learn how to
  - Describe services, their operations and data contracts (Data Transfer Objects)
  - Open, run and code within the generated codebase
 
-At the end of the tutorial, you will have an app that can manage movie data. Once you have the hang of it, you will be able to build an app like this in less than 5 min :)
+In the end you should have a very simple movie database with a simple interactive front-end which would take about 5 minutes to complete.
 
 [View or download sample](https://github.com/IntentSoftware/Docs/tree/master/source_code/samples/create-web-app)
 
