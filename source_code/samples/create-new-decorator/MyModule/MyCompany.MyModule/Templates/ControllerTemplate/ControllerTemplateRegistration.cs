@@ -34,7 +34,7 @@ namespace MyCompany.MyModule.Templates.ControllerTemplate
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<IServiceModel> GetModels(IApplication application)
         {
-            return _metadataManager.GetServices(application);
+            return _metadataManager.GetServices(application.Id);
         }
     }
 }

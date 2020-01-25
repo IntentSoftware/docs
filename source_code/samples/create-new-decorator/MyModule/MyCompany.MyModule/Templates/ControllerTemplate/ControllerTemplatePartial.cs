@@ -19,7 +19,7 @@ namespace MyCompany.MyModule.Templates.ControllerTemplate
 
         public ControllerTemplate(IProject project, IServiceModel model) : base(TemplateId, project, model)
         {
-            AddTypeSource(templateId: ControllerTemplate.TemplateId, collectionFormat: "IEnumerable<{0}>");
+            AddTypeSource(CSharpTypeSource.InProject(project, ControllerTemplate.TemplateId, collectionFormat: "IEnumerable<{0}>"));
         }
 
         public override RoslynMergeConfig ConfigureRoslynMerger()

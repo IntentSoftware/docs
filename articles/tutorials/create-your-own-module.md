@@ -295,7 +295,7 @@ Finally, we can test that your Module is creating code that actually works. Test
 ***
 ## Summary
 
-In this guide we created a Module that creates simple ASP.NET Core Controllers for services that we describe in Intent Architect. While we would not recommend using a pattern like this one in a production system, it serves to illustrate how a pattern can be codified and packaged into a Module for reuse.
+In this guide we created a Module that creates simple ASP.NET Core Controllers for services that we describe in Intent Architect. While we would not recommend using a pattern like this one in a production system, it serves to illustrate how a pattern can be coded and packaged into a Module for reuse.
 
 >[!TIP]
->The Intent Module system is incredibly versatile and is not limited to creating C# classes. Any text file can be generated, which means that any programming language can be generated!
+>The Intent Module system is incredibly versatile and is not limited to creating C# classes. Any text file can be generated, which means that any programming language can be generated (but only as the end product)!

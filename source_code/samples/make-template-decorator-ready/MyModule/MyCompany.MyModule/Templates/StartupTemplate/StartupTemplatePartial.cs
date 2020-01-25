@@ -55,13 +55,13 @@ namespace MyCompany.MyModule.Templates.StartupTemplate
             return _decorators;
         }
 
-#region GetConfigureCode
+        #region GetConfigureCode
         private string GetConfigureCode()
         {
             return GetDecorators()
                 .OrderBy(o => o.Priority)
                 .Aggregate(new StringBuilder(), (sb, dec) => sb.AppendLine(dec.ConfigureCode())).ToString();
         }
-#endregion
+        #endregion
     }
 }
