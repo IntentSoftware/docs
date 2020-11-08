@@ -1,1 +1,22 @@
 img + em { display: block; text-align: center;}
+
+.sidefilter {
+    top:118px;
+}
+.sidetoc {
+    top: 180px;
+}
+
+blockquote {
+    font-style: normal;
+}
+
+.footer {
+    border-top: none;
+    background-color: inherit;
+}
+
+footer {
+    padding: 10px;
+}
+
