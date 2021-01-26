@@ -2,7 +2,6 @@
   href: overview/index.md
 - name: Creating Modules [.NET]
   href: create-modules-net/toc.yml
-  topicHref: create-modules-net/index.md
 - name: How To
   href: howtos/toc.yml
   topicHref: howtos/index.md
