@@ -1,1 +1,5 @@
-- name:
+- name: Resolving Types
+- name: Extend with Stereotypes
+- name: Filtering Templates
+- name: Controlling Output Locations
+- name: Decorators

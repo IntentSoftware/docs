@@ -1,0 +1,5 @@
+- name: 1. Creating a Workspace
+  href: creating-workspace.md
+- name: 2. Create a simple Module
+- name: 3. Generate Entities
+- name: 4. Exending Entities with Stereotypes
