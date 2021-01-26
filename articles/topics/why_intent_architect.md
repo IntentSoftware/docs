@@ -137,7 +137,7 @@ In a similar way that package managers such as NuGet and NPM provide a platform 
 Intent's Module system operates in a similar way to these package managers, providing searching, versioning, dependency management, and configuration. With it, individual developers and organizations can leverage the patterns built and maintained by experts.
 
 >[!TIP]
->Learn how to build your own modules by following [this guide](xref:TutorialCreateModule).
+>Learn how to build your own modules by following [this guide](xref:CreateIntentModuleSeries).
 
 ### Create Intellectual Property
 
