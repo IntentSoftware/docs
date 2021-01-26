@@ -1,8 +1,15 @@
-img + em { display: block; text-align: center;}
+article p img {
+    display: block;
+    margin: auto;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+}
 
 .sidefilter {
-    top:118px;
+    top: 118px;
 }
+
 .sidetoc {
     top: 180px;
 }
@@ -19,4 +26,3 @@ blockquote {
 footer {
     padding: 10px;
 }
-

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationId>889954d5-3c40-473e-94b2-1fa5742e5a1c</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <ProjectId>b5549dd0-1214-40bd-b8a7-70bf2c7333dd</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/Class Entity.imodspec</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Class Entity.imodspec</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b5549dd0-1214-40bd-b8a7-70bf2c7333dd</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/ClassEntityModule.csproj</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ClassEntityModule.csproj</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b5549dd0-1214-40bd-b8a7-70bf2c7333dd</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/README.txt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>bca92180-952d-440d-800c-5aed69378bda</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/Templates/ClassEntity/ClassEntityTemplate.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ClassEntity/ClassEntityTemplate.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>bca92180-952d-440d-800c-5aed69378bda</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/Templates/ClassEntity/ClassEntityTemplate.tt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ClassEntity/ClassEntityTemplate.tt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>bca92180-952d-440d-800c-5aed69378bda</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/Templates/ClassEntity/ClassEntityTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ClassEntity/ClassEntityTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>bca92180-952d-440d-800c-5aed69378bda</ProjectId>
+      <SolutionRelativeFilePath>../ClassEntityModule/Templates/ClassEntity/ClassEntityTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ClassEntity/ClassEntityTemplateRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <SolutionRelativeFilePath>../TestSpace.sln</SolutionRelativeFilePath>
+    </FileLog>
+  </FileLogs>
+</outputLog>
