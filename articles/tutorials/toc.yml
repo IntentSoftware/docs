@@ -1,8 +1,1 @@
-- name: Getting started - Create an ASP.NET Core web app
-  href: create-an-aspnetcore-web-app.md
-- name: Create your own Module
-  href: create-your-own-module.md
-- name: Making a Template able to support extensibility through Decorators
-  href: make-template-extensible-through-decorators.md
-- name: Creating a Decorator
-  href: create-decorator.md
+- name:
