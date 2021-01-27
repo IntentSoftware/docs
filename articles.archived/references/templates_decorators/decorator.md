@@ -11,11 +11,11 @@ If you ever heard of the [Decorator Pattern](https://sourcemaking.com/design_pat
 Before we can worry about a Decorator, you would need a Template that would advertise to the entire solution "Hey, I am customizable!". But to do that you need to give some sort of "blueprint" (or "contract" for the enterprise developers) that would explain how the template can be customized and how a decorator can customize that template. This follows the Open for Extension, closed for Modification; and Interface Segregation principles (from [SOLID](https://stackify.com/solid-design-principles/)) which allows any developer to extend any Template as long as it meets the Template's expectations.
 
 So Intent Architect has a `Intent.AspNet.Owin` Module that you can install that will allow the `Startup.cs` file to be generated.
-If you look at the Template code [here](https://github.com/IntentSoftware/IntentArchitect/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs), you will see that it contains `IHasDecorators<IOwinStartupDecorator>` as an implementable interface.
+If you look at the Template code [here](https://github.com/IntentSoftware/Intent.Modules.NET/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs), you will see that it contains `IHasDecorators<IOwinStartupDecorator>` as an implementable interface.
 > [!NOTE]
 > Pay special care to the FQDN (Fully Qualified Domain Name) of the interface/class that you are referencing (for Module Builder purposes)
 
-This [interface](https://github.com/IntentSoftware/IntentArchitect/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/IOwinStartupDecorator.cs) is the "blueprint" of how you can change the `Startup.cs` file without changing the code.
+This [interface](https://github.com/IntentSoftware/Intent.Modules.NET/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/IOwinStartupDecorator.cs) is the "blueprint" of how you can change the `Startup.cs` file without changing the code.
 
 Notice that it contains two methods that need to be implemented:
 ```csharp
@@ -26,7 +26,7 @@ public interface IOwinStartupDecorator : ITemplateDecorator, IDeclareUsings
 }
 ```
 
-If we look at how its implemented on the [Template side](https://github.com/IntentSoftware/IntentArchitect/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplate.tt) you'll notice two areas where substitution will take place in this Text Transform file (T4):
+If we look at how its implemented on the [Template side](https://github.com/IntentSoftware/Intent.Modules.NET/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplate.tt) you'll notice two areas where substitution will take place in this Text Transform file (T4):
 ```csharp
 [IntentManaged(Mode.Merge)]
 public partial class Startup
@@ -44,7 +44,7 @@ public partial class Startup
 }
 ```
 
-The underlying [code](https://github.com/IntentSoftware/IntentArchitect/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs) shows how it implements this interface for a decorator to use.
+The underlying [code](https://github.com/IntentSoftware/Intent.Modules.NET/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs) shows how it implements this interface for a decorator to use.
 
 - As mentioned, you need to have an interface specified with a "blueprint": `IHasDecorators<IOwinStartupDecorator>`.
 
@@ -66,11 +66,11 @@ public IEnumerable<IOwinStartupDecorator> GetDecorators()
 }
 ```
 
-- Leveraging the `GetDecorators()` method in order to accumulate the output of all registered Decorators. See [this](https://github.com/IntentSoftware/IntentArchitect/blob/be3a6a58fc15058d68c57c3e8657a3f28841d35a/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs#L70) and [this](https://github.com/IntentSoftware/IntentArchitect/blob/be3a6a58fc15058d68c57c3e8657a3f28841d35a/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs#L95).
+- Leveraging the `GetDecorators()` method in order to accumulate the output of all registered Decorators. See [this](https://github.com/IntentSoftware/Intent.Modules.NET/blob/be3a6a58fc15058d68c57c3e8657a3f28841d35a/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs#L70) and [this](https://github.com/IntentSoftware/Intent.Modules.NET/blob/be3a6a58fc15058d68c57c3e8657a3f28841d35a/Modules/Intent.Modules.AspNet.Owin/Templates/OwinStartup/OwinStartupTemplatePartial.cs#L95).
 
 Now we can look at how the Decorator looks like. There is another Intent Architect module called `Intent.AspNet.Owin.Jwt` that deals with `OAuth configuration`. Notice that just be installing a separate module, you now have OAuth capabilities in your codebase.
 
-Looking at the [decorator class](https://github.com/IntentSoftware/IntentArchitect/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin.Jwt/Decorators/JwtAuthOwinStartupDecorator.cs) you will see that our "blueprint" interface is being implemented directly here to return actual C# code.
+Looking at the [decorator class](https://github.com/IntentSoftware/Intent.Modules.NET/blob/release/2.0.0/Modules/Intent.Modules.AspNet.Owin.Jwt/Decorators/JwtAuthOwinStartupDecorator.cs) you will see that our "blueprint" interface is being implemented directly here to return actual C# code.
 Once the Decorator is registered and installed, it will inject code into the two areas that the Template has exposed.
 
 Here is a simple example of the final output when a Template along with all its Decorators have been applied:

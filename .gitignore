@@ -252,7 +252,7 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-**/Intent.Modules/**
+**/Intent.Modules.NET/**
 /Modules/Intent.ApplicationTemplates/*.iat
 .vscode/
 .intent/
