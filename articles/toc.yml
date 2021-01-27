@@ -1,5 +1,5 @@
-- name: Introduction
-  href: overview/index.md
+- name: Getting Started
+  href: getting-started/toc.yml
 - name: Creating Modules [.NET]
   href: create-modules-net/toc.yml
 - name: How To
