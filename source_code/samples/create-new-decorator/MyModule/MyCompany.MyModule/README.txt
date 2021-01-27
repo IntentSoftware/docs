@@ -27,4 +27,4 @@ NOTE: In Visual Studio, it is recommended to use a T4 editor such as this one (h
     - Outputs (if any) for your module will be listed. 
     - Errors can be debugged by clicking on the "bug" button to left of the "play" button, and selecting this solution.
 
-Issues can be sent to support@intentarchitect.com or posted on our GitHub Repository at https://github.com/IntentSoftware/IntentArchitect.
+Issues can be sent to support@intentarchitect.com or posted on our GitHub Repository at https://github.com/IntentSoftware/Intent.Moduleschitect.
