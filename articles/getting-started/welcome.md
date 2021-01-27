@@ -42,7 +42,7 @@ _An example of an application template for a .NET Core web application that uses
 ## Supported technologies
 Intent Architect **does not introduce any hard runtime dependencies** and is capable of generating and managing files for _any_ programming language or technology.
 
-Since Intent Architect is language oriented (it manages code files), it therefore follows that it supports any framework or technology (including in-house built frameworks) that is managed by the language.
+Therefore, since Intent Architect is language oriented (it manages code files), it completely supports any framework or technology (including custom, in-house built frameworks) that is managed by the language.
 
 For the advanced code-management capabilities described above, Intent Architect currently has support for the following languages:
  - C#
@@ -64,11 +64,15 @@ Similarly, Intent Architect does not dictate how developers design their system.
 
 ## Use cases
 Intent Architect is ideal for automating architectural, infrastructural, and boilerplate code. Depending on the project, this type of code can make up over 80% of the codebase. Typically, the tool is used by developers to achieve the following:
-- **Bootstrapping** - microservices, monolythic applications, application modules, etc.
+- **Bootstrapping** - microservices, monolythic applications, application modules, identity, etc.
 - **Persistence Infrastructure** - ORM Mappings, Repositories, etc.
 - **Service Infrastructure** - RESTful Web Services, Data Transfer Objects, Dispatch Patterns (e.g. Mediator, Interface Dispatch), etc.
 - **Eventing Infrastructure** - Events, Message Broker configuration, Message dispatch infrastructure, etc.
 - **Business Logic Placeholders** - Domain Entities, Service Call Handlers, Command / Query Handlers, etc.
-- **Front-End Infrastructure** - Components, Service Proxies, 
+- **Front-End Infrastructure** - Components, Service Proxies, Models, etc.
+- **Workflow Design** - Workflow Infrastructure, Flow Control Systems, etc.
+
+The use cases for Intent Architect are really endless. A general rule of thumb is **if it can be described, it can be automated**. In other words, if a developer can define a way to adequately model their _design intent_, they would be able to create a Module to automate that particular pattern.
 
 ## No lock-in
+Intent Architect is not a framework or runtime platform. It does not inherently introduce any hard runtime dependencies. Because it generates and manages code (and the code is written in the same way a developer would - a key principle when creating Modules), there is no dependency on it, and therefore no lock-in. Teams may chose to continue building their project without Intent Architect and they would be no worse off had they written the entire codebase themselves.
