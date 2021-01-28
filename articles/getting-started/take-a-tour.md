@@ -3,7 +3,7 @@
 ## Introduction
 This tour covers the key concepts in Intent Architect at a high-level. The aim is to introduce each concept without going into too much detail. Let's get started.
 
-Once [installed and logged in with your account](get-the-app.md), you will be routed to the home view of Intent Architect. From here you have options to create a new application, module, or open an existing solution workspace.
+Once [installed and logged in with your account](get-the-application.md), you will be routed to the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
 
 ![Getting Started](images/home-getting-started.png)
 
@@ -28,7 +28,7 @@ Here you can search and choose which application template you want and set key s
 
 Application Templates are pre-configured templates for new Applications that ultimately define and constrain which Modules to install and what default metadata should be created in the [Designers](#Designers).
 
-To illustrate this, let's create a new .NET Core Application using the `Clean Architecture .NET Core 3.1` Application Template. Following the steps we took above, select the template and fill out the Application's name, location, and the Solution name, then click `NEXT`. The wizard then moves to next page which displays the high-level _Components_ that make up the template.
+To illustrate this, let's create a sample .NET Core Application using the `Clean Architecture .NET Core 3.1` Application Template. Following the steps we took above, select the template and fill out the Application's name, location, and the Solution name, then click `NEXT`. The wizard then moves to next page which displays the high-level _Components_ that make up the template.
 
 ![Application Template Components](images/application-template-components.png)
 
@@ -70,12 +70,21 @@ Modules have similarities with package systems such as Nuget, NPM, and Maven. Ho
 Modules have versions and dependencies, and don't directly introduce any runtime dependencies. The can, however, be configured to introduce package dependencies if the designer of the Module so chooses.
 
 ![Application Modules](images/application-modules-installed.png)
-_This example shows the list of Installed Modules in our sample application. The `Intent.Application.MedaitR` module has been selected, with its details displayed in the pane on the right._
+_This example shows the list of Installed Modules in our sample application. The `Intent.Application.MediatR` module has been selected, with its details displayed in the pane on the right._
 
 >[!NOTE]
 >When you select an installed Module, Intent Architect gives a view into the internals of that module (i.e. the Templates, Decorators, and Factory Extensions it is made up of).
 
 ## Designers
+Designers in Intent Architect allow you describe aspects of your application's design as visual models and hierarchical concepts. For example, this may include the entities in a domain, the services that make up the applications API, and events that are published and subscribed. 
+
+Designers are added to the Application when a Module that has designer configuration is installed. You can therefore choose which Designers you would like to use in your Application.
+
+In our sample application, the following image shows a Domain model inside of the Domain Designer.
+
+![Domain Designer](images/designers-domain.png)
+
+
 
 ## Software Factory Execution
 

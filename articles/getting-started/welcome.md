@@ -78,5 +78,5 @@ The use cases for Intent Architect are really endless. A general rule of thumb i
 Intent Architect is not a framework or runtime platform. It does not inherently introduce any hard runtime dependencies. Because it generates and manages code (and the code is written in the same way a developer would - a key principle when creating Modules), there is no dependency on it, and therefore no lock-in. Teams may chose to continue building their project without Intent Architect and they would be no worse off had they written the entire codebase themselves.
 
 ## What's Next
- - **[Get started with Intent Architect](get-the-app.md)**. 
+ - **[Get started with Intent Architect](get-the-application.md)**. 
     How to download and install Intent Architect, and how to create an account.
