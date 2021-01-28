@@ -3,5 +3,4 @@
 - name: Creating Modules [.NET]
   href: create-modules-net/toc.yml
 - name: How To
-  href: howtos/toc.yml
-  topicHref: howtos/index.md
+  href: how-to/toc.yml

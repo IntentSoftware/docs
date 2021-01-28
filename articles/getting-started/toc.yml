@@ -1,6 +1,6 @@
 - name: Welcome
   href: welcome.md
-- name: Get the app
-  href: get-the-app.md
-- name: Key Concepts
-- name: key-concepts.md
+- name: Get the application
+  href: get-the-application.md
+- name: Take a tour
+  href: take-a-tour.md
