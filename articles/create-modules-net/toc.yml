@@ -1,6 +1,7 @@
-- name: 1. Creating a Workspace
-  href: creating-workspace.md # Set up the "test" application
-- name: 2. Create a simple Module
+- name: 1. Create a simple Module
   href: create-simple-module.md # Create a basic module (EntityBase), and install it into the "test" application
-- name: 3. Generate Entities # Extend above module with Entities based on the Domain
+- name: 2. Install & run the Module
+  href: 2-install-and-run-the-module.md
+- name: 3. Templates per model  # Extend above module with Entities based on the Domain
+  href: 3-templates-per-model.md
 - name: 4. Introducing Stereotypes # Create EF configurations & EF DB Context (max Length).
