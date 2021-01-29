@@ -19,15 +19,15 @@ Creating a new application in Intent Architect can be done by clicking on the "C
 
 ![Create Application Start](images/create-application-start.png)
 
-The first page of the wizard lists the available [Application Templates](#Application-Templates) in the selected repository (by default this will be Intent Architect's website [http://intentarchitect.com] but could be a local directory or network location. [Learn how to change your default repositories here](../how-to/change-user-settings.md)).
-Here you can search and choose which application template you want and set key settings like the Application's name, directly location and [Solution](#Solution) name.
+The first page of the wizard lists the available [Application Templates](#application-templates) in the selected repository (by default this will be Intent Architect's website [http://intentarchitect.com] but could be a local directory or network location. [Learn how to change your default repositories here](../how-to/change-user-settings.md)).
+Here you can search and choose which application template you want and set key settings like the Application's name, directly location and [Solution](#solution) name.
 
 >[!NOTE]
 >It is possible to create an empty application by clicking on the `CREATE EMPTY` button instead of `NEXT`. This would create a new application without any Modules or metadata installed.
 
 
 ### Application Templates
-Application Templates are pre-configured templates for new Applications that ultimately define and constrain which Modules to install and what default metadata should be created in the [Designers](#Designers).
+Application Templates are pre-configured templates for new Applications that ultimately define and constrain which Modules to install and what default metadata should be created in the [Designers](#designers).
 
 To illustrate this, let's create a sample .NET Core Application using the `Clean Architecture .NET Core 3.1` Application Template. Following the steps we took above, select the template and fill out the Application's name, location, and the Solution name, then click `NEXT`. The wizard then moves to next page which displays the high-level _Components_ that make up the template.
 

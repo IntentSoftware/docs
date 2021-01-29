@@ -1,2 +1,4 @@
 - name: Change user settings
   href: change-user-settings.md
+- name: Resolving type names
+- name: Filtering templates
