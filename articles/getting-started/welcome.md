@@ -10,6 +10,10 @@ Intent Architect can be thought of as a _robot developer_ whose sole purpose is 
 
 The platform is designed to be completely under the control of the developers and to never get in their way - bringing all the advantages of code-automation, without any of the drawbacks that have historically invalidated the approach.
 
+<!-- >[!IMPORTANT]
+>Intent Architect does not reduce the amount of code that developers write, only the amount of mundane, time-wasting (but critically important) code. Overall, developer save time wiring up the architecture (often up to 80%) and instead get to  focus on the design, business logic and technical nuances of their applications. -->
+
+
 ## How it does this
 
 By combining visual modelling, code-management, and pattern reuse into a powerful and intuitive platform, Intent Architect offers the first truly practical approach to code-automation. These mechanisms are explained briefly below.
@@ -78,5 +82,9 @@ The use cases for Intent Architect are really endless. A general rule of thumb i
 Intent Architect is not a framework or runtime platform. It does not inherently introduce any hard runtime dependencies. Because it generates and manages code (and the code is written in the same way a developer would - a key principle when creating Modules), there is no dependency on it, and therefore no lock-in. Teams may chose to continue building their project without Intent Architect and they would be no worse off had they written the entire codebase themselves.
 
 ## What's Next
- - **[Get started with Intent Architect](get-the-application.md)**. 
-    How to download and install Intent Architect, and how to create an account.
+
+#### [Get started with Intent Architect](get-the-application.md)
+How to download and install Intent Architect, and how to create an account.
+
+#### [Take a tour of Intent Architect](take-a-tour.md)
+Discover the key concepts and features in Intent Architect.

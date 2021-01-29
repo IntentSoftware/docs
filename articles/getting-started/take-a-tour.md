@@ -9,6 +9,7 @@ Once [installed and logged in with your account](get-the-application.md), you wi
 
 Previously opened solutions will be listed under the **Open recent** header for quick access later on.
 
+
 ## Applications
 Applications in Intent Architect represent a _scope of code files_ that we want to automate. It could be a full-stack monolithic application, a microservice, or even just a single folder in which we wish to generate and manage files.
 
@@ -24,8 +25,8 @@ Here you can search and choose which application template you want and set key s
 >[!NOTE]
 >It is possible to create an empty application by clicking on the `CREATE EMPTY` button instead of `NEXT`. This would create a new application without any Modules or metadata installed.
 
-### Application Templates
 
+### Application Templates
 Application Templates are pre-configured templates for new Applications that ultimately define and constrain which Modules to install and what default metadata should be created in the [Designers](#Designers).
 
 To illustrate this, let's create a sample .NET Core Application using the `Clean Architecture .NET Core 3.1` Application Template. Following the steps we took above, select the template and fill out the Application's name, location, and the Solution name, then click `NEXT`. The wizard then moves to next page which displays the high-level _Components_ that make up the template.
@@ -48,6 +49,7 @@ _The modules downloaded in the example above are specifically related to the `Cl
 >[!NOTE]
 >Although this example is based in .NET, this process would work in the same way for other Application Templates that are designed for other languages.
 
+
 ## Application Settings
 Once Intent Architect has finished installing the application, it will open it automatically on the _Settings_ tab.
 
@@ -59,6 +61,7 @@ Below the _Relative Output Location_, Intent Architect shows the full path into 
 
 >[!NOTE]
 >If the path doesn't exist yet, it won't be able to open.
+
 
 ## Modules
 Modules are the _building blocks_ and artifacts of pattern reuse in Intent Architect.
@@ -75,17 +78,59 @@ _This example shows the list of Installed Modules in our sample application. The
 >[!NOTE]
 >When you select an installed Module, Intent Architect gives a view into the internals of that module (i.e. the Templates, Decorators, and Factory Extensions it is made up of).
 
+
 ## Designers
-Designers in Intent Architect allow you describe aspects of your application's design as visual models and hierarchical concepts. For example, this may include the entities in a domain, the services that make up the applications API, and events that are published and subscribed. 
+Designers in Intent Architect allow you describe your application's design as visual models and hierarchical concepts. For example, Designers could be used to describe the entities in a domain, the services that make up the applications API, and events that are published and subscribed. 
 
 Designers are added to the Application when a Module that has designer configuration is installed. You can therefore choose which Designers you would like to use in your Application.
 
-In our sample application, the following image shows a Domain model inside of the Domain Designer.
+>[!NOTE]
+>Designers can be created and configured by using the Intent Module Builder. Existing Designers can also be extended with new concepts and configuration.
+
+In our sample application, the following image shows an example Domain model inside of the Domain Designer.
 
 ![Domain Designer](images/designers-domain.png)
 
+Designers serve as a **blueprint** of your system. They can be used to describe any aspect of your Application. Typically, they are used to capture the following:
+ - **Codebase Structure** - Visual Studio Projects in .NET, Folder Structures in other languages, etc.
+ - **Entities** - Entities and their relationships to one another, Domain Driven Design (DDD) concepts (Aggregate Roots, Entities and Value Objects), etc.
+ - **Database Schemas** - Tables, Documents, Foreign keys, Indices, etc.
+ - **Services** - RESTful web services, SOAP services, security settings, transactional settings, etc.
+ - **Client Proxies** - Web client proxies, Synchronous Query Proxies, etc.
+ - **Eventing** - Messages, Topics, Queues, Subscriptions, etc. Often used to support a Microservice architectures.
+ - **Workflows** - Workflow Diagrams, Process Diagrams, etc.
+ - **Front-End Structure** - Components, Routing, Modules, View Models, Views, etc.
 
 
 ## Software Factory Execution
+The Software Factory Execution is the process that executes the installed Modules with the metadata from the Designers within an Application. The result is changes to the codebase which are **staged** before being accepted or rejected.
 
-## Solution
+![Software Factory Execution](images/software-factory-execution.gif)
+
+Intent Architect will not make changes to your codebase without your concent. The changes will be listed and you can use a Diff tool to view the changes between the files - like a _pull request_ from your robot developer friend.
+
+![Diff Example](images/diff-example.png)
+_An example diff of changes made to a C# interface that's managed by Intent Architect._
+
+The Software Factory Execution is initiated from within an Application by clicking on the _Play_ button in the top nav-bar. The execution is typically kicked off after completing some design changes, or installing / updating Modules.
+
+![Play Button](images/software-factory-execution-play-button.png)
+
+>[!NOTE]
+>When you create Modules, it is very useful to be able to **debug** them. Intent Architect allows this when you click the _Bug_ button to the left of the _Play_ button. 
+
+
+## Solutions
+Solutions in Intent Architect serve as a _view_ on one or more Applications. They have some basic settings and can configure which Repositories are available for the Applications.
+
+An Application can only be opened in the context on a Solution, which is represented by an `.isln` (Intent Solution) file on the hard-drive.
+
+![Solution Dashboard](images/solution-dashboard.png)
+_A Solution dashboard with a single Application from this tour._
+
+Additional Applications can be created from the Solution dashboard by clicking on the `Create new application...` button. Applications can also be filtered as well as _favourited_ by clicking the _Star_ in the top right-hand of an Application. They can be removed by right-clicking and selecting the `Delete` option.
+
+## What's Next
+#### [Tutorial: Create a Module (.NET)](get-the-application.md)
+Tutorials on how to create a Module and install it into an Application.
+Modules are the building blocks for how to automate your infrastructural and architectural patterns.

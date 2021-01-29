@@ -26,3 +26,7 @@ blockquote {
 footer {
     padding: 10px;
 }
+
+article h4 {
+    border-bottom: none;
+}

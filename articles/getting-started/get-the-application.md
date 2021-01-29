@@ -21,4 +21,5 @@ Intent Architect will automatically log in once your account has been created.
 >Your information is kept 100% private and secure. We do not share any of your personal information with third parties.
 
 ## What's Next
- - **[Take a tour of Intent Architect](take-a-tour.md)**. Discover the key concepts in Intent Architect.
+#### [Take a tour of Intent Architect](take-a-tour.md)
+Discover the key concepts in Intent Architect.
