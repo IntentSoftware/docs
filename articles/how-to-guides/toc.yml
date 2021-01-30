@@ -1,5 +1,6 @@
 # Simply creating a stereotype to add Serializability to the entity
 - name: Use Stereotypes
+  href: use-stereotypes/use-stereotypes.md
 
 # Add Attributes above the Properties for serializability options
 - name: Decorate a Template
