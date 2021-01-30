@@ -1,0 +1,15 @@
+# Simply creating a stereotype to add Serializability to the entity
+- name: Use Stereotypes
+
+# Add Attributes above the Properties for serializability options
+- name: Decorate a Template
+
+- name: Create a Factory Extension
+
+# Can use stereotype again here to filter in the Registration
+- name: Filter templates
+
+- name: Manage Repositories
+
+- name: Change user settings
+  href: change-user-settings/change-user-settings.md

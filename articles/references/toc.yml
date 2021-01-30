@@ -1,0 +1,18 @@
+# Understanding Modules and their anatomy
+- name: Modules
+  href: modules/modules.md
+
+- name: Templates
+
+# What it is: Extend metadata. Different options (text, checkbox, etc). Display functions.
+- name: Stereotypes
+
+- name: Decorators
+  href: decorators.md
+
+- name: Factory Extensions
+
+- name: Designers
+
+- name: Packages
+

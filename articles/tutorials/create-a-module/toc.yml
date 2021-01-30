@@ -1,0 +1,9 @@
+- name: Introduction
+  href: 01-introduction/01-introduction.md
+
+# Create a basic module (EntityBase), and install it into the "test" application
+- name: Create a simple module
+  href: 02-create-a-simple-module/02-create-a-simple-module.md
+
+- name: Install and run the module
+  href: 03-install-and-run-the-module/03-install-and-run-the-module.md
