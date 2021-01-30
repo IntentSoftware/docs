@@ -25,3 +25,4 @@
 - name: Change the output root
 
 - name: Auto-assign Template Outputs
+  href: auto-assign-template-outputs/auto-assign-template-outputs.md

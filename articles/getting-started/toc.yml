@@ -1,6 +1,6 @@
 - name: Welcome
-  href: welcome.md
+  href: welcome/welcome.md
 - name: Get the application
-  href: get-the-application.md
+  href: get-the-application/get-the-application.md
 - name: Take a tour
-  href: take-a-tour.md
+  href: take-a-tour/take-a-tour.md

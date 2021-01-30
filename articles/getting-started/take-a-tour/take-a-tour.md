@@ -1,10 +1,13 @@
-# Take a tour
+---
+uid: getting-started/take-a-tour
+---
 
+# Take a tour
 
 ## Introduction
 This tour covers the key concepts in Intent Architect at a high-level. The aim is to introduce each concept without going into too much detail. Let's get started.
 
-Once [installed and logged in with your account](get-the-application.md), you will be routed to the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
+Once [installed and logged in with your account](xref:getting-started/get-the-application), you will be routed to the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
 
 ![Getting Started](images/home-getting-started.png)
 
@@ -131,6 +134,6 @@ Additional Applications can be created from the Solution dashboard by clicking o
 
 
 ## What's Next
-#### [Tutorial: Create a Module (.NET)](get-the-application.md)
+#### [Tutorial: Create a Module (.NET)](xref:getting-started/get-the-application)
 Tutorials on how to create a Module and install it into an Application.
 Modules are the building blocks for how to automate your infrastructural and architectural patterns.

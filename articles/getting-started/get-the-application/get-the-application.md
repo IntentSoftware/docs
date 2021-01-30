@@ -1,7 +1,11 @@
+---
+uid: getting-started/get-the-application
+---
+
 # Get the application
 
 ## Install Intent Architect
-The latest version of Intent Architect can be downloaded for either Windows or iOS from the website [HERE](https://intentarchitect.com/#/downloads).
+The latest version of Intent Architect can be downloaded for either Windows or iOS from the website **[HERE](https://intentarchitect.com/#/downloads)**.
 
 Once downloaded, execute the installation file. 
 
@@ -21,5 +25,5 @@ Intent Architect will automatically log in once your account has been created.
 >Your information is kept 100% private and secure. We do not share any of your personal information with third parties.
 
 ## What's Next
-#### [Take a tour of Intent Architect](take-a-tour.md)
+#### [Take a tour of Intent Architect](xref:getting-started/take-a-tour)
 Discover the key concepts in Intent Architect.

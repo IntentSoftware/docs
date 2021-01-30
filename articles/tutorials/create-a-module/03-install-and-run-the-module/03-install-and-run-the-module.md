@@ -48,12 +48,12 @@ The application structure should look as follows:
 
 6. Finally, click `APPLY CHANGES` to instruct Intent Architect to create the files in our codebase.
 
->[!NOTE]
->
+
 ## Install the Module
 
 Next, let's install the Module we created in the [previous step](xref:tutorial/creating-modules-net/create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
 
+### Finding and Installing the Module
 The default repository for our Modules is still set to the Intent Architect website. This means that we're only able to search for Modules created by the Intent Architect team. Let's change this so that our default repository is the folder where our `MyModule.Entities` was created.
 
 1. Open [User Settings](xref:how-to-guides/change-user-settings).
@@ -65,6 +65,7 @@ The default repository for our Modules is still set to the Intent Architect webs
 6. Install the Module.
 ![Selecting Repository and installing Module](images/selecting-repository-and-installing-module.gif)
 
+### Assigning the Template Output
 You many have noticed that the `Installation Manager` mentioned an _Unassigned template_ that was created. 
 ![Selecting Repository and installing Module](images/unassigned-template-created-example.png)
 This is important because it's telling us that we need to assign our `MyModules.Entities.EntityBase` template to an output location. This is done in the `Visual Studio` Designer.
@@ -81,12 +82,10 @@ We've now told Intent Architect to place our `EntityBase` template in the `TestA
 ## Run the Module
 We've created a project structure, installed our Module, and set the Output Target to our `TestApp.Domain` project. We're now ready to run our Module.
 
-1. Run the Software Factory Execution.
+1. Run the [Software Factory Execution](xref:getting-started/take-a-tour#software-factory-execution).
 2. Note the changes.
 3. Click the `APPLY CHANGES` button.
 4. Open the codebase to verify that the new `EntityBase.cs` file was created in the correct location.
-
-## Debugging the Module
 
 
 ## What's Next

@@ -86,10 +86,10 @@ Intent Architect is not a framework or runtime platform. It does not inherently 
 
 ## What's Next
 
-#### [Get the application](get-the-application.md)
+#### [Get the application](xref:getting-started/get-the-application)
 
 How to download and install Intent Architect, and how to create an account.
 
-#### [Take a tour](take-a-tour.md)
+#### [Take a tour](xref:getting-started/take-a-tour)
 
 Discover the key concepts and features in Intent Architect.
