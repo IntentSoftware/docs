@@ -1,5 +1,6 @@
 - name: Getting started
   href: getting-started/toc.yml
+  topicHref: getting-started/welcome/welcome.md
 - name: 'Tutorial: Create a Module'
   href: tutorials/create-a-module/toc.yml
   topicHref: tutorials/create-a-module/01-create-a-module-introduction/create-a-module-introduction.md
