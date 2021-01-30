@@ -19,7 +19,9 @@
       {
         "files": [
           "images/**",
-          "**/images/**"
+          "**/images/**",
+          "videos/**",
+          "**/videos/**"
         ],
         "exclude": [
           "obj/**",

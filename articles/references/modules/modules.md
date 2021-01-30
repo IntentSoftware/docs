@@ -1,5 +1,5 @@
 ---
-uid: reference/module
+uid: reference.module
 ---
 # Modules
 

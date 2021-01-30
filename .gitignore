@@ -257,5 +257,5 @@ ModelManifest.xml
 .vscode/
 .intent/
 
-# Output of Intent Architect SF runs that shouldn't be committed
-**/test-sf-output/**
+# Nothing in the articles folder should ever be ignored
+!articles/**

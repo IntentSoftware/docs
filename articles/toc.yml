@@ -2,6 +2,7 @@
   href: getting-started/toc.yml
 - name: 'Tutorial: Create a Module'
   href: tutorials/create-a-module/toc.yml
+  topicHref: tutorials/create-a-module/01-create-a-module-introduction/create-a-module-introduction.md
 - name: How-to guides
   href: how-to-guides/toc.yml
 - name: References
