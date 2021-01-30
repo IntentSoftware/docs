@@ -13,5 +13,5 @@
   href: 04-templates-per-model.md
 
 # Create EF configurations & EF DB Context (max Length)
-- name: Introducing Stereotypes
+- name: Introducing tereotypes
   href: 05-introducing-stereotypes.md

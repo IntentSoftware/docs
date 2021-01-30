@@ -3,31 +3,56 @@ uid: guide/creating-modules-net/create-a-simple-module
 ---
 # Create a simple module
 
-## Prerequisites
+## Create a new application
 
-This guide has the following prerequisites:
+On the home screen click `Create a new module`.
 
- - Please ensure that you have followed this [article](xref:CreateWorkspace) first before attempting this one. You should have a simplistic Workspace with one application that you will use for testing your Module that you are going to create now.
- - Visual Studio doesn't offer T4 Template highlighting. We advise you get this extension before starting: [https://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html](https://t4-editor.tangible-engineering.com/T4-Editor-Visual-T4-Editing.html). 
+Fill in a `Name` and review/change the `Location` as desired, then click `NEXT`:
 
-## New Module Application
+![Create application](images/02-create-a-simple-module/create-application.png)
 
-Our aim for this tutorial is to create a Module that will generate a single file in our Workspace application. This tutorial will be another stepping stone which will lead us to a further feature extensions down the line.
+Click `NEXT`.
 
-Go to your Intent Architect solution view (the view that shows all your applications). This can be achieved by clicking on the top-most option of the left-hand panel (right underneath the Intent Architect logo).
+Ensure the following components are selected:
+- `Module Builder Core`
+- `Module Builder - C#`
+- `Visual Studio Integration`
 
-You will notice where your created application is, that there is another button that will allow you to create another Application. Click on it to open the new Application dialog.
+![Selected components](images/02-create-a-simple-module/selected-components.png)
 
-![Create New Application Dialog](images/Create_New_Application_Dialog.png)
+Click `CREATE`.
 
-Choose the `Intent Module Builder` Application Template and give it the name (for example) "ClassEntityModule".
-Don't create an Empty project, rather click on Next. 
+An `Application Installation` dialogue will pop up showing the progress of downloading and installing modules and metadata for the application, once it's finished it will show `Process complete.` and you can click the `CLOSE` button:
 
-![Select Module Builder](images/Create_New_Application_ModuleBuilder_Module.png)
+![Application installation](images/02-create-a-simple-module/application-installation.png)
 
-Please select the Module `Module Builder - C#`.
+## Create a package
 
-Once you have created the Application and allowed the setup to complete, please navigate to the `Module Builder` designer. 
+Click on `Module Builder` on the left of the screen to enter the designer.
+
+Click `CREATE NEW PACKAGE`.
+
+Enter a name for the package (such as `My Module`) and click `DONE`.
+
+## Create a template
+
+Right-click the package and click the `New C# Template` option:
+
+![New C# Template](images/02-create-a-simple-module/new-csharp-template.png)
+
+Name it `EntityBase` and select a type of `Single File`:
+
+![Entity name and type](images/02-create-a-simple-module/template-name-and-type.png)
+
+## Run the software factory
+
+Press the play button near the top right of the screen to run the software factory.
+
+
+
+
+# --------UPTO HERE--------
+
 
 ![Module Builder](images/Designer_ModuleBuilder.png)
 

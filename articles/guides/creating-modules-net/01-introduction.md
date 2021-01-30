@@ -3,7 +3,7 @@ uid: guide/creating-modules-net/introduction
 ---
 # Creating modules (.NET) introduction
 
-This guide will walk you through creating a _Module_ with a focus on functionality especially applicable C# and .NET.
+This guide will walk you through creating a [Module](xref:reference/module) with a focus on functionality especially applicable C# and .NET.
 
 
 ## Prerequisites

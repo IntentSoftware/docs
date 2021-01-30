@@ -4,3 +4,5 @@
   href: guides/toc.yml
 - name: How To
   href: how-to/toc.yml
+- name: Reference
+  href: reference/toc.yml
