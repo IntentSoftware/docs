@@ -1,5 +1,5 @@
 - name: 1. Create a simple Module
-  href: create-simple-module.md # Create a basic module (EntityBase), and install it into the "test" application
+  href: 1-create-a-simple-module.md # Create a basic module (EntityBase), and install it into the "test" application
 - name: 2. Install & run the Module
   href: 2-install-and-run-the-module.md
 - name: 3. Templates per model  # Extend above module with Entities based on the Domain
