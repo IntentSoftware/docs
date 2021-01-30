@@ -103,9 +103,9 @@ Once the build has been completed you will notice that the `Build` log includes 
 
 This was output by the Intent Packager and lets you know where it has placed the built Module.
 
-# Summary
+## Summary
 
-Congratulations, you have created your first Intent Architect Module!
+Congratulations, you have created an Intent Architect Module!
 
 ## Next Steps
 
