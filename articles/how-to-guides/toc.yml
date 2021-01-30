@@ -21,3 +21,7 @@
 
 - name: Create an Application Template
   href: create-an-application-template/create-an-application-template.md
+
+- name: Change the output root
+
+- name: Auto-assign Template Outputs
