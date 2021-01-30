@@ -256,3 +256,6 @@ ModelManifest.xml
 /Modules/Intent.ApplicationTemplates/*.iat
 .vscode/
 .intent/
+
+# Output of Intent Architect SF runs that shouldn't be committed
+**/test-sf-output/**

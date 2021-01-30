@@ -1,0 +1,17 @@
+- name: Introduction
+  href: 01-introduction.md
+
+# Create a basic module (EntityBase), and install it into the "test" application
+- name: Create a simple module
+  href: 02 create-a-simple-module.md
+
+- name: Install and run the module
+  href: 03-install-and-run-the-module.md
+
+# Extend above module with Entities based on the Domain
+- name: Templates per model
+  href: 04-templates-per-model.md
+
+# Create EF configurations & EF DB Context (max Length)
+- name: Introducing Stereotypes
+  href: 05-introducing-stereotypes.md

@@ -1,6 +1,6 @@
 - name: Getting Started
   href: getting-started/toc.yml
-- name: Creating Modules [.NET]
-  href: create-modules-net/toc.yml
+- name: Guides
+  href: guides/toc.yml
 - name: How To
   href: how-to/toc.yml

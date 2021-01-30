@@ -1,4 +1,7 @@
-# 2. Install and run the Module
+---
+uid: guide/creating-modules-net/install-and-run-the-module
+---
+# Install and run the Module
 
 When creating Modules it is often very useful to have a _test_ Application that we can use to test that our Modules are working correctly. This tutorial explains how to create this _test_ Application and how to install and run the Module we created in the [previous tutorial](1-create-a-simple-module.md).
 
@@ -45,3 +48,8 @@ The application structure should look as follows:
 ## Run the Module
 
 ## Debugging the Module
+
+
+## Next
+
+[Templates per model](xref:guide/creating-modules-net/templates-per-model)

@@ -1,7 +1,7 @@
 ---
-uid: CreateSimpleModule
+uid: guide/creating-modules-net/create-a-simple-module
 ---
-# Create a simple Module
+# Create a simple module
 
 ## Prerequisites
 
@@ -89,3 +89,8 @@ So click and drag that item to your Project underneath it and click on Save.
 Once you run the Software Factory process again, you will notice some changes that wants to be applied to your Workspace Project. You will see that the template you created in your module wants to create a file called `ClassEntity.cs` in your Project (that you assigned it to). Apply those changes and open your Workspace Project to confirm that the file is generated and that it correlates to the Template contents.
 
 ![Final](images/Generated_ClassEntity_Actual.png)
+
+
+## Next
+
+[Install and run the module](xref:guide/creating-modules-net/install-and-run-the-module)

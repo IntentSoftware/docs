@@ -1,2 +1,0 @@
-# Templates per model
-
