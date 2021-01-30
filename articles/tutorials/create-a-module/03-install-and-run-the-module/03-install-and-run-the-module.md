@@ -1,9 +1,9 @@
 ---
-uid: guide/creating-modules-net/install-and-run-the-module
+uid: tutorial/creating-modules-net/install-and-run-the-module
 ---
 # Install and run the Module
 
-When creating Modules it is often very useful to have a _test_ Application that we can use to test that our Modules are working correctly. This tutorial explains how to create this _test_ Application and how to install and run the Module we created in the [previous tutorial](xref:guide/creating-modules-net/create-a-simple-module).
+When creating Modules it is often very useful to have a _test_ Application that we can use to test that our Modules are working correctly. This tutorial explains how to create this _test_ Application and how to install and run the Module we created in the [previous tutorial](xref:tutorial/creating-modules-net/create-a-simple-module).
 
 ## Create an empty Application
 To get started, let's create an empty Application.
@@ -16,7 +16,7 @@ To get started, let's create an empty Application.
 ![Create Test Application](images/create-test-application.png)
 
 >[!NOTE]
->We typically create Applications with an [Application Template](create-an-application-template.md). Empty Applications are useful when there isn't an Application Template that fulfils our needs.
+>We typically create Applications with an [Application Template](xref:how-to/create-an-application-template). Empty Applications are useful when there isn't an Application Template that fulfils our needs.
 
 
 ## Set up Visual Studio projects
@@ -49,8 +49,3 @@ The application structure should look as follows:
 ## Run the Module
 
 ## Debugging the Module
-
-
-## Next
-
-[Templates per model](xref:guide/creating-modules-net/templates-per-model)

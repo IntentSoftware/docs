@@ -3,16 +3,21 @@
   href: modules/modules.md
 
 - name: Templates
+  href: templates/templates.md
 
 # What it is: Extend metadata. Different options (text, checkbox, etc). Display functions.
 - name: Stereotypes
+  href: stereotypes/stereotypes.md
 
 - name: Decorators
-  href: decorators.md
+  href: decorators/decorators.md
 
 - name: Factory Extensions
+  href: factory-extensions/factory-extensions.md
 
 - name: Designers
+  href: designers/designers.md
 
 - name: Packages
+  href: packages/packages.md
 

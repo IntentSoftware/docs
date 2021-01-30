@@ -1,3 +1,6 @@
+---
+uid: how-to/change-user-settings
+---
 # Change user settings
 To access the user settings:
 1. Click your user Display Name dropdown at the top 

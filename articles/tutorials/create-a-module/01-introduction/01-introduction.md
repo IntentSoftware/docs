@@ -1,5 +1,5 @@
 ---
-uid: guide/creating-modules-net/introduction
+uid: tutorial/creating-modules-net/introduction
 ---
 # Creating modules (.NET) introduction
 
@@ -15,4 +15,4 @@ This guide will walk you through creating a [Module](xref:reference/module) with
 
 ## Next
 
-[Create a simple module](xref:guide/creating-modules-net/create-a-simple-module)
+[Create a simple module](xref:tutorial/creating-modules-net/create-a-simple-module)
