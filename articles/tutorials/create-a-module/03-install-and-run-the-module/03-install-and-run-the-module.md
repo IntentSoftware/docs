@@ -52,7 +52,7 @@ The application structure should look as follows:
 >
 ## Install the Module
 
-Next, let's install the Module we created in the [previous step](xref:guide/creating-modules-net/create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
+Next, let's install the Module we created in the [previous step](xref:tutorial/creating-modules-net/create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
 
 The default repository for our Modules is still set to the Intent Architect website. This means that we're only able to search for Modules created by the Intent Architect team. Let's change this so that our default repository is the folder where our `MyModule.Entities` was created.
 
@@ -92,6 +92,5 @@ We've created a project structure, installed our Module, and set the Output Targ
 ## What's Next
 
 #### [Extend metadata with Stereotypes]()
-[Templates per model](xref:guide/creating-modules-net/templates-per-model)
 
 #### [Extend Templates with Decorators]()
