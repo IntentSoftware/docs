@@ -17,13 +17,13 @@ Inside Module Builder designer you will need to create a Stereotype Definition f
 >You may find that you need to include the package where this new Stereotype Definition was created in to be included with the current Module. In order to do that, click on the Package itself and set the Properties:
 >
 > * Include in Module: _Checked_
-> * Reference in Designer: `Module Builder`
+> * Reference in Designer: `Domain`
 
 Supply the following in the Stereotype Definition:
 
  * Name: Serializable
- * Target Mode: Elements that reference
- * Targets: Entity, EntityBase
+ * Target Mode: Elements of Type
+ * Targets: Class
  * Apply mode: Always
 
 Now we want to add a Property to this Stereotype Definition. Right click on this Stereotype Definition and select `Add Property`.
@@ -33,4 +33,52 @@ Supply the following Property values for this Stereotype Property:
  * Name: Enabled
  * Control Type: Checkbox
  * Default value: _Unchecked_
+
+>[!NOTE]
+>Make sure to Run the Software Factory as this will generate a `ClassModelExtensions` class that provides a convenient way to access your Stereotype from within your Template code.
+
+## Update Entity Templates
+
+Open your `MyModules.Entities` Visual Studio project and locate the `EntityTemplate.tt` file and open it.
+
+The following pieces need to be added to this template code.
+
+Add this to the `import` section of your code:
+
+```cs
+<#@ import namespace="MyModules.Entities.Api" #>
+```
+
+Add this where the template namespaces are being declared:
+
+```cs
+using System;
+```
+
+Add this right above the line where the `ClassName` class is being declared:
+
+```cs
+<#= Model.GetSerializable()?.Enabled() == true ? "[Serializable]" : string.Empty #>
+```
+
+In the end it should look like this:
+
+```cs
+<#@ template language="C#" inherits="CSharpTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+...
+<#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="MyModules.Entities.Api" #>
+using System;
+
+[assembly: DefaultIntentManaged(Mode.Fully)]
+
+namespace <#= Namespace #>
+{
+    <#= Model.GetSerializable()?.Enabled() == true ? "[Serializable]" : string.Empty #>
+    public class <#= ClassName #>
+    {
+        ...
+```
 
