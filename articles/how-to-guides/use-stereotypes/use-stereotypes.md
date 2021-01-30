@@ -6,7 +6,7 @@ If you have followed through the [Create Module](xref:guide/creating-modules-net
 
 ## Creating a Stereotype Definition
 
-In Intent Architect, open the Module solution (as was created in the tutorial) and select the Project that represents the Module that will generate the code for a C# Entity.
+In Intent Architect, open the `MyModule` solution (as was created in the tutorial) and select the `MyModule.Entities` Project that represents the Module that will generate the code for a C# Entity.
 
 Inside Module Builder designer you will need to create a Stereotype Definition first before it can be applied. Right click on any of the Tree view folders (found on the right-hand-side panel) and select `New Stereotype-Definition`.
 
@@ -20,7 +20,7 @@ Supply the following in the Stereotype Definition:
 
  * Name: Serializable
  * Target Mode: Elements that reference
- * Targets: EntityBase
+ * Targets: Entity, EntityBase
  * Apply mode: Always
 
 Now we want to add a Property to this Stereotype Definition. Right click on this Stereotype Definition and select `Add Property`.
