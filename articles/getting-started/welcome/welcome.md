@@ -1,3 +1,7 @@
+---
+uid: getting-started/welcome
+---
+
 # Welcome
 
 ## Overview

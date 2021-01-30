@@ -82,10 +82,13 @@ We've now told Intent Architect to place our `EntityBase` template in the `TestA
 ## Run the Module
 We've created a project structure, installed our Module, and set the Output Target to our `TestApp.Domain` project. We're now ready to run our Module.
 
-1. Run the [Software Factory Execution](xref:getting-started/take-a-tour#software-factory-execution).
-2. Note the changes.
-3. Click the `APPLY CHANGES` button.
-4. Open the codebase to verify that the new `EntityBase.cs` file was created in the correct location.
+1. Run the [Software Factory Execution](xref:getting-started/take-a-tour#software-factory-execution). The following changes should be staged:
+![Software Factory Output](images/software-factory-module-output.png)
+2. Click the `APPLY CHANGES` button.
+3. Open the codebase to verify that the new `EntityBase.cs` file was created in the correct location.
+
+>[!NOTE]
+>You may notice that a NuGet package (`Intent.RoslynWeaver.Attributes`) gets added to the `TestApp.Domain.csproj` file. This package provides _non-executing_ C# attributes which are used to instruct the [Code-Management](xref:getting-started/welcome#code-management) systems in C#. This is not a hard dependency, does not affect runtime execution in any way, and can be swapped out or removed if needed.
 
 
 ## What's Next
