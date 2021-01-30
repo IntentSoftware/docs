@@ -11,7 +11,7 @@ If you have followed through the [Create Module](xref:tutorial/creating-modules-
 
 In Intent Architect, open the `MyModule` solution (as was created in the tutorial) and select the `MyModule.Entities` Project that represents the Module that will generate the code for a C# Entity.
 
-Inside Module Builder designer you will need to create a Stereotype Definition first before it can be applied. Right click on any of the Tree view folders (found on the right-hand-side panel) and select `New Stereotype-Definition`.
+Inside the Module Builder designer you will need to create a Stereotype Definition first before it can be applied. Right click on any of the Tree view folders (found on the right-hand-side panel) and select `New Stereotype-Definition`.
 
 >[!NOTE]
 >You may find that you need to include the package where this new Stereotype Definition was created in to be included with the current Module. In order to do that, click on the Package itself and set the Properties:
@@ -86,4 +86,6 @@ namespace <#= Namespace #>
 
 Install the `MyModule.Entities` to to your `TestApp` in Intent Architect.
 
-Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field thats of type `checkbox`. Depending on state of the checkbox, the `[Serializable]` attribute will be generated for that class or not.
+Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field thats of type `checkbox`. 
+The net result will be determined by the state of that check-box.
+For a given Entity class, if in the designer the check-box is checked, then it will generate that C# class with the `[Serializable]` attribute. If not, it will omit the generation of that attribute.
