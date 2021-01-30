@@ -7,7 +7,7 @@ Extending meta-data in Intent Architect is commonly achieved through Stereotypes
 
 If you have followed through the [Create Module](xref:tutorial/creating-modules-net/create-a-simple-module) tutorial, it will be useful to note that we will be extending the Template in order to add a C# attribute `[Serializeable]` depending on whether the `Serializeable` stereotype is applied to an Element or not.
 
-## Creating a Stereotype Definition
+## Create a Stereotype Definition
 
 In Intent Architect, open the `MyModule` solution (as was created in the tutorial) and select the `MyModule.Entities` Project that represents the Module that will generate the code for a C# Entity.
 
@@ -82,3 +82,8 @@ namespace <#= Namespace #>
         ...
 ```
 
+## Using the Stereotype
+
+Install the `MyModule.Entities` to to your `TestApp` in Intent Architect.
+
+Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field thats of type `checkbox`. Depending on state of the checkbox, the `[Serializable]` attribute will be generated for that class or not.
