@@ -1,5 +1,6 @@
 # Take a tour
 
+
 ## Introduction
 This tour covers the key concepts in Intent Architect at a high-level. The aim is to introduce each concept without going into too much detail. Let's get started.
 
@@ -19,25 +20,25 @@ Creating a new application in Intent Architect can be done by clicking on the "C
 
 ![Create Application Start](images/create-application-start.png)
 
-The first page of the wizard lists the available [Application Templates](#application-templates) in the selected repository (by default this will be Intent Architect's website [http://intentarchitect.com] but could be a local directory or network location. [Learn how to change your default repositories here](../how-to/change-user-settings.md)).
-Here you can search and choose which application template you want and set key settings like the Application's name, directly location and [Solution](#solutions) name.
+The first page of the wizard lists the available [Application Templates](#application-templates) in the selected repository (by default this will be Intent Architect's website [https://intentarchitect.com/](https://intentarchitect.com/) but could be a local directory or network location. [Learn how to change your default repositories here](../how-to/change-user-settings.md)).
+
+Here you can search and choose which application template you want and directly set key settings like the Application's name, location and [solution](#solutions) name.
 
 >[!NOTE]
 >It is possible to create an empty application by clicking on the `CREATE EMPTY` button instead of `NEXT`. This would create a new application without any Modules or metadata installed.
 
 
 ### Application Templates
-Application Templates are pre-configured templates for new Applications that ultimately define and constrain which Modules to install and what default metadata should be created in the [Designers](#designers).
+Application Templates allow specifying a pre-defined set of options of which Modules and Metadata (for [Designers](#designers)) to automatically install into the new Application during its creation.
 
 To illustrate this, let's create a sample .NET Core Application using the `Clean Architecture .NET Core 3.1` Application Template. Following the steps we took above, select the template and fill out the Application's name, location, and the Solution name, then click `NEXT`. The wizard then moves to next page which displays the high-level _Components_ that make up the template.
 
 ![Application Template Components](images/application-template-components.png)
 
-The Components listed represent one or more Module that must be installed into the new Application. Each component may be included or excluded as required. To see exactly which Modules will be installed, we can expand the Component list on the right side of the page.
+Each block is a _Component_ and each represents one or more Modules that must be installed into the new Application. Each Component may be included or excluded as required. To see exactly which Modules will be installed depending on our selection of Components, we can expand the Component list on the right side of the page.
 
 ![Application Template Modules](images/application-template-modules.png)
-
-Here we can see exactly which modules would be installed from the selected Components.
+_This screenshot of the component list on the left of the screen shows exactly which modules would be installed from the selected Components._
 
 To create the Application we then click on the `CREATE` button.
 
@@ -46,22 +47,21 @@ Intent Architect will download and install the Modules correlating to the select
 ![Application Template Installation](images/application-template-installation.png)
 _The modules downloaded in the example above are specifically related to the `Clean Architecture .NET Core 3.1` Application Template._
 
->[!NOTE]
->Although this example is based in .NET, this process would work in the same way for other Application Templates that are designed for other languages.
+> [!NOTE]
+> Although this example is based in .NET, this process would work in the same way for other Application Templates that are designed for other languages.
 
 
 ## Application Settings
-Once Intent Architect has finished installing the application, it will open it automatically on the _Settings_ tab.
+Once Intent Architect has finished creating the application and installing the selected components, it will open it automatically on the _Settings_ tab.
 
 ![Application Settings](images/application-settings.png)
 
-Here you will be able to rename the Application, change it's icon, add a description and change the _Relative Output Location_.
+Here you will be able to rename the Application, change its icon, add a description and change the _Relative Output Location_.
 
 Below the _Relative Output Location_, Intent Architect shows the full path into where code will be created. To open this location in the default file explorer, you can simply click on the full path _link_.
 
 >[!NOTE]
 >If the path doesn't exist yet, it won't be able to open.
-
 
 ## Modules
 Modules are the _building blocks_ and artifacts of pattern reuse in Intent Architect.
@@ -70,26 +70,25 @@ Typically, the purpose of a Module is to generate and manage a set of code files
 
 Modules have similarities with package systems such as Nuget, NPM, and Maven. However, where the primary objective of these system is to make code-reuse easier, the primary objective of Modules is _pattern-reuse_. 
 
-Modules have versions and dependencies, and don't directly introduce any runtime dependencies. The can, however, be configured to introduce package dependencies if the designer of the Module so chooses.
+Modules have versions and dependencies, and don't directly introduce any runtime dependencies. They can, however, be configured to introduce package dependencies if the designer of the Module so chooses.
 
 ![Application Modules](images/application-modules-installed.png)
 _This example shows the list of Installed Modules in our sample application. The `Intent.Application.MediatR` module has been selected, with its details displayed in the pane on the right._
 
->[!NOTE]
->When you select an installed Module, Intent Architect gives a view into the internals of that module (i.e. the Templates, Decorators, and Factory Extensions it is made up of).
+> [!NOTE]
+> When you select an installed Module, Intent Architect gives a view into the internals of that module (i.e. the Templates, Decorators, and Factory Extensions it is made up of).
 
 
 ## Designers
-Designers in Intent Architect allow you describe your application's design as visual models and hierarchical concepts. For example, Designers could be used to describe the entities in a domain, the services that make up the applications API, and events that are published and subscribed. 
+Designers in Intent Architect allow you describe your application's design as visual models and hierarchical concepts. For example, Designers could be used to describe: the entities in a domain, the services that make up the applications API, events that are published and subscribed, etc.
 
 Designers are added to the Application when a Module that has designer configuration is installed. You can therefore choose which Designers you would like to use in your Application.
 
->[!NOTE]
->Designers can be created and configured by using the Intent Module Builder. Existing Designers can also be extended with new concepts and configuration.
-
-In our sample application, the following image shows an example Domain model inside of the Domain Designer.
+> [!NOTE]
+> Designers can be created and configured by using the Intent Module Builder. Existing Designers can also be extended with new concepts and configuration.
 
 ![Domain Designer](images/designers-domain.png)
+_An example from our from our sample application showing a Domain model inside of the Domain Designer._
 
 Designers serve as a **blueprint** of your system. They can be used to describe any aspect of your Application. Typically, they are used to capture the following:
  - **Codebase Structure** - Visual Studio Projects in .NET, Folder Structures in other languages, etc.
@@ -97,7 +96,7 @@ Designers serve as a **blueprint** of your system. They can be used to describe 
  - **Database Schemas** - Tables, Documents, Foreign keys, Indices, etc.
  - **Services** - RESTful web services, SOAP services, security settings, transactional settings, etc.
  - **Client Proxies** - Web client proxies, Synchronous Query Proxies, etc.
- - **Eventing** - Messages, Topics, Queues, Subscriptions, etc. Often used to support a Microservice architectures.
+ - **Eventing** - Messages, Topics, Queues, Subscriptions, etc. Often used to support a Microservices architectures.
  - **Workflows** - Workflow Diagrams, Process Diagrams, etc.
  - **Front-End Structure** - Components, Routing, Modules, View Models, Views, etc.
 
@@ -107,7 +106,7 @@ The Software Factory Execution is the process that executes the installed Module
 
 ![Software Factory Execution](images/software-factory-execution.gif)
 
-Intent Architect will not make changes to your codebase without your concent. The changes will be listed and you can use a Diff tool to view the changes between the files - like a _pull request_ from your robot developer friend.
+Intent Architect will not make changes to your codebase without your consent. The changes will be listed and can be clicked on which launches a Diff tool for you to view the changes between the files - like a _pull request_ from your robot developer friend.
 
 ![Diff Example](images/diff-example.png)
 _An example diff of changes made to a C# interface that's managed by Intent Architect._
@@ -129,6 +128,7 @@ An Application can only be opened in the context on a Solution, which is represe
 _A Solution dashboard with a single Application from this tour._
 
 Additional Applications can be created from the Solution dashboard by clicking on the `Create new application...` button. Applications can also be filtered as well as _favourited_ by clicking the _Star_ in the top right-hand of an Application. They can be removed by right-clicking and selecting the `Delete` option.
+
 
 ## What's Next
 #### [Tutorial: Create a Module (.NET)](get-the-application.md)
