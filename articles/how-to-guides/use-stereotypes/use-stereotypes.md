@@ -51,14 +51,10 @@ Add this to the `import` section of your code:
 
 Add this where the template namespaces are being declared:
 
-```cs
-using System;
-```
-
 Add this right above the line where the `ClassName` class is being declared:
 
 ```cs
-<#= Model.GetSerializable()?.Enabled() == true ? "[Serializable]" : string.Empty #>
+<#= GenerateSerializableAttribute() #>
 ```
 
 In the end it should look like this:
@@ -70,19 +66,28 @@ In the end it should look like this:
 ...
 <#@ import namespace="Intent.Metadata.Models" #>
 <#@ import namespace="MyModules.Entities.Api" #>
-using System;
-
 [assembly: DefaultIntentManaged(Mode.Fully)]
 
 namespace <#= Namespace #>
 {
-    <#= Model.GetSerializable()?.Enabled() == true ? "[Serializable]" : string.Empty #>
+    <#= GenerateSerializableAttribute() #>
     public class <#= ClassName #>
     {
         ...
 ```
 
-## Using the Stereotype
+Then from the `EntityTemplatePartial.cs` file, we need to define the method `GenerateSerializableAttribute`.
+
+```cs
+public string GenerateSerializableAttribute()
+{
+    return Model.GetSerializable()?.Enabled() == true
+        ? "[Serializable]"
+        : string.Empty;
+}
+```
+
+## Applying the Stereotype
 
 Install the `MyModule.Entities` to to your `TestApp` in Intent Architect.
 
