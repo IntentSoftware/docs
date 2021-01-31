@@ -3,6 +3,8 @@ uid: tutorials.create-a-module.create-a-simple-module
 ---
 # Create a simple module
 
+In this step of the tutorial we will create a new Module Builder Application in Intent Architect, use the designer to add a template to it. We will run the software factory against this application to generate a .NET Core C# solution which will then be built to generate the module.
+
 ## Create a new application
 
 On the home screen click `Create a new module`.
