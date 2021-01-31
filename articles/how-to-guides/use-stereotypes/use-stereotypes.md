@@ -5,7 +5,7 @@ uid: how-to-guides.use-stereotypes
 
 Extending meta-data in Intent Architect is commonly achieved through Stereotypes. This guide will describe how to create one and how to use it inside a template in order to affect how the source code gets generated.
 
-If you have followed through the [Create Module](xref:tutorials.create-a-module.create-a-simple-module) tutorial, it will be useful to note that we will be extending the Template in order to add a C# attribute `[Serializeable]` depending on whether the `Serializeable` stereotype is applied to an Element or not.
+If you have followed through the [Create Module](xref:tutorials.creating-modules-net.create-templates-per-model) tutorial, it will be useful to note that we will be extending the Template in order to add a C# attribute `[Serializeable]` depending on whether the `Serializeable` stereotype is applied to an Element or not.
 
 ## Create a Stereotype Definition
 
@@ -34,28 +34,18 @@ Supply the following Property values for this Stereotype Property:
  * Control Type: Checkbox
  * Default value: _Unchecked_
 
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/stereotype-definition.mp4"></video></p>
+
 >[!NOTE]
 >Make sure to Run the Software Factory as this will generate a `ClassModelExtensions` class that provides a convenient way to access your Stereotype from within your Template code.
+>
+>![Software Factory Run](images/software-factory-run.png)
 
 ## Update Entity Templates
 
 Open your `MyModules.Entities` Visual Studio project and locate the `EntityTemplate.tt` file and open it.
 
-The following pieces need to be added to this template code.
-
-Add this where the template namespaces are being declared:
-
-```cs
-using System;
-```
-
-Add this right above the line where the `ClassName` class is being declared:
-
-```cs
-<#= GenerateSerializableAttribute() #>
-```
-
-In the end it should look like this:
+Make changes to the template so that it looks like this:
 
 ```cs
 <#@ template language="C#" inherits="CSharpTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
@@ -64,21 +54,22 @@ In the end it should look like this:
 ...
 <#@ import namespace="Intent.Metadata.Models" #>
 using System;
+using System.Collections.Generic;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 
 namespace <#= Namespace #>
 {
-    <#= GenerateSerializableAttribute() #>
+    <#= GetClassAttributes() /* Add this method expression */ #>
     public class <#= ClassName #>
     {
         ...
 ```
 
-Then from the `EntityTemplatePartial.cs` file, we need to define the method `GenerateSerializableAttribute`.
+Then from the `EntityTemplatePartial.cs` file, we need to define the method `GetClassAttributes`.
 
 ```cs
-public string GenerateSerializableAttribute()
+public string GetClassAttributes()
 {
     return Model.GetSerializable()?.Enabled() == true
         ? "[Serializable]"
@@ -86,7 +77,7 @@ public string GenerateSerializableAttribute()
 }
 ```
 
-You may find that in order to use the `GetSerializable` method, you need to add the namespace `MyModules.Entities.Api` as part of your declarations.
+You may find that in order to use the `GetSerializable` method, you need to add the namespace `MyModules.Entities.Api` as part of your namespace declarations.
 
 Make sure to compile your module project before continuing.
 
@@ -94,6 +85,12 @@ Make sure to compile your module project before continuing.
 
 Install the `MyModule.Entities` to to your `TestApp` in Intent Architect. Follow these [steps](xref:tutorials.create-a-module.install-and-run-the-module#install-the-module) if you are not sure.
 
-Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field thats of type `checkbox`. 
+Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field that has a `checkbox`. 
+
+![Entity Class with Stereotype](images/entity-class-serializable-stereotype.png)
+*Notice the Serializable stereotype in the bottom right corner*
+
 The net result will be determined by the state of that check-box.
 For a given Entity class, if in the designer the check-box is checked, then it will generate that C# class with the `[Serializable]` attribute. If not, it will omit the generation of that attribute.
+
+![Diff Result](images/serializable-diff-result.png)
