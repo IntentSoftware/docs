@@ -59,7 +59,7 @@ During the software factory run, Intent Architect generated a complete Visual St
 Navigate to the folder where the `.sln` and associated files have been placed and open the `.sln` file Visual Studio solution.
 
 > [!TIP]
-> Intent Architect can open the folder the output was placed by you going to the Application `Settings` and pressing the path under the `Relative Output Location` input:
+> Intent Architect can open the folder where the output was placed by you going to the Application `Settings` and pressing the path under the `Relative Output Location` input:
 > 
 > ![Open the output path folder](images/open-the-output-path-folder.png)
 

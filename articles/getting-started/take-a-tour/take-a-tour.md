@@ -134,6 +134,6 @@ Additional Applications can be created from the Solution dashboard by clicking o
 
 
 ## What's Next
-#### [Tutorial: Create a Module (.NET)](xref:getting-started.get-the-application)
+#### [Tutorial: Create a Module (.NET)](xref:tutorials.create-a-module.introduction)
 Tutorials on how to create a Module and install it into an Application.
 Modules are the building blocks for how to automate your infrastructural and architectural patterns.
