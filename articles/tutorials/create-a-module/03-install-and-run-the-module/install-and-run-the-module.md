@@ -9,8 +9,10 @@ When creating Modules it is often very useful to have a _test_ Application that 
 >[!NOTE]
 >If you have already created an Application to install your module, you can skip this section and jump straight to the [Install the Module](#install-the-module) section.
 
-To get started, let's create an empty Application.
-1. From the home view, click `Create a new application`.
+To get started, let's create an empty Application. 
+>[!TIP]
+>Start a new instance of Intent Architect to create this application. It will make swapping between your Modules Solution and the Test Application contexts very easy
+1. From the home view, click `Create a new application`. 
 2. Set the Application's name, location and Solution name. _NOTE: You can ignore which Application Template is selected. It won't affect an empty application._
 3. Click `CREATE EMPTY`.
 4. When prompted with a confirmation, click `YES` to continue.
