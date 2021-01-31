@@ -20,7 +20,7 @@ Give it the name of `NpmInstallFactoryExtension`.
 >[!NOTE]
 >Make sure to Run the Software Factory as this will generate the Factory Extension code.
 >
->![Software Factory Run](images/software-factory-run.png)
+>![Software Factory Run](images/software-factory-execution-staging.png)
 
 ## Implementing the Factory Extension
 
@@ -97,4 +97,4 @@ Install your Module to your Test Application in Intent Architect. Follow these [
 
 Once that is done, run the Software Factory and click on the Apply button. Then you will observe the following at the end of the process in the console output:
 
-![Complete](images/software-factory-run-complete.png)
+![Complete](images/software-factory-execution-complete.png)

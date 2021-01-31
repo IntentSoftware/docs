@@ -25,7 +25,7 @@ Give it the name of `DataAnnotationValidationDecorator` and select (as the type)
 >[!NOTE]
 >Make sure to Run the Software Factory as this will generate the Decorator as well as the Contract for the Template.
 >
->![Software Factory Run](images/software-factory-run.png)
+>![Software Factory Run](images/software-factory-execution-staging.png)
 
 ## Update the Module
 

@@ -39,7 +39,7 @@ Supply the following Property values for this Stereotype Property:
 >[!NOTE]
 >Make sure to Run the Software Factory as this will generate a `ClassModelExtensions` class that provides a convenient way to access your Stereotype from within your Template code.
 >
->![Software Factory Run](images/software-factory-run.png)
+>![Software Factory Run](images/software-factory-execution-staging.png)
 
 ## Update Entity Templates
 
