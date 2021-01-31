@@ -1,37 +1,30 @@
-# Understanding Modules and their anatomy
-- name: Modules
-  href: modules/modules.md
-
-- name: Templates
-  href: templates/templates.md
-
-# What it is: Extend metadata. Different options (text, checkbox, etc). Display functions.
-- name: Stereotypes
-  href: stereotypes/stereotypes.md
-
-- name: Decorators
-  href: decorators/decorators.md
-
-- name: Factory Extensions
-  href: factory-extensions/factory-extensions.md
-
-- name: Designers
-  href: designers/designers.md
-
-- name: Packages
-  href: packages/packages.md
-
-- name: Metadata
-  href: metadata/metadata.md
-
-- name: Software Factory Execution
-  href: software-factory-execution/software-factory-execution.md
-
 - name: Applications
   href: applications/applications.md
 
 - name: Application Templates
   href: application-templates/application-templates.md
+
+- name: Decorators
+  href: decorators/decorators.md
+
+- name: Designers
+  href: designers/designers.md
+
+- name: Factory Extensions
+  href: factory-extensions/factory-extensions.md
+
+- name: Intent Module Builder
+  href: intent-module-builder/intent-module-builder.md
+
+- name: Metadata
+  href: metadata/metadata.md
+
+# Understanding Modules and their anatomy
+- name: Modules
+  href: modules/modules.md
+
+- name: Packages
+  href: packages/packages.md
 
 - name: Repositories
   href: repositories/repositories.md
@@ -39,5 +32,12 @@
 - name: Solutions
   href: solutions/solutions.md
 
-- name: Intent Module Builder
-  href: intent-module-builder/intent-module-builder.md
+- name: Software Factory Execution
+  href: software-factory-execution/software-factory-execution.md
+
+# What it is: Extend metadata. Different options (text, checkbox, etc). Display functions.
+- name: Stereotypes
+  href: stereotypes/stereotypes.md
+
+- name: Templates
+  href: templates/templates.md
