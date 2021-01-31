@@ -45,7 +45,7 @@ Next, we will create a new Template that we can configure to receive the models 
 >
 >![](images/entity-template-registration-class.png)
 >
->Filtering which `ClassModel`s create an `EntityTemplate` can be cleanly done in the `GetModels(...)` method. [Learn more here](how-to-guides.filter-templates).
+>Filtering which `ClassModel`s create an `EntityTemplate` can be cleanly done in the `GetModels(...)` method. [Learn more here](xref:how-to-guides.filter-templates).
 
 ## Implement Template Logic
 Next, we will implement the logic of the `Entity` Template, essentially _templatizing_ our entities pattern. In this tutorial we will create `public` properties for each _attribute_ and _association_ that we describe in the `Domain` Designer.
@@ -116,7 +116,7 @@ Next, we will implement the logic of the `Entity` Template, essentially _templat
 
 
 ## Reinstall the Module
-Finally, our Module is ready and can reinstall it into our `TestApp` that we created in the [previous tutorial](tutorials.create-a-module.install-and-run-the-module).
+Finally, our Module is ready and can reinstall it into our `TestApp` that we created in the [previous tutorial](xref:tutorials.create-a-module.install-and-run-the-module).
 
 1. Open the `TestApp` Application in Intent Architect.
 2. Navigate to the `Modules` tab.
