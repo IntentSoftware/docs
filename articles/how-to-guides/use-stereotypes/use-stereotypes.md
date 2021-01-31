@@ -43,13 +43,11 @@ Open your `MyModules.Entities` Visual Studio project and locate the `EntityTempl
 
 The following pieces need to be added to this template code.
 
-Add this to the `import` section of your code:
+Add this where the template namespaces are being declared:
 
 ```cs
-<#@ import namespace="MyModules.Entities.Api" #>
+using System;
 ```
-
-Add this where the template namespaces are being declared:
 
 Add this right above the line where the `ClassName` class is being declared:
 
@@ -65,7 +63,8 @@ In the end it should look like this:
 <#@ import namespace="System.Collections.Generic" #>
 ...
 <#@ import namespace="Intent.Metadata.Models" #>
-<#@ import namespace="MyModules.Entities.Api" #>
+using System;
+
 [assembly: DefaultIntentManaged(Mode.Fully)]
 
 namespace <#= Namespace #>
@@ -87,9 +86,13 @@ public string GenerateSerializableAttribute()
 }
 ```
 
+You may find that in order to use the `GetSerializable` method, you need to add the namespace `MyModules.Entities.Api` as part of your declarations.
+
+Make sure to compile your module project before continuing.
+
 ## Applying the Stereotype
 
-Install the `MyModule.Entities` to to your `TestApp` in Intent Architect.
+Install the `MyModule.Entities` to to your `TestApp` in Intent Architect. Follow these [steps](xref:tutorials.create-a-module.install-and-run-the-module#install-the-module) if you are not sure.
 
 Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field thats of type `checkbox`. 
 The net result will be determined by the state of that check-box.
