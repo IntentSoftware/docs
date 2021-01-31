@@ -14,7 +14,7 @@ Intent Architect can be thought of as a _robot developer_ whose sole purpose is 
 
 The platform is designed to be completely under the control of the developers and to never get in their way - bringing all the advantages of code-automation, without any of the drawbacks that have historically invalidated the approach.
 
-## How it does this
+## How it's achieved
 
 By combining visual modelling, code-management, and pattern reuse into a powerful and intuitive platform, Intent Architect offers the first truly practical approach to code-automation. These mechanisms are explained briefly below.
 
