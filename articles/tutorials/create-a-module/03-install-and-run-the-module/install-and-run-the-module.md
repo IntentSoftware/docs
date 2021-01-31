@@ -7,11 +7,11 @@ When creating Modules it is often very useful to have a _test_ Application that 
 
 ## Create an empty Application
 >[!NOTE]
->If you have already created an Application to install your module, you can skip this section and jump straight to the [Install the Module](#install-the-module) section.
+>If you have already created an Application to install your module in, you can skip this section and jump straight to the [Install the Module](#install-the-module) section.
 
 To get started, let's create an empty Application. 
 >[!TIP]
->Start a new instance of Intent Architect to create this application. It will make swapping between your Modules Solution and the Test Application contexts very easy
+>Start a new instance of Intent Architect to create this application. It will make switching between your Modules Solution and the Test Application contexts very quickly
 1. From the home view, click `Create a new application`. 
 2. Set the Application's name, location and Solution name. _NOTE: You can ignore which Application Template is selected. It won't affect an empty application._
 3. Click `CREATE EMPTY`.
@@ -21,7 +21,7 @@ To get started, let's create an empty Application.
 ![Create Test Application](images/create-test-application.png)
 
 >[!NOTE]
->We typically create Applications with an [Application Template](xref:how-to-guides.create-an-application-template). Empty Applications are useful when there isn't an Application Template that fulfils our needs.
+>We typically create Applications with an [Application Template](xref:how-to-guides.create-an-application-template). Empty Applications are useful when there aren't any Application Templates that fulfill your needs.
 
 
 ## Set up Visual Studio projects
@@ -56,7 +56,7 @@ The application structure should look as follows:
 Next, let's install the Module we created in the [previous step](xref:tutorials.create-a-module.create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
 
 ### Finding and Installing the Module
-The default repository for our Modules is still set to the Intent Architect website. This means that we're only able to search for Modules created by the Intent Architect team. Let's change this so that our default repository is the folder where our `MyModule.Entities` was created.
+The default repository for our Modules is still set to the Intent Architect website. This means that we're only able to search for the official Modules hosted by Intent Architect. Let's change this so that our default repository is the folder where our `MyModule.Entities` was created.
 
 1. Open [User Settings](xref:how-to-guides.change-user-settings).
 2. Add a new Repository with a unique `Name` (e.g. "My Modules") and `Address` to the full location of the folder where our Module was created (e.g. `C:\Dev\MyModules\Intent.Modules`).
@@ -68,7 +68,7 @@ The default repository for our Modules is still set to the Intent Architect webs
 ![Selecting Repository and installing Module](images/selecting-repository-and-installing-module.gif)
 
 ### Assigning the Template Output
-You many have noticed that the `Installation Manager` mentioned an _Unassigned template_ that was created. 
+You may have noticed that the `Installation Manager` mentioned an _Unassigned template_ that was created. 
 ![Selecting Repository and installing Module](images/unassigned-template-created-example.png)
 This is important because it's telling us that we need to assign our `MyModules.Entities.EntityBase` template to an output location. This is done in the `Visual Studio` Designer.
 
