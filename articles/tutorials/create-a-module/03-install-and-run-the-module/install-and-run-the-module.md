@@ -95,6 +95,5 @@ We've created a project structure, installed our Module, and set the Output Targ
 
 ## What's Next
 
-#### [Extend metadata with Stereotypes]()
+#### [Create Files per Model](xref:tutorials.creating-modules-net.create-templates-per-model)
 
-#### [Extend Templates with Decorators]()

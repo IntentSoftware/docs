@@ -111,4 +111,5 @@ Congratulations, you have created an Intent Architect Module!
 
 ## Next Steps
 
-[Install and run the module](xref:tutorials.create-a-module.install-and-run-the-module)
+#### [Install and run the module](xref:tutorials.create-a-module.install-and-run-the-module)
+Create a test Application to install and run our Module.

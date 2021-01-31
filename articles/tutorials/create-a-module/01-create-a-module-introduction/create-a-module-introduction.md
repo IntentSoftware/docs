@@ -29,4 +29,5 @@ Modules have similarities with package systems such as Nuget, NPM, and Maven. Ho
 
 ## Next Steps
 
-[Create a simple module](xref:tutorials.create-a-module.create-a-simple-module)
+#### [Create a simple module](xref:tutorials.create-a-module.create-a-simple-module)
+Create a Module using the Intent Module Builder with a simple Template that generates and manages a single file.
