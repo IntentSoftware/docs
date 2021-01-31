@@ -1,9 +1,9 @@
 ---
-uid: tutorial/create-a-module/introduction
+uid: tutorials.create-a-module.introduction
 ---
-# Create a Module (.NET) introduction
+# Create a Module introduction
 
-This tutorial will walk you through creating an Intent Architect [Module](xref:reference.module).
+This tutorial will walk you through creating an Intent Architect [Module](xref:references.modules).
 
 
 ## What is Intent Architect?
@@ -29,4 +29,4 @@ Modules have similarities with package systems such as Nuget, NPM, and Maven. Ho
 
 ## Next Steps
 
-[Create a simple module](xref:tutorial/create-a-module/create-a-simple-module)
+[Create a simple module](xref:tutorials.create-a-module.create-a-simple-module)

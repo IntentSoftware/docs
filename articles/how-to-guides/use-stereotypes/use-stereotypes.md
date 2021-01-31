@@ -1,11 +1,11 @@
 ---
-uid: how-to/use-stereotypes
+uid: how-to-guides.use-stereotypes
 ---
 # Use Stereotypes
 
 Extending meta-data in Intent Architect is commonly achieved through Stereotypes. This guide will describe how to create one and how to use it inside a template in order to affect how the source code gets generated.
 
-If you have followed through the [Create Module](xref:tutorial/create-a-module/create-a-simple-module) tutorial, it will be useful to note that we will be extending the Template in order to add a C# attribute `[Serializeable]` depending on whether the `Serializeable` stereotype is applied to an Element or not.
+If you have followed through the [Create Module](xref:tutorials.create-a-module.create-a-simple-module) tutorial, it will be useful to note that we will be extending the Template in order to add a C# attribute `[Serializeable]` depending on whether the `Serializeable` stereotype is applied to an Element or not.
 
 ## Create a Stereotype Definition
 

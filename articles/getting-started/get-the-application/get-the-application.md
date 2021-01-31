@@ -1,5 +1,5 @@
 ---
-uid: getting-started/get-the-application
+uid: getting-started.get-the-application
 ---
 
 # Get the application
@@ -25,5 +25,5 @@ Intent Architect will automatically log in once your account has been created.
 >Your information is kept 100% private and secure. We do not share any of your personal information with third parties.
 
 ## What's Next
-#### [Take a tour of Intent Architect](xref:getting-started/take-a-tour)
+#### [Take a tour of Intent Architect](xref:getting-started.take-a-tour)
 Discover the key concepts in Intent Architect.

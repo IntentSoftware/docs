@@ -1,4 +1,4 @@
 ---
-uid: how-to/create-a-factory-extension
+uid: how-to-guides.create-a-factory-extension
 ---
 # Create a Factory Extension

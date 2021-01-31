@@ -1,0 +1,4 @@
+---
+uid: references.stereotypes
+---
+# Stereotypes

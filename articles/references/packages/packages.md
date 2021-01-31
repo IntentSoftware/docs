@@ -1,4 +1,4 @@
 ---
-uid: reference.package
+uid: references.packages
 ---
 # Packages

@@ -1,4 +1,4 @@
 ---
-uid: how-to/create-an-application-template
+uid: how-to-guides.create-an-application-template
 ---
 # Create an Application Template

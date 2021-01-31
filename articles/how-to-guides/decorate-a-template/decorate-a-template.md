@@ -1,4 +1,4 @@
 ---
-uid: how-to/decorate-a-template
+uid: how-to-guides.decorate-a-template
 ---
 # Decorate a Template

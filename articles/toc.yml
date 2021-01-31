@@ -1,10 +1,13 @@
 - name: Getting started
   href: getting-started/toc.yml
-  topicHref: getting-started/welcome/welcome.md
+  topicUid: getting-started.welcome
+
 - name: 'Tutorial: Create a Module'
   href: tutorials/create-a-module/toc.yml
-  topicHref: tutorials/create-a-module/01-create-a-module-introduction/create-a-module-introduction.md
+  topicUid: tutorials.create-a-module.introduction
+
 - name: How-to guides
   href: how-to-guides/toc.yml
+
 - name: References
   href: references/toc.yml

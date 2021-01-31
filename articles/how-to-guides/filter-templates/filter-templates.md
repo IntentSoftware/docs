@@ -1,4 +1,4 @@
 ---
-uid: how-to/filter-templates
+uid: how-to-guides.filter-templates
 ---
 # Filter Templates

@@ -1,5 +1,5 @@
 ---
-uid: how-to-guides/auto-assign-template-outputs
+uid: how-to-guides.auto-assign-template-outputs
 ---
 # Auto-assign Template Outputs
 

@@ -1,4 +1,4 @@
 ---
-uid: how-to/manage-repositories
+uid: how-to-guides.manage-repositories
 ---
 # Manage Repositories

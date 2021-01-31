@@ -1,5 +1,5 @@
 ---
-uid: tutorial/create-a-module/create-a-simple-module
+uid: tutorials.create-a-module.create-a-simple-module
 ---
 # Create a simple module
 
@@ -27,7 +27,7 @@ Click on `Module Builder` on the left of the screen to enter the designer.
 
 Click `CREATE NEW PACKAGE`.
 
-Enter a name for the [Package](xref:reference.package) (such as `MyModules.Entities`) and click `DONE`.
+Enter a name for the [Package](xref:references.packages) (such as `MyModules.Entities`) and click `DONE`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-the-package.mp4"></video></p>
 
@@ -109,4 +109,4 @@ Congratulations, you have created an Intent Architect Module!
 
 ## Next Steps
 
-[Install and run the module](xref:tutorial/create-a-module/install-and-run-the-module)
+[Install and run the module](xref:tutorials.create-a-module.install-and-run-the-module)

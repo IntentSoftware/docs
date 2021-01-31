@@ -1,5 +1,5 @@
 ---
-uid: getting-started/take-a-tour
+uid: getting-started.take-a-tour
 ---
 
 # Take a tour
@@ -7,7 +7,7 @@ uid: getting-started/take-a-tour
 ## Introduction
 This tour covers the key concepts in Intent Architect at a high-level. The aim is to introduce each concept without going into too much detail. Let's get started.
 
-Once [installed and logged in with your account](xref:getting-started/get-the-application), you will be routed to the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
+Once [installed and logged in with your account](xref:getting-started.get-the-application), you will be routed to the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
 
 ![Getting Started](images/home-getting-started.png)
 
@@ -23,7 +23,7 @@ Creating a new application in Intent Architect can be done by clicking on the "C
 
 ![Create Application Start](images/create-application-start.png)
 
-The first page of the wizard lists the available [Application Templates](#application-templates) in the selected repository (by default this will be Intent Architect's website [https://intentarchitect.com/](https://intentarchitect.com/) but could be a local directory or network location. [Learn how to change your default repositories here](xref:how-to-guides/change-user-settings)).
+The first page of the wizard lists the available [Application Templates](#application-templates) in the selected repository (by default this will be Intent Architect's website [https://intentarchitect.com/](https://intentarchitect.com/) but could be a local directory or network location. [Learn how to change your default repositories here](xref:how-to-guides.change-user-settings)).
 
 Here you can search and choose which application template you want and directly set key settings like the Application's name, location and [solution](#solutions) name.
 
@@ -134,6 +134,6 @@ Additional Applications can be created from the Solution dashboard by clicking o
 
 
 ## What's Next
-#### [Tutorial: Create a Module (.NET)](xref:getting-started/get-the-application)
+#### [Tutorial: Create a Module (.NET)](xref:getting-started.get-the-application)
 Tutorials on how to create a Module and install it into an Application.
 Modules are the building blocks for how to automate your infrastructural and architectural patterns.

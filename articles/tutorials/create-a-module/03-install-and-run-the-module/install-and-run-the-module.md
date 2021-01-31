@@ -1,9 +1,9 @@
 ---
-uid: tutorial/create-a-module/install-and-run-the-module
+uid: tutorials.create-a-module.install-and-run-the-module
 ---
 # Install and run the Module
 
-When creating Modules it is often very useful to have a _test_ Application that we can use to test that our Modules are working correctly. This tutorial explains how to create this _test_ Application and how to install and run the Module we created in the [previous tutorial](xref:tutorial/create-a-module/create-a-simple-module).
+When creating Modules it is often very useful to have a _test_ Application that we can use to test that our Modules are working correctly. This tutorial explains how to create this _test_ Application and how to install and run the Module we created in the [previous tutorial](xref:tutorials.create-a-module.create-a-simple-module).
 
 ## Create an empty Application
 >[!NOTE]
@@ -19,7 +19,7 @@ To get started, let's create an empty Application.
 ![Create Test Application](images/create-test-application.png)
 
 >[!NOTE]
->We typically create Applications with an [Application Template](xref:how-to/create-an-application-template). Empty Applications are useful when there isn't an Application Template that fulfils our needs.
+>We typically create Applications with an [Application Template](xref:how-to-guides.create-an-application-template). Empty Applications are useful when there isn't an Application Template that fulfils our needs.
 
 
 ## Set up Visual Studio projects
@@ -51,12 +51,12 @@ The application structure should look as follows:
 
 ## Install the Module
 
-Next, let's install the Module we created in the [previous step](xref:tutorial/create-a-module/create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
+Next, let's install the Module we created in the [previous step](xref:tutorials.create-a-module.create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
 
 ### Finding and Installing the Module
 The default repository for our Modules is still set to the Intent Architect website. This means that we're only able to search for Modules created by the Intent Architect team. Let's change this so that our default repository is the folder where our `MyModule.Entities` was created.
 
-1. Open [User Settings](xref:how-to-guides/change-user-settings).
+1. Open [User Settings](xref:how-to-guides.change-user-settings).
 2. Add a new Repository with a unique `Name` (e.g. "My Modules") and `Address` to the full location of the folder where our Module was created (e.g. `C:\Dev\MyModules\Intent.Modules`).
 3. Reorder the repositories so that this new one is at the top.
 4. Click `Save`.
@@ -77,18 +77,18 @@ This is important because it's telling us that we need to assign our `MyModules.
 We've now told Intent Architect to place our `EntityBase` template in the `TestApp.Domain` project.
 
 >[!NOTE]
->Assigning Template Outputs can be configured to happen automatically when we install a Module. We [use Roles to achieve this](xref:how-to-guides/auto-assign-template-outputs).
+>Assigning Template Outputs can be configured to happen automatically when we install a Module. We [use Roles to achieve this](xref:how-to-guides.auto-assign-template-outputs).
 
 ## Run the Module
 We've created a project structure, installed our Module, and set the Output Target to our `TestApp.Domain` project. We're now ready to run our Module.
 
-1. Run the [Software Factory Execution](xref:getting-started/take-a-tour#software-factory-execution). The following changes should be staged:
+1. Run the [Software Factory Execution](xref:getting-started.take-a-tour#software-factory-execution). The following changes should be staged:
 ![Software Factory Output](images/software-factory-module-output.png)
 2. Click the `APPLY CHANGES` button.
 3. Open the codebase to verify that the new `EntityBase.cs` file was created in the correct location.
 
 >[!NOTE]
->You may notice that a NuGet package (`Intent.RoslynWeaver.Attributes`) gets added to the `TestApp.Domain.csproj` file. This package provides _non-executing_ C# attributes which are used to instruct the [Code-Management](xref:getting-started/welcome#code-management) systems in C#. This is not a hard dependency, does not affect runtime execution in any way, and can be swapped out or removed if needed.
+>You may notice that a NuGet package (`Intent.RoslynWeaver.Attributes`) gets added to the `TestApp.Domain.csproj` file. This package provides _non-executing_ C# attributes which are used to instruct the [Code-Management](xref:getting-started.welcome#code-management) systems in C#. This is not a hard dependency, does not affect runtime execution in any way, and can be swapped out or removed if needed.
 
 
 ## What's Next
