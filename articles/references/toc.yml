@@ -21,3 +21,23 @@
 - name: Packages
   href: packages/packages.md
 
+- name: Metadata
+  href: metadata/metadata.md
+
+- name: Software Factory Execution
+  href: software-factory-execution/software-factory-execution.md
+
+- name: Applications
+  href: applications/applications.md
+
+- name: Application Templates
+  href: application-templates/application-templates.md
+
+- name: Repositories
+  href: repositories/repositories.md
+
+- name: Solutions
+  href: solutions/solutions.md
+
+- name: Intent Module Builder
+  href: intent-module-builder/intent-module-builder.md
