@@ -51,7 +51,11 @@ Make changes to the template so that it looks like this:
 <#@ template language="C#" inherits="CSharpTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
-...
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Modules.Common.CSharp.Templates" #>
+<#@ import namespace="Intent.Templates" #>
 <#@ import namespace="Intent.Metadata.Models" #>
 using System;
 using System.Collections.Generic;
@@ -79,11 +83,12 @@ public string GetClassAttributes()
 
 You may find that in order to use the `GetSerializable` method, you need to add the namespace `MyModules.Entities.Api` as part of your namespace declarations.
 
-Make sure to compile your module project before continuing.
+>[!IMPORTANT]
+>Make sure to compile your module project before continuing.
 
 ## Applying the Stereotype
 
-Install the `MyModule.Entities` to to your `TestApp` in Intent Architect. Follow these [steps](xref:tutorials.create-a-module.install-and-run-the-module#install-the-module) if you are not sure.
+Install the `MyModule.Entities` to to your `TestApp` in Intent Architect. Follow these [steps](xref:tutorials.create-a-module.install-and-run-the-module#install-the-module) if you are not sure how. Remember to click on Re-install for your updated module.
 
 Open up the Domain designer and select one of your Entity Classes that are found on your current selected diagram. You will notice that all of them will have the `Serializable` stereotype present in their property displays and that there is one field that has a `checkbox`. 
 
