@@ -17,7 +17,7 @@ Modules are the _building blocks_ and artifacts of pattern reuse in Intent Archi
 
 Typically, the purpose of a Module is to generate and manage a set of code files in a codebase, usually around a particular architectural pattern. This could for example be the entities in our domain, simple bootstrapping files, ORM mappings, controllers in our Api, etc.
 
-Modules have similarities with package systems such as Nuget, NPM, and Maven. However, where the primary objective of these system is to make code-reuse easier, the primary objective of Modules is _pattern-reuse_. 
+Modules have similarities with package systems such as Nuget, NPM, and Maven. However, where the primary objective of these systems is to make code-reuse easier, the primary objective of Modules is _pattern-reuse_. 
 
 
 ## Prerequisites

@@ -43,23 +43,23 @@ Name it `EntityBase` and select a type of `Single File`:
 
 ## Run the software factory
 
-We are now ready to run the software factory. Press the play button near the top right of the screen and the run will start.
+We are now ready to run the software factory. Press the play button near the top right of the screen and the execution will start.
 
 > [!NOTE]
 > If your changes are unsaved you will be asked if you want to save them before proceeding.
 
-Once the software has run the templates it pauses to give you an opportunity to review the proposed changes, once you are satisfied doing so you can press the `APPLY CHANGES` button to continue. Once the remainder of the software factory run is complete, press the `CLOSE` button.
+Once the Software Factory has executed the templates, it pauses to give you an opportunity to review the proposed changes (called staging). If you are satisfied with the proposed changes you can press the `APPLY CHANGES` button to continue. When the Software Factory Execution is complete, you will be presented with the `CLOSE` button to end the session.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/run-the-software-factory.mp4"></video></p>
 
 ## Edit the template in Visual Studio
 
-During the software factory run, Intent Architect generated a complete Visual Studio solution along with the `EntityBase` template which was added the [create a template](#create-a-template) step above.
+During the Software Factory Execution, Intent Architect generated a Visual Studio solution along with the `EntityBase` template which was added in the [create a template](#create-a-template) step above.
 
-Navigate to the folder where the `.sln` and associated files have been placed and open the `.sln` file Visual Studio solution.
+Navigate to the folder where the `.sln` solution file (and associated files) have been placed and open it with Visual Studio.
 
 > [!TIP]
-> Intent Architect can open the folder where the output was placed by you going to the Application `Settings` and pressing the path under the `Relative Output Location` input:
+> Intent Architect can open the folder, where the generated content was placed, by you going to the Application `Settings` and clicking on the path hyperlink located under the `Relative Output Location` input:
 > 
 > ![Open the output path folder](images/open-the-output-path-folder.png)
 
