@@ -20,7 +20,7 @@ Give it the name of `NpmInstallFactoryExtension`.
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-factory-extension.mp4"></video></p>
 
 >[!NOTE]
->Make sure to Run the Software Factory as this will generate the Factory Extension code.
+>Make sure to Run the Software Factory Execution as this will generate the Factory Extension code.
 >
 >![Software Factory Run](images/software-factory-execution-staging.png)
 

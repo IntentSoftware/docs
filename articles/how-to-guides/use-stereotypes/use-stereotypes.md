@@ -18,6 +18,8 @@ Inside the Module Builder designer you will need to create a Stereotype Definiti
 >
 > * Include in Module: _Checked_
 > * Reference in Designer: `Domain`
+>
+><p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/include-package.mp4"></video></p> 
 
 Supply the following in the Stereotype Definition:
 
@@ -37,7 +39,7 @@ Supply the following Property values for this Stereotype Property:
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/stereotype-definition.mp4"></video></p>
 
 >[!NOTE]
->Make sure to Run the Software Factory as this will generate a `ClassModelExtensions` class that provides a convenient way to access your Stereotype from within your Template code.
+>Make sure to Run the Software Factory Execution as this will generate a `ClassModelExtensions` class that provides a convenient way to access your Stereotype from within your Template code.
 >
 >![Software Factory Run](images/software-factory-execution-staging.png)
 

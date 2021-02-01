@@ -23,7 +23,7 @@ Give it the name of `DataAnnotationValidationDecorator` and select (as the type)
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-decorator.mp4"></video></p>
 
 >[!NOTE]
->Make sure to Run the Software Factory as this will generate the Decorator as well as the Contract for the Template.
+>Make sure to Run the Software Factory Execution as this will generate the Decorator as well as the Contract for the Template.
 >
 >![Software Factory Run](images/software-factory-execution-staging.png)
 
@@ -118,3 +118,6 @@ Open your Domain designer and select the `User` Entity. Let's make the `firsName
 Now run the Software Factory to see that it adds the `[Required]` attribute only on the fields that are not-nullable.
 
 ![Diff Result](images/decorator-diff-result.png)
+
+>[!TIP]
+>You can use Stereotypes to add more complex validation logic to a Class Attribute. To learn how to work with Stereotypes, read [this article](xref:how-to-guides.use-stereotypes).
