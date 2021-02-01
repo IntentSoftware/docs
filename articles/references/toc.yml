@@ -23,6 +23,9 @@
 - name: Modules
   href: modules/modules.md
 
+- name: Module Builder
+  href: module-builder/module-builder.md
+
 - name: Packages
   href: packages/packages.md
 
@@ -41,3 +44,6 @@
 
 - name: Templates
   href: templates/templates.md
+
+- name: Templates (C#)
+  href: templates-csharp/templates-csharp.md
