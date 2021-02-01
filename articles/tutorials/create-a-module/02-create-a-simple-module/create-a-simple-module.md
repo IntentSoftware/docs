@@ -9,7 +9,7 @@ In this step of the tutorial we will create a new Module Builder Application in 
 
 On the home screen click `Create a new module`.
 
-Fill in a `Name` and review/change the `Location` as desired, then click `NEXT`.
+Fill in a `Name`, such as `MyModules`, review/change the `Location` as desired and click `NEXT`.
 
 Ensure the following components are selected:
 - `Module Builder Core`
@@ -107,7 +107,7 @@ This was output by the Intent Packager and lets you know where it has placed the
 
 ## Summary
 
-Congratulations, you have created an Intent Architect Module!
+You have successfully created an Intent Architect Module.
 
 ## Next Steps
 
