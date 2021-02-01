@@ -15,13 +15,14 @@ _Properties of the Repository Template, specified in the Module Builder._
 To apply filtering to our Template, in the Visual Studio solution:
 1. Navigate to the `RepositoryTemplateRegistration.cs` file.
 2. Alter the `GetModels` method to filter based on the Stereotype, as follows:
+
     ```csharp
-        public override IEnumerable<ClassModel> GetModels(IApplication application)
-        {
-            return _metadataManager.Domain(application).GetClassModels()
-                .Where(x => x.GetEntitySettings().HasRepository())
-                .ToList();
-        }
+    public override IEnumerable<ClassModel> GetModels(IApplication application)
+    {
+        return _metadataManager.Domain(application).GetClassModels()
+            .Where(x => x.GetEntitySettings().HasRepository())
+            .ToList();
+    }
     ```
 3. Recompile the Project (`.csproj`).
 4. Reinstall the Module and rerun the Software Factory Execution.

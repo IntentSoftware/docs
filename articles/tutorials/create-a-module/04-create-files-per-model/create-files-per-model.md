@@ -38,14 +38,14 @@ Next, we will create a new Template that we can configure to receive the models 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/module-builder-create-entity-template.mp4"></video></p>
 
 >[!WARNING]
->It is always recommended to inspect the changes that Intent Architect wants to make to your codebase _before_ applying the changes.
+>It is always recommended to inspect the changes that Intent Architect wants to make to your codebase _before_ applying the them.
 
 >[!NOTE]
->You may notice that the `EntityTemplateRegistration.cs` class is wired up to create a new Template _instance_ for each `ClassModel` that is retrieved from the `Domain` Designer by Intent Architect's metadata management system. 
+>You may notice that the `EntityTemplateRegistration.cs` class is wired up to create a new Template _instance_ for each `ClassModel` that is retrieved from the `Domain` Designer by Intent Architect's metadata management system. Later in this article you will see how a `ClassModel` ties up with a Class in the actual `Domain` Designer.
 >
 >![](images/entity-template-registration-class.png)
 >
->Filtering which `ClassModel`s create an `EntityTemplate` can be cleanly done in the `GetModels(...)` method. [Learn more here](xref:how-to-guides.filter-templates).
+>Not every `ClassModel` has to create an `EntityTemplate` instance. A filter can be applied on the `GetModels(...)` method. [Learn more here](xref:how-to-guides.filter-templates).
 
 ## Implement Template Logic
 Next, we will implement the logic of the `Entity` Template, essentially _templatizing_ our entities pattern. In this tutorial we will create `public` properties for each _attribute_ and _association_ that we describe in the `Domain` Designer.
@@ -85,15 +85,15 @@ Next, we will implement the logic of the `Entity` Template, essentially _templat
     ```
 
     >[!NOTE]
-    >The Module Builder has automatically wired up our Template so that the  `Model` property is of the type `ClassModel` (the `Class` model for the Domain which will represent our entities). From the `Model` the can access the `Attributes` and `AssociatedClasses` collections.
+    >The Module Builder has automatically wired up our Template so that the  `Model` property is of the type `ClassModel` (the `Class` model for the Domain which will represent our entities). From the `Model` they can access the `Attributes` and `AssociatedClasses` collections.
     >
     >The `GetTypeName(...)` method returns the referenced type that was specified as a qualified and namespace-normalized C# type. It also tracks dependencies between this template and others, allowing it to dynamically add `using` clauses to managed classes (created by Intent Architect) in different namespaces.
     >
-    >Also note that we filter the `AssociatedClasses` by those those that are _Navigable_:
+    >Also note that we filter the `AssociatedClasses` by those that are _Navigable_:
     >```
     ><#  foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
     >```
-    >This prevents ever association relationship from being expresses as bidirectional in our code. 
+    >This prevents every association relationship from being expressed as bidirectional in our code.
 
 <!-- TODO: Add a link to C# template documentation as well as Domain API documentation -->
 4. Open the `EntityTemplatePartial.cs` file. Add the `GetBaseType()` method, that we call in the `EntityTemplate.tt` file, as follows:
@@ -112,7 +112,7 @@ Next, we will implement the logic of the `Entity` Template, essentially _templat
 
 
 >[!TIP]
->The Intent Module Builder configures T4 (`.tt`) files to operate in the same way a `StringBuilder`. The _code-behind_ is regenerated every time the `.tt` file is saved.
+>The Intent Module Builder configures T4 (`.tt`) files to operate in the same way as a `StringBuilder`. The _code-behind_ is regenerated every time the `.tt` file is saved.
 
 
 ## Reinstall the Module
@@ -129,7 +129,7 @@ Finally, our Module is ready and can reinstall it into our `TestApp` that we cre
 >Notice that the `Domain` Designer has now been installed. When we configured our `Entity` Templates to use the `Domain` Designer, the Module Builder automatically added a dependency to the `Intent.Modelers.Domain` Module in the `.imodspec` file.
 
 ## Visually model a test domain
-Next, we will use the `Domain` Designer to model out a basic test domain. We will use this test our _entities pattern_.
+Next, we will use the `Domain` Designer to model out a basic test domain. We will use this to test our _entities pattern_.
 
 1. Navigate to the the `Domain` Designer tab.
 2. Create a new `Domain Package`.
