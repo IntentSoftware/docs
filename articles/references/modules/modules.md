@@ -34,3 +34,7 @@ TODO
 ### Template Registration
 
 TODO
+
+## See also
+
+- [](xref:tutorials.create-a-module.introduction)

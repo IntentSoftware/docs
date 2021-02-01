@@ -42,8 +42,10 @@
 - name: Stereotypes
   href: stereotypes/stereotypes.md
 
-- name: Templates
-  href: templates/templates.md
+# For now this is covered by the `Templates C#` doc, but ultimately generalized content will be extracted
+# from there into this and that will become a sub-node of this menu item.
+# - name: Templates
+#   href: templates/templates.md
 
 - name: Templates (C#)
   href: templates-csharp/templates-csharp.md

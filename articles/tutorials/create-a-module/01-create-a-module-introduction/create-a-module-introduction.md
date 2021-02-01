@@ -1,7 +1,7 @@
 ---
 uid: tutorials.create-a-module.introduction
 ---
-# Create a Module introduction
+# Tutorial: Create a Module
 
 This tutorial will walk you through creating an Intent Architect [Module](xref:references.modules).
 

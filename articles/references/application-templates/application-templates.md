@@ -24,6 +24,6 @@ _The modules downloaded in the example above are specifically related to the `Cl
 > [!NOTE]
 > Although this example is based in .NET, this process would work in the same way for other Application Templates that are designed for other languages.
 
-## Creating your own Application Template
+## See also
 
-TODO
+- [](xref:how-to-guides.create-an-application-template)

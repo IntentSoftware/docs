@@ -1,13 +1,27 @@
-# Simply creating a stereotype to add Serializability to the entity
-- name: Use Stereotypes
-  href: use-stereotypes/use-stereotypes.md
+- name: Auto-assign Template Outputs
+  href: auto-assign-template-outputs/auto-assign-template-outputs.md
+
+- name: Change the output root
+  href: change-the-output-root/change-the-output-root.md
+
+- name: Change user settings
+  href: change-user-settings/change-user-settings.md
+
+- name: Create a Designer
+  href: create-a-designer/create-a-designer.md
+
+- name: Create a Factory Extension
+  href: create-a-factory-extension/create-a-factory-extension.md
+
+- name: Create an Application Template
+  href: create-an-application-template/create-an-application-template.md
+
+- name: Debug your Module code
+  href: debug-your-module-code/debug-your-module-code.md
 
 # Add Attributes above the Properties for serializability options
 - name: Decorate a Template
   href: decorate-a-template/decorate-a-template.md
-
-- name: Create a Factory Extension
-  href: create-a-factory-extension/create-a-factory-extension.md
 
 # Can use stereotype again here to filter in the Registration
 - name: Filter Templates
@@ -16,16 +30,6 @@
 - name: Manage Repositories
   href: manage-repositories/manage-repositories.md
 
-- name: Change user settings
-  href: change-user-settings/change-user-settings.md
-
-- name: Create an Application Template
-  href: create-an-application-template/create-an-application-template.md
-
-- name: Change the output root
-
-- name: Auto-assign Template Outputs
-  href: auto-assign-template-outputs/auto-assign-template-outputs.md
-
-- name: Debug your Module code
-  href: debug-your-module-code/debug-your-module-code.md
+# Simply creating a stereotype to add Serializability to the entity
+- name: Use Stereotypes
+  href: use-stereotypes/use-stereotypes.md

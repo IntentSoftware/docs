@@ -55,7 +55,8 @@ Any method or property in this partial class are accessible in the `.tt` as easi
 
 This file contains the code for _registering_ one or more _instances_ of the template for use during the Software Factory Execution.
 
-An important concept to understand about Intent Architect is that the Software Factory Execution will output a single file per registered template _instance_. A template may have none, a single or multiple instances of it registered during Software Factory Execution. For example the [Single File](#single-file) C# Template Type will register a single instance of its template, while the [File Per Model](#file-per-model) C# Template Type will register an instance of its template for each occurrence of a model type in a Designer.
+> [!IMPORTANT]
+> A key concept to understand about Intent Architect is that the Software Factory Execution will output a single file per registered template _instance_. A template may have none, a single or multiple _instances_ of it registered during Software Factory Execution. For example the [Single File](#single-file) C# Template Type will register a single instance of its template, while the [File Per Model](#file-per-model) C# Template Type will register an instance of its template for each occurrence of a model type in a Designer.
 
 ## Details of the C# Template types
 
