@@ -4,6 +4,9 @@
 - name: Application Templates
   href: application-templates/application-templates.md
 
+- name: Code management
+  href: code-management/code-management.md
+
 - name: Decorators
   href: decorators/decorators.md
 
@@ -13,9 +16,6 @@
 - name: Factory Extensions
   href: factory-extensions/factory-extensions.md
 
-- name: Intent Module Builder
-  href: intent-module-builder/intent-module-builder.md
-
 - name: Metadata
   href: metadata/metadata.md
 
@@ -23,8 +23,11 @@
 - name: Modules
   href: modules/modules.md
 
-- name: Module Builder
-  href: module-builder/module-builder.md
+- name: 'Module: Module Builder'
+  href: module-module-builder/module-module-builder.md
+
+- name: 'Module: Visual Studio'
+  href: module-visual-studio/module-visual-studio.md
 
 - name: Packages
   href: packages/packages.md

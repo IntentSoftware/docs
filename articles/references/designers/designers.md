@@ -8,7 +8,7 @@ Designers in Intent Architect allow you describe your [application's](xref:refer
 Designers are added to the [Application](xref:references.applications) when a [Module](xref:references.modules) that has designer configuration is installed. You can therefore choose which Designers you would like to use in your Application.
 
 > [!NOTE]
-> Designers can be created and configured by using the [Intent Module Builder](xref:references.intent-module-builder). Existing Designers can also be extended with new concepts and configuration.
+> Designers can be created and configured by using the [Intent Module Builder](xref:references.modules.module-builder). Existing Designers can also be extended with new concepts and configuration.
 
 ![Domain Designer](images/designers-domain.png)
 _An example from our from a sample application showing a Domain model inside of the Domain Designer._
