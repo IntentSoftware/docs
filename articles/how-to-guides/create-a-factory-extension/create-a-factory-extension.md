@@ -6,7 +6,9 @@ uid: how-to-guides.create-a-factory-extension
 Generating source code is not the only thing that Intent Architect can do when runs the Software Factory. The processing pipeline can also be extended by running middleware called `Factory Extensions`.
 This guide will explain how to create a `Factory Extension` and using it to invoke a command-line command:
 
->npm i.
+```
+npm install
+```
 
 This guide assumes that you have a Module Project already setup to work from. If you would like to know how to set one up please visit the [Create Module](xref:tutorials.create-a-module.introduction) tutorial.
 
@@ -28,7 +30,7 @@ Open your `MyModules.Entities` Visual Studio project and locate the `NpmInstallF
 
 Make changes to the class so that it looks like this:
 
-```cs
+```csharp
 using Intent.Engine;
 using Intent.Modules.Common.Plugins;
 using Intent.Plugins.FactoryExtensions;
@@ -70,7 +72,7 @@ namespace ExtensionModule.FactoryExtensions
                     };
                     cmd.Start();
 
-                    cmd.StandardInput.WriteLine("npm i");
+                    cmd.StandardInput.WriteLine("npm install");
 
                     cmd.StandardInput.Flush();
                     cmd.StandardInput.Close();
@@ -80,7 +82,7 @@ namespace ExtensionModule.FactoryExtensions
                 }
                 catch (Exception e)
                 {
-                    Logging.Log.Failure($@"Failed to execute: ""npm i"", Reason: {e.Message}");
+                    Logging.Log.Failure($@"Failed to execute: ""npm install"", Reason: {e.Message}");
                 }
             }
         }

@@ -5,8 +5,8 @@ uid: tutorials.creating-modules-net.create-templates-per-model
 In this next tutorial we will extend our `MyModules.Entities` Module to create and manage domain entities based off the `Domain` Designer. To do this we will create a Template that generates a new file for each entity we create in the `Domain`.
 
 
-## Install the `Domain` Designer
-First, to access the `Domain` types so that we can configure our Template correctly, we must install the `Intent.Modelers.Domain` Module into our Module Builder.
+## Install the `Domain` Metadata
+First, to access the `Domain` types so that we can configure our Template correctly, we must install metadata from the `Intent.Modelers.Domain` Module into our Module Builder.
 
 1. Open the `MyModules.Entities` Application.
 2. Navigate to the `Modules` tab.

@@ -38,7 +38,7 @@ To illustrate this, let's create a sample .NET Core Application using the `Clean
 
 ![Application Template Components](images/application-template-components.png)
 
-Each block is a _Component_ and each represents one or more Modules that must be installed into the new Application. Each Component may be included or excluded as required. To see exactly which Modules will be installed depending on our selection of Components, we can expand the Component list on the right side of the page.
+Each block is a _Component_ and each represents one or more Modules that will be installed into the new Application. Each Component may be included or excluded as required. To see exactly which Modules will be installed depending on our selection of Components, we can expand the Component list on the right side of the page.
 
 ![Application Template Modules](images/application-template-modules.png)
 _This screenshot of the component list on the left of the screen shows exactly which modules would be installed from the selected Components._
