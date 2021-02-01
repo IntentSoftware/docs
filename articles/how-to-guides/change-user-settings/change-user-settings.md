@@ -15,7 +15,7 @@ Choose between dark theme or light. By default Intent Architect will use your op
 From time to time, Intent Architect may release pre-release versions of the product. To be notified and able to update to a new pre-release, enable the `Enable updating to pre-release versions` toggle. It is recommended that you keep this setting disabled as pre-releases can be less stable than official ones. 
 
 ### Asset Repositories
-Asset Repositories represent the default available repositories that can be searched for Modules and Application Templates. By default the Intent Architect server is available [https://intentarchitect.com], which hosts all the Open Source modules that the Intent Architect team has created.
+Asset Repositories represent the default available repositories that are searched when discovering Modules and Application Templates. By default the Intent Architect server is available [https://intentarchitect.com], which hosts all the official Open Source modules.
 
 Repositories can also point to local folders and network locations, and can be overridden at the Intent Solution level and Application level. Local folders need to be fully qualified for User Settings, but can be relative locations for Intent Solutions and Applications.
 
@@ -27,4 +27,4 @@ Repositories can be reordered, with the top one being the default. The order of 
 This is the default location that Intent Architect will use when creating a new Application from the home view.
 
 ### Diff Tools
-Intent Architect supports the use of any diff tool that can be executed from the CLI. By default (if blank), Intent Architect will use Visual Studio Code if it has been installed. It will fall back to using Visual Studio, and finally, if neither can be found, a diff tool will need to be specified manually here.
+Intent Architect supports the use of any Diff tool that can be executed from the CLI. By default (if blank), Intent Architect will use Visual Studio Code if it has been installed. It will fall back to using Visual Studio, and finally, if neither can be found, a Diff tool will need to be specified manually here.

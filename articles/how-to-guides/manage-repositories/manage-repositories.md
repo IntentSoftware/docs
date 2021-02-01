@@ -2,9 +2,10 @@
 uid: how-to-guides.manage-repositories
 ---
 # Manage Repositories
-Intent Architect has a hierarchical system to know which Asset Repositories should be available in any particular application. 
+Intent Architect has a hierarchical system to know which Asset Repositories should be available in any particular application.
+Think of this as similar to _Git_'s repository settings, where you can define your user and email address on a global scope, then on a repository scope.
 
-1. First, it will look for an _Application-specific_ repository file (an `intent.repositories.config` file in same folder as the Application's `.application.config` file). Setting these repositories is done by clicking on the _Cog_ next to the Repositories dropdown in the Modules tab.
+1. First, it will look for an _Application-specific_ repository file (an `intent.repositories.config` file in same folder as the Application's `.application.config` file). Setting these repositories is done by clicking on the _Cog_ icon next to the Repositories dropdown in the Modules tab.
 
     ![Application Manage Repositories](images/modules-manage-repositories.png)
 
