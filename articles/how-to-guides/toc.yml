@@ -24,8 +24,8 @@
   href: decorate-a-template/decorate-a-template.md
 
 # Can use stereotype again here to filter in the Registration
-- name: Filter Templates
-  href: filter-templates/filter-templates.md
+- name: Filter Template Instances
+  href: filter-template-instances/filter-template-instances.md
 
 - name: Manage Repositories
   href: manage-repositories/manage-repositories.md
