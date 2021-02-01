@@ -3,7 +3,7 @@ uid: how-to-guides.create-a-factory-extension
 ---
 # Create a Factory Extension
 
-Generating source code is not the only thing that Intent Architect can do when runs the Software Factory. The processing pipeline can also be extended by running middleware called `Factory Extensions`.
+Generating source code is not the only thing that Intent Architect can do when it runs the Software Factory Execution. The processing pipeline can also be extended by running middleware called `Factory Extensions`.
 This guide will explain how to create a `Factory Extension` and using it to invoke a command-line command:
 
 ```
