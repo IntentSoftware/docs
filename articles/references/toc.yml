@@ -13,27 +13,26 @@
 - name: Designers
   href: designers/designers.md
 
-- name: Factory Extensions
-  href: factory-extensions/factory-extensions.md
+# - name: Factory Extensions
+#   href: factory-extensions/factory-extensions.md
 
-- name: Metadata
-  href: metadata/metadata.md
+# - name: Metadata
+#   href: metadata/metadata.md
 
-# Understanding Modules and their anatomy
 - name: Modules
   href: modules/modules.md
 
-- name: 'Module: Module Builder'
-  href: module-module-builder/module-module-builder.md
+# - name: 'Module: Module Builder'
+#   href: module-module-builder/module-module-builder.md
 
-- name: 'Module: Visual Studio'
-  href: module-visual-studio/module-visual-studio.md
+# - name: 'Module: Visual Studio'
+#   href: module-visual-studio/module-visual-studio.md
 
-- name: Packages
-  href: packages/packages.md
+# - name: Packages
+#   href: packages/packages.md
 
-- name: Repositories
-  href: repositories/repositories.md
+# - name: Repositories
+#   href: repositories/repositories.md
 
 - name: Solutions
   href: solutions/solutions.md
@@ -42,8 +41,8 @@
   href: software-factory-execution/software-factory-execution.md
 
 # What it is: Extend metadata. Different options (text, checkbox, etc). Display functions.
-- name: Stereotypes
-  href: stereotypes/stereotypes.md
+# - name: Stereotypes
+#   href: stereotypes/stereotypes.md
 
 # For now this is covered by the `Templates C#` doc, but ultimately generalized content will be extracted
 # from there into this and that will become a sub-node of this menu item.

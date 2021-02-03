@@ -24,6 +24,7 @@ To apply filtering to our Template, in the Visual Studio solution:
             .ToList();
     }
     ```
+    
 3. Recompile the Project (`.csproj`).
 4. Reinstall the Module and rerun the Software Factory Execution.
 

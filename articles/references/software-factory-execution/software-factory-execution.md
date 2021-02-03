@@ -16,6 +16,6 @@ The Software Factory Execution is initiated from within an Application by clicki
 
 ![Play Button](images/play-button.png)
 
-# TODO
+<!-- # TODO
 
-Perhaps how to configure diff tool, or anything else we need to cover.
+Perhaps how to configure diff tool, or anything else we need to cover. -->
