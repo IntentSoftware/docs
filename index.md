@@ -15,7 +15,10 @@ Welcome to the Intent Architect docs. All docs are generated from the source fil
 
 A good place to start is our [welcome](articles/getting-started/welcome/welcome.md) doc.
 
-<script type="text/javascript">window.location.href = "articles/getting-started/welcome/welcome.html";</script>
+<script type="text/javascript">
+  let prefix = window.location.pathname.toLowerCase() === "/docs" ? "/docs/" : "";
+  window.location.href = `${prefix}articles/getting-started/welcome/welcome.html`;
+</script>
 
 ## What if I find an issue with a particular doc or have a suggestion?
 
