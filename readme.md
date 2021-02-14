@@ -21,13 +21,13 @@ This folder contains the source [markdown](https://dotnet.github.io/docfx/spec/d
 From the command line run:
 
 ```
-_tools\DocFX\docfx.exe docfx.json --serve
+_tools/DocFX/docfx.exe docfx.json --serve
 ```
 
 Or alternatively:
 
 ```
-_build_and_serve.bat
+./_build_and_serve.ps1
 ```
 
 ### Build only
@@ -35,9 +35,13 @@ _build_and_serve.bat
 From the command line run:
 
 ```
-_tools\DocFX\docfx.exe docfx.json
+_tools/DocFX/docfx.exe docfx.json
 ```
 
 ### Troubleshooting
 
 If there is a strange build error, try completely deleting the `obj` folder. This folder only contains build artifacts, the worst that can happen from its deletion is that the next build may take longer.
+
+## Publishing (for Intent Software employees)
+
+For information on publishing the docs to our website, refer to the `readme.md` in the Intent Architect private repository.

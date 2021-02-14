@@ -1,29 +1,23 @@
 ---
-uid: default
 remarks: |
-  We don't link directly to this page, but rather to the welcome page, however, as it is still
-  published it can be navigated to from entering a URL manually.
+  Do not add any content to this file as any requests to this root path are redirected server side
+  as per the `Documentation/Intent.Docs.sln` in the Intent Architect private repository. The
+  <script> tag is for convenience when using `_build_and_serve.ps1`.
 
-  Provided JavaScript is enabled people should just be redirected to the welcome page, otherwise
-  they will see the basic content below.
+  If you are planning on adding content to this file, be aware there is an unresolved problem with
+  viewing it. If one visits `https://intentarchitect.com/docs/`, then everything works fine, if one
+  visits `https://intentarchitect.com/docs`, then all the relative paths on the published page stop
+  working as the browser no longer sees the page as in a folder for things like the CSS ref.
+
+  I tried using url rewrite in the web.config as per
+  https://blog.elmah.io/web-config-redirects-with-rewrite-rules-https-www-and-more/, but that
+  particular example didn't seem to work.
+
+  I then tried using OWIN middleware, but even when debugging the Azure website, there was no
+  discernible difference that I could see in the request context between `/docs` and `/docs/`.
+  So for now the middleware does a redirect to the welcome page and then nothing looks scruffy
+  to users who go to `/docs`.
 ---
-# Intent Architect docs
-
-Welcome to the Intent Architect docs. All docs are generated from the source files in our [Docs Github Repository](https://github.com/IntentSoftware/Docs).
-
-## Where do I start?
-
-A good place to start is our [welcome](articles/getting-started/welcome/welcome.md) doc.
-
 <script type="text/javascript">
-  let prefix = window.location.pathname.toLowerCase() === "/docs" ? "/docs/" : "";
-  window.location.href = `${prefix}articles/getting-started/welcome/welcome.html`;
+  window.location.href = "./articles/getting-started/welcome/welcome.html";
 </script>
-
-## What if I find an issue with a particular doc or have a suggestion?
-
-If you're familiar with markdown, Github and are happy to fix small issues yourself, we welcome pull requests. All docs have an `Improve this Doc` link at the top right of the page which can be clicked on to take you right to the doc source.
-
-The next best for us if you [create an issue](https://github.com/IntentSoftware/Docs/issues/new/choose) on the Github repository.
-
-Otherwise, feel free to hit us up on other pre-established communication channel you already have with us.
