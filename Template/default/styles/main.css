@@ -6,6 +6,10 @@ article p img {
     border-color: black;
 }
 
+code {
+    color: #c7254e;
+}
+
 .sidefilter {
     top: 118px;
 }

@@ -55,7 +55,7 @@ Any method or property in this partial class are accessible in the `.tt` as easi
 
 This file contains the code for _registering_ one or more _instances_ of the template for use during the Software Factory Execution.
 
-> [!IMPORTANT]
+> [!NOTE]
 > A key concept to understand about Intent Architect is that the Software Factory Execution will output a single file per registered template _instance_. A template may have none, a single or multiple _instances_ of it registered during Software Factory Execution. For example the [Single File](#single-file) C# Template Type will register a single instance of its template, while the [File Per Model](#file-per-model) C# Template Type will register an instance of its template for each occurrence of a model type in a Designer.
 
 ## Details of the C# Template types
@@ -88,49 +88,66 @@ This C# Template type is used far less than the other types and is when the othe
 
 Custom is largely the same as [Single File](#single-file) except that the generated [Template registration file](#3-template-registration-file) derives from `ITemplateRegistration` and therefore allows complete control over the implementation.
 
+## Template Configuration
+The Template configuration is specified in the [Template partial file](#2-template-partial-file), inside the `DefineFileConfig` method. In this method, the configuration of each instance can be set as literal values or determined by functions and string interpolation. The required values set in the configuration determine the Template's `ClassName` and `Namespace` properties.
+
+![DefineFileConfig method example](images/csharp-template-config-method.png)
+
+### The `ClassName` Property
+
+When working with C# templates, it is recommended that you use `<#= ClassName #>` for a class's name in the `.tt` file:
+
+```csharp
+public class <#= ClassName #>
+{
+    ...
+}
+```
+
+Intent Architect will then ensure it handles all the rules and edge cases for the naming of your class, including:
+- Applying PascalCase naming convention.
+- Removing invalid characters, like spaces or punctuation.
+
+### The `Namespace` Property
+
+When working with C# templates, it is recommended that you use `<#= Namespace #>` to declare the file's namespace in the `.tt` file:
+
+```csharp
+namespace <#= Namespace #>
+{
+    ...
+}
+```
+
+The default Template configuration that uses `this.GetNamespace()` will automatically determine the `Namespace` of the class based on where the file output is created. See below for how to configure the Output Location.
+
+### Configure the Output Location
+Ultimately, the output location of a Template instance is determined by two factors:
+
+1. **The `Template Output` location** - i.e. under which folder or project the Template's `Template Output` is placed within the application. With C# Templates this is typically be determined using the `Visual Studio` Designer. In the example below we can see that the `Template Output` for `Intent.AspNetCore.Startup` will be placed in the `ExampleApp.Api` project:
+
+    ![Template Output in Visual Studio](images/visual-studio-template-output.png)
+
+    > [!TIP]
+    > We can easily change where a Template's output will be created by dragging the `Template Output` element into a different folder or project.
+
+2. **The Template's `relativeLocation` configuration** - The `relativeLocation` is set relative to the `Template Output`'s location as described above.
+
+    > [!TIP]
+    > The `relativeLocation`'s default of `this.GetFolderPath()` will respect any folders in the Designer that the `Model` element instance was created within.
+
 ## Convenience and utility features for C# file generation
 
 Through extensive experience of building templates for generating C# files, we have added many features which we consider essential to making the C# template authoring process a painless experience.
 
 ### Code Management
-
 A core feature of Intent Architect is [Code Management](xref:references.code-management) where parts of a file are managed fully by Intent Architect while other parts in the same file are hand crafted and Intent Architect will leave those particular parts alone.
 
 For C# files, you can use [C# attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/) anywhere in the file to opt-out a particular element of code within a file from being overwritten during Software Factory Execution.
 
 For example you could place `[IntentManaged(Mode.Ignore)]` on a particular method and when Intent Architect sees this during Software Factory execution it will make sure to never change anything for it.
 
-### Class Name
-
-When working with C# templates, you should always use `<#= ClassName #>` for a class's name:
-
-```csharp
-public class <#= ClassName #>
-{
-}
-```
-
-Intent Architect will then ensure it handles all the rules and edge cases for the name of your class, including (but not limited to) things like:
-- Applying CamelCase naming convention.
-- Removing invalid characters, like spaces or punctuation.
-- Applying other class name rules like that they can't begin with a number.
-
-### Namespace
-
-When working with C# templates, you should always use `<#= Namespace #>` to declare the file's namespace:
-
-```csharp
-namespace <#= Namespace #>
-{
-}
-```
-
-Intent Architect will then automatically generate the namespace based on the following:
-- The [Application](xref:references.applications) name.
-- The project name and folder of the Template as per your configuration in the [Visual Studio Designer](xref:references.modules.visual-studio#designer).
-- The folder of the particular model for the template instance (for [File Per Model](#file-per-model) Templates only).
-
-### Using statements
+### Using statements from other Templates (dependencies)
 
 Intent Architect will automatically add required [using statements](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement) to generated C# files based on specified template dependencies as [`GetTypeName(...)`](#resolving-type-names-of-other-template-instances) usages.
 
@@ -147,11 +164,11 @@ partial class EntityBaseTemplate : CSharpTemplateBase<object>
 }
 ```
 
-During Software Factory Execution, Intent Architect will [determine the namespaces](#namespace) of those other Template instances and add them as using statements.
+During Software Factory Execution, Intent Architect will [determine the namespaces](#the-namespace-property) of those other Template instances and add them as using statements.
 
 ### Resolving type names of other template instances
 
-Similar to how Intent Architect automatically determines the [class name for the current Template instance](#class-name), it can resolve the determined class names of other Template instances.
+Similar to how Intent Architect automatically determines the [class name for the current Template instance](#the-classname-property), it can resolve the determined class names of other Template instances.
 
 This is essential for templates which refer to types generated in other template instances as doing so manually would require consideration not only of the the other Template instance's class name, namespace and use generic parameters, but also that Intent Architect allows customization through its UI of the resolution of these, meaning that the rules you thought applied, might have been overridden.
 
