@@ -3,13 +3,13 @@ uid: tutorials.create-a-module.create-a-simple-module
 ---
 # Create a simple module
 
-In this step of the tutorial we will create a new Module Builder Application in Intent Architect, use the designer to add a template to it. We will run the software factory against this application to generate a .NET Core C# solution which will then be built to generate the module.
+In this step of the tutorial we will create a new Module Builder Application in Intent Architect, use the Designer to add a template to it, run the Software Factory against this Application to generate a .NET Core C# solution, which we will then finally build in our IDE to generate the Module.
 
 ## Create a new application
 
 On the home screen click `Create a new module`.
 
-Fill in a `Name`, such as `MyModules`, review/change the `Location` as desired and click `NEXT`.
+Fill in a `Name` (such as `MyModules`), review/change the `Location` as desired and click `NEXT`.
 
 Ensure the following components are selected:
 - `Module Builder Core`
@@ -18,7 +18,7 @@ Ensure the following components are selected:
 
 Click `CREATE`.
 
-An `Application Installation` dialogue will pop up showing the progress of downloading and installing modules and metadata for the application, once it's finished it will show `Process complete.` and you can click the `CLOSE` button:
+An `Application Installation` dialogue will pop up showing the progress of downloading and installing Modules and Metadata for the Application, once it's finished it will show `Process complete.` and you can click the `CLOSE` button:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-a-new-module.mp4"></video></p>
 
@@ -35,9 +35,9 @@ Enter a name for the [Package](xref:references.packages) (such as `MyModules.Ent
 
 ## Create a template
 
-Right-click the package and click the `New C# Template` option:
+Right-click the Package and click the `New C# Template` option:
 
-Name it `EntityBase` and select a type of `Single File`:
+Name it `EntityBase` and for its type select `Single File`:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-the-template.mp4"></video></p>
 
@@ -48,7 +48,7 @@ We are now ready to run the software factory. Press the play button near the top
 > [!NOTE]
 > If your changes are unsaved you will be asked if you want to save them before proceeding.
 
-Once the Software Factory has executed the templates, it pauses to give you an opportunity to review the proposed changes (called staging). If you are satisfied with the proposed changes you can press the `APPLY CHANGES` button to continue. When the Software Factory Execution is complete, you will be presented with the `CLOSE` button to end the session.
+Once the Software Factory has executed the templates, it pauses to give you an opportunity to review the proposed changes (called staging). You can click an entry and it will open in a diff tool. If you are satisfied with the proposed changes you can press the `APPLY CHANGES` button to continue. When the Software Factory Execution is complete, you will be presented with the `CLOSE` button to end the session.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/run-the-software-factory.mp4"></video></p>
 
@@ -59,11 +59,11 @@ During the Software Factory Execution, Intent Architect generated a Visual Studi
 Navigate to the folder where the `.sln` solution file (and associated files) have been placed and open it with Visual Studio.
 
 > [!TIP]
-> Intent Architect can open the folder, where the generated content was placed, by you going to the Application `Settings` and clicking on the path hyperlink located under the `Relative Output Location` input:
+> Intent Architect can open the folder where the generated content was placed by you going to the Application `Settings` and clicking on the path hyperlink located under the `Relative Output Location` input:
 > 
 > ![Open the output path folder](images/open-the-output-path-folder.png)
 
-Go to the `MyModules` Project and expand the `Templates` folder and then the  `EntityBase` folder.
+Go to the `MyModules` Project and expand the `Templates` folder and then the `EntityBase` folder.
 
 Open the `EntityBaseTemplate.tt` file and update its content to the following:
 

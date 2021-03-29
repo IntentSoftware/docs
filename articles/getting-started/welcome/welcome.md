@@ -20,10 +20,10 @@ By combining visual modelling, code-management, and pattern reuse into a powerfu
 
 ### Visual Models
 
-Intent Architect allows developers to use visual models to describe their application's design. By compressing information into visual formats (e.g. Entity relationship diagram), the human mind can quickly interpret and digest it. When instructed, Intent Architect synchronizes the visual models with the codebase according to the patterns (Modules) that the developer has installed. In this way, it ensures that the visual models are a true representation of the codebase, thereby providing teams with blueprints of their systems.
+Intent Architect allows developers to use visual models to describe their application's design. By compressing information into visual formats (e.g. entity relationship diagrams), the human mind can quickly interpret and digest it. When instructed, Intent Architect synchronizes the visual models with the codebase according to the patterns (Modules) that the developer has installed. In this way, it ensures that the visual models are a true representation of the codebase, thereby providing teams with blueprints of their systems.
 
 ![Visual Modelling Example](images/visual-modelling-example-dark.png)
-_Example of an entity relationship diagram being used to design a domain and its persistence characteristics_
+_Example of an entity relationship diagram being used to design a domain and its persistence characteristics._
 
 ### Code Management
 
@@ -54,11 +54,11 @@ Therefore, since Intent Architect is language oriented (it manages code files), 
 For the advanced [code-management](#code-management) capabilities described above, Intent Architect currently has support for the following languages:
  - C#
  - Java
- - Typescript / Javascript
+ - TypeScript / JavaScript
  - HTML
  - SQL
 
-This list will continue to grow to include other popular programming languages such as Python an GO in the near future.
+This list will continue to grow to include other popular programming languages such as Python and Go in the near future.
 
 ## Non-prescriptive
 
@@ -66,14 +66,14 @@ Intent Architect is non-prescriptive, making it unopinionated on choice of archi
 
 While other code generation solutions tend to generate code that works and looks in a particular way, Intent Architect is instead just a platform, and the code that is managed is determined by the particular _Modules_ that the team has installed into any particular application.
 
-Since _Modules_ are typically created and managed by the architect(s) within the organization, there is no constraint on forced opt-in, and the development team is completely in control of what code is managed under automation, and what code they will manage by hand.
+Since _Modules_ are typically created and managed by the architect(s) within an organization, there is no constraint on forced opt-in, and the development team is completely in control of what code is managed under automation, and what code they will manage by hand.
 
 Similarly, Intent Architect does not dictate how developers design their system. Where most modelling products constrain developers to use strict UML diagrams (Class Diagrams, State Diagrams, Sequence Diagrams, etc.), Intent Architect's modelling systems are completely customizable, configurable and extensible. Teams choose how _they_ want to design their application. They also choose _which_ parts of the system they want to model visually.
 
 ## Use cases
 
 Intent Architect is ideal for automating architectural, infrastructural, and boilerplate code. Depending on the project, this type of code can make up over 80% of the codebase. Typically, the tool is used by developers to achieve the following:
-- **Bootstrapping** - microservices, monolythic applications, application modules, identity, etc.
+- **Bootstrapping** - microservices, monolithic applications, application modules, identity, etc.
 - **Persistence Infrastructure** - ORM Mappings, Repositories, etc.
 - **Service Infrastructure** - RESTful Web Services, Data Transfer Objects, Dispatch Patterns (e.g. Mediator, Interface Dispatch), etc.
 - **Eventing Infrastructure** - Events, Message Broker configuration, Message dispatch infrastructure, etc.
@@ -81,11 +81,11 @@ Intent Architect is ideal for automating architectural, infrastructural, and boi
 - **Front-End Infrastructure** - Components, Service Proxies, Models, etc.
 - **Workflow Design** - Workflow Infrastructure, Flow Control Systems, etc.
 
-The use cases for Intent Architect are really endless. A general rule of thumb is **if it can be described, it can be automated**. In other words, if a developer can define a way to adequately model their _design intent_, they would be able to create a _Module_ to automate that particular pattern.
+The use cases for Intent Architect really are endless. A general rule of thumb is **if it can be described, it can be automated**. In other words, if a developer can define a way to adequately model their _design intent_, they would be able to create a _Module_ to automate that particular pattern.
 
 ## No lock-in
 
-Intent Architect is not a framework or runtime platform. It does not inherently introduce any hard runtime dependencies. Because it generates and manages code (and the code is written in the same style as a developer - a key principle when creating Modules), there is no dependency on it, and therefore no lock-in. Teams may choose to continue building their project without Intent Architect and they would be no worse off had they written the entire codebase by hand.
+Intent Architect is not a framework or runtime platform. It does not inherently introduce any hard runtime dependencies. Because it generates and manages code (and the code is written in the same style as a developer - a key principle when creating Modules), there is no dependency on it, and therefore no lock-in. Teams may choose to continue building their project without Intent Architect and all the code that was managed by Intent Architect will be no worse off than if it were originally written by hand.
 
 ## What's Next
 

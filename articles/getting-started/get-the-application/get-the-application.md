@@ -9,8 +9,8 @@ The latest version of Intent Architect can be downloaded for either Windows or i
 
 Once downloaded, execute the installation file. 
 
->[!NOTE]
->Our releases are digitally signed, safe and unintrusive.
+> [!NOTE]
+> Our releases are digitally signed, safe and unintrusive.
 
 ## Create an account
 As a new user, creating an account can be done from within Intent Architect. Follow these steps to create your new account:
@@ -21,8 +21,8 @@ As a new user, creating an account can be done from within Intent Architect. Fol
 
 Intent Architect will automatically log in once your account has been created.
 
->[!NOTE]
->Your information is kept 100% private and secure. We do not share any of your personal information with third parties.
+> [!NOTE]
+> Your information is kept 100% private and secure. We do not share any of your personal information with third parties.
 
 ## What's Next
 #### [Take a tour of Intent Architect](xref:getting-started.take-a-tour)

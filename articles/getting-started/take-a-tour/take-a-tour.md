@@ -5,9 +5,9 @@ uid: getting-started.take-a-tour
 # Take a tour
 
 ## Introduction
-This tour covers the key concepts in Intent Architect at a high-level. The aim is to introduce each concept without going into too much detail. Let's get started.
+This tour covers the key concepts in Intent Architect at a high-level. Its aim is to introduce each concept without going into too much detail. Let's get started.
 
-Once [installed and logged in with your account](xref:getting-started.get-the-application), you will be routed to the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
+Once [installed and logged in with your account](xref:getting-started.get-the-application), you will be presented with the home view of Intent Architect. From here you have options to `Create a new application`, `Create a new module`, or `Open an existing solution workspace`.
 
 ![Getting Started](images/home-getting-started.png)
 
@@ -19,16 +19,16 @@ Applications in Intent Architect represent a _scope of code files_ that we want 
 
 Applications are fundamentally composed of installed Modules, Designers and some high-level configuration settings. These concepts will be discussed later in the tour.
 
-Creating a new application in Intent Architect can be done by clicking on the "Create a new application" button in the home view to launch the _Create application_ wizard.
+Creating a new application in Intent Architect can be done by clicking on the `Create a new application` button in the home view to launch the _Create application_ wizard.
 
 ![Create Application Start](images/create-application-start.png)
 
 The first page of the wizard lists the available [Application Templates](#application-templates) in the selected repository (by default this will be Intent Architect's website [https://intentarchitect.com/](https://intentarchitect.com/) but could be a local directory or network location. [Learn how to change your default repositories here](xref:how-to-guides.change-user-settings)).
 
-Here you can search and choose which application template you want and directly set key settings like the Application's name, location and [solution](#solutions) name.
+Here you can search and choose which application template you want and directly configure key settings like the Application's name, location and [solution](#solutions) name.
 
->[!NOTE]
->It is possible to create an empty application by clicking on the `CREATE EMPTY` button instead of `NEXT`. This would create a new application without any Modules or metadata installed.
+> [!NOTE]
+> It is possible to create an empty application by clicking on the `CREATE EMPTY` button instead of `NEXT`. This would create a new application without any Modules or metadata installed.
 
 
 ### Application Templates
@@ -51,11 +51,11 @@ Intent Architect will download and install the Modules correlating to the select
 _The modules downloaded in the example above are specifically related to the `Clean Architecture .NET Core 3.1` Application Template._
 
 > [!NOTE]
-> Although this example is based in .NET, this process would work in the same way for other Application Templates that are designed for other languages.
+> Although this example is targetting .NET, this process would work in the same way for other Application Templates that are designed for other languages.
 
 
 ## Application Settings
-Once Intent Architect has finished creating the application and installing the selected components, it will open it automatically on the _Settings_ tab.
+Once Intent Architect has finished creating the application and installing the selected components, it will open it automatically on the _Settings_ view.
 
 ![Application Settings](images/application-settings.png)
 
@@ -67,28 +67,28 @@ Below the _Relative Output Location_, Intent Architect shows the full path into 
 >If the path doesn't exist yet, it won't be able to open.
 
 ## Modules
-Modules are the _building blocks_ and artifacts of pattern reuse in Intent Architect.
+Modules are distributable artifacts which are the _building blocks_ of pattern reuse in Intent Architect.
 
 Typically, the purpose of a Module is to generate and manage a set of code files in a codebase, usually around a particular architectural pattern. This could for example be the entities in our domain, simple bootstrapping files, ORM mappings, controllers in our Api, etc.
 
-Modules have similarities with package systems such as Nuget, NPM, and Maven. However, where the primary objective of these systems is to make code-reuse easier, the primary objective of Modules is _pattern-reuse_. 
+Modules have similarities with package systems such as Nuget, NPM, and Maven. However, where the primary objective of these systems is to facilitate code-reuse, the primary objective of Modules is to facilitate _pattern-reuse_.
 
 Modules have versions and dependencies, and don't directly introduce any runtime dependencies. They can, however, be configured to introduce package dependencies if the designer of the Module so chooses.
 
 ![Application Modules](images/application-modules-installed.png)
-_This example shows the list of Installed Modules in our sample application. The `Intent.Application.MediatR` module has been selected, with its details displayed in the pane on the right._
+_This example shows the list of Installed Modules in our sample application. The `Intent.Application.MediatR` Module has been selected, with its details displayed in the pane on the right._
 
 > [!NOTE]
 > When you select an installed Module, Intent Architect gives a view into the internals of that module (i.e. the Templates, Decorators, and Factory Extensions that it is made up of).
 
 
 ## Designers
-Designers in Intent Architect allow you describe your application's design as visual models and hierarchical concepts. For example, Designers could be used to describe: the entities in a domain, the services that make up the applications API, events that are published and subscribed, etc.
+Designers in Intent Architect allow you describe your application's design as visual models and hierarchical concepts. For example, Designers could be used to describe things such as: the entities in a domain, the services that make up the applications API, events that are published and subscribed, etc.
 
 Designers are added to the Application when a Module that has designer configuration is installed. You can therefore choose which Designers you would like to use in your Application.
 
 > [!NOTE]
-> Designers can be created and configured by using the Intent Module Builder. Existing Designers can also be extended with new concepts and configuration.
+> Designers can be created and configured by using the Intent Module Builder. Existing Designers can also be extended with new concepts, configuration and options.
 
 ![Domain Designer](images/designers-domain.png)
 _An example from our sample application showing a Domain model inside of the Domain Designer._
@@ -118,8 +118,8 @@ The Software Factory Execution is initiated from within an Application by clicki
 
 ![Play Button](images/software-factory-execution-play-button.png)
 
->[!NOTE]
->When you create Modules, it is very useful to be able to **debug** them. Intent Architect allows this when you click the _Bug_ button to the left of the _Play_ button. 
+> [!NOTE]
+> When you create Modules, it can sometimes be very useful to be able to **debug** them. Intent Architect supports this by prompting you to attach a debugger when you click the _Bug_ button to the left of the _Play_ button before it proceeds to perform the Software Factory Execution.
 
 
 ## Solutions
@@ -130,7 +130,7 @@ An Application can only be opened in the context on a Solution, which is represe
 ![Solution Dashboard](images/solution-dashboard.png)
 _A Solution dashboard with a single Application from this tour._
 
-Additional Applications can be created from the Solution dashboard by clicking on the `Create new application...` button. Applications can also be filtered as well as _favourited_ by clicking the _Star_ in the top right-hand of an Application. They can be removed by right-clicking and selecting the `Delete` option.
+Additional Applications can be created from the Solution dashboard by clicking on the `Create new application...` button. Applications can also be filtered with the text field as well as _favourited_ by clicking the _Star_ in the top right-hand of an Application. They can be removed by right-clicking and selecting the `Delete` option.
 
 
 ## What's Next
