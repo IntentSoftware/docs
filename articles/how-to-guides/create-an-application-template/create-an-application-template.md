@@ -25,7 +25,7 @@ Open the `App Templates` designer and click on `Create new pacakge`.
 
 ![Create App Template Package](images/create-app-templates-package.png)
 
-Upon creation, you will notice that the package is highlighted in red. This is to prompt you to complete the following fields:
+If you find that the package is highlighted in red, click on it and complete the following fields:
 
 ![Application Template Package Settings](images/app-template-pacakge-settings.png)
 
