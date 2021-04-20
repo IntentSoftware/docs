@@ -51,3 +51,6 @@
 
 - name: Templates (C#)
   href: templates-csharp/templates-csharp.md
+
+- name: Notations
+  href: notations/notations.md

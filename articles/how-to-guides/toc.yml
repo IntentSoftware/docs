@@ -13,8 +13,8 @@
 - name: Create a Factory Extension
   href: create-a-factory-extension/create-a-factory-extension.md
 
-# - name: Create an Application Template
-#   href: create-an-application-template/create-an-application-template.md
+- name: Create an Application Template
+  href: create-an-application-template/create-an-application-template.md
 
 - name: Debug your Module code
   href: debug-your-module-code/debug-your-module-code.md
