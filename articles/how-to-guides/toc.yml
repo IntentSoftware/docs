@@ -10,6 +10,9 @@
 # - name: Create a Designer
 #   href: create-a-designer/create-a-designer.md
 
+- name: Create a Designer Extension
+  href: create-a-designer-extension/create-a-designer-extension.md
+
 - name: Create a Factory Extension
   href: create-a-factory-extension/create-a-factory-extension.md
 
