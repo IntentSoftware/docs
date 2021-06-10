@@ -36,3 +36,6 @@
 # Simply creating a stereotype to add Serializability to the entity
 - name: Use Stereotypes
   href: use-stereotypes/use-stereotypes.md
+
+- name: Use the Change Icon Dialogue
+  href: use-the-change-icon-dialogue/use-the-change-icon-dialogue.md
