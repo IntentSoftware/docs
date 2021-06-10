@@ -4,68 +4,141 @@ note: This one will only cover the new element creation. We will need to write o
 ---
 # Create a Designer Extension
 
-If you have worked in Intent Architect's available set of designers such as the Services or the Domain designer, chances are you might have asked yourself the question whether you could change them to some extent.
-In this how-to you will learn how to add your own Element to a Domain designer (or any other designer) and be able to reference it in the designer as if it is an actual type and be able to generate content from that new element.
+This how-to guide will walk you through creating a [Designer Extension](xref:references.designer-extensions) which extends the [Domain Designer](https://github.com/IntentSoftware/Intent.Modules/tree/master/Modules/Intent.Modules.Modelers.Domain) such that in addition to everything it already supports, it will also allow:
 
-Create a new Module Builder application and give it the name `DomainDesignerExtension`.
+- Adding a new element of type `Domain Event` which can be added through a context menu option on folders.
+- Ability to apply a new Stereotype to `Class` elements.
+- Have a property on the above Stereotype which allows selection of `Domain Event` element types created in that Designer's Package.
+
+## Create a new Application
+
+Create a new `Module Builder` application and give it the name `DomainDesignerExtension`:
 
 ![Domain Design Extension Creation](images/design-extension-creation.png)
 
-And select the `Module Builder - C#` option and click on `Create`.
+Click `NEXT` and on the following screen ensure that the following extra options are ticked:
+
+- `Module Builder - C#`.
+- `Auto-Build Module`:
 
 ![Domain Design Extension Customize](images/design-extension-customize.png)
 
-Once the installation dialog is complete you can click on `Close`.
+Click `CREATE`:
 
 ![Installation Dialog](images/installation-dialog.png)
 
-Click on the `Module Builder` designer and create a package with the name `MyDomainExtension`.
+Once the `Application Installation` is complete, click `CLOSE`.
 
-After that, go ahead and install the metadata for the Domain designer.
+## Install the Domain designer
+
+- Click on `Modules` on the left.
+- Search for `Intent.Modelers.Domain`.
+- Expand `Options` on the right.
+- Check `Install metadata only`.
+- Click `Install`:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/install-domain-module-metadata.mp4"></video></p>
 
-Return to the `Module Builder` designer and setup the following:
+## Configure the package to reference the domain designer
 
-Reference the Domain designer in the `MyDomainExtension` package.
-This will make our elements bundled with the `MyDomainExtension` package and targeting the `Domain` designer.
+- Click on the  `Module Builder` Designer on the left.
+- Select the top-level Package node and in the Properties pane on the right:
+  - Check `Include in Module`.
+  - Add `Domain` to `Reference in Designer`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/design-setup-designer-reference.mp4"></video></p>
 
-Create our `Domain Event` Element with its `Property` Element so that we have something to install in the `Domain` designer.
+## Create and configure the `Domain Event` element
+
+- Right-click the root Package element and click the `Add Designers Folder` option.
+- Right-click the `designers` element and click the `New Designer Settings` option.
+- Give the new element a name of `DomainEventSettings`.
+- Select the `DomainEventSettings` element and in the Properties pane on the right:
+  - For `Extend Designers` add `Domain`.
+- Right-click the `DomainEventSettings` element and click the `New Element Type` option.
+- Give the new element a name of `Domain Event`.
+- Right-click the `Domain Event` element and click the `Add Element Settings` option.
+- Give the new element a name of `Property`
+- Select the `Property` element and in the Properties pane on the right:
+  - Change `Mode` to `Required`.
+  - For `Target Types` add `Class`, `Enum` and `Type-Definition`.
+- Right-click the `[context-menu]` element (the one directly within `DomainEventSettings`) and click the `Add Element Creation` option.
+- Give the new element a name of `Add Property` and select the `Property` type for it:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/design-setup-element.mp4"></video></p>
 
-Create the Package extension and Folder extension elements which will allow us to setup the Creation of our `Domain Event` element within Packages and Folders inside the `Domain` designer.
+## Create an `Add Event` context menu option for `Folder` elements
 
-<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/design-setup-element-creation.mp4"></video></p>
+- Right-click the `DomainEventSettings` and click the `New Element Extension` option.
+- Give the new element a name of `Folder Extension` and select the `Folder` type for it.
+- Right-click the `Folder Extension` element and click the `Add Menu Options` option.
+- Right-click the `[context-menu]` element (the one directly within `Folder Extension`) and click the `Add Element Creation` option.
+- Give the new element a name of `Add Event` and select the `Domain Event` type for it:
 
-Lastly, let's setup a Stereotype that will allow us to reference our newly created `Domain Event` within a `Class` element.
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/folder-add-event-context-menu-option.mp4"></video></p>
 
-<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/design-setup-stereotype.mp4"></video></p>
+## Create an `Add Event` context menu option for `Package` elements
 
-Run the Software Factory to apply the following changes in staging
+- Right-click the `DomainEventSettings` and click the `New Package Extension` option.
+- Give the new element a name of `Package Settings` and select the `Domain Package` type for it.
+- Right-click the `[context-menu]` element (the one directly within `Package Settings`) and click the `Add Element Creation` option.
+- Give the new element a name of `Add Event` and select the `Domain Event` type for it:
+
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/package-add-event-context-menu-option.mp4"></video></p>
+
+## Create the Stereotype
+
+- Right-click the root Package element and click the `New Stereotype-Definition` option.
+- Give the new Stereotype Definition a name of `Has Domain Event`.
+- Select the `Has Domain Event` element and in the Properties pane on the right:
+  - For `Targets` add `Class`.
+- Right-click the `Has Domain Event` element and click the `Add Property` option.
+- Give the Property a name of `Event`.
+- Select the `Event` element and in the Properties pane on the right:
+  - Change `Control Type` to `Select`.
+  - Change `Option Source` to `Lookup Element`.
+  - For `Lookup Types` add `Domain Event`:
+
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-the-stereotype.mp4"></video></p>
+
+## Run the Software Factory to generate the module
+
+Run the Software Factory and optionally review the proposed changes:
 
 ![Staging files](images/software-factory-run.png)
 
-You can click on `Apply` and once that is done continue to build the solution in Visual Studio.
+Click `APPLY CHANGES`.
 
-![Visual Studio Build](images/visual-studio-build.png)
+After the Software Factory has applied the changes, you'll see that it runs `dotnet build` on the generated `Visual Studio` solution:
 
-# Test your Designer Extension Module
+![Software Factory: dotnet build](images/software-factory-dotnet-build.png)
 
-Open up the [Repository Manager](xref:how-to-guides.manage-repositories) to point to your newly created Module folder.
+Take note of the following line in the output for the following step:
+
+```text
+Successfully created module C:\Dev\MySolution\Intent.Modules\DomainDesignerExtension.1.0.0.imod
+```
+
+Click `CLOSE`.
+
+## Test your Designer Extension Module
+
+Ensure you have added the output path as noted in the above step as a repository in the [Repository Manager](xref:how-to-guides.manage-repositories). For the above output, the full path of the module is `C:\Dev\MySolution\Intent.Modules\DomainDesignerExtension.1.0.0.imod`, so the repository would point to its folder, which is `C:\Dev\MySolution\Intent.Modules`:
 
 ![Manage Repositories](images/repo-manager-module-folder.png)
 
-Add your Repository to the list as shown in the image above. Let it point to your folder where your compiled Module is located.
-
-Open or create the Intent Architect application where you want to install your newly created Module.
-Click on the Modules option on the panel to the left.
-Select your repository from the drop-down on the right and locate your Module to install.
+- Open or create the Intent Architect application where you want to install your newly created Module.
+- Click on the Modules option on the panel to the left.
+- Ensure the application has the `Intent.Modelers.Domain` module installed.
+- Select your repository from the drop-down on the right and locate your Module to install:
 
 ![Install Module](images/test-module-install.png)
 
-Now you can see your new Designer extension in action
+You will now have the option of creating the new `Domain Event` element and using it in the `Has Domain Event` Stereotype that was added by the Designer Extension we created above:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/test-module-domain.mp4"></video></p>
+
+## See also
+
+- [](xref:references.designers)
+- [](xref:references.designer-extensions)

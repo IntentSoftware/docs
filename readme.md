@@ -16,6 +16,21 @@ To make more complex submissions, contact the Intent team at support@intentarchi
 
 This folder contains the source [markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) for Intent Architect's documentation. [DocFX](https://dotnet.github.io/docfx/) is then run against the `docfx.json` file and along with the `.md` files, our documentation is generated into the `_site` folder (which is `.gitignore`'d). The contents of the `_site` folder are then uploaded to the website at [http://intentarchitect.com/docs/](http://intentarchitect.com/docs/) by the Intent Architect team.
 
+## Notes on presentation of the client for screenshots and videos
+
+In the developer console, run the following first which makes the window frame-less:
+
+```js
+require("electron").ipcRenderer.send("relaunch-as-frameless");
+```
+
+After, you can run the following commands, also from the developer console:
+
+```js
+require("electron").ipcRenderer.send("set-size", { width: 1280, height: 720 }); // Sets the window to the recommended recording size of 720p
+angular.element(document.querySelector("html")).injector().get("EventAggregator").publish("set-presentation-mode", true); // Hides "Update Available", hides "IPC Connected" and changes the user display name to "User".
+```
+
 ### Build and make localhost preview site available
 
 From the command line run:
