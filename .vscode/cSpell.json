@@ -1,16 +1,19 @@
-// cSpell Settings
 {
+    "version": "0.1",
     "words": [
-        "dsls",
-        "isln",
+        "autoplay",
         "behaviour",
+        "dsls",
+        "favourite",
+        "frameless",
+        "imod",
+        "isln",
         "pathed",
-        "unintrusive",
-        "templatized",
+        "patternization",
         "patternize",
         "patternized",
-        "patternization",
         "patternizing",
-        "favourite"
+        "templatized",
+        "unintrusive"
     ]
 }
