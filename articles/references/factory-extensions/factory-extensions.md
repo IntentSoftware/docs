@@ -3,8 +3,6 @@ uid: references.factory-extensions
 ---
 # Factory Extensions
 
-TODO
-
-# See also
+## See also
 
 - [](xref:how-to-guides.create-a-factory-extension)

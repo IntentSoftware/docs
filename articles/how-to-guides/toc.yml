@@ -23,18 +23,15 @@ items:
 - name: Debug your Module code
   href: debug-your-module-code/debug-your-module-code.md
 
-# Add Attributes above the Properties for serializability options
 - name: Decorate a Template
   href: decorate-a-template/decorate-a-template.md
 
-# Can use stereotype again here to filter in the Registration
 - name: Filter Template Instances
   href: filter-template-instances/filter-template-instances.md
 
 - name: Manage Repositories
   href: manage-repositories/manage-repositories.md
 
-# Simply creating a stereotype to add Serializability to the entity
 - name: Use Stereotypes
   href: use-stereotypes/use-stereotypes.md
 

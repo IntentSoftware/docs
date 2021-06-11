@@ -3,17 +3,31 @@
     "words": [
         "autoplay",
         "behaviour",
+        "classname",
+        "CQRS",
+        "customizability",
         "dsls",
         "favourite",
+        "favourited",
         "frameless",
         "imod",
+        "imodspec",
+        "inclusivity",
         "isln",
-        "pathed",
+        "Linq",
+        "MediatR",
+        "microservice",
+        "Microservices",
+        "Nuget",
         "patternization",
         "patternize",
         "patternized",
         "patternizing",
+        "serializable",
+        "templatize",
         "templatized",
-        "unintrusive"
+        "templatizing",
+        "unintrusive",
+        "unopinionated"
     ]
 }
