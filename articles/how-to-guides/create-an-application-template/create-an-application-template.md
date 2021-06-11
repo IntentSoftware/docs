@@ -3,82 +3,98 @@ uid: how-to-guides.create-an-application-template
 ---
 # Create an Application Template
 
-Do you find yourself creating new applications in Intent Architect by choosing a very simple application template and customizing it by installing lots of modules?
-Working in a small team or organization can become daunting when someone else needs to create a new application and are not sure what the configuration settings should be.
+This how-to guide will walk you through creating your own [Application Template](xref:references.application-templates) using the `Intent Application Template Builder` [Designer](xref:references.designers).
 
-In this how-to we will explain how to setup your own team or organizational application template list which can run side-by-side to the official application template list and allows developers not only to create their own applications with ease, but they can easily customize it without having too much in-depth knowledge upon creation.
+## Create a new Application
 
-In Intent Architect, choose to create a new application and select the `Intent Application Template Builder`.
-Give it the name of `MyApplicationTemplates`.
+Create a new `Intent Application Template Builder` application and give it the name `MyApplicationTemplates`:
 
-![Application Template Builder Creation](images/my-app-templates-creation.png)
+![Create a new Application](images/my-app-templates-creation.png)
 
-When clicking on `Next` you will be presented with the following page. There is nothing to customize here so you can click on `Create` to begin your own application templates.
-
-![Application Template Builder Customization](images/my-app-templates-customize.png)
-
-Once the installation dialog is complete, click on `Close`.
+- Click `NEXT`.
+- Leave the ticked options as is and click `CREATE`:
 
 ![Installation dialog](images/installation-dialog.png)
 
-Open the `App Templates` designer and click on `Create new pacakge`.
+Once the `Application Installation` is complete, click `CLOSE`.
 
-![Create App Template Package](images/create-app-templates-package.png)
+## Create a new Package
 
-If you find that the package is highlighted in red, click on it and complete the following fields:
+- Click on the `App Templates` Designer on the left.
+- Click `CREATE NEW PACKAGE`.
+- Give the package a name of `My Application Template`.
+- Click `DONE`.
+- Click the root Package element and in the Properties pane on the right:
+  - For `Display Name` enter `My Application Template`:
 
-![Application Template Package Settings](images/app-template-pacakge-settings.png)
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-package.mp4"></video></p>
 
-| Name | Description |
-|-|-|
-| Version | You can give it a default value of `1.0.0`. **It needs to have 3 version components.** |
-| Display Name | Give it a display friendly name. Example: `My Standardized Application Templates` |
-| Supported Client Versions | Which versions of Intent Architect does this target? Click [here](xref:references.notations#version-ranges) to find out about the version scheme. Use the default of: `[3.0.0,4.0.0)` |
+## Specify a Group and a Component
 
-Once this is specified, follow through with the following steps (as an example) on how to setup Groups, Components and Modules.
+- Right-click the root Package element and click the `New Group` option.
+- Give the new element a name of `Group 1`.
+- Right-click the `Group 1` element and click the `Add Component` option.
+- Give the new element a name of `Component 1`.
+- Click the root `Component 1` element and in the Properties pane on the right:
+  - For `Icon` use the ellipses to [choose an icon](xref:how-to-guides.use-the-change-icon-dialogue):
 
-<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-group-components.mp4"></video></p>
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-group-and-component.mp4"></video></p>
 
-As per the video, create a Group called `Presentation` and a Component in it called `Angular` (give it the icon URL of `https://www.elemental.co.za/cms/resources/uploads/blog/89/05bd53609c4c.png`, you can click on the `...` button which will allow you to paste the image data in as well from the OS clipboard), then to finish it off, create a Module in the Component that is the same name as the actual Module that you wish to import into your application: `Intent.Angular`. Specify that Module to use version `3.0.0-beta.6`.
+## Add a Module
 
-As a further exercise, complete the design so that it looks like this:
+- Right-click the `Component 1` element and click the `Add Module` option.
+- Give the new element a name of `Intent.Modelers.Domain`.
 
-![Completed design example](images/app-template-design-complete.png)
+    > [!IMPORTANT]
+    > This must be the exact name of a [module](xref:references.modules) which is to be installed by the Application Template.
+- Click the root `Intent.Modelers.Domain` element and in the Properties pane on the right:
+  - For `Version` enter `3.0.4`.
 
-The Services Component uses this URL `https://image.shutterstock.com/image-vector/service-tool-icon-this-isolated-260nw-274711127.jpg`.
+    > [!IMPORTANT]
+    > This must be a valid version for the Module name chosen above.
 
-The Modules being used are:
- * Intent.Modelers.Services (3.0.2)
- * Intent.Application.ServiceImplementations (3.0.3)
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/add-a-module.mp4"></video></p>
 
-Now you can run the Software Factory to see the following staging changes:
+## Run the Software Factory to generate the module
 
-![Software Factory Run 1](images/software-factory-run-1.png)
+Run the Software Factory and optionally review the proposed changes:
 
-Click on `Apply` and open up the newly generated solution in Visual Studio.
-Perform a Build on the solution in order to build our new Application Template Module.
+![Staging files](images/software-factory-run.png)
 
-You will then notice the compiled module in the Intent.Modules folder.
+Click `APPLY CHANGES`.
 
-![Compiled App Template](images/app-template-compiled.png)
+After the Software Factory has applied the changes, you'll see that it runs `dotnet build` on the generated `Visual Studio` solution:
 
-# Test your Application Template
+![Software Factory: dotnet build](images/software-factory-dotnet-build.png)
 
-Open up the [Repository Manager](xref:how-to-guides.manage-repositories) to point to your newly created App Template Module folder.
+Take note of the following line in the output for the following step:
 
-![Manage Repositories](images/repo-manager-app-template-folder.png)
+```text
+Finished writing C:\Dev\MySolution\Intent.Modules\My Application Template.1.0.0.iat
+```
 
-Add your Repository to the list as shown in the image above. Let it point to your folder where your compiled Application Template Module is located.
+Click `CLOSE`.
 
->[!TIP]
->You can arrange your Repository to be on top so it automatically shows your Application Template first when you create a new Application in Intent Architect.
+## Test your Application Template
 
-Go to your Intent Architect solution where you want to create a new Application.
+Ensure you have added the output path as noted in the above step as a repository in the [Repository Manager](xref:how-to-guides.manage-repositories). For the above output, the full path of the Application Template is `C:\Dev\MySolution\Intent.Modules\My Application Template.1.0.0.iat`, so the repository would point to its folder, which is `C:\Dev\MySolution\Intent.Modules`:
 
-![Create Test Application Template](images/test-app-templates-create.png)
+![Manage Repositories](images/repo-manager-module-folder.png)
 
-Give it a name and click on `Next`.
+Ensure your module repository is selected in the drop down and you should see your application template:
 
-![Customize Test Application Template](images/test-app-templates-customize.png)
+![Select your Application Template](images/testing-select-application-template.png)
 
-Notice that you can decide which Components to install by checking the relevant check-boxes next to them. You should now be able to create the Application and begin to develop. You can go back to your App Template designer to modify or enhance the Components and Modules as you see fit.
+Give it a name and click `NEXT`.
+
+![Application Template Components](images/testing-select-application-template-components.png)
+
+Observe that it's showing all the elements we created in the [Specify a Group and a Component](#specify-a-group-and-a-component) and [Add a Module](#add-a-module) steps.
+
+## Next steps
+
+You can use the `App Templates` Designer to add/change Groups, Components and Modules, re-run the Software Factory and see the affect it has on your Application Template when used in Intent Architect.
+
+## See also
+
+[](xref:references.application-templates)
