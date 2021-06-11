@@ -1,6 +1,9 @@
 ---
 uid: how-to-guides.create-a-designer-extension
-note: This one will only cover the new element creation. We will need to write one that will form part of 'creating a new designer' that will allow you to define your visuals too.
+remarks: |
+  This one will only cover the new element creation. We will need to write one
+  that will form part of 'creating a new designer' that will allow you to
+  define your visuals too.
 ---
 # Create a Designer Extension
 

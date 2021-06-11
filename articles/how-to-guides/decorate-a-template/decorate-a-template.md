@@ -22,10 +22,10 @@ Give it the name of `DataAnnotationValidationDecorator` and select (as the type)
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-decorator.mp4"></video></p>
 
->[!NOTE]
->Make sure to Run the Software Factory Execution as this will generate the Decorator as well as the Contract for the Template.
+> [!NOTE]
+> Make sure to Run the Software Factory Execution as this will generate the Decorator as well as the Contract for the Template.
 >
->![Software Factory Run](images/software-factory-execution-staging.png)
+> ![Software Factory Run](images/software-factory-execution-staging.png)
 
 ## Update the Module
 
@@ -104,8 +104,8 @@ public override IEnumerable<string> GetEntityFieldAttributes(AttributeModel attr
 }
 ```
 
->[!IMPORTANT]
->Make sure to compile your module project before continuing.
+> [!IMPORTANT]
+> Make sure to compile your module project before continuing.
 
 ## Applying the Decorator
 
@@ -119,5 +119,5 @@ Now run the Software Factory to see that it adds the `[Required]` attribute only
 
 ![Diff Result](images/decorator-diff-result.png)
 
->[!TIP]
->You can use Stereotypes to add more complex validation logic to a Class Attribute. To learn how to work with Stereotypes, read [this article](xref:how-to-guides.use-stereotypes).
+> [!TIP]
+> You can use Stereotypes to add more complex validation logic to a Class Attribute. To learn how to work with Stereotypes, read [this article](xref:how-to-guides.use-stereotypes)

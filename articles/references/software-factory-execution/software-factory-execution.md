@@ -1,5 +1,9 @@
 ---
 uid: references.software-factory-execution
+remarks: |
+    # TODO
+
+    Perhaps how to configure diff tool, or anything else we need to cover. -->
 ---
 # Software Factory Execution
 
@@ -15,7 +19,3 @@ _An example diff of changes made to a C# interface that's managed by Intent Arch
 The Software Factory Execution is initiated from within an Application by clicking on the _Play_ button in the top nav-bar. The execution is typically kicked off after completing some design changes, or installing / updating Modules.
 
 ![Play Button](images/play-button.png)
-
-<!-- # TODO
-
-Perhaps how to configure diff tool, or anything else we need to cover. -->

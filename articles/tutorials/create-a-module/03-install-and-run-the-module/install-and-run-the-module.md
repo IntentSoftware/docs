@@ -6,6 +6,7 @@ uid: tutorials.create-a-module.install-and-run-the-module
 When creating Modules it is often very useful to have a _test_ Application that we can use to test that our Modules are working correctly. This tutorial explains how to create this _test_ Application and how to install and run the Module we created in the [previous tutorial](xref:tutorials.create-a-module.create-a-simple-module).
 
 ## Create an empty Application
+
 > [!NOTE]
 > If you have already created an Application to install your module in, you can skip this section and jump straight to the [Install the Module](#install-the-module) section.
 
@@ -25,8 +26,8 @@ To get started, let's create an empty Application.
 > [!NOTE]
 > We typically create Applications with an [Application Template](xref:how-to-guides.create-an-application-template). Empty Applications are useful when there aren't any Application Templates that fulfill your needs.
 
-
 ## Set up Visual Studio projects
+
 Applications need a way to know where to output specific code files. Since we're working with .NET we can install the `Intent.VisualStudio.Projects` Module which installs a Designer to configure our .NET solution and project structure.
 
 To install this module we must navigate to the `Modules` tab within our application.
@@ -54,13 +55,13 @@ You may have noticed that a new `Visual Studio` Designer was installed into our 
     ![Create Projects](images/software-factory-execution-project-structure.png)
 6. Finally, click `APPLY CHANGES` to instruct Intent Architect to create the files in our codebase.
 
-
 ## Install the Module
 
 Next, let's install the Module we created in the [previous step](xref:tutorials.create-a-module.create-a-simple-module). To do this we first navigate to the `Modules` tab of our Application.
 
 ### Finding and Installing the Module
-By default Intent Architect is configured only with the repository for official Modules hosted at https://intentarchitect.com/. To be able to use our own Module we can make the folder where our `MyModule.Entities` was created the default repository.
+
+By default Intent Architect is configured only with the repository for official Modules hosted at [https://intentarchitect.com/](https://intentarchitect.com/). To be able to use our own Module we can make the folder where our `MyModule.Entities` was created the default repository.
 
 1. Open [User Settings](xref:how-to-guides.change-user-settings).
 2. Add a new Repository with a unique `Name` (e.g. "My Modules") and the `Address` value being the full location of the folder where our Module was created (e.g. `C:\Dev\MyModules\Intent.Modules`).
@@ -74,6 +75,7 @@ By default Intent Architect is configured only with the repository for official 
     ![Selecting Repository and installing Module](images/selecting-repository-and-installing-module.gif)
 
 ### Assigning the Template Output
+
 You may have noticed that the `Installation Manager` mentioned an _Unassigned template_ that was created.
 
 ![Selecting Repository and installing Module](images/unassigned-template-created-example.png)
@@ -91,6 +93,7 @@ We've now told Intent Architect that when generating our `EntityBase` template i
 > Assigning Template Outputs can be configured to happen automatically when we install a Module. We [use Roles to achieve this](xref:how-to-guides.auto-assign-template-outputs).
 
 ## Run the Module
+
 We've created a project structure, installed our Module, and set the Output Target to our `TestApp.Domain` project. We're now ready to run our Module.
 
 1. Run the [Software Factory Execution](xref:getting-started.take-a-tour#software-factory-execution). The following changes should be staged:
@@ -99,11 +102,9 @@ We've created a project structure, installed our Module, and set the Output Targ
 2. Click the `APPLY CHANGES` button.
 3. Open the codebase to verify that the new `EntityBase.cs` file was created in the correct location.
 
->[!NOTE]
+> [!NOTE]
 > You may notice that a NuGet package (`Intent.RoslynWeaver.Attributes`) gets added to the `TestApp.Domain.csproj` file. This package provides _non-executing_ C# attributes which are used to instruct the [Code-Management](xref:getting-started.welcome#code-management) systems in C#. This is not a hard dependency, does not affect runtime execution in any way and can be swapped out or removed if needed.
-
 
 ## What's Next
 
-#### [Create Files per Model](xref:tutorials.creating-modules-net.create-templates-per-model)
-
+### [Create Files per Model](xref:tutorials.creating-modules-net.create-templates-per-model)

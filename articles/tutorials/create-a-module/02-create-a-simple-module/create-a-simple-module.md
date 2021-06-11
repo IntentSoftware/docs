@@ -12,6 +12,7 @@ On the home screen click `Create a new module`.
 Fill in a `Name` (such as `MyModules`), review/change the `Location` as desired and click `NEXT`.
 
 Ensure the following components are selected:
+
 - `Module Builder Core`
 - `Module Builder - C#`
 - `Visual Studio Integration`
@@ -22,14 +23,13 @@ An `Application Installation` dialogue will pop up showing the progress of downl
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-a-new-module.mp4"></video></p>
 
-
 ## Create a package
 
 Click on `Module Builder` on the left of the screen to enter the designer.
 
 Click `CREATE NEW PACKAGE`.
 
-Enter a name for the [Package](xref:references.packages) (such as `MyModules.Entities`) and click `DONE`.
+Enter a name for the `Package` (such as `MyModules.Entities`) and click `DONE`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-the-package.mp4"></video></p>
 
@@ -60,7 +60,7 @@ Navigate to the folder where the `.sln` solution file (and associated files) hav
 
 > [!TIP]
 > Intent Architect can open the folder where the generated content was placed by you going to the Application `Settings` and clicking on the path hyperlink located under the `Relative Output Location` input:
-> 
+>
 > ![Open the output path folder](images/open-the-output-path-folder.png)
 
 Go to the `MyModules` Project and expand the `Templates` folder and then the `EntityBase` folder.
@@ -111,5 +111,6 @@ You have successfully created an Intent Architect Module.
 
 ## Next Steps
 
-#### [Install and run the module](xref:tutorials.create-a-module.install-and-run-the-module)
+### [Install and run the module](xref:tutorials.create-a-module.install-and-run-the-module)
+
 Create a test Application to install and run our Module.

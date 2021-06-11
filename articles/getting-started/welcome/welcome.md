@@ -29,7 +29,7 @@ _Example of an entity relationship diagram being used to design a domain and its
 
 Code-automation as used in the software industry has two flavours: once-off (scaffolding) and continuous. Both have their place, but come with trade-offs and compromises in customizability and control.
 
-Code-management is a unique approach to code-automation that completely avoids the typical compromises. It utilizes abstract syntax tree parsing and intelligent algorithms to merge user-written code with automatically generated code. Code-management allows developers to control the automation systems of Intent Architect from a high-level all the way to the granular level of the members within each managed code file (e.g. classes, fields, functions, methods, etc.). 
+Code-management is a unique approach to code-automation that completely avoids the typical compromises. It utilizes abstract syntax tree parsing and intelligent algorithms to merge user-written code with automatically generated code. Code-management allows developers to control the automation systems of Intent Architect from a high-level all the way to the granular level of the members within each managed code file (e.g. classes, fields, functions, methods, etc.).
 
 As an example, a developer may configure a C# or Java file such that they are managing the implementation of one method within a class, while Intent Architect will manage the remaining methods. They may then choose to change this configuration, perhaps deciding to take over management of the entire class or just one of the other methods. The configuration of each file is completely controlled by the developer, preventing the automation system from ever getting in the way.
 
@@ -52,11 +52,12 @@ Intent Architect **does not introduce any hard runtime dependencies** and is cap
 Therefore, since Intent Architect is language oriented (it manages code files), it completely supports any framework or technology (including custom, in-house built frameworks) that is managed by the language.
 
 For the advanced [code-management](#code-management) capabilities described above, Intent Architect currently has support for the following languages:
- - C#
- - Java
- - TypeScript / JavaScript
- - HTML
- - SQL
+
+- C#
+- Java
+- TypeScript / JavaScript
+- HTML
+- SQL
 
 This list will continue to grow to include other popular programming languages such as Python and Go in the near future.
 
@@ -73,6 +74,7 @@ Similarly, Intent Architect does not dictate how developers design their system.
 ## Use cases
 
 Intent Architect is ideal for automating architectural, infrastructural, and boilerplate code. Depending on the project, this type of code can make up over 80% of the codebase. Typically, the tool is used by developers to achieve the following:
+
 - **Bootstrapping** - microservices, monolithic applications, application modules, identity, etc.
 - **Persistence Infrastructure** - ORM Mappings, Repositories, etc.
 - **Service Infrastructure** - RESTful Web Services, Data Transfer Objects, Dispatch Patterns (e.g. Mediator, Interface Dispatch), etc.
@@ -89,10 +91,10 @@ Intent Architect is not a framework or runtime platform. It does not inherently 
 
 ## What's Next
 
-#### [Get the application](xref:getting-started.get-the-application)
+### [Get the application](xref:getting-started.get-the-application)
 
 How to download and install Intent Architect, and how to create an account.
 
-#### [Take a tour](xref:getting-started.take-a-tour)
+### [Take a tour](xref:getting-started.take-a-tour)
 
 Discover the key concepts and features in Intent Architect.
