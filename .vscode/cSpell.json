@@ -18,16 +18,20 @@
         "MediatR",
         "microservice",
         "Microservices",
+        "msbuild",
         "Nuget",
         "patternization",
         "patternize",
         "patternized",
         "patternizing",
+        "Preload",
+        "pwsh",
         "serializable",
         "templatize",
         "templatized",
         "templatizing",
         "unintrusive",
-        "unopinionated"
+        "unopinionated",
+        "webdeploy"
     ]
 }
