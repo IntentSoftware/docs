@@ -1,0 +1,43 @@
+trigger:
+  batch: 'true'
+  branches:
+    include:
+    - master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  webDeployPassword: $(web-deploy-password)
+  webDeployPublishProfile: 'intent-architect-website-za-north'
+  solutionPath: '**/Intent.Docs.sln'
+
+steps:
+
+  - checkout: self
+    persistCredentials: 'true'
+    fetchDepth: '1'
+
+  - task: NuGetToolInstaller@1
+    displayName: 'nuget tool installer'
+    inputs:
+      versionSpec: '4.7.1'
+
+  - task: NuGetCommand@2
+    displayName: 'nuget restore'
+    inputs:
+      command: 'restore'
+      feedsToUse: 'select'
+      restoreSolution: '$(solutionPath)'
+
+  - pwsh: |
+      $(Build.SourcesDirectory)/_tools/DocFX/docfx.exe $(Build.SourcesDirectory)/docfx.json
+    displayName: run docfx
+
+  - task: MSBuild@1
+    displayName: 'msbuild: webdeploy'
+    condition: succeeded()
+    inputs:
+      solution: '$(solutionPath)'
+      configuration: 'release'
+      msbuildArguments: '/p:DeployOnBuild=true "/p:PublishProfile=$(webDeployPublishProfile)" "/p:Password=$(webDeployPassword)"'
