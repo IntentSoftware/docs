@@ -6,7 +6,7 @@ uid: how-to-guides.create-a-factory-extension
 Generating source code is not the only thing that Intent Architect can do when it runs the Software Factory Execution. The processing pipeline can also be extended by running middleware called `Factory Extensions`.
 This guide will explain how to create a `Factory Extension` and using it to invoke a command-line command:
 
-```
+```cmd
 npm install
 ```
 
@@ -19,10 +19,10 @@ Give it the name of `NpmInstallFactoryExtension`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-factory-extension.mp4"></video></p>
 
->[!NOTE]
->Make sure to Run the Software Factory Execution as this will generate the Factory Extension code.
+> [!NOTE]
+> Make sure to Run the Software Factory Execution as this will generate the Factory Extension code.
 >
->![Software Factory Run](images/software-factory-execution-staging.png)
+> ![Software Factory Run](images/software-factory-execution-staging.png)
 
 ## Implementing the Factory Extension
 
@@ -90,8 +90,8 @@ namespace ExtensionModule.FactoryExtensions
 }
 ```
 
->[!IMPORTANT]
->Make sure to compile your module project before continuing.
+> [!IMPORTANT]
+> Make sure to compile your module project before continuing.
 
 ## Running the Factory Extension
 
@@ -99,4 +99,4 @@ Install your Module to your Test Application in Intent Architect. Follow these [
 
 Once that is done, run the Software Factory and click on the Apply button. Then you will observe the following at the end of the process in the console output:
 
-![Complete](images/software-factory-execution-complete.png)
+![Complete](images/software-factory-execution-complete.png

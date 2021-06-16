@@ -31,7 +31,7 @@ Regardless of the type selected, during the [Software Factory Execution](xref:re
 | ------------------- |
 | `<Name>Template.tt` |
 
-This file is for authoring the output of the template in [T4 syntax](https://docs.microsoft.com/en-us/visualstudio/modeling/writing-a-t4-text-template). Every time this file is saved the IDE will auto "pre-compile" it and re-generate the backing `<Name>Template.cs` file which contains a [partial](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class named `<Name>Template`.
+This file is for authoring the output of the template in [T4 syntax](https://docs.microsoft.com/visualstudio/modeling/writing-a-t4-text-template). Every time this file is saved the IDE will auto "pre-compile" it and re-generate the backing `<Name>Template.cs` file which contains a [partial](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class named `<Name>Template`.
 
 ### 2. Template partial file
 
@@ -43,7 +43,7 @@ This file contains the other part of the `<Name>Template` partial class. On init
 
 In it you can control the instantiation of the template or adjust its config, but it is exceptionally useful though as a place to create helper methods or properties which can be conveniently used in your `.tt` file.
 
-While it's possible to make methods in the `.tt` file itself, we've found (from a code organisation and ergonomics perspective) it works much better to create methods in a partial file to the template.
+While it's possible to make methods in the `.tt` file itself, we've found (from a code organization and ergonomics perspective) it works much better to create methods in a partial file to the template.
 
 Any method or property in this partial class are accessible in the `.tt` as easily as doing `<# =PropertyName #>` (for properties) or `<# =MethodName() #>` for methods.
 
@@ -70,7 +70,7 @@ The generated [Template partial file](#2-template-partial-file)'s class uses `ob
 
 ### File Per Model
 
-This C# Template type is for when you want a separate `.cs` file for each instance of a model in a desiger of a type, EG: domain entities, WebApi endpoint, DTO, etc.
+This C# Template type is for when you want a separate `.cs` file for each instance of a model in a Designer of a type, EG: domain entities, WebApi endpoint, DTO, etc.
 
 The generated [Template registration file](#3-template-registration-file) derives from `FilePerModelTemplateRegistration<TModel>` and the code will register an instance of the template per model.
 
@@ -80,7 +80,7 @@ For both the template registration and partial files, the generated value for `T
 
 ![Template settings](images/template-settings.png)
 
-Unlike [Single File](#single-file) above, The `model` for this type of C# Template is essential as each registered template instance will have a seperate output file generated with its name and content dependant upon details on the incoming `model`.
+Unlike [Single File](#single-file) above, The `model` for this type of C# Template is essential as each registered template instance will have a separate output file generated with its name and content dependant upon details on the incoming `model`.
 
 ### Custom
 
@@ -89,6 +89,7 @@ This C# Template type is used far less than the other types and is when the othe
 Custom is largely the same as [Single File](#single-file) except that the generated [Template registration file](#3-template-registration-file) derives from `ITemplateRegistration` and therefore allows complete control over the implementation.
 
 ## Template Configuration
+
 The Template configuration is specified in the [Template partial file](#2-template-partial-file), inside the `DefineFileConfig` method. In this method, the configuration of each instance can be set as literal values or determined by functions and string interpolation. The required values set in the configuration determine the Template's `ClassName` and `Namespace` properties.
 
 ![DefineFileConfig method example](images/csharp-template-config-method.png)
@@ -105,6 +106,7 @@ public class <#= ClassName #>
 ```
 
 Intent Architect will then ensure it handles all the rules and edge cases for the naming of your class, including:
+
 - Applying PascalCase naming convention.
 - Removing invalid characters, like spaces or punctuation.
 
@@ -122,6 +124,7 @@ namespace <#= Namespace #>
 The default Template configuration that uses `this.GetNamespace()` will automatically determine the `Namespace` of the class based on where the file output is created. See below for how to configure the Output Location.
 
 ### Configure the Output Location
+
 Ultimately, the output location of a Template instance is determined by two factors:
 
 1. **The `Template Output` location** - i.e. under which folder or project the Template's `Template Output` is placed within the application. With C# Templates this is typically be determined using the `Visual Studio` Designer. In the example below we can see that the `Template Output` for `Intent.AspNetCore.Startup` will be placed in the `ExampleApp.Api` project:
@@ -141,15 +144,16 @@ Ultimately, the output location of a Template instance is determined by two fact
 Through extensive experience of building templates for generating C# files, we have added many features which we consider essential to making the C# template authoring process a painless experience.
 
 ### Code Management
+
 A core feature of Intent Architect is [Code Management](xref:references.code-management) where parts of a file are managed fully by Intent Architect while other parts in the same file are hand crafted and Intent Architect will leave those particular parts alone.
 
-For C# files, you can use [C# attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/) anywhere in the file to opt-out a particular element of code within a file from being overwritten during Software Factory Execution.
+For C# files, you can use [C# attributes](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/attributes/) anywhere in the file to opt-out a particular element of code within a file from being overwritten during Software Factory Execution.
 
 For example you could place `[IntentManaged(Mode.Ignore)]` on a particular method and when Intent Architect sees this during Software Factory execution it will make sure to never change anything for it.
 
 ### Using statements from other Templates (dependencies)
 
-Intent Architect will automatically add required [using statements](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement) to generated C# files based on specified template dependencies as [`GetTypeName(...)`](#resolving-type-names-of-other-template-instances) usages.
+Intent Architect will automatically add required [using statements](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) to generated C# files based on specified template dependencies as [`GetTypeName(...)`](#resolving-type-names-of-other-template-instances) usages.
 
 To specify a template dependency, use the `AddTypeSource(...)` method in the constructor of the template in the [Template File](#1-template-file):
 
@@ -242,7 +246,7 @@ public class NuGetPackages
 
 ### GAC Assembly dependencies
 
-Intent Architect will automatically add [GAC](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/gac) Assembly references to `.csproj` files based on specified requirements in Templates.
+Intent Architect will automatically add [GAC](https://docs.microsoft.com/dotnet/framework/app-domains/gac) Assembly references to `.csproj` files based on specified requirements in Templates.
 
 To specify a GAC Assembly reference requirement, use the `AddAssemblyReference(...)` method in the constructor of the template in the [Template File](#1-template-file):
 

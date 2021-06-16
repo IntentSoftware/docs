@@ -1,3 +1,4 @@
+items:
 - name: Applications
   href: applications/applications.md
 
@@ -31,6 +32,9 @@
 # - name: 'Module: Visual Studio'
 #   href: module-visual-studio/module-visual-studio.md
 
+- name: Notations
+  href: notations/notations.md
+
 # - name: Packages
 #   href: packages/packages.md
 
@@ -43,17 +47,11 @@
 - name: Software Factory Execution
   href: software-factory-execution/software-factory-execution.md
 
-# What it is: Extend metadata. Different options (text, checkbox, etc). Display functions.
 # - name: Stereotypes
 #   href: stereotypes/stereotypes.md
 
-# For now this is covered by the `Templates C#` doc, but ultimately generalized content will be extracted
-# from there into this and that will become a sub-node of this menu item.
 # - name: Templates
 #   href: templates/templates.md
 
 - name: Templates (C#)
   href: templates-csharp/templates-csharp.md
-
-- name: Notations
-  href: notations/notations.md
