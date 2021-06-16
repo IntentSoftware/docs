@@ -3,7 +3,7 @@ uid: references.application-templates
 ---
 # Application Templates
 
-Application Templates allow specifying a pre-defined set of options of which [Modules](xref:references.modules) and [Metadata](xref:references.metadata) (for [Designers](xref:references.designers)) to automatically install into the new [Application](xref:references.applications) during its creation.
+Application Templates allow specifying a pre-defined set of options of which [Modules](xref:references.modules) and [Metadata](xref:references.metadata) (for [Designers](xref:references.designers)) to automatically install into a new [Application](xref:references.applications) during its creation.
 
 To illustrate this, from the home screen create a sample .NET Core Application using the `Clean Architecture .NET Core 3.1` Application Template. Fill out the Application's name, location, and the Solution name, then click `NEXT`. The wizard then moves to next page which displays the high-level _Components_ that make up the Application Template.
 
@@ -24,6 +24,6 @@ _The modules downloaded in the example above are specifically related to the `Cl
 > [!NOTE]
 > Although this example is based in .NET, this process would work in the same way for other Application Templates that are designed for other languages.
 
-<!-- ## See also
+## See also
 
-#### [How-to: Create an Application Template](xref:how-to-guides.create-an-application-template) -->
+- [](xref:how-to-guides.create-an-application-template)

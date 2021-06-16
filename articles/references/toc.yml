@@ -13,6 +13,9 @@
 - name: Designers
   href: designers/designers.md
 
+- name: Designer Extensions
+  href: designer-extensions/designer-extensions.md
+
 # - name: Factory Extensions
 #   href: factory-extensions/factory-extensions.md
 
@@ -51,3 +54,6 @@
 
 - name: Templates (C#)
   href: templates-csharp/templates-csharp.md
+
+- name: Notations
+  href: notations/notations.md

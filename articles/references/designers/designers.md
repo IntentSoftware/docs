@@ -24,12 +24,13 @@ Designers serve as a **blueprint** of your system. They can be used to describe 
  - **Front-End Structure** - Components, Routing, Modules, View Models, Views, etc.
 
 ## Creating your own Designer
+
 Customized Designers can be created using the Intent Module Builder. For examples on how Designers can be configured, open the `Intent.Modules.isln` in the [Intent.Modules](https://github.com/IntentSoftware/Intent.Modules) open-source repository on GitHub. See the following Modules:
 
  - `Intent.Modelers.Services`
  - `Intent.Modelers.Services.CQRS`
  - `Intent.Modelers.Domain`
 
-<!-- ## See also
+## See also
 
-- [](xref:how-to-guides.create-a-designer) -->
+- [](xref:references.designer-extensions)
