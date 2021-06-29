@@ -111,7 +111,7 @@ It should look like this in the end:
 
 The next section will outline some of the features of Intent Architect which entails doing Domain to DTO mapping.
 
-Starting with the `PetVisitDTO`, right click on it and select `Mapping...`
+Starting with the `PetVisitDTO`, right click on it and select `Mapping...`.
 Click on the dropdown saying `Select an element to map from`.
 Notice that you will now see all your Domain Entities in that dropdown.
 Choose the `Visit` Entity.
@@ -119,3 +119,21 @@ Select only the top-most attributes to map from.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet-visit.mp4"></video></p>
 
+The following DTO mapping will feature some more advanced capabilities that Intent has to offer. Right click on the `PetDTO` and select `Mapping...`.
+Select the `Pet` Entity from the empty dropdown.
+Select the top-most attributes and then in the `PetType` association, expand it and select its `id` and `name` fields. Select the Owner association, expand it and select the `id`, `fiestName` and `lastName` fields. Lastly, choose the `Visit` association in its entirety. You will notice that it will highlight an error as you will need to choose the DTO that it needs to map to. This is why we did the `PetVisitDTO` first since we can now select that DTO in this case.
+Once the mapping is completed, you're not done yet. Notice that you have fields that have the same name on this DTO. This will never work in the implementation layer. You will also find that with each field in the DTO there are arrow icons and text that follow it. This is Intent Architect's notation to indicate which fields from the Domain Entity will map to the DTO fields. Locate the attribute that is mapped from the `PetType` Entity.
+Rename those fields to be prefixed with `petType`. Do the same for the `Owner` attributes.
+
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet.mp4"></video></p>
+
+Lastly we need to map the `OwnerDTO` to look like this:
+
+![OwnerDTO mapping](images/service-mapping-owner-dto.png)
+
+Now you are ready to create a service operation. Right click on the `OwnerRestController` to add the new `getOwners` service. Make sure it has a return type of `OwnerDTO` (as a collection) and set the HTTP Verb to `GET`.
+
+>[!WARNING]
+>You might find that your list of DTOs in the `DTOs` package may not always appear immediately. As a workaround, ensure you have saved your work and navigate away to another designer/screen then come back to the Services designer.
+
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-get-owners.mp4"></video></p>
