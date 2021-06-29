@@ -137,3 +137,12 @@ Now you are ready to create a service operation. Right click on the `OwnerRestCo
 >You might find that your list of DTOs in the `DTOs` package may not always appear immediately. As a workaround, ensure you have saved your work and navigate away to another designer/screen then come back to the Services designer.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-get-owners.mp4"></video></p>
+
+Now that you have a service that can return all the owners, you need a way to add a new owner via the API services. So go ahead and create that service.
+First go to the `DTOs` package and create a `OwnerCreateDTO` and manually add the following fields to it to look like this:
+
+![Add Create Owner DTO](images/service-add-create-owner-dto.png)
+
+Next create a service called `addOwner`. It should have a `dto` parameter of type `OwnerCreateDTO` and an HTTP Verb `POST`.
+
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-add-owner.mp4"></video></p>
