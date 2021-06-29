@@ -3,6 +3,10 @@ items:
   href: getting-started/toc.yml
   topicUid: getting-started.welcome
 
+- name: 'Tutorial: Sample Pet Clinic'
+  href: tutorials/sample-pet-clinic/toc.yml
+  topicUid: tutorials.sample-pet-clinic.introduction
+
 - name: 'Tutorial: Create a Module'
   href: tutorials/create-a-module/toc.yml
   topicUid: tutorials.create-a-module.introduction

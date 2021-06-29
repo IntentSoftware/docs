@@ -137,6 +137,10 @@ Additional Applications can be created from the Solution dashboard by clicking o
 
 ## What's Next
 
+### [Tutorial: Sample Pet Clinic](xref:tutorials.sample-pet-clinic.introduction)
+
+Tutorial on how to recreate a sample application in Intent Architect to get familiar with building applications.
+
 ### [Tutorial: Create a Module (.NET)](xref:tutorials.create-a-module.introduction)
 
 Tutorials on how to create a Module and install it into an Application.
