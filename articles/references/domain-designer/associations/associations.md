@@ -9,6 +9,12 @@ Wikipedia provides some information regarding the concept of [Relationships](htt
 
 In the UML world, an `Association` is a kind of `Relationship` while in Intent Architect's Domain Designer the term `Association` represents the kind of relationship between two `Entities` (or `Classes`). 
 
+The following information around associations can be modeled in Intent Architect:
+
+ * [Association Types](xref:references.domain-designer.associations#association-types) - Relationship ownership between Entities
+ * [Multiplicity Types](xref:references.domain-designer.associations#multiplicity-types) - Cardinality between related Entities
+ * [Navigability](xref:references.domain-designer.associations#navigability) - Constraining the direction of accessing Entities from other Entities
+
 ## Association Types
 
 ### Composition Association
@@ -28,9 +34,9 @@ In this example, there is an `OwnerEntity` who has one-or-more `SubEntities`. No
 
 An `aggregation` is an association that represents a part of a whole. This is the opposite of a `composition` but it doesn't mean that it is "owned" by any `Entity`. 
 
-![Aggregation Association](images/association-professor-class.png)
+![Aggregation Association](images/association-professor-subject.png)
 
-In this example, there is a `Professor` that has multiple `Classes` to teach. Notice the White Diamond located on the side of the `Professor`, it denotes that a `Professor` has many `Classes` but doesn't own them. Both a `Class` and a `Professor` can exist without any instances of the other. If a `Class` is "destroyed", a `Professor` will still exist. If a `Professor` is destroyed, the `Classes` will still exist.
+In this example, there is a `Professor` that has multiple `Subjects` to teach. Notice the White Diamond located on the side of the `Professor`, it denotes that a `Professor` has many `Subjects` but doesn't own them. Both a `Subject` and a `Professor` can exist without any instances of the other. If a `Subject` is "destroyed", a `Professor` will still exist. If a `Professor` is destroyed, the `Subjects` will still exist.
 
 >[!NOTE]
 >This association is useful because you're modeling Entities that make up a greater whole but those Entities can be exchanged with other greater Entities. Think for instance of a Car Engine (ENG01) that is used within a certain Car Model (Zoyota) but it can also be used in another Car Model (Plexus).
