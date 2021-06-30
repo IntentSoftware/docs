@@ -79,7 +79,7 @@ As an exercise to the reader, try to create the following diagram:
 
 ![Pet Clinic Diagram](images/pet-clinic-domain-diagram.png)
 
-### Creating Services
+## Creating API Services
 
 Now that you have defined your domain, it would be useful to be able to interact with it especially from an API Services perspective.
 Click on the `Services` designer located on the left panel.
@@ -146,3 +146,68 @@ First go to the `DTOs` package and create a `OwnerCreateDTO` and manually add th
 Next create a service called `addOwner`. It should have a `dto` parameter of type `OwnerCreateDTO` and an HTTP Verb `POST`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-add-owner.mp4"></video></p>
+
+## Generate the code
+
+At this point you might be eager to see what the outcome would look like from all the modeling that has been done already. Go ahead and click on the big Play button located on the top right part of the screen. This will be referred to as doing a `Software Factory Execution`. Go ahead and perform this action.
+
+<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/software-factory-run.mp4"></video></p>
+
+You will notice a dialog presenting itself with a long list of information about the Software Factory Execution that will eventually present the list of files that it wants to affect. This part of the process is called the staging area where you can inspect the output before you apply it.
+Go ahead and locate a file called `OwnerRestController` (you're welcome to try and search for it).
+
+![Owner Rest Controller](images/software-factory-run-staging-ownerrestcontroller.png)
+
+You will notice three files. Click on the one located in the `Implementation` folder.
+
+![Service Implementation](images/software-factory-run-staging-diff-ownerrestcontroller-impl.png)
+
+By default it will open up VSCode to show you a `diff` view of the changes. Here you can clearly see how it wants to create a Class that includes the two operations we made for that service we created in the `Services` designer. It doesn't look very promising to think that for our basic CRUD application that we have to do the implementation ourselves. So go back to Intent Architect and cancel the Software Factory Execution.
+
+Open up the Modules section on the left panel and locate the following Modules to install:
+
+ * Intent.EntityFrameworkCore.Repositories
+ * Intent.Application.ServiceImplementations.Conventions.CRUD
+
+After installing those modules, execute the Software Factory again and click again on the same `OwnerRestController` file as before.
+
+![Service Implementation CRUD](images/software-factory-run-staging-diff-ownerrestcontroller-impl-crud.png)
+
+Notice anything different? The service operations has been implemented for you. 
+
+>[!IMPORTANT]
+>The installed modules will only implement the code for you on CRUD based operations and not for more complicated service operations
+
+## Test your application backend
+
+You are actually now in a good position to apply these changes, compile your project and run it.
+
+Once you have managed to get it up and running, a browser window will appear. In the address bar, type `/swagger` to be directed to the swagger page.
+
+![Initial Swagger Page](images/app-browser-swagger.png)
+
+Click on the `POST` version of the `/api/OwnerRest` panel and then click on the `Try it out` button.
+
+Paste the following in the request body text box:
+
+```json
+{
+  "firstName": "Sherlock",
+  "lastName": "Holmes",
+  "address": "221B Baker Street",
+  "city": "London",
+  "telephone": "020 7234 3456"
+}
+```
+
+Next click on the `Execute` blue button.
+
+It should come back with success.
+
+![Add Owner Success](images/app-browser-swagger-add-owner-resp.png)
+
+Next let's try and query all the Owners by going to the `GET` version of the `/api/OwnerRest` panel and click on the `Try it out` button followed by clicking on the blue `Execute` button.
+
+![Get All Owners Success](images/app-browser-swagger-get-owners-resp.png)
+
+It should also come back with success.
