@@ -211,3 +211,19 @@ Next let's try and query all the Owners by going to the `GET` version of the `/a
 ![Get All Owners Success](images/app-browser-swagger-get-owners-resp.png)
 
 It should also come back with success.
+
+## What's Next
+
+### Finish the Implementation
+
+You have only implemented a small portion of the application in order to get acquainted with Intent Architect.
+
+You are welcome to try and implement the rest of the services yourself so that you can have `Pets` with `Owners` and `Pets` make `Visits` to the `Vet`, etc.
+
+Alternatively you may choose to go to the next tutorial.
+
+### [Tutorial: Create a Module (.NET)](xref:tutorials.create-a-module.introduction)
+
+Tutorials on how to create a Module and install it into an Application.
+
+Modules are the building blocks for how to automate your infrastructural and architectural patterns
