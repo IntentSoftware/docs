@@ -48,7 +48,7 @@ Add the attributes:
 
 Before the `Pet` is complete, there are two minor adjustments that would need to be made to help indicate to the backend persistence layer (i.e. the Database) that the `id` attribute will act as a `Primary Key` and another concern is to limit the length of the `name` field to 30 characters. This can be achieved by adding [Stereotypes](xref:references.stereotypes) to Class attributes.
 
-To do this, right click on the attribute and select `Add Stereotype`. This will present a list of stereotypes for you to add. Select the `Primary Key` stereotype from the list.
+To do this, right click on the `id` attribute and select `Add Stereotype`. This will present a list of stereotypes for you to add. Select the `Primary Key` stereotype from the list.
 
 Next select the `name` attribute and add the `Text Constraints` stereotype.
 Once added, you will need to specify the `Max Length` to be 30.
@@ -66,7 +66,7 @@ Next, create an Entity `Owner` and supply the fields:
 This is how it should look like:
 ![Owner Entity](images/owner-entity-alone.png)
 
-Next you need to add a "has a" association so that an `Onwer` would have one-or-many `Pets`.
+Next you need to add a composite association so that an `Owner` would have one-or-many `Pets`.
 To do this, you need to start with the `Owner` Entity and right click on it and selecting `New Association`.
 Notice that a dynamic arrow will appear, starting from the `Owner` entity and following your mouse cursor. Left click on the `Pet` Entity in order to finalize the association. It will now show a straight line with a many-to-one association. This is not the association that you are looking for, instead click on that arrow line and move your attention to the right-hand panel. In the `Target End` you need to ensure that the `Is Collection` is checked and in the `Source End` you need to ensure that the `Navigable` is checked and the `Is Collection` is not.
 
@@ -119,11 +119,15 @@ Select only the top-most attributes to map from.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet-visit.mp4"></video></p>
 
-The following DTO mapping will feature some more advanced capabilities that Intent has to offer. Right click on the `PetDTO` and select `Mapping...`.
+The following DTO mapping will feature some more advanced capabilities that Intent Architect has to offer. Right click on the `PetDTO` and select `Mapping...`.
 Select the `Pet` Entity from the empty dropdown.
-Select the top-most attributes and then in the `PetType` association, expand it and select its `id` and `name` fields. Select the Owner association, expand it and select the `id`, `fiestName` and `lastName` fields. Lastly, choose the `Visit` association in its entirety. You will notice that it will highlight an error as you will need to choose the DTO that it needs to map to. This is why we did the `PetVisitDTO` first since we can now select that DTO in this case.
+Select the top-most attributes and then in the `PetType` association, expand it and select its `id` and `name` fields. Select the Owner association, expand it and select the `id`, `firstName` and `lastName` fields. Lastly, choose the `Visit` association in its entirety. You will notice that it will highlight an error as you will need to choose the DTO that it needs to map to. This is why you had to do the `PetVisitDTO` first since you can now select that DTO in this case.
+
 Once the mapping is completed, you're not done yet. Notice that you have fields that have the same name on this DTO. This will never work in the implementation layer. You will also find that with each field in the DTO there are arrow icons and text that follow it. This is Intent Architect's notation to indicate which fields from the Domain Entity will map to the DTO fields. Locate the attribute that is mapped from the `PetType` Entity.
-Rename those fields to be prefixed with `petType`. Do the same for the `Owner` attributes.
+Rename those fields to be prefixed with `petType`. For the `Owner` attributes, prefix them with `owner`.
+
+>[!NOTE]
+>As you prefix those attributes with lowercase letters it may be important to still retain Camel casing for consistency reasons
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet.mp4"></video></p>
 
@@ -169,7 +173,7 @@ Open up the Modules section on the left panel and locate the following Modules t
  * Intent.EntityFrameworkCore.Repositories
  * Intent.Application.ServiceImplementations.Conventions.CRUD
 
-After installing those modules, execute the Software Factory again and click again on the same `OwnerRestController` file as before.
+After installing those modules, execute the Software Factory again and click on the file `OwnerService`.
 
 ![Service Implementation CRUD](images/software-factory-run-staging-diff-ownerrestcontroller-impl-crud.png)
 
