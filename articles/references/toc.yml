@@ -6,7 +6,8 @@ items:
   href: application-templates/application-templates.md
 
 - name: Code management
-  href: code-management/code-management.md
+  href: code-management/toc.yml
+  topicUid: references.code-management
 
 - name: Decorators
   href: decorators/decorators.md
