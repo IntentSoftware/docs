@@ -26,6 +26,9 @@ items:
 - name: Decorate a Template
   href: decorate-a-template/decorate-a-template.md
 
+- name: Determine the name and namespace of a class which is generated in a different template
+  href: determine-class-name-from-different-template/determine-class-name-from-different-template.md
+
 - name: Filter Template Instances
   href: filter-template-instances/filter-template-instances.md
 
