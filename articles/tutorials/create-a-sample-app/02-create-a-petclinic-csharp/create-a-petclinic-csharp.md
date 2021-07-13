@@ -60,23 +60,18 @@ Create a `Pet` entity and then right-click it (on either the visual diagram's bl
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-entity-pet.mp4"></video></p>
 
-Before the `Pet` is complete, there are two minor adjustments that would need to be made to help indicate to the backend persistence layer (i.e. the Database) that the `id` attribute will act as a `Primary Key` and another concern is to limit the length of the `name` field to 30 characters. This can be achieved by adding [Stereotypes](xref:references.stereotypes) to Class attributes.
+Right-click on the `id` field and select `Add Stereotype`. Select the `Primary Key` [stereotype](xref:references.stereotypes)  from the list.
 
-To do this, right click on the `id` attribute and select `Add Stereotype`. This will present a list of stereotypes for you to add. Select the `Primary Key` stereotype from the list.
-
-Next select the `name` attribute and add the `Text Constraints` stereotype.
-Once added, you will need to specify the `Max Length` to be 30.
-
-<p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/add-pet-stereotypes.mp4"></video></p>
+![What the `Pet` entity should look like](images/pet-entity-primary-key.png)
 
 Create an `Owner` entity with the following attributes:
 
 - `id` of type `int` (Primary Key)
-- `firstName` of type `string` (Max Length: 30 characters)
-- `lastName` of type `string` (Max Length: 30 characters)
-- `address` of type `string` (Max Length: 255 characters)
-- `city` of type `string` (Max Length: 80 characters)
-- `telephone` of type `string` (Max Length: 20 characters)
+- `firstName` of type `string`
+- `lastName` of type `string`
+- `address` of type `string`
+- `city` of type `string`
+- `telephone` of type `string`
 
 ![What the `Owner` entity should now look like.](images/owner-entity-alone.png)
 
@@ -168,7 +163,7 @@ Ensure that the following fields are checked:
 On the `Pet` entity, expand the `PetType` field and check the `id` and `name` fields. Do the same for `Owner` with the `id`, `firstName` and `lastName` fields.
 Click on `DONE`.
 
-When the `Visit` field highlights in red, click on it and select the `PetVisitDTO` type in the `Type` field located on the right of the screen.
+When the `Visits` field highlights in red, click on it and select the `PetVisitDTO` type in the `Type` field located on the right of the screen.
 
 Locate the fields that you have mapped by looking at the text next to it (separated by an arrow), this shows the field where it is mapped from, and rename the fields that are mapped from `PetType.id`, `PetType.name`, `Owner.id`, `Owner.firstName` and `Owner.lastName` to have the corresponding prefix: If it is mapped from `PetType` add `petType` and if it is from `Owner`, add `owner`.
 
@@ -183,7 +178,7 @@ Lastly we need to map the `OwnerDTO` to look like this:
 
 ## Add Operations to Services
 
-Right click on the `OwnerRestController` to add a new `getOwners` operation. Set the return type of `OwnerDTO` (as a collection) and set the HTTP Verb to `GET`.
+Right click on the `OwnerRestController` to add a new `getOwners` operation. Set the return type of `OwnerDTO`, click on the `Is Collection` check-box and set the HTTP Verb to `GET`.
 
 >[!WARNING]
 >You might find that your list of DTOs in the `DTOs` package may not always appear immediately. As a workaround, ensure you have saved your work and navigate away to another designer/screen then come back to the Services designer.
@@ -205,14 +200,14 @@ Run the `Software Factory Execution` by clicking on the Play button located on t
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/software-factory-run.mp4"></video></p>
 
-Once the `Diff` view comes into view, to demonstrate the changes that are going to be applied click on the `OwnerRestController.cs` file in the list shown below.
+Once the `Diff` view comes into view, to demonstrate the changes that are going to be applied click on the `OwnerService.cs` file in the list shown below.
 
 >[!TIP]
 >You can also filter the files list by typing in the name of the file you're looking for in the filter text box located top left of the Software Factory Execution Pop up.
 
-You will notice three files. Click on the one located in the `Implementation` folder.
+Click on the file located in the `Implementation` folder.
 
-![Owner Rest Controller](images/software-factory-run-staging-ownerrestcontroller.png)
+![Owner Rest Controller](images/software-factory-run-staging-ownerservice.png)
 
 The default editor should present itself (i.e. VSCode) to show you a `diff` of all the changes where a class is being generated with the two operations that you added in the `Services` designer.
 
