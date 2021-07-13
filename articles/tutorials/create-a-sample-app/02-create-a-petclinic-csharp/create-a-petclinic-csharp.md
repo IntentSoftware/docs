@@ -156,15 +156,24 @@ Set the check-boxes for the following attributes:
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet-visit.mp4"></video></p>
 
 Right click on the `PetDTO` and select `Mapping...`.
-Select the `Pet` Entity from the empty drop-down.
+Select the `Pet` Entity from the bottom drop-down.
 
-Select the top-most attributes and then in the `PetType` association, expand it and select its `id` and `name` fields. Select the Owner association, expand it and select the `id`, `firstName` and `lastName` fields. Lastly, choose the `Visit` association in its entirety. You will notice that it will highlight an error as you will need to choose the DTO that it needs to map to. This is why you had to do the `PetVisitDTO` first since you can now select that DTO in this case.
+Ensure that the following fields are checked:
 
-Once the mapping is completed, you're not done yet. Notice that you have fields that have the same name on this DTO. This will never work in the implementation layer. You will also find that with each field in the DTO there are arrow icons and text that follow it. This is Intent Architect's notation to indicate which fields from the Domain Entity will map to the DTO fields. Locate the attribute that is mapped from the `PetType` Entity.
-Rename those fields to be prefixed with `petType`. For the `Owner` attributes, prefix them with `owner`.
+- `id`
+- `name`
+- `birthDate`
+- `Visit`
+
+On the `Pet` entity, expand the `PetType` field and check the `id` and `name` fields. Do the same for `Owner` with the `id`, `firstName` and `lastName` fields.
+Click on `DONE`.
+
+When the `Visit` field highlights in red, click on it and select the `PetVisitDTO` type in the `Type` field located on the right of the screen.
+
+Locate the fields that you have mapped by looking at the text next to it (separated by an arrow), this shows the field where it is mapped from, and rename the fields that are mapped from `PetType.id`, `PetType.name`, `Owner.id`, `Owner.firstName` and `Owner.lastName` to have the corresponding prefix: If it is mapped from `PetType` add `petType` and if it is from `Owner`, add `owner`.
 
 >[!NOTE]
->As you prefix those attributes with lowercase letters it may be important to still retain Camel casing for consistency reasons
+>As you prefix those attributes with lowercase letters it may be important to still retain [Camel casing](https://en.wikipedia.org/wiki/Camel_case) for consistency reasons
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet.mp4"></video></p>
 
@@ -172,58 +181,67 @@ Lastly we need to map the `OwnerDTO` to look like this:
 
 ![OwnerDTO mapping](images/service-mapping-owner-dto.png)
 
-Now you are ready to create a service operation. Right click on the `OwnerRestController` to add the new `getOwners` service. Make sure it has a return type of `OwnerDTO` (as a collection) and set the HTTP Verb to `GET`.
+## Add Operations to Services
+
+Right click on the `OwnerRestController` to add a new `getOwners` operation. Set the return type of `OwnerDTO` (as a collection) and set the HTTP Verb to `GET`.
 
 >[!WARNING]
 >You might find that your list of DTOs in the `DTOs` package may not always appear immediately. As a workaround, ensure you have saved your work and navigate away to another designer/screen then come back to the Services designer.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-get-owners.mp4"></video></p>
 
-Now that you have a service that can return all the owners, you need a way to add a new owner via the API services. So go ahead and create that service.
-First go to the `DTOs` package and create a `OwnerCreateDTO` and manually add the following fields to it to look like this:
+In the `DTOs` package, create a `OwnerCreateDTO` and manually add the following fields to it to look like this:
 
 ![Add Create Owner DTO](images/service-add-create-owner-dto.png)
 
-Next create a service called `addOwner`. It should have a `dto` parameter of type `OwnerCreateDTO` and an HTTP Verb `POST`.
+Next create an operation called `addOwner` on the `OwnerRestController`.
+It should have a `dto` parameter of type `OwnerCreateDTO` and an HTTP Verb `POST`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-add-owner.mp4"></video></p>
 
 ## Generate the Code
 
-At this point you might be eager to see what the outcome would look like from all the modeling that has been done already. Go ahead and click on the big Play button located on the top right part of the screen. This will be referred to as doing a `Software Factory Execution`. Go ahead and perform this action.
+Run the `Software Factory Execution` by clicking on the Play button located on the top right part of the screen.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/software-factory-run.mp4"></video></p>
 
-You will notice a dialog presenting itself with a long list of information about the Software Factory Execution that will eventually present the list of files that it wants to affect. This part of the process is called the staging area where you can inspect the output before you apply it.
-Go ahead and locate a file called `OwnerRestController` (you're welcome to try and search for it).
+Once the `Diff` view comes into view, to demonstrate the changes that are going to be applied click on the `OwnerRestController.cs` file in the list shown below.
 
-![Owner Rest Controller](images/software-factory-run-staging-ownerrestcontroller.png)
+>[!TIP]
+>You can also filter the files list by typing in the name of the file you're looking for in the filter text box located top left of the Software Factory Execution Pop up.
 
 You will notice three files. Click on the one located in the `Implementation` folder.
 
+![Owner Rest Controller](images/software-factory-run-staging-ownerrestcontroller.png)
+
+The default editor should present itself (i.e. VSCode) to show you a `diff` of all the changes where a class is being generated with the two operations that you added in the `Services` designer.
+
 ![Service Implementation](images/software-factory-run-staging-diff-ownerrestcontroller-impl.png)
 
-By default it will open up VSCode to show you a `diff` view of the changes. Here you can clearly see how it wants to create a Class that includes the two operations we made for that service we created in the `Services` designer. It doesn't look very promising to think that for our basic CRUD application that we have to do the implementation ourselves. So go back to Intent Architect and cancel the Software Factory Execution.
+To conclude this demonstration, click on `CANCEL` and click on the `Modules` section located on the left of the screen.
 
-Open up the Modules section on the left panel and locate the following Modules to install:
+Install the following modules:
 
 - `Intent.EntityFrameworkCore.Repositories`
 - `Intent.Application.ServiceImplementations.Conventions.CRUD`
 
-After installing those modules, execute the Software Factory again and click on the file `OwnerService`.
+Execute the Software Factory again and click again on the file `OwnerService`.
 
 ![Service Implementation CRUD](images/software-factory-run-staging-diff-ownerrestcontroller-impl-crud.png)
 
-Notice anything different? The service operations has been implemented for you. 
+>[!NOTE]
+>Notice that the operations are now populated with code that will facilitate CRUD operations.
+>The installed modules will only implement the code for you on CRUD based operations and not for more complicated service operations.
+>[!WARNING]
+>It is always recommended to inspect the changes that Intent Architect wants to make to your codebase before applying the them.
 
->[!IMPORTANT]
->The installed modules will only implement the code for you on CRUD based operations and not for more complicated service operations
+In Intent Architect on the `Execute Software Factory` dialog, click on `APPLY`.
 
-## Test your application backend
+## Test your application back-end
 
-You are actually now in a good position to apply these changes, compile your project and run it.
+Compile your application in Visual Studio and Run it.
 
-Once you have managed to get it up and running, a browser window will appear. In the address bar, type `/swagger` to be directed to the swagger page.
+Once its running, a browser window will appear. Append in the address bar `/swagger` and `ENTER` to be directed to the swagger page.
 
 ![Initial Swagger Page](images/app-browser-swagger.png)
 
@@ -267,4 +285,4 @@ Alternatively you may choose to go to the next tutorial.
 
 Tutorials on how to create a Module and install it into an Application.
 
-Modules are the building blocks for how to automate your infrastructural and architectural patterns
+Modules are the building blocks for how to automate your infrastructural and architectural patterns.
