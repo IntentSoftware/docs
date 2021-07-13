@@ -1,5 +1,5 @@
 ---
-uid: tutorials.sample-pet-clinic.create-csharp
+uid: tutorials.create-a-sample-app.create-a-petclinic-csharp
 ---
 
 # Create Pet Clinic for the .NET C# Technology Stack
@@ -9,40 +9,54 @@ uid: tutorials.sample-pet-clinic.create-csharp
 - Ensure Intent Architect has been [installed](xref:getting-started.get-the-application).
 - The latest [Microsoft Visual Studio for Windows/Mac](https://visualstudio.microsoft.com/), [JetBrains Rider](https://www.jetbrains.com/rider/download/) or any other IDE capable of working with .NET Core projects.
 
-## Create a Sample Pet Clinic Application
+## Create a new Application
 
 On the home screen click `Create a new application`.
 
-Choose the .NET 5.0 Core Application Template.
+Select the `Web Application ASP.NET Core 5.0` Application Template.
+
 Fill in a `Name` (such as `PetClinicRest`), review/change the `Location` as desired and click `NEXT`.
 
-You can glance over the modules that it wants to install but you can just continue to click on `CREATE`.
+Ensure that the following Modules are selected:
+
+- `ASP.NET Core RESTful Api`
+- `OpenAPI (Swashbuckle)`
+- `Basic Service Implementation`
+- `Entities`
+- `Entity Framework Core`
+- `Visual Studio Integration`
 
 An `Application Installation` dialogue will pop up showing the progress of downloading and installing Modules and Metadata for the Application, once it's finished it will show `Process complete.` and you can click the `CLOSE` button:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-new-app.mp4"></video></p>
 
-## Setting up the Domain
+## Create a package for the Domain designer
 
-Starting off, we want to create the Pet Clinic domain since this will form part of the core application logic and how we will persist the data in the backend.
-Click on the `Domain` designer located on the left panel.
+Click on `Domain` on the left of the screen to enter the designer.
 
-You will be prompted with a dialog box asking you for a name for this Domain package. You can go ahead and create with the Default name.
+Click `CREATE NEW PACKAGE`.
+
+Leave the name with its default value of `Domain` and click `DONE`.
+
+This is where you will model your "business domain" using an [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) class relationship diagram which Intent Architect will use to generate C# classes and ultimately a database schema.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-domain-package.mp4"></video></p>
 
-### Creating the Domain Entities
+### Create the Domain Entities
 
-In this little Pet Clinic application, there will be the concept of a `Pet` that needs to `Visit` a `Vet` and a `Pet` belongs to an `Owner`.
+This PetClinic application's business domain requires the following [entities](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) (concepts) to be modeled:
 
-Add a `Pet` Entity by right clicking on the diagram and selecting `New Class` _or_ you can even right click on the tree-view (on the right hand side) on the `Domain` package item and also selecting `New Class`.
+- `Pet`
+- `Owner` (to which a `Pet` "belongs to")
+- `Visit` (to represent each visit by a `Pet` to the PetClinic)
 
-Add the following fields to this `Pet` Entity by also right clicking on the `Pet` diagram element _or_ on the `Pet` tree-view element and then selecting `Add Attribute`.
+Entities can be added to the domain modeler by right-clicking on the background of it and clicking the `New Class` option. Alternatively, they can also be added in the tree view by right-clicking on a folder and similarly clicking the `New Class` option.
 
-Add the attributes:
- * `id` of type `int`
- * `name` of type `string`
- * `birthDate` of type `date`
+Create a `Pet` entity and then right-click it (on either the visual diagram's block, or the tree view element) and click the `Add Attribute` option to add the following attributes:
+
+- `id` of type `int`
+- `name` of type `string`
+- `birthDate` of type `date`
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-entity-pet.mp4"></video></p>
 
@@ -55,72 +69,95 @@ Once added, you will need to specify the `Max Length` to be 30.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/add-pet-stereotypes.mp4"></video></p>
 
-Next, create an Entity `Owner` and supply the fields:
- * `id` of type `int` (Primary Key)
- * `firstName` of type `string` (Max Length: 30 characters)
- * `lastName` of type `string` (Max Length: 30 characters)
- * `address` of type `string` (Max Length: 255 characters)
- * `city` of type `string` (Max Length: 80 characters)
- * `telephone` of type `string` (Max Length: 20 characters)
+Create an `Owner` entity with the following attributes:
 
-This is how it should look like:
-![Owner Entity](images/owner-entity-alone.png)
+- `id` of type `int` (Primary Key)
+- `firstName` of type `string` (Max Length: 30 characters)
+- `lastName` of type `string` (Max Length: 30 characters)
+- `address` of type `string` (Max Length: 255 characters)
+- `city` of type `string` (Max Length: 80 characters)
+- `telephone` of type `string` (Max Length: 20 characters)
 
-Next you need to add a composite association so that an `Owner` would have one-or-many `Pets`.
-To do this, you need to start with the `Owner` Entity and right click on it and selecting `New Association`.
-Notice that a dynamic arrow will appear, starting from the `Owner` entity and following your mouse cursor. Left click on the `Pet` Entity in order to finalize the association. It will now show a straight line with a many-to-one association. This is not the association that you are looking for, instead click on that arrow line and move your attention to the right-hand panel. In the `Target End` you need to ensure that the `Is Collection` is checked and in the `Source End` you need to ensure that the `Navigable` is checked and the `Is Collection` is not.
+![What the `Owner` entity should now look like.](images/owner-entity-alone.png)
+
+## Specify the relationships between entities
+
+Specifying [relationships](https://en.wikipedia.org/wiki/Class_diagram#Instance-level_relationships) between entities in the Intent Architect modelers are initiated by right-clicking an entity in the visual diagram, then clicking the `New Association` option and then completed by clicking on the other class which you want to be the target of the relationship.
+
+Create an association between `Owner` and `Pet`:
+
+- Right-click on `Owner` entity.
+- Click on the `New Association` option.
+- Click on the `Pet` entity which completes the creation of the association.
+- In the property pane (in the bottom-right corner of the screen) within the `Target End` section ensure that `Is Collection` is checked.
+- In the property pane within the `Source End` section ensure that `Is Collection` is *un*checked and that `Navigable` is checked.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/add-owner-pet-association.mp4"></video></p>
 
 >[!NOTE]
 >To learn more about these associations, visit [this article](xref:references.domain-designer.associations) for more information.
 
-As an exercise to the reader, try to create the following diagram:
+Create an association between `Owner` and `Pet`:
+
+- Right-click on `Owner` entity.
+- Click on the `New Association` option.
+- Click on the `Pet` entity which completes the creation of the association.
+- In the property pane (in the bottom-right corner of the screen) within the `Target End` section ensure that `Is Collection` is checked.
+- In the property pane within the `Source End` section ensure that `Is Collection` is *un*checked and that `Navigable` is checked.
 
 ![Pet Clinic Diagram](images/pet-clinic-domain-diagram.png)
 
-## Creating API Services
+## Create a package for the Services designer
 
-Now that you have defined your domain, it would be useful to be able to interact with it especially from an API Services perspective.
-Click on the `Services` designer located on the left panel.
+Click on the `Services` designer located on the left panel. Here you will model API Services for the domain models you have created.
 
-You will be prompted with a dialog box asking you for a name for this Services package. You can go ahead and create with the Default name.
+Click `CREATE NEW PACKAGE`.
+
+Leave the name with its default value of `Services` and click `DONE`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-services-package.mp4"></video></p>
 
-In this designer you will notice that its more simple to work with than the Domain designer since all we need to do is setup Services and their Data Contracts (usually referred to as DTOs - or Data Transfer Objects).
+Create the `OwnerRestController` service in the `Services` package by right clicking on the `Services` package and selecting `New Service`.
 
-Start off by creating a `OwnerRestController` service in the `Services` package by right clicking on the `Services` package and selecting `New Service`.
-It should look like this:
+![What the Owner Service should look like](images/create-service-owner.png)
 
-![Create Owner Service](images/create-service-owner.png)
+You will now create `DTO` objects. You can [read here](https://en.wikipedia.org/wiki/Data_transfer_object) about Data Transfer Objects to know more.
 
-Before we continue with adding Service operations, let's first define a few Data Contracts that will give structure to our Service operations.
-Let's create a new Package and call it `DTOs`.
-Right click somewhere in the background and select `Create new package`. Give it the name `DTOs`. Click on the `Save` button. Click on the References section of the `Services` package and select the newly created `DTOs` package. Click on `Save` again.
+Create a new Package and call it `DTOs`.
+Right click in the background and select `Create new package`.
+Give it the name `DTOs`.
+Click on the `Save` button.
+Right Click on the References item located in the `Services` package, select `Add Package Reference...` and select the newly created `DTOs` package.
+Click on `Save` again.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-services-dtos-package.mp4"></video></p>
 
-Go ahead and right click on the `DTOs` package and create a new `DTO`. Name the DTO, `OwnerDTO`. To preempt the rest, create also the following:
- * `PetDTO`
- * `PetVisitDTO`
+Right click on the `DTOs` package and create a new `DTO`. Name the DTO, `OwnerDTO`.
+Also create also the following:
 
-It should look like this in the end:
+- `PetDTO`
+- `PetVisitDTO`
 
-![Create Service DTOs](images/create-service-dtos.png)
+![What the Service DTOs should look like](images/create-service-dtos.png)
 
-The next section will outline some of the features of Intent Architect which entails doing Domain to DTO mapping.
+## Map Domain Entities to DTOs
 
-Starting with the `PetVisitDTO`, right click on it and select `Mapping...`.
-Click on the dropdown saying `Select an element to map from`.
-Notice that you will now see all your Domain Entities in that dropdown.
+On the `PetVisitDTO`, right click on it and select `Mapping...`.
+Click on the drop-down named `Select an element to map from`.
+Notice that you will now see all your Domain Entities in that drop-down.
 Choose the `Visit` Entity.
-Select only the top-most attributes to map from.
+
+Set the check-boxes for the following attributes:
+
+- `id`
+- `visitDate`
+- `description`
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet-visit.mp4"></video></p>
 
-The following DTO mapping will feature some more advanced capabilities that Intent Architect has to offer. Right click on the `PetDTO` and select `Mapping...`.
-Select the `Pet` Entity from the empty dropdown.
+Right click on the `PetDTO` and select `Mapping...`.
+Select the `Pet` Entity from the empty drop-down.
+
 Select the top-most attributes and then in the `PetType` association, expand it and select its `id` and `name` fields. Select the Owner association, expand it and select the `id`, `firstName` and `lastName` fields. Lastly, choose the `Visit` association in its entirety. You will notice that it will highlight an error as you will need to choose the DTO that it needs to map to. This is why you had to do the `PetVisitDTO` first since you can now select that DTO in this case.
 
 Once the mapping is completed, you're not done yet. Notice that you have fields that have the same name on this DTO. This will never work in the implementation layer. You will also find that with each field in the DTO there are arrow icons and text that follow it. This is Intent Architect's notation to indicate which fields from the Domain Entity will map to the DTO fields. Locate the attribute that is mapped from the `PetType` Entity.
@@ -151,7 +188,7 @@ Next create a service called `addOwner`. It should have a `dto` parameter of typ
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-add-owner.mp4"></video></p>
 
-## Generate the code
+## Generate the Code
 
 At this point you might be eager to see what the outcome would look like from all the modeling that has been done already. Go ahead and click on the big Play button located on the top right part of the screen. This will be referred to as doing a `Software Factory Execution`. Go ahead and perform this action.
 
@@ -170,8 +207,8 @@ By default it will open up VSCode to show you a `diff` view of the changes. Here
 
 Open up the Modules section on the left panel and locate the following Modules to install:
 
- * Intent.EntityFrameworkCore.Repositories
- * Intent.Application.ServiceImplementations.Conventions.CRUD
+- `Intent.EntityFrameworkCore.Repositories`
+- `Intent.Application.ServiceImplementations.Conventions.CRUD`
 
 After installing those modules, execute the Software Factory again and click on the file `OwnerService`.
 

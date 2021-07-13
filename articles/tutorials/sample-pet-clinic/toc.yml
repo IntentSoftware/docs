@@ -1,5 +1,0 @@
-items:
-- name: 1. Introduction
-  href: 01-sample-pet-clinic-introduction/sample-pet-clinic-introduction.md
-- name: 2. Create Pet Clinic for .NET C#
-  href: 02-create-csharp/create-csharp.md
