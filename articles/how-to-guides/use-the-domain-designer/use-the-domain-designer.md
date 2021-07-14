@@ -81,7 +81,7 @@ In the `Target End` tick the `Is Collection` field and in the `Source End` un-ti
 ## Add a new Diagram
 
 On the tree-view located right of the screen, right click on the `Domain` package. Select `New Diagram`. Give it the name `Shapes Diagram`.
-Perform a multi-select on the `Shape`, `Triangle` and `Circle` Classes by left clicking on the diagram to the left and above where `Shape` is located and draw a selection box around those Classes and ensure that they highlight once you release the mouse cursor.
+Perform a box-select on the `Shape`, `Triangle` and `Circle` Classes by left clicking on the diagram to the left and above where `Shape` is located and draw a selection box around those Classes and ensure that they highlight once you release the mouse cursor.
 Right click on any of the selected items and select `Hide`.
 
 Now double-click on `Shapes Diagram` located in the tree-view on the right side of the screen to open that diagram.
@@ -89,9 +89,9 @@ Perform a drag-and-drop from the tree-view and onto the diagram by selecting (or
 
 Spread them out so that `Shape` is located center-top of the diagram, `Triangle` bottom left and `Circle` bottom right.
 
->[!NOTE]
+>[!TIP]
 >Inspect the properties panel when you click on a diagram in the tree-view and notice the field `New diagram elements`.
->This will allow you to select which package to place newly created elements in when you add them from the diagram itself.
+>This will allow you to select which package to place newly created elements in when you add them from the diagram view itself.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/new-diagram-and-move-over.mp4"></video></p>
 
