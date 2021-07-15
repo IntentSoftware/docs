@@ -3,7 +3,7 @@ uid: how-to-guides.use-the-domain-designer
 ---
 # Use the Domain Designer
 
-This how-to will walk you through using the Domain Designer by working through an example where you will model conceptually how shapes can be drawn on a canvas.
+This how-to will walk you through using the Domain Designer by working through an example where you will model conceptually how `Shapes` can be drawn on a `Canvas`.
 Assuming you have the `Intent.Modelers.Domain` module installed, open up the `Domain` designer by clicking on `Domain` located left of the screen.
 
 ## Add new Classes
@@ -60,7 +60,7 @@ Give it the name of `shapes` and specify the type `Shape` and ensure that `Is Co
 
 ## Add a Composite association between Classes
 
-Space out the diagram elements so that there is some distance between them horizontally in order to show an arrow clearly. Feel free to resize the elements too.
+Space out the diagram elements so that there is some distance between them vertically in order to show an arrow clearly. Feel free to resize the elements too.
 
 Right click on `Canvas` and select `Add Association`. Click thereafter on `Shape`. Click on the newly created arrow.
 In the `Target End` section of the Properties panel (located right of the screen) tick the `Is Collection` field. Then in the `Source End` un-tick the `Is Collection` field.
@@ -81,13 +81,17 @@ In the `Target End` tick the `Is Collection` field and in the `Source End` un-ti
 ## Add a new Diagram
 
 On the tree-view located right of the screen, right click on the `Domain` package. Select `New Diagram`. Give it the name `Shapes Diagram`.
-Perform a box-select on the `Shape`, `Triangle` and `Circle` Classes by left clicking on the diagram to the left and above where `Shape` is located and draw a selection box around those Classes and ensure that they highlight once you release the mouse cursor.
+Draw a selection box around the `Shape`, `Triangle` and `Circle` Classes and ensure that they highlight once you release the mouse cursor.
 Right click on any of the selected items and select `Hide`.
 
 Now double-click on `Shapes Diagram` located in the tree-view on the right side of the screen to open that diagram.
 Perform a drag-and-drop from the tree-view and onto the diagram by selecting (or multi-selecting by clicking on each item while holding in the `CTRL` key) these three items: `Circle`, `Triangle` and `Shape`.
 
 Spread them out so that `Shape` is located center-top of the diagram, `Triangle` bottom left and `Circle` bottom right.
+
+>[!NOTE]
+>Once you've moved those Classes over to another diagram, they are still associated with the other Classes you've assigned them to before.
+>You can inspect this by going over to the tree-view on the right, locate `Shape` (for instance), expand it to show its contents and you will notice that there are four associations: `Group`, `Canvas`, `Circle` and `Triangle`.
 
 >[!TIP]
 >Inspect the properties panel when you click on a diagram in the tree-view and notice the field `New diagram elements`.
