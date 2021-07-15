@@ -76,6 +76,9 @@ Now create the same association between `Canvas` and `Group` in the same way exc
 Right click on `Group` and select `Add Association`. Click thereafter on `Shape`. Click on the newly created arrow.
 In the `Target End` tick the `Is Collection` field and in the `Source End` un-tick the `Is Collection` and tick the `Is Nullable` field.
 
+>[!NOTE]
+>To learn more about these associations, visit [this article](xref:references.domain-designer.associations) for more information.
+
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/add-aggregate-association.mp4"></video></p>
 
 ## Add a new Diagram
