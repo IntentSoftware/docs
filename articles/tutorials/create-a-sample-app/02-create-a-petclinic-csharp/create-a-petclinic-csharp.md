@@ -38,13 +38,13 @@ Click `CREATE NEW PACKAGE`.
 
 Leave the name with its default value of `Domain` and click `DONE`.
 
-This is where you will model your "business domain" using an [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) class relationship diagram which Intent Architect will use to generate C# classes and ultimately a database schema.
+This is where the "business domain" will be modelled using a [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) class relationship diagram which Intent Architect will use to generate C# classes and ultimately a database schema.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-domain-package.mp4"></video></p>
 
 ### Create the Domain Entities
 
-This PetClinic application's business domain requires the following [entities](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) (concepts) to be modeled:
+This PetClinic application's business domain requires the following [entities](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) (concepts) to be modelled:
 
 - `Pet`
 - `Owner` (to which a `Pet` "belongs to")
@@ -60,7 +60,7 @@ Create a `Pet` entity and then right-click it (on either the visual diagram's bl
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-entity-pet.mp4"></video></p>
 
-Right-click on the `id` field and select `Add Stereotype`. Select the `Primary Key` [stereotype](xref:references.stereotypes)  from the list.
+Right-click on the `id` field and select `Add Stereotype`. Select the `Primary Key` [stereotype](xref:references.stereotypes) from the list.
 
 ![What the `Pet` entity should look like](images/pet-entity-primary-key.png)
 
@@ -101,7 +101,7 @@ Create an association between `Owner` and `Pet`:
 
 ## Create a package for the Services designer
 
-Click on the `Services` designer located on the left panel. Here you will model API Services for the domain models you have created.
+Click on the `Services` designer located in the left panel. This is where API Services can be modelled to interact with the entities modelled in the domain designer.
 
 Click `CREATE NEW PACKAGE`.
 
@@ -109,22 +109,23 @@ Leave the name with its default value of `Services` and click `DONE`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-services-package.mp4"></video></p>
 
-Create the `OwnerRestController` service in the `Services` package by right clicking on the `Services` package and selecting `New Service`.
+Create the `OwnerRestController` service in the `Services` package by right clicking on the `Services` package and clicking the `New Service` option.
 
 ![What the Owner Service should look like](images/create-service-owner.png)
 
-You will now create `DTO` objects. You can [read here](https://en.wikipedia.org/wiki/Data_transfer_object) about Data Transfer Objects to know more.
+Create a new Package in which [DTO](https://en.wikipedia.org/wiki/Data_transfer_object)s will be modelled:
 
-Create a new Package and call it `DTOs`.
-Right click in the background and select `Create new package`.
-Give it the name `DTOs`.
-Click on the `Save` button.
-Right Click on the References item located in the `Services` package, select `Add Package Reference...` and select the newly created `DTOs` package.
-Click on `Save` again.
+- Right-click the background of the modeller and click the `Create new package` option.
+- Give it the name `DTOs`.
+- Click on the `Save` button.
+- Right-click on the `References` element located in the `Services` Package and click on the `Add Package Reference...` option.
+- On the modal which pops up check the `DTOs` entry.
+- Click on `Save` again.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/create-services-dtos-package.mp4"></video></p>
 
-Right click on the `DTOs` package and create a new `DTO`. Name the DTO, `OwnerDTO`.
+Right-click on the `DTOs` package and create a new `DTO` with a name of `OwnerDTO`.
+
 Also create also the following:
 
 - `PetDTO`
@@ -134,12 +135,11 @@ Also create also the following:
 
 ## Map Domain Entities to DTOs
 
-On the `PetVisitDTO`, right click on it and select `Mapping...`.
-Click on the drop-down named `Select an element to map from`.
-Notice that you will now see all your Domain Entities in that drop-down.
-Choose the `Visit` Entity.
+- Right-click the `PetVisitDTO` element and click on the `Mapping...` option.
+- Pull down the `Select an element to map from` dropdown and observe that it has a list of the modelled domain entities.
+- Choose the `Visit` Entity.
 
-Set the check-boxes for the following attributes:
+Use the check-boxes to select the following attributes:
 
 - `id`
 - `visitDate`
@@ -147,10 +147,7 @@ Set the check-boxes for the following attributes:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet-visit.mp4"></video></p>
 
-Right click on the `PetDTO` and select `Mapping...`.
-Select the `Pet` Entity from the bottom drop-down.
-
-Ensure that the following fields are checked:
+Similarly, right-click on the `PetDTO` and select `Mapping...`, choose the `Pet` Entity from the bottom drop-down and ensure that the following fields are checked:
 
 - `id`
 - `name`
@@ -164,30 +161,39 @@ When the `Visits` field highlights in red, click on it and select the `PetVisitD
 
 Locate the fields that you have mapped by looking at the text next to it (separated by an arrow), this shows the field where it is mapped from, and rename the fields that are mapped from `PetType.id`, `PetType.name`, `Owner.id`, `Owner.firstName` and `Owner.lastName` to have the corresponding prefix: If it is mapped from `PetType` add `petType` and if it is from `Owner`, add `owner`.
 
->[!NOTE]
->As you prefix those attributes with lowercase letters it may be important to still retain [Camel casing](https://en.wikipedia.org/wiki/Camel_case) for consistency reasons
+> [!NOTE]
+> As you prefix those attributes with lowercase letters it may be important to still retain [Camel casing](https://en.wikipedia.org/wiki/Camel_case) for consistency reasons.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/service-mapping-pet.mp4"></video></p>
 
-Lastly we need to map the `OwnerDTO` to look like this:
+Lastly we need to map the `OwnerDTO` to look as follows:
 
 ![OwnerDTO mapping](images/service-mapping-owner-dto.png)
 
 ## Add Operations to Services
 
-Right click on the `OwnerRestController` to add a new `getOwners` operation. Set the return type of `OwnerDTO`, click on the `Is Collection` check-box and set the HTTP Verb to `GET`.
+- Right-click on the `OwnerRestController` element and click the `Add Operation` option.
+- Give it a name of `getOwners` and set the return type to `OwnerDTO`.
+- In the bottom-right properties pane:
+  - Ensure `Is Collection` is checked.
+  - Change the `HTTP Verb` to `GET`.
 
->[!WARNING]
->You might find that your list of DTOs in the `DTOs` package may not always appear immediately. As a workaround, ensure you have saved your work and navigate away to another designer/screen then come back to the Services designer.
+> [!WARNING]
+> If found that the list of DTOs in the `DTOs` package does not immediately appear. Save your work, navigate to another designer/screen (such as the Domain) then navigate back to the Services designer.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-get-owners.mp4"></video></p>
 
-In the `DTOs` package, create a `OwnerCreateDTO` and manually add the following fields to it to look like this:
+In the `DTOs` package, create an `OwnerCreateDTO` and manually add the following fields to it so that it looks as follows:
 
 ![Add Create Owner DTO](images/service-add-create-owner-dto.png)
 
-Next create an operation called `addOwner` on the `OwnerRestController`.
-It should have a `dto` parameter of type `OwnerCreateDTO` and an HTTP Verb `POST`.
+- Right-click on the `OwnerRestController` element and click the `Add Operation` option.
+- Give it a name of `addOwner` and leave the return type blank.
+- Right-click the `addOwner` element and click the `Add parameter` option.
+- Give the parameter a name of `dto` and set its type to `OwnerCreateDTO`.
+- In the bottom-right properties pane:
+  - Ensure `Is Collection` is checked.
+  - Change the `HTTP Verb` to `POST`.
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/services-add-add-owner.mp4"></video></p>
 
@@ -197,43 +203,49 @@ Run the `Software Factory Execution` by clicking on the Play button located on t
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/software-factory-run.mp4"></video></p>
 
-Once the `Diff` view comes into view, to demonstrate the changes that are going to be applied click on the `OwnerService.cs` file in the list shown below.
+Once the staged `Changes` comes into view, you can review the proposed code changes, for example, the `OwnerService.cs`.
 
->[!TIP]
->You can also filter the files list by typing in the name of the file you're looking for in the filter text box located top left of the Software Factory Execution Pop up.
+> [!TIP]
+> The `Filter` box near the top-right of the `Software Factory Execution` modal can be used to help quickly locate particular files.
 
 Click on the file located in the `Implementation` folder.
 
 ![Owner Rest Controller](images/software-factory-run-staging-ownerservice.png)
 
-The default editor should present itself (i.e. VSCode) to show you a `diff` of all the changes where a class is being generated with the two operations that you added in the `Services` designer.
+On clicking the file, Intent Architect will start up an external "diff" tool which you can use to review the changes. The diff tool used by Intent Architect can be configured manually or alternatively Intent Architect will try see if Visual Studio Code is already installed and use it.
 
 ![Service Implementation](images/software-factory-run-staging-diff-ownerrestcontroller-impl.png)
 
-To conclude this demonstration, click on `CANCEL` and click on the `Modules` section located on the left of the screen.
+For the purposes of this tutorial, don't apply the changes at this time and instead click `CANCEL`.
 
-Install the following modules:
+Click the `Modules` option located in the left pane of the window and install the following modules:
 
 - `Intent.EntityFrameworkCore.Repositories`
 - `Intent.Application.ServiceImplementations.Conventions.CRUD`
 
-Execute the Software Factory again and click again on the file `OwnerService`.
+Execute the Software Factory again, click the file `OwnerService` in the changes and observe how its output has changed from the previous run..
 
 ![Service Implementation CRUD](images/software-factory-run-staging-diff-ownerrestcontroller-impl-crud.png)
 
->[!NOTE]
->Notice that the operations are now populated with code that will facilitate CRUD operations.
->The installed modules will only implement the code for you on CRUD based operations and not for more complicated service operations.
->[!WARNING]
->It is always recommended to inspect the changes that Intent Architect wants to make to your codebase before applying the them.
+> [!NOTE]
+> Observe that the operations are now populated with code that will facilitate CRUD operations.
+>
+> The `Intent.Application.ServiceImplementations.Conventions.CRUD` module automatically checked for operations which followed simple conventions and generated basic implementations where found.
+>
+> Anything not meeting these conventions was ignored and no implementations were generated.
 
-In Intent Architect on the `Execute Software Factory` dialog, click on `APPLY`.
+> [!WARNING]
+>
+> It is strongly recommended that one _always_ reviews all files in the `Changes` tab of the Software Factory Execution to ensure that all changes that will be applied are what you expect.
+
+
+Click `APPLY CHANGES`.
 
 ## Test your application back-end
 
-Compile your application in Visual Studio and Run it.
+Open your Application in your preferred .NET capable IDE, ensure that the startup project is set to the `.WebApi` one, then compile and run the solution.
 
-Once its running, a browser window will appear. Append in the address bar `/swagger` and `ENTER` to be directed to the swagger page.
+If you're running Visual Studio, it should automatically open the website in your browser. Append `/swagger` to the URL and press your return key to navigate to it.
 
 ![Initial Swagger Page](images/app-browser-swagger.png)
 
@@ -251,30 +263,24 @@ Paste the following in the request body text box:
 }
 ```
 
-Next click on the `Execute` blue button.
+Click on the blue `Execute` button.
 
-It should come back with success.
+It should show a success result which means that the application should have added an entry with the above details to its database.
 
 ![Add Owner Success](images/app-browser-swagger-add-owner-resp.png)
 
-Next let's try and query all the Owners by going to the `GET` version of the `/api/OwnerRest` panel and click on the `Try it out` button followed by clicking on the blue `Execute` button.
+To see the database record inserted above, in Swagger now click on the `GET` version of the `/api/OwnerRest` panel and click on the `Try it out` button followed by clicking on the blue `Execute` button.
 
 ![Get All Owners Success](images/app-browser-swagger-get-owners-resp.png)
 
-It should also come back with success.
+It should also have come back with success as well as an array of JSON results including the entry you created above.
 
 ## What's Next
 
 ### Finish the Implementation
 
-You have only implemented a small portion of the application in order to get acquainted with Intent Architect.
-
-You are welcome to try and implement the rest of the services yourself so that you can have `Pets` with `Owners` and `Pets` make `Visits` to the `Vet`, etc.
-
-Alternatively you may choose to go to the next tutorial.
+If you wish to continue exploring the concepts covered by this tutorial you can make new services, operations and DTOs to cover additional use cases towards a complete implementation of the PetClinic.
 
 ### [Tutorial: Create a Module (.NET)](xref:tutorials.create-a-module.introduction)
 
-Tutorials on how to create a Module and install it into an Application.
-
-Modules are the building blocks for how to automate your infrastructural and architectural patterns.
+A tutorial on how to create a Module and install it into an Application.

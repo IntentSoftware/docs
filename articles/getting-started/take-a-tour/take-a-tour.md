@@ -139,7 +139,7 @@ Additional Applications can be created from the Solution dashboard by clicking o
 
 ### [Tutorial: Use existing modules to quickly make applications](xref:tutorials.create-a-sample-app.introduction)
 
-Tutorial on how to use existing Intent Architect modules to help you quickly build a C# application.
+Tutorial on how to create a Module and install it into an Application.
 
 ### [Tutorial: Create a Module (.NET)](xref:tutorials.create-a-module.introduction)
 
