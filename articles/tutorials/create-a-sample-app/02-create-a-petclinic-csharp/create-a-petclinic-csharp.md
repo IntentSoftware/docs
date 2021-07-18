@@ -89,9 +89,6 @@ Create an association between `Owner` and `Pet`:
 
 <p><video style="max-width: 100%" muted="true" loop="true" autoplay="true" src="videos/add-owner-pet-association.mp4"></video></p>
 
->[!NOTE]
->To learn more about these associations, visit [this article](xref:references.domain-designer.associations) for more information.
-
 Create an association between `Owner` and `Pet`:
 
 - Right-click on `Owner` entity.
