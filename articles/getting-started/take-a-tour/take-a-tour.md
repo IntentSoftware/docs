@@ -137,6 +137,10 @@ Additional Applications can be created from the Solution dashboard by clicking o
 
 ## What's Next
 
+### [Tutorial: Use existing modules to quickly make applications](xref:tutorials.create-a-sample-app.introduction)
+
+Tutorial on how to create a Module and install it into an Application.
+
 ### [Tutorial: Create a Module (.NET)](xref:tutorials.create-a-module.introduction)
 
 Tutorials on how to create a Module and install it into an Application.

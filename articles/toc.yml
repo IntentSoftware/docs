@@ -7,6 +7,10 @@ items:
   href: tutorials/create-a-module/toc.yml
   topicUid: tutorials.create-a-module.introduction
 
+- name: 'Tutorial: Create a Sample App'
+  href: tutorials/create-a-sample-app/toc.yml
+  topicUid: tutorials.create-a-sample-app.introduction
+
 - name: How-to guides
   href: how-to-guides/toc.yml
 
